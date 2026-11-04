@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--
+  HSK WORKSHEET TEMPLATE — copy this file, replace the bracketed content.
+  See planning/blueprints/01-practice-worksheet-blueprint.md (P),
+  planning/blueprints/02-grammar-test-blueprint.md (GT),
+  planning/blueprints/03-vocabulary-test-blueprint.md (VT),
+  and planning/references/01-question-type-catalog.md (item formats & rules).
+
+  Metadata block (fill in — machine-readable):
+  worksheet_id: [hsk{L}-ws{NNN}]
+  hsk_level: [{L}]
+  grammar_point: [ID + 名称]
+  topic_context: [话题]
+  est_minutes: [{n}]
+  review_sources: [ids]
+  generated: [date]
+
+  QUICK RULES
+  - Pinyin: wrap Chinese in <span class="zh" data-py="pīnyīn">汉字</span> — click toggles
+    ruby pinyin. The header button toggles ALL. Pinyin uses tone marks.
+  - Every item gets its own check button; the key must include the rule + why the tempting
+    distractor fails. Production keys give model + variants + a wrong-with-reason example.
+  - No external resources. Fonts: system stack below.
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[HSK3 · 把字句1 — 搬家]</title>
+<style>
+  :root {
+    --ink:#1a1a1a; --bg:#faf9f6; --card:#ffffff; --line:#e5e2da;
+    --accent:#b0342a; --accent-soft:#fdf0ee; --ok:#2e7d32; --bad:#b0342a;
+    --hanzi:"Microsoft YaHei","Noto Sans SC","PingFang SC",sans-serif;
+  }
+  * { box-sizing:border-box; }
+  body {
+    font-family:var(--hanzi); color:var(--ink); background:var(--bg);
+    max-width:720px; margin:0 auto; padding:16px 20px 80px; line-height:1.75;
+  }
+  header.worksheet { border-bottom:3px solid var(--accent); padding-bottom:10px; margin-bottom:14px; }
+  header.worksheet h1 { font-size:1.35rem; margin:0 0 4px; }
+  .meta { color:#6b6558; font-size:.85rem; display:flex; flex-wrap:wrap; gap:8px 18px; }
+  .meta b { color:var(--accent); font-weight:600; }
+  .goal { background:var(--accent-soft); border-left:4px solid var(--accent);
+          padding:10px 14px; border-radius:0 8px 8px 0; margin:14px 0 22px; font-size:.95rem; }
+
+  h2.section { display:flex; align-items:baseline; gap:10px; margin:34px 0 8px;
+               font-size:1.15rem; }
+  h2.section .badge { background:var(--accent); color:#fff; border-radius:6px;
+               padding:1px 9px; font-size:.8rem; letter-spacing:1px; }
+  h2.section small { color:#6b6558; font-weight:400; font-size:.8rem; }
+  .inst { color:#6b6558; font-size:.9rem; margin:0 0 14px; }
+
+  .item { background:var(--card); border:1px solid var(--line); border-radius:10px;
+          padding:14px 16px; margin:12px 0; }
+  .qno { font-weight:700; color:var(--accent); margin-right:6px; }
+  .srctag { font-size:.75rem; color:#9a917f; border:1px solid var(--line);
+            border-radius:10px; padding:0 8px; margin-left:8px; }
+
+  /* pinyin toggle: <span class="zh" data-py="...">汉字</span> */
+  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
+  .zh.show::before {
+    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap;
+    font-family:Arial,"Noto Sans SC",sans-serif;
+  }
+  body.py-all .zh::before {
+    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap;
+  }
+
+  button { font-family:inherit; cursor:pointer; }
+  .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent);
+         border-radius:8px; padding:5px 14px; font-size:.85rem; }
+  .btn:hover { background:var(--accent-soft); }
+  .btn:disabled { opacity:.45; cursor:default; }
+  .key { display:none; margin-top:10px; padding:10px 12px; border-radius:8px;
+         background:#f2f8f2; border-left:4px solid var(--ok); font-size:.92rem; }
+  .key.show { display:block; }
+  .key .verdict-ok { color:var(--ok); font-weight:700; }
+  .key .verdict-bad { color:var(--bad); font-weight:700; }
+  .key .wrong-note { color:#8a4b00; }
+
+  /* MCQ: .mcq > .opt buttons + .check */
+  .opt { display:block; width:100%; text-align:left; background:#fff; margin:6px 0;
+         border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; font-size:1rem; }
+  .opt:hover { border-color:var(--accent); }
+  .opt.sel { border-color:var(--accent); background:var(--accent-soft); }
+  .opt.correct { border-color:var(--ok); background:#eef7ee; }
+  .opt.incorrect { border-color:var(--bad); background:#fdeeee; }
+
+  /* order tiles: click to build a sentence */
+  .tiles { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .tile { background:#fff; border:1.5px solid var(--line); border-radius:8px;
+          padding:6px 12px; font-size:1.05rem; }
+  .tile:hover { border-color:var(--accent); }
+  .tile.used { opacity:.35; }
+  .built { min-height:2.4em; border:2px dashed var(--line); border-radius:8px;
+           padding:8px 12px; margin:8px 0; font-size:1.05rem; }
+  .built .tile { background:var(--accent-soft); }
+
+  /* word bank fill: click bank word then a slot */
+  .bank { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .bank .bword { background:var(--accent-soft); border:1.5px solid var(--accent);
+                 border-radius:8px; padding:4px 12px; }
+  .bank .bword.used { opacity:.35; }
+  .slot { display:inline-block; min-width:56px; text-align:center; border-bottom:2px solid var(--accent);
+          padding:2px 8px; cursor:pointer; margin:0 3px; background:#fff; }
+
+  /* matching: click left then right */
+  .match-cols { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .match-cols .mopt { text-align:left; background:#fff; border:1.5px solid var(--line);
+        border-radius:8px; padding:8px 12px; margin:6px 0; width:100%; font-size:1rem; }
+  .mopt.sel { border-color:var(--accent); background:var(--accent-soft); }
+  .mopt.correct { border-color:var(--ok); background:#eef7ee; }
+  .mopt.incorrect { border-color:var(--bad); background:#fdeeee; }
+
+  /* flip cards */
+  .flip-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; }
+  .flip { perspective:900px; height:150px; cursor:pointer; }
+  .flip-inner { position:relative; width:100%; height:100%; transition:transform .5s;
+                transform-style:preserve-3d; }
+  .flip.flipped .flip-inner { transform:rotateY(180deg); }
+  .face { position:absolute; inset:0; backface-visibility:hidden; border-radius:12px;
+          border:1.5px solid var(--line); background:#fff; padding:14px;
+          display:flex; align-items:center; justify-content:center; text-align:center; }
+  .face.back { transform:rotateY(180deg); background:var(--accent-soft);
+               font-size:.85rem; }
+  .face .hl { color:var(--accent); font-weight:700; }
+
+  /* dialogue / listening simulation */
+  .dlg { margin:8px 0; }
+  .dlg .line { display:flex; gap:10px; align-items:flex-start; padding:6px 0;
+               border-bottom:1px dashed var(--line); }
+  .dlg .speaker { flex:0 0 64px; font-weight:700; color:var(--accent); }
+  .dlg .line.hidden-line { display:none; }
+  .tts { border:none; background:none; font-size:1rem; padding:0 4px; }
+
+  /* typed input */
+  .typed-in { font-family:var(--hanzi); font-size:1rem; border:1.5px solid var(--line);
+              border-radius:8px; padding:8px 12px; width:100%; margin:6px 0; }
+  textarea.typed-in { min-height:110px; }
+
+  /* self-check strip */
+  .selfcheck { background:var(--card); border:2px solid var(--accent); border-radius:12px;
+               padding:16px; margin-top:36px; }
+  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line);
+          border-radius:8px; padding:4px 10px; margin-right:6px; }
+  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
+
+  /* score summary (test worksheets: GT/VT — replaces .selfcheck) */
+  .scorebox { background:var(--card); border:2px solid var(--accent); border-radius:12px;
+              padding:16px; margin-top:36px; }
+  .scorebox .result { font-size:1.1rem; font-weight:700; margin:8px 0; }
+  .scorebox .verdict-pass { color:var(--ok); }
+  .scorebox .verdict-fail { color:var(--bad); }
+  .scorebox .missed-list { background:var(--accent-soft); border-radius:8px;
+              padding:8px 12px; margin-top:8px; font-size:.95rem; }
+
+  @media (max-width:480px){ .match-cols { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<!-- py toggle lives in the header row below -->
+<header class="worksheet">
+  <h1>[HSK3 · 把字句（一）]</h1>
+  <div class="meta">
+    <span><b>语法点</b> [L3-SP-1 把字句1]</span>
+    <span><b>话题</b> [家庭生活 · 搬家]</span>
+    <span><b>用时</b> [约 13 分钟]</span>
+    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
+  </div>
+</header>
+
+<div class="goal">
+  学习目标：[能使用"把"字句说明对某事物处置的结果 —— Use 把-sentences to say what someone
+  did to an object and the result.]
+</div>
+
+<!-- ============ SECTION A · 模式感知 Pattern warm-up ============ -->
+<h2 class="section"><span class="badge">A</span> 模式感知 <small>Pattern warm-up · 先看例句，别急着做题</small></h2>
+<p class="inst">[Click each card to flip. Read the sentences aloud.]</p>
+
+<!-- W1 flip card -->
+<div class="flip-row">
+  <div class="flip" tabindex="0">
+    <div class="flip-inner">
+      <div class="face front"><span class="zh" data-py="wǒ bǎ xīn dìtú guà zài qiáng shàng le">我把新地图挂在墙上了。</span></div>
+      <div class="face back">
+        <span class="hl">S + 把 + O + V + 在/到 + 处所</span><br>
+        [把 marks that the object got moved & located somewhere: "hung the new map ONTO the wall."]
+      </div>
+    </div>
+  </div>
+  <!-- more .flip cards: one per warm-up sentence + optional formula card + contrast card -->
+</div>
+
+<!-- ============ SECTION B · 语法操练 Grammar drills ============ -->
+<h2 class="section"><span class="badge">B</span> 语法操练 <small>Grammar drills</small></h2>
+<p class="inst">[Do them in order — they get harder.]</p>
+
+<!-- R1: MCQ fill-in -->
+<div class="item">
+  <p><span class="qno">B1</span> 他把作业交（　）了老师。
+    <span class="zh" data-py="tā bǎ zuòyè jiāogěi lǎoshī le"></span></p>
+  <div class="mcq" data-answer="C" data-point="把+O1+V+给+O2">
+    <button class="opt" data-v="A">A 给</button>
+    <button class="opt" data-v="B">B 到</button>
+    <button class="opt" data-v="C">C 给</button>
+    <button class="opt" data-v="D">D 在</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key">[VERDICT] [Rule: …] [Why the tempting wrong option fails: …]</div>
+</div>
+<!-- NOTE: R1 example above is illustrative — generate real content, exactly ONE defensible
+     answer, distractors must be plausible learner errors. See catalog §R1.-->
+
+<!-- R2: choose the correct sentence (same .mcq structure, options are full sentences) -->
+
+<!-- P2: order tiles -->
+<div class="item">
+  <p><span class="qno">B2</span> 排列顺序：把下面的词排成一句话。</p>
+  <div class="tiles">
+    <button class="tile">我</button>
+    <button class="tile">把</button>
+    <button class="tile">房间</button>
+    <button class="tile">打扫</button>
+    <button class="tile">干净了</button>
+  </div>
+  <div class="built" aria-label="your answer"></div>
+  <button class="btn check">对答案</button>
+  <button class="btn reset">重来</button>
+  <div class="key">[Correct order + rule + note on the trap.]</div>
+</div>
+
+<!-- P3: error finding (mcq over sentence segments) -->
+<!-- P1/P4: typed -->
+<div class="item">
+  <p><span class="qno">B3</span> 用"把"改写这句话：他关上了门。→</p>
+  <input class="typed-in" type="text" placeholder="输入你的句子…">
+  <button class="btn check">对答案</button>
+  <div class="key">[Model: 他把门关上了。] [Variants: …] [Wrong version + reason: …]</div>
+</div>
+
+<!-- ============ SECTION C · 听力模拟 Listening simulation ============ -->
+<h2 class="section"><span class="badge">C</span> 听力模拟 <small>Listening simulation · read-aloud dialogue</small></h2>
+<p class="inst">[Read the dialogue ALOUD twice — once for meaning, once at natural speed —
+then answer. Use 🔊 if your browser supports speech. "下一句" hides lines for shadowing practice.]</p>
+
+<div class="item">
+  <div class="dlg" data-lines="3">
+    <div class="line"><span class="speaker">女:</span><span>喂，你把箱子放哪儿了？<button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span>我把它们放在阳台上了。怎么了？<button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">女:</span><span>[… more turns, pattern appears ≥2 times …]</span></div>
+  </div>
+  <button class="btn reveal-next">显示下一句</button>
+  <button class="btn reset-lines">全部显示</button>
+  <!-- L1/L2/L3 comprehension items below, same .mcq / .item structures as section B -->
+</div>
+
+<!-- ============ SECTION D · 考试题型 Exam-style ============ -->
+<h2 class="section"><span class="badge">D</span> 考试题型 <small>Exam-style · official format</small></h2>
+<p class="inst">[Official-format items for this level — see 03-level-guide.md. E.g. HSK3 选词填空 /
+HSK4 语段排序 / HSK5 病句 / HSK6 400字作文→adapted. Use the official instruction phrasing + English subtitle.]</p>
+
+<!-- E1 bank-fill example structure -->
+<div class="item">
+  <p><span class="qno">D1</span> 选词填空（每个词只能用一次）：</p>
+  <div class="bank">
+    <button class="bword">A 把</button><button class="bword">B 被</button>
+    <button class="bword">C 给</button><button class="bword">D 让</button>
+    <button class="bword">E 从</button><button class="bword">F 在</button>
+  </div>
+  <p>1. 我的手机 <span class="slot" data-bank="1"></span> 弟弟弄坏了。</p>
+  <p>2. 请 <span class="slot" data-bank="2"></span> 这封信交给王老师。</p>
+  <button class="btn check">对答案</button>
+  <div class="key">[Per-blank answers + rules + traps.]</div>
+</div>
+
+<!-- ============ SECTION E · 自由产出 Free production ============ -->
+<h2 class="section"><span class="badge">E</span> 自由产出 <small>Free production</small></h2>
+<!-- F1/F2/F3/F4 typed items -->
+<div class="item">
+  <p><span class="qno">E1</span> [Specific personal question forcing the pattern: 你昨天到家后，
+      先把什么东西放在哪里了？用一个"把"字句回答。]</p>
+  <input class="typed-in" type="text" placeholder="输入你的句子…">
+  <button class="btn check">对答案</button>
+  <div class="key">[Model answers ×2 + acceptable variants + common mistake with reason.]</div>
+</div>
+
+<!-- ============ SECTION F · 温故知新 Review ============ -->
+<h2 class="section"><span class="badge">F</span> 温故知新 <small>Review · from earlier worksheets</small></h2>
+<p class="inst">[Items recycle content from review_sources — label each with source id.]</p>
+<div class="item">
+  <p><span class="qno">F1</span> 用"越来越"改写：我把房间打扫干净以后，房间 <input class="typed-in" style="display:inline-block;width:180px" type="text"> 。
+    <span class="srctag">from hsk3-ws-011 · 越来越</span></p>
+  <button class="btn check">对答案</button>
+  <div class="key">[越来越干净 — interleaves the old pattern with today's 把 sentence context.]</div>
+</div>
+
+<!-- ============ Self-check strip (P practice worksheets end here) ============ -->
+  <div class="scorebox">
+    <p><b>得分总结 Score summary</b> — 检查完所有选择题后点下面的按钮。</p>
+    <button class="btn score-btn">计算得分</button>
+    <div class="score-result"></div>
+    <p><b>自评打分 Self-grade the written sections (D/E)</b>:</p>
+    <p>😊 全对 / 🤔 差不多 / 😩 不行: <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button></p>
+  </div>
+
+<!-- ============ Score summary (GT / VT test worksheets: use INSTEAD of .selfcheck) ============
+  <div class="scorebox">
+    <p><b>得分总结 Score summary</b> — 检查完所有选择题后点下面的按钮。</p>
+    <button class="btn score-btn">计算得分</button>
+    <div class="score-result"></div>
+    <p><b>自评打分 Self-grade the written sections (D/E)</b>:</p>
+    <p>😊 全对 / 🤔 差不多 / 😩 不行: <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button></p>
+  </div>
+  NOTE for agents:
+  - Every MCQ item in a GT must carry data-point="the cluster point it tests"
+    (e.g. data-point="把+O+V+结果"); every VT item carries data-word="word tested".
+  - Missed (unchecked or wrong) items are collected into the review list by the button.
+  - Verdict: >=80% pass (advance per syllabus), else remediate-then-retake.
+-->
+
+
+<script>
+/* ---------- engine: copy unchanged; behavior is class-based ---------- */
+
+// Pinyin: click a .zh to toggle; header button toggles all.
+document.getElementById('pyAll').onclick = () =>
+  document.body.classList.toggle('py-all');
+document.addEventListener('click', e => {
+  const zh = e.target.closest('.zh');
+  if (zh) zh.classList.toggle('show');
+});
+
+// Generic: a .check button shows the .key inside the same .item
+document.addEventListener('click', e => {
+  if (!e.target.matches('.check')) return;
+  const item = e.target.closest('.item');
+  const key = item && item.querySelector('.key');
+  if (key) key.classList.add('show');
+});
+
+// MCQ / matching: click option to select; .check marks correct/incorrect, once
+document.addEventListener('click', e => {
+  if (!e.target.matches('.opt, .mopt')) return;
+  const box = e.target.closest('.mcq, .match-cols');
+  if (!box || box.dataset.done) return;
+  box.querySelectorAll('.sel').forEach(s => s.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.check')) return;
+  const item = e.target.closest('.item');
+  const box = item && item.querySelector('.mcq, .match-cols');
+  if (!box || box.dataset.done) return;
+  box.dataset.done = '1';
+  const ans = box.dataset.answer;
+  box.querySelectorAll('.opt, .mopt').forEach(o => {
+    if (o.dataset.v === ans) o.classList.add('correct');
+    else if (o.classList.contains('sel')) o.classList.add('incorrect');
+  });
+});
+
+// Order tiles: click tile → append to .built; click built tile to remove
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tiles > .tile')) return;
+  const built = e.target.closest('.item').querySelector('.built');
+  if (!built) return;
+  const t = document.createElement('button');
+  t.className = 'tile'; t.textContent = e.target.textContent;
+  built.appendChild(t); e.target.classList.add('used');
+});
+document.addEventListener('click', e => {
+  if (e.target.matches('.built > .tile')) e.target.remove();
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.reset')) return;
+  const item = e.target.closest('.item');
+  item.querySelectorAll('.tiles > .tile.used').forEach(t => t.classList.remove('used'));
+  const built = item.querySelector('.built'); if (built) built.innerHTML = '';
+});
+
+// Bank fill: click a bank word (arms it), then a slot (places it)
+let armedWord = null;
+document.addEventListener('click', e => {
+  if (e.target.matches('.bank .bword')) {
+    armedWord = e.target.classList.contains('used') ? null : e.target;
+    document.querySelectorAll('.bword').forEach(b => b.style.outline = '');
+    if (armedWord) armedWord.style.outline = '2px solid var(--accent)';
+  }
+  if (e.target.matches('.slot') && armedWord) {
+    e.target.textContent = armedWord.textContent.slice(2);  // drop "A " label
+    e.target.dataset.filled = armedWord.textContent.slice(0,1);
+    armedWord.classList.add('used'); armedWord.style.outline = ''; armedWord = null;
+  }
+});
+
+// Flip cards
+document.addEventListener('click', e => {
+  const f = e.target.closest('.flip');
+  if (f && !e.target.matches('.zh')) f.classList.toggle('flipped');
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && e.target.matches('.flip')) e.target.classList.toggle('flipped');
+});
+
+// Dialogue: reveal next hidden line / show all.
+// To use shadowing mode, give every line except the first class "hidden-line".
+document.addEventListener('click', e => {
+  if (e.target.matches('.reveal-next')) {
+    const dlg = e.target.closest('.item').querySelector('.dlg');
+    const nl = dlg && dlg.querySelector('.line.hidden-line');
+    if (nl) nl.classList.remove('hidden-line');
+  }
+  if (e.target.matches('.reset-lines')) {
+    const dlg = e.target.closest('.item').querySelector('.dlg');
+    if (dlg) dlg.querySelectorAll('.line').forEach(l => l.classList.remove('hidden-line'));
+  }
+});
+
+// TTS: reads the sibling Chinese text with zh-CN voice if available
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tts')) return;
+  if (!('speechSynthesis' in window)) return;
+  const line = e.target.parentElement;
+  const clone = line.cloneNode(true);
+  clone.querySelectorAll('button').forEach(b => b.remove());
+  const u = new SpeechSynthesisUtterance(clone.textContent.trim());
+  u.lang = 'zh-CN';
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+});
+
+// Self-check confidence buttons
+document.addEventListener('click', e => {
+  if (!e.target.matches('.conf')) return;
+  const sibs = e.target.parentElement.querySelectorAll('.conf');
+  sibs.forEach(b => b.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+
+// Score summary (test worksheets): count marked MCQs, collect missed points/words
+document.addEventListener('click', e => {
+  if (!e.target.matches('.score-btn')) return;
+  const box = e.target.closest('.scorebox');
+  const result = box.querySelector('.score-result');
+  if (!result) return;
+  let total = 0, right = 0;
+  const missed = [];
+  const seen = new Set();
+  document.querySelectorAll('.mcq').forEach(mcq => {
+    total++;
+    const ok = mcq.dataset.done && !mcq.querySelector('.opt.incorrect');
+    if (ok) { right++; return; }
+    const meta = mcq.closest('.item') || mcq;
+    const pt = mcq.dataset.point || meta.dataset.point || mcq.dataset.word || meta.dataset.word;
+    if (pt && !seen.has(pt)) { seen.add(pt); missed.push(pt); }
+  });
+  const pct = total ? Math.round((right / total) * 100) : 0;
+  const pass = pct >= 80;
+  result.innerHTML =
+    `<p class="result">得分 Score: <span class="${pass ? 'verdict-pass' : 'verdict-fail'}">${right} / ${total} (${pct}%)</span></p>` +
+    `<p>${pass ? '✅ <b>通过！</b>这个单元过关 — 可以进入下一个单元了。'
+              : '📉 <b>还没过关</b>（80% 通过线）。把下面这些点/词补练一下，然后再来一次。'}</p>` +
+    (missed.length ? `<div class="missed-list"><b>需要复习 Need review</b>: ${missed.join('、')}</div>` : '') +
+    `<p style="font-size:.8rem;color:#6b6558">别忘了在聊天里把得分和要复习的内容告诉我，我会记录并安排下次复习。</p>`;
+  result.classList.add('show');
+});
+</script>
+</body>
+</html>

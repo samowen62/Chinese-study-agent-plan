@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--
+  EXAMPLE WORKSHEET — demonstrates the full blueprint end-to-end.
+  This is a demonstration file: content was hand-checked but real generated worksheets
+  must re-verify vocabulary levels against the 词汇大纲 (see planning/README.md QA checklist).
+
+  worksheet_id: hsk3-ws-014
+  hsk_level: 3
+  grammar_point: L3-SP-1 把字句1
+  topic_context: 家庭生活 · 搬家与整理房间
+  est_minutes: 13
+  review_sources: hsk3-ws-013 (L3-SP-3 比较句2), hsk3-ws-011 (L3-FX-1 越来越), hsk3-ws-012 (L3-CP-5 一边……一边……)
+  generated: 2026-11-02
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSK3 · 把字句（一）· 搬家</title>
+<style>
+  :root {
+    --ink:#1a1a1a; --bg:#faf9f6; --card:#ffffff; --line:#e5e2da;
+    --accent:#b0342a; --accent-soft:#fdf0ee; --ok:#2e7d32; --bad:#b0342a;
+    --hanzi:"Microsoft YaHei","Noto Sans SC","PingFang SC",sans-serif;
+  }
+  * { box-sizing:border-box; }
+  body { font-family:var(--hanzi); color:var(--ink); background:var(--bg);
+    max-width:720px; margin:0 auto; padding:16px 20px 80px; line-height:1.75; }
+  header.worksheet { border-bottom:3px solid var(--accent); padding-bottom:10px; margin-bottom:14px; }
+  header.worksheet h1 { font-size:1.35rem; margin:0 0 4px; }
+  .meta { color:#6b6558; font-size:.85rem; display:flex; flex-wrap:wrap; gap:8px 18px; }
+  .meta b { color:var(--accent); font-weight:600; }
+  .goal { background:var(--accent-soft); border-left:4px solid var(--accent);
+          padding:10px 14px; border-radius:0 8px 8px 0; margin:14px 0 22px; font-size:.95rem; }
+  h2.section { display:flex; align-items:baseline; gap:10px; margin:34px 0 8px; font-size:1.15rem; }
+  h2.section .badge { background:var(--accent); color:#fff; border-radius:6px;
+               padding:1px 9px; font-size:.8rem; letter-spacing:1px; }
+  h2.section small { color:#6b6558; font-weight:400; font-size:.8rem; }
+  .inst { color:#6b6558; font-size:.9rem; margin:0 0 14px; }
+  .item { background:var(--card); border:1px solid var(--line); border-radius:10px;
+          padding:14px 16px; margin:12px 0; }
+  .qno { font-weight:700; color:var(--accent); margin-right:6px; }
+  .srctag { font-size:.75rem; color:#9a917f; border:1px solid var(--line);
+            border-radius:10px; padding:0 8px; margin-left:8px; }
+  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
+  .zh.show::before, body.py-all .zh::before {
+    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap;
+    font-family:Arial,"Noto Sans SC",sans-serif; }
+  button { font-family:inherit; cursor:pointer; }
+  .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent);
+         border-radius:8px; padding:5px 14px; font-size:.85rem; }
+  .btn:hover { background:var(--accent-soft); }
+  .key { display:none; margin-top:10px; padding:10px 12px; border-radius:8px;
+         background:#f2f8f2; border-left:4px solid var(--ok); font-size:.92rem; }
+  .key.show { display:block; }
+  .key b { color:var(--ok); }
+  .key .wrong-note { color:#8a4b00; }
+  .opt { display:block; width:100%; text-align:left; background:#fff; margin:6px 0;
+         border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; font-size:1rem; }
+  .opt:hover { border-color:var(--accent); }
+  .opt.sel { border-color:var(--accent); background:var(--accent-soft); }
+  .opt.correct { border-color:var(--ok); background:#eef7ee; }
+  .opt.incorrect { border-color:var(--bad); background:#fdeeee; }
+  .tiles { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .tile { background:#fff; border:1.5px solid var(--line); border-radius:8px;
+          padding:6px 12px; font-size:1.05rem; }
+  .tile:hover { border-color:var(--accent); }
+  .tile.used { opacity:.35; }
+  .built { min-height:2.4em; border:2px dashed var(--line); border-radius:8px;
+           padding:8px 12px; margin:8px 0; font-size:1.05rem; display:flex; flex-wrap:wrap; gap:8px; }
+  .bank { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .bank .bword { background:var(--accent-soft); border:1.5px solid var(--accent);
+                 border-radius:8px; padding:4px 12px; }
+  .bank .bword.used { opacity:.35; }
+  .slot { display:inline-block; min-width:56px; text-align:center; border-bottom:2px solid var(--accent);
+          padding:2px 8px; cursor:pointer; margin:0 3px; background:#fff; }
+  .flip-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; }
+  .flip { perspective:900px; height:150px; cursor:pointer; }
+  .flip-inner { position:relative; width:100%; height:100%; transition:transform .5s;
+                transform-style:preserve-3d; }
+  .flip.flipped .flip-inner { transform:rotateY(180deg); }
+  .face { position:absolute; inset:0; backface-visibility:hidden; border-radius:12px;
+          border:1.5px solid var(--line); background:#fff; padding:14px;
+          display:flex; align-items:center; justify-content:center; text-align:center; }
+  .face.back { transform:rotateY(180deg); background:var(--accent-soft); font-size:.85rem; }
+  .face .hl { color:var(--accent); font-weight:700; }
+  .dlg .line { display:flex; gap:10px; align-items:flex-start; padding:6px 0;
+               border-bottom:1px dashed var(--line); }
+  .dlg .speaker { flex:0 0 64px; font-weight:700; color:var(--accent); }
+  .dlg .line.hidden-line { display:none; }
+  .tts { border:none; background:none; font-size:1rem; padding:0 4px; }
+  .typed-in { font-family:var(--hanzi); font-size:1rem; border:1.5px solid var(--line);
+              border-radius:8px; padding:8px 12px; width:100%; margin:6px 0; }
+  .selfcheck { background:var(--card); border:2px solid var(--accent); border-radius:12px;
+               padding:16px; margin-top:36px; }
+  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line);
+          border-radius:8px; padding:4px 10px; margin-right:6px; }
+  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
+</style>
+</head>
+<body>
+<header class="worksheet">
+  <h1>HSK 3 · 把字句（一）</h1>
+  <div class="meta">
+    <span><b>语法点</b> L3-SP-1 把字句1</span>
+    <span><b>话题</b> 家庭生活 · 搬家与整理房间</span>
+    <span><b>用时</b> 约 13 分钟</span>
+    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
+  </div>
+</header>
+
+<div class="goal">
+  学习目标：能用"把"字句说明某人把东西怎么处理了、处理成什么样了 ——
+  Use 把-sentences to say what someone did to an object and where / how it ended up.
+</div>
+
+<!-- ============ A · 模式感知 ============ -->
+<h2 class="section"><span class="badge">A</span> 模式感知 <small>Pattern warm-up · 点开卡片，大声读句子</small></h2>
+<p class="inst">Click a card to flip. Click any Chinese to show its pinyin.</p>
+<div class="flip-row">
+  <div class="flip" tabindex="0">
+    <div class="flip-inner">
+      <div class="face front"><span class="zh" data-py="wǒ bǎ xīn de dìtú guà zài qiáng shàng le">我把新的地图挂在墙上了。</span></div>
+      <div class="face back"><span class="hl">S＋把＋O＋V＋在/到＋处所</span><br>把 = the action was applied to the object, and it ended up somewhere.</div>
+    </div>
+  </div>
+  <div class="flip" tabindex="0">
+    <div class="flip-inner">
+      <div class="face front"><span class="zh" data-py="qǐng bǎ xiāngzi fàng dào yángtái shàng">请把箱子放到阳台上。</span></div>
+      <div class="face back">Same pattern in a request. 把 must be followed by an action <b>plus result/location</b> — never a bare verb.</div>
+    </div>
+  </div>
+  <div class="flip" tabindex="0">
+    <div class="flip-inner">
+      <div class="face front"><span class="zh" data-py="tā bǎ wǒ de bēizi dǎ pò le">他打破了我的杯子。</span></div>
+      <div class="face back">This sentence is fine <b>without</b> 把 — but once you want to highlight "what happened to MY CUP", you repackage it: 他<b>把</b>我的杯子<b>打破了</b>。</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ B · 语法操练 ============ -->
+<h2 class="section"><span class="badge">B</span> 语法操练 <small>Grammar drills · 从易到难</small></h2>
+<p class="inst">从易到难，做完一题再点"对答案"。Do them in order; check each answer before moving on.</p>
+
+<div class="item">
+  <p><span class="qno">B1</span> 哪个句子是对的？</p>
+  <div class="mcq" data-answer="A">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="wǒ bǎ zuòyè zuò wán le">我把作业做完了。</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="wǒ bǎ zuòyè zuò">我把作业做。</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="wǒ bǎ xiǎng jiā le">我把想家了。</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="wǒ zuòyè bǎ zuò wán le">我作业把做完了。</span></button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 把 is followed by object＋verb＋result (做完). — B fails because 把-sentences need a result/complement after the verb: a bare 做 is incomplete. C fails because 想 (to miss) is a feeling, not an action you "apply" to an object like 家. D fails on word order: 把 must come after the subject and before its object.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B2</span> 选词填空：我把信（　）给王老师了。</p>
+  <div class="mcq" data-answer="C">
+    <button class="opt" data-v="A">A. 交在</button>
+    <button class="opt" data-v="B">B. 交到</button>
+    <button class="opt" data-v="C">C. 交</button>
+    <button class="opt" data-v="D">D. 交了</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> Pattern ② : S＋把＋O1＋V（＋给）＋O2 — I handed the letter TO teacher Wang. — 在/到 introduce a <b>location</b>, but 王老师 is a person receiving the object, so you need 给 (attached to the verb) instead. 交了了 would be ungrammatical; 交了 alone loses the recipient.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B3</span> 排列顺序：把这些词排成一句话。Click the words in order.</p>
+  <div class="tiles">
+    <button class="tile">我</button>
+    <button class="tile">把</button>
+    <button class="tile">房间</button>
+    <button class="tile">打扫</button>
+    <button class="tile">干净了</button>
+  </div>
+  <div class="built"></div>
+  <button class="btn check">对答案</button>
+  <button class="btn reset">重来</button>
+  <div class="key"><b>我把房间打扫干净了。</b> Subject → 把 → object → verb＋result. The trap: 干净了 (clean) is the result, so it must come after the verb 打扫 — never "我打扫干净了把房间".</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B4</span> 找错误：下面这句话有一个错，选出来。 Choose the wrong part.</p>
+  <p>他 <span class="zh" data-py="bǎ">把</span> <span class="zh" data-py="wǒ de fángjiān">我的房间</span> <span class="zh" data-py="méi dǎsǎo">没打扫</span> <span class="zh" data-py="gānjìng">干净</span>。</p>
+  <div class="mcq" data-answer="D">
+    <button class="opt" data-v="A">A. 他</button>
+    <button class="opt" data-v="B">B. 把</button>
+    <button class="opt" data-v="C">C. 我的房间</button>
+    <button class="opt" data-v="D">D. 没打扫</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>D ✔</b> In a 把-sentence, 不/没 must stand BEFORE 把: <span class="zh" data-py="tā méi bǎ wǒ de fángjiān dǎsǎo gānjìng">他没把我的房间打扫干净。</span> Negating after 把 is one of the most common learner errors.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B5</span> 用"把"改写：他关上了门。→</p>
+  <input class="typed-in" type="text" placeholder="输入你的句子…">
+  <button class="btn check">对答案</button>
+  <div class="key"><b>他把门关上了。</b> Model answer. Acceptable: 他把门给关上了 (colloquial 给). Wrong version to avoid: 他把关门了 — 把 must be followed directly by its object 门.</div>
+</div>
+
+<!-- ============ C · 听力模拟 ============ -->
+<h2 class="section"><span class="badge">C</span> 听力模拟 <small>Listening simulation · read-aloud dialogue</small></h2>
+<p class="inst">Read the dialogue aloud twice — once for meaning, once at natural speed. (🔊 reads it aloud if your browser supports it.) Then answer C1–C3.</p>
+
+<div class="item">
+  <div class="dlg">
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="wéi, nǐ zài nǎr ne? wǒ men dào jiā le.">喂，你在哪儿呢？我们到家了。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span><span class="zh" data-py="wǒ bǎ chē tíng zài lóu xià le, mǎshàng shàng lái.">我把车停在楼下了，马上上来。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="ài, wǒ bǎ xiāngzi fàng zài ménkǒu le, tài zhòng le, wǒ bān bu dòng.">哎，我把箱子放在门口了，太重了，我搬不动。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span><span class="zh" data-py="nǐ xiān bǎ dōngxi fàng dào kètīng qù ba.">你先把东西放到客厅去吧。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="nà ge shūjià ne? māma bǎ tā fàng zài yángtái shàng le.">那个书架呢？妈妈把它放在阳台上了。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span><span class="zh" data-py="hǎo. āi yā, wǒ bǎ nǐ māma de huāpíng wàng zài chē shàng le!">好。哎呀，我把你妈妈的花瓶忘在车上了！</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="nà kuài qù ná, xiǎoxīn bié bǎ tā dǎ suì le!">那你快去拿，小心别把它打碎了！</span><button class="tts">🔊</button></span></div>
+  </div>
+  <p style="margin-top:10px"><span class="qno">C1</span> 男的把什么忘在车上了？</p>
+  <div class="mcq" data-answer="B">
+    <button class="opt" data-v="A">A. 箱子</button>
+    <button class="opt" data-v="B">B. 花瓶</button>
+    <button class="opt" data-v="C">C. 书架</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> 我把你妈妈的花瓶忘在车上了 — a perfect 把 pattern ① with 在＋处所. 箱子 was placed at the door by the woman; the bookshelf is on the balcony.</div>
+
+  <p style="margin-top:10px"><span class="qno">C2</span> 判断对错：妈妈把书架放在客厅了。（√ / ×）</p>
+  <div class="mcq" data-answer="B">
+    <button class="opt" data-v="A">A. √</button>
+    <button class="opt" data-v="B">B. ×</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>× ✔</b> 妈妈把它放在<b>阳台上</b>了， not the living room — the location after 在 is exactly what a 把-sentence locks in.</div>
+
+  <p style="margin-top:10px"><span class="qno">C3</span> 女的最后一句"小心别把它打碎了"里的"它"是什么？</p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key"><b>花瓶 (the vase).</b> "它" refers to the thing being carried back from the car — the vase. Note the negative command with 把: 别＋把＋O＋V＋result.</div>
+</div>
+
+<!-- ============ D · 考试题型 ============ -->
+<h2 class="section"><span class="badge">D</span> 考试题型 <small>Exam-style · HSK3 选词填空</small></h2>
+<p class="inst">每个词只能用一次。Click a bank word, then click the blank. (HSK3 阅读 · 第二部分 format)</p>
+
+<div class="item">
+  <div class="bank">
+    <button class="bword">A 把</button><button class="bword">B 被</button>
+    <button class="bword">C 给</button><button class="bword">D 让</button>
+    <button class="bword">E 在</button><button class="bword">F 从</button>
+  </div>
+  <p>1. 我的手机 <span class="slot"></span> 弟弟弄坏了。</p>
+  <p>2. 请把这封信交 <span class="slot"></span> 王老师。</p>
+  <p>3. 老师 <span class="slot"></span> 我们把课文读了两遍。</p>
+  <p>4. 快点儿，别 <span class="slot"></span> 书忘在教室里了。</p>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>1-B 被 2-C 给 3-D 让 4-A 把</b>（E 在、F 从 不用）<br>
+  1. 被 passive: the phone suffered the action. 2. 交＋给＋person = hand TO. 3. 让＋O＋V = have someone do something. 4. 别＋把＋书＋忘＋在＋处所 — negative command with 把.<br>
+  <span class="wrong-note">弄坏 nòng huài = break/damage (HSK4 word, glossed as promised for anything above level).</span></div>
+</div>
+
+<!-- ============ E · 自由产出 ============ -->
+<h2 class="section"><span class="badge">E</span> 自由产出 <small>Free production</small></h2>
+
+<div class="item">
+  <p><span class="qno">E1</span> 你昨天到家以后，先把什么东西放在哪儿了？用一个"把"字句回答。</p>
+  <input class="typed-in" type="text" placeholder="我先把…放在…了">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>我先把书包放在椅子上了。</b> Variants: 我到家后把外套挂在了门上。 Check yourself: does the verb have a result or location after it? If you wrote 我把钥匙放 — incomplete; it needs 放在了哪儿 or 放好了.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">E2</span> Translate into Chinese: "I left your book at school."</p>
+  <input class="typed-in" type="text" placeholder="输入你的句子…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>我把你的书忘在学校了。</b> Over-literal to avoid: 我忘了你的书在学校 — Chinese needs 把 to move 你的书 before the verb; 忘 in this pattern takes 在＋place as the result.</div>
+</div>
+
+<!-- ============ F · 温故知新 ============ -->
+<h2 class="section"><span class="badge">F</span> 温故知新 <small>Review · from earlier worksheets</small></h2>
+
+<div class="item">
+  <p><span class="qno">F1</span> 选正确答案：今天跟昨天（　）。<span class="srctag">from hsk3-ws-013 · 比较句2</span></p>
+  <div class="mcq" data-answer="A">
+    <button class="opt" data-v="A">A. 一样冷</button>
+    <button class="opt" data-v="B">B. 冷一样</button>
+    <button class="opt" data-v="C">C. 一样的不冷</button>
+    <button class="opt" data-v="D">D. 冷得一样</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> A跟B一样＋形容词. C adds an unnecessary 不, changing the meaning to "as cold as NOT…". D would need 冷得跟昨天一样.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">F2</span> 用"一边……一边……"把两个句子合成一句话：我打扫房间。我听音乐。<span class="srctag">from hsk3-ws-012 · 一边……一边……</span></p>
+  <input class="typed-in" type="text" placeholder="输入你的句子…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>我一边打扫房间一边听音乐。</b> Both actions happen at the same time, same subject.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">F3</span> 用"越来越"完成这句话：我把房间打扫干净以后，房间（　）。<span class="srctag">from hsk3-ws-011 · 越来越</span></p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>房间越来越干净了。</b> — notice how today's 把-sentence (我把房间打扫干净了) and the old pattern 越来越 connect naturally.</div>
+</div>
+
+<!-- ============ Self-check strip ============ -->
+<div class="selfcheck">
+  <p><b>自评 Self-check</b> — 点每个部分的心情，再把想复习的词写下来（下次课会用到！）</p>
+  <p>A <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; B <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; C <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; D <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; E <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button></p>
+  <p><b>词语收藏 Words to revisit</b></p>
+  <textarea class="typed-in" placeholder="记下今天没把握的词和句子…"></textarea>
+</div>
+
+<script>
+document.getElementById('pyAll').onclick = () => document.body.classList.toggle('py-all');
+document.addEventListener('click', e => {
+  const zh = e.target.closest('.zh');
+  if (zh && !e.target.closest('.flip')) zh.classList.toggle('show');
+});
+document.addEventListener('click', e => {
+  if (e.target.matches('.check')) {
+    const item = e.target.closest('.item');
+    const key = item && item.querySelector('.key');
+    if (key) key.classList.add('show');
+  }
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.opt')) return;
+  const box = e.target.closest('.mcq');
+  if (!box || box.dataset.done) return;
+  box.querySelectorAll('.sel').forEach(s => s.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.check')) return;
+  const box = e.target.closest('.item').querySelector('.mcq');
+  if (!box || box.dataset.done) return;
+  box.dataset.done = '1';
+  const ans = box.dataset.answer;
+  box.querySelectorAll('.opt').forEach(o => {
+    if (o.dataset.v === ans) o.classList.add('correct');
+    else if (o.classList.contains('sel')) o.classList.add('incorrect');
+  });
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tiles > .tile')) return;
+  const built = e.target.closest('.item').querySelector('.built');
+  if (!built) return;
+  const t = document.createElement('button');
+  t.className = 'tile'; t.textContent = e.target.textContent;
+  built.appendChild(t); e.target.classList.add('used');
+});
+document.addEventListener('click', e => { if (e.target.matches('.built > .tile')) e.target.remove(); });
+document.addEventListener('click', e => {
+  if (!e.target.matches('.reset')) return;
+  const item = e.target.closest('.item');
+  item.querySelectorAll('.tiles > .tile.used').forEach(t => t.classList.remove('used'));
+  const built = item.querySelector('.built'); if (built) built.innerHTML = '';
+});
+let armedWord = null;
+document.addEventListener('click', e => {
+  if (e.target.matches('.bank .bword')) {
+    armedWord = e.target.classList.contains('used') ? null : e.target;
+    document.querySelectorAll('.bword').forEach(b => b.style.outline = '');
+    if (armedWord) armedWord.style.outline = '2px solid #b0342a';
+  }
+  if (e.target.matches('.slot') && armedWord) {
+    e.target.textContent = armedWord.textContent.slice(2);
+    e.target.dataset.filled = armedWord.textContent.slice(0,1);
+    armedWord.classList.add('used'); armedWord.style.outline = ''; armedWord = null;
+  }
+});
+document.addEventListener('click', e => {
+  const f = e.target.closest('.flip');
+  if (f) f.classList.toggle('flipped');
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && e.target.matches('.flip')) e.target.classList.toggle('flipped');
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tts')) return;
+  if (!('speechSynthesis' in window)) return;
+  const line = e.target.parentElement.cloneNode(true);
+  line.querySelectorAll('button').forEach(b => b.remove());
+  const u = new SpeechSynthesisUtterance(line.textContent.trim());
+  u.lang = 'zh-CN';
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.conf')) return;
+  e.target.parentElement.querySelectorAll('.conf').forEach(b => b.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+</script>
+</body>
+</html>
