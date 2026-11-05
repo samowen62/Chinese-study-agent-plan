@@ -51,18 +51,23 @@ planning\
 ├── blueprints\
 │   ├── 01-practice-worksheet-blueprint.md   (P)
 │   ├── 02-grammar-test-blueprint.md         (GT)
-│   └── 03-vocabulary-test-blueprint.md      (VT)
+│   └── 03-vocabulary-test-blueprint.md       (VT)
 ├── references\
 │   ├── 01-question-type-catalog.md  ← every allowed item format + HTML components
 │   ├── 02-level-guide.md            ← per-level exam structure, vocab ranges, topics, scaffolding
 │   └── 03-grammar-inventory.md      ← cluster spine (133 clusters/502 points) + official 2025 语法大纲 appendix
 ├── syllabuses\
 │   └── 01-hsk-syllabus.md           ← unit order, test cadence, progression rules
+├── plans\                           ← build plans (one .md per task; all future plans saved here)
 ├── templates\
 │   ├── worksheet-template.html      ← copy as starting point (all components implemented)
 │   └── example-worksheet-hsk3-ba.html  ← complete P example (HSK3 把字句)
 └── scripts\                         ← extraction tooling + generated data (cluster JSON)
 ```
+
+**Course storage**: worksheets built as part of a level course go in
+`Z:\Chinese\courses\hsk{L}\{p,gt,vt}\` with a `course-manifest.md` tracking every unit's
+status; standalone one-off worksheets still go in `Z:\Chinese\worksheets\{type}\`.
 
 ## Workflow: generating a worksheet
 

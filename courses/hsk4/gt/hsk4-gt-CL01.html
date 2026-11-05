@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--
+  worksheet_id: hsk4-gt-CL01
+  type: grammar-test (GT)
+  hsk_level: 4
+  cluster: L4-CL01 Adjectives 形容词
+  cluster_points: [全, 死了/厉害 (L4-CM-1)]
+  practice_units_covered: hsk4-ws-001
+  topic_context: 综合
+  est_minutes: 10
+  scoring: auto (MCQ) + self-grade (E)
+  generated: 2026-11-05
+  NOTE: cluster has only 2 points, so R4 options borrow close neighbours from CL02
+  (可, 差不多, 正好, 竟然) per blueprint §C — keys note the borrowed ones.
+  C7 retests 反问句 from hsk4-gt-entry needs_review.
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSK4 · 单元测试 CL01 形容词 · Unit test</title>
+<style>
+  :root { --ink:#1a1a1a; --bg:#faf9f6; --card:#ffffff; --line:#e5e2da;
+    --accent:#b0342a; --accent-soft:#fdf0ee; --ok:#2e7d32; --bad:#b0342a;
+    --hanzi:"Microsoft YaHei","Noto Sans SC","PingFang SC",sans-serif; }
+  * { box-sizing:border-box; }
+  body { font-family:var(--hanzi); color:var(--ink); background:var(--bg);
+    max-width:720px; margin:0 auto; padding:16px 20px 80px; line-height:1.75; }
+  header.worksheet { border-bottom:3px solid var(--accent); padding-bottom:10px; margin-bottom:14px; }
+  header.worksheet h1 { font-size:1.35rem; margin:0 0 4px; }
+  .meta { color:#6b6558; font-size:.85rem; display:flex; flex-wrap:wrap; gap:8px 18px; }
+  .meta b { color:var(--accent); font-weight:600; }
+  .goal { background:var(--accent-soft); border-left:4px solid var(--accent);
+          padding:10px 14px; border-radius:0 8px 8px 0; margin:14px 0 22px; font-size:.95rem; }
+  h2.section { display:flex; align-items:baseline; gap:10px; margin:34px 0 8px; font-size:1.15rem; }
+  h2.section .badge { background:var(--accent); color:#fff; border-radius:6px; padding:1px 9px; font-size:.8rem; letter-spacing:1px; }
+  h2.section small { color:#6b6558; font-weight:400; font-size:.8rem; }
+  .inst { color:#6b6558; font-size:.9rem; margin:0 0 14px; }
+  .item { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:12px 0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:12px 0; font-size:.95rem; }
+  .card h3 { margin:0 0 6px; font-size:1.02rem; }
+  .card .formula { color:var(--accent); font-weight:700; }
+  .card .pit { color:#8a4b00; font-size:.88rem; margin-top:6px; }
+  .qno { font-weight:700; color:var(--accent); margin-right:6px; }
+  .srctag { font-size:.75rem; color:#9a917f; border:1px solid var(--line); border-radius:10px; padding:0 8px; margin-left:8px; }
+  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
+  .zh.show::before, body.py-all .zh::before {
+    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap; font-family:Arial,sans-serif; }
+  button { font-family:inherit; cursor:pointer; }
+  .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent); border-radius:8px; padding:5px 14px; font-size:.85rem; }
+  .btn:hover { background:var(--accent-soft); }
+  .key { display:none; margin-top:10px; padding:10px 12px; border-radius:8px; background:#f2f8f2; border-left:4px solid var(--ok); font-size:.92rem; }
+  .key.show { display:block; }
+  .key b { color:var(--ok); }
+  .opt { display:block; width:100%; text-align:left; background:#fff; margin:6px 0;
+         border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; font-size:1rem; }
+  .opt:hover { border-color:var(--accent); }
+  .opt.sel { border-color:var(--accent); background:var(--accent-soft); }
+  .opt.correct { border-color:var(--ok); background:#eef7ee; }
+  .opt.incorrect { border-color:var(--bad); background:#fdeeee; }
+  .tiles { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .tile { background:#fff; border:1.5px solid var(--line); border-radius:8px; padding:6px 12px; font-size:1.05rem; }
+  .tile:hover { border-color:var(--accent); }
+  .tile.used { opacity:.35; }
+  .built { min-height:2.4em; border:2px dashed var(--line); border-radius:8px; padding:8px 12px; margin:8px 0; font-size:1.05rem; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .typed-in { font-family:var(--hanzi); font-size:1rem; border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; width:100%; margin:6px 0; }
+  details.ref { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 14px; margin:10px 0; }
+  details.ref summary { cursor:pointer; font-weight:700; color:var(--accent); }
+  details.ref table { width:100%; border-collapse:collapse; margin-top:8px; font-size:.92rem; }
+  details.ref td, details.ref th { border:1px solid var(--line); padding:5px 8px; }
+  .scorebox { background:var(--card); border:2px solid var(--accent); border-radius:12px; padding:16px; margin-top:36px; }
+  .scorebox .result { font-size:1.1rem; font-weight:700; margin:8px 0; }
+  .scorebox .verdict-pass { color:var(--ok); }
+  .scorebox .verdict-fail { color:var(--bad); }
+  .scorebox .missed-list { background:var(--accent-soft); border-radius:8px; padding:8px 12px; margin-top:8px; font-size:.95rem; }
+  .score-result { display:none; } .score-result.show { display:block; }
+  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line); border-radius:8px; padding:4px 10px; margin-right:6px; }
+  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
+</style>
+</head>
+<body>
+<header class="worksheet">
+  <h1>HSK 4 · 单元测试 · 形容词（全 / 死了）</h1>
+  <div class="meta">
+    <span><b>集群</b> L4-CL01 Adjectives 形容词</span>
+    <span><b>覆盖</b> hsk4-ws-001</span>
+    <span><b>用时</b> 约 10 分钟</span>
+    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
+  </div>
+</header>
+
+<div class="goal">
+  考核目标：① 用"全"表达整体范围；② 用"死了/厉害"表达极端程度 —— and tell them apart from
+  their neighbours (可, 差不多, 正好…) in real situations.
+</div>
+
+<!-- ============ A 语法讲解 ============ -->
+<h2 class="section"><span class="badge">A</span> 语法讲解 <small>Grammar explanations · 每个考点一张卡（2 分钟）</small></h2>
+
+<div class="card">
+  <h3>1. 全 quán — the whole / entire</h3>
+  <p><span class="formula">全 + Noun</span>（＋都＋V）：全家 · 全班 · 全国 · 全世界 · 全身</p>
+  <p><span class="zh" data-py="quán jiā dōu bān dào Běijīng le">全家都搬到北京了。</span> = the WHOLE family moved.</p>
+  <p>What it expresses: the scope covers every member of the noun. With a plural subject, 都 usually follows: <span class="zh" data-py="quán bān tóngxué dōu lái le">全班同学都来了。</span></p>
+  <p class="pit">⚠ Pitfall: 全 modifies the noun; 都 goes before the verb. ✗全班同学来了 sounds incomplete. Compare 所有(的)+N (all of X, attributive) and 各+M (each of X).</p>
+</div>
+
+<div class="card">
+  <h3>2. 死了 / 得厉害 — extreme degree</h3>
+  <p><span class="formula">Adj / 心理动词 + 死了</span>：热死了 · 忙死了 · 高兴死了 · 馋死了（spoken, vivid）</p>
+  <p><span class="formula">心理动词 + 得 + 厉害</span>：想得厉害（softer, written-friendly）</p>
+  <p>What it expresses: the degree is at an extreme — stronger than 太…了. 死了 never means real death here.</p>
+  <p class="pit">⚠ Pitfall: 死了 attaches directly — ✗忙得死了. And it only works with state adjectives / psych verbs: ✗吃死了 (real meaning), ✗跑了死了.</p>
+</div>
+
+<!-- ============ B 集群速览 ============ -->
+<h2 class="section"><span class="badge">B</span> 集群速览 <small>Cluster reference · 测试中可以打开看，但先尽量不看</small></h2>
+<details class="ref">
+  <summary>点开 / Close &amp; open reference</summary>
+  <table>
+    <tr><th>Point</th><th>Pattern</th><th>Example</th></tr>
+    <tr><td>全 whole</td><td>全 + N (+ 都)</td><td>全班同学都到了。</td></tr>
+    <tr><td>死了 degree</td><td>Adj/心理V + 死了</td><td>今天热死了。</td></tr>
+    <tr><td>得厉害</td><td>心理V + 得 + 厉害</td><td>他想你想得厉害。</td></tr>
+    <tr><td>(borrowed) 可+Adj</td><td>可 + Adj + 了</td><td>可好了！</td></tr>
+    <tr><td>(borrowed) 差不多</td><td>差不多</td><td>八点差不多。</td></tr>
+    <tr><td>(borrowed) 正好</td><td>正好</td><td>我正好也要去。</td></tr>
+  </table>
+</details>
+
+<!-- ============ C 场景选择 R4 ============ -->
+<h2 class="section"><span class="badge">C</span> 场景选择 <small>Scenario MCQ · 哪个语法适合这个场景？</small></h2>
+<p class="inst">每题选一个。Try not to peek at B before answering.</p>
+
+<div class="item">
+  <p><span class="qno">C1</span> 你想说"整个班级都通过了考试"：（　）班同学都通过了考试。</p>
+  <div class="mcq" data-answer="A" data-point="全">
+    <button class="opt" data-v="A">A. 全</button>
+    <button class="opt" data-v="B">B. 死了</button>
+    <button class="opt" data-v="C">C. 可</button>
+    <button class="opt" data-v="D">D. 差不多</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 全 = the entire scope of the noun. C 可+Adj is exclamation, D 差不多 = approximately — neither can modify 班.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C2</span> 朋友问你爬山累不累，你想说累到极点：累（　）！</p>
+  <div class="mcq" data-answer="B" data-point="死了">
+    <button class="opt" data-v="A">A. 全</button>
+    <button class="opt" data-v="B">B. 死了</button>
+    <button class="opt" data-v="C">C. 正好</button>
+    <button class="opt" data-v="D">D. 竟然</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> Adj＋死了 = extreme degree. D 竟然 is "unexpectedly" (borrowed from CL02) — it can appear next to adjectives but doesn't express degree.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C3</span> 这部电影无聊极了，你想口语化地抱怨：这电影无聊（　）。</p>
+  <div class="mcq" data-answer="A" data-point="死了">
+    <button class="opt" data-v="A">A. 死了</button>
+    <button class="opt" data-v="B">B. 全了</button>
+    <button class="opt" data-v="C">C. 正好了</button>
+    <button class="opt" data-v="D">D. 刚才</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 无聊 is a state adjective → takes 死了 directly. The others can't attach as degree complements.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C4</span> "我把家里所有的窗户都打开了。"—— 哪个词能代替"所有的"？</p>
+  <div class="mcq" data-answer="C" data-point="全">
+    <button class="opt" data-v="A">A. 死了</button>
+    <button class="opt" data-v="B">B. 千万</button>
+    <button class="opt" data-v="C">C. 全</button>
+    <button class="opt" data-v="D">D. 难道</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> 全部窗户 → natural rewrite: 把家里的窗户全打开了. 千万 (absolutely, commands) and 难道 (rhetorical) are borrowed CL02 points and don't fit a noun slot.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C5</span> 约了八点，他七点五十就到了，时间刚刚合适：他到的时候，（　）。</p>
+  <div class="mcq" data-answer="B" data-point="正好 (borrowed CL02)">
+    <button class="opt" data-v="A">A. 全</button>
+    <button class="opt" data-v="B">B. 正好</button>
+    <button class="opt" data-v="C">C. 死了</button>
+    <button class="opt" data-v="D">D. 竟然</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> (借入考点 borrowed from CL02) 正好 = coincidentally exactly right — timing fit. The key word in the scenario: 刚刚合适.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C6</span> 高考那天她极度紧张，手一直在抖：她紧张（　）。</p>
+  <div class="mcq" data-answer="A" data-point="死了">
+    <button class="opt" data-v="A">A. 死了</button>
+    <button class="opt" data-v="B">B. 全</button>
+    <button class="opt" data-v="C">C. 却</button>
+    <button class="opt" data-v="D">D. 只好</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 紧张 is a psych-state adjective → 紧张死了. 却 (yet) and 只好 (have no choice) are CL02/CL15 points that fit verbs, not degree slots.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C7</span> 朋友问你是不是忘了带钥匙。你很确定自己带了，想用反问强调「当然带了」：（　）我没带钥匙吗？<span class="srctag">from hsk4-gt-entry · 反问句</span></p>
+  <div class="mcq" data-answer="B" data-point="反问句 (HSK3 core)">
+    <button class="opt" data-v="A">A. 还是</button>
+    <button class="opt" data-v="B">B. 难道</button>
+    <button class="opt" data-v="C">C. 只好</button>
+    <button class="opt" data-v="D">D. 全</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> 难道……吗？ is a 反问句: "surely I DID bring the keys" — not a real question. 还是 offers a choice / "had better"; 只好 = have no choice; 全 is this cluster's scope adjective and cannot open a question.</div>
+</div>
+
+<!-- ============ D 形式判断 ============ -->
+<h2 class="section"><span class="badge">D</span> 形式判断 <small>Form check</small></h2>
+
+<div class="item">
+  <p><span class="qno">D1</span> 哪个句子是对的？</p>
+  <div class="mcq" data-answer="A" data-point="全">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="quán jiā dōu bān dào Běijīng le">全家都搬到北京了。</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="quán jiā bān dōu dào Běijīng le">全家搬都到北京了。</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="jiā quán dōu bān dào le Běijīng">家全都搬到了北京。</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="dōu quán jiā bān dào Běijīng le">都全家搬到北京了。</span></button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 全＋N＋都＋V. B splits 搬到, C misplaces 全 after the noun, D puts the adverb 都 before the subject.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D2</span> 选词填空：天哪，外面吵（　）了！</p>
+  <div class="mcq" data-answer="C" data-point="死了">
+    <button class="opt" data-v="A">A. 得</button>
+    <button class="opt" data-v="B">B. 太</button>
+    <button class="opt" data-v="C">C. 死</button>
+    <button class="opt" data-v="D">D. 很</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> 吵死了. The tempting 得 is the classic intrusion error — 死了 attaches directly.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D3</span> 找错误：我饿得死了，快给我点儿吃的吧。</p>
+  <div class="mcq" data-answer="B" data-point="死了">
+    <button class="opt" data-v="A">A. 我饿</button>
+    <button class="opt" data-v="B">B. 得</button>
+    <button class="opt" data-v="C">C. 死了</button>
+    <button class="opt" data-v="D">D. 快给我点儿吃的吧</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> Fix: 我饿死了. 得 would need a descriptive phrase after it (饿得走不动了).</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D4</span> 排列顺序：把词排成一句话。</p>
+  <div class="tiles">
+    <button class="tile">全国</button>
+    <button class="tile">人民</button>
+    <button class="tile">都</button>
+    <button class="tile">在</button>
+    <button class="tile">关注</button>
+    <button class="tile">奥运会</button>
+  </div>
+  <div class="built"></div>
+  <button class="btn check">对答案</button>
+  <button class="btn reset">重来</button>
+  <div class="key"><b>全国人民都在关注奥运会。</b> 全＋N must come first as the subject, then 都 before the verb phrase 在关注.</div>
+</div>
+
+<!-- ============ E 综合运用 ============ -->
+<h2 class="section"><span class="badge">E</span> 综合运用 <small>Production · self-graded</small></h2>
+
+<div class="item">
+  <p><span class="qno">E1</span> 用"全"写一句话，介绍你的家庭或者班级。</p>
+  <input class="typed-in" type="text" placeholder="输入你的句子…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>我们全家都喜欢运动。</b> / <b>全班同学都通过了考试。</b> Check: if your subject starts with 全+N, the verb needs 都 (or 很/都…). ✗ 全家喜欢运动 sounds cut off.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">E2</span> 用"X死了"描述你今天的感觉，再写出它的"安全版"（用 太…了）。</p>
+  <input class="typed-in" type="text" placeholder="例：我困死了。→ 我太困了。">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>我今天累死了。</b> 安全版：<b>我今天太累了。</b> The meaning is the same family; 死了 is stronger and more spoken.</div>
+</div>
+
+<!-- ============ F 语篇理解 ============ -->
+<h2 class="section"><span class="badge">F</span> 语篇理解 <small>Cluster in context</small></h2>
+<div class="item">
+  <p><span class="zh" data-py="zuótiān shì xīngqītiān, quán jiā dōu qù le xiāngxià nǎinai jiā">昨天是星期天，全家都去了乡下奶奶家。</span><span class="zh" data-py="tàiyáng dà de hěn, wǒmen rè sǐ le">太阳大得很，我们热死了。</span><span class="zh" data-py="zhōngwǔ, nǎinai zuò le yī zhuōzi cài, quán shì wǒ ài chī de">中午，奶奶做了一桌子菜，全是我爱吃的：鱼、鸡蛋、青菜……</span><span class="zh" data-py="wǒ gāoxìng sǐ le">我高兴死了。</span><span class="zh" data-py="xiàwǔ wǒmen bǎ yuànzi dǎsǎo de gāngān jìngjìng, ránhòu zuò zhe hē chá liáotiān">下午我们把院子打扫得干干净净，然后坐着喝茶聊天，舒服极了。</span></p>
+
+  <p style="margin-top:10px"><span class="qno">F1</span> "全是我爱吃的"里的"全"是什么意思？</p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>桌上的每一道菜都是我爱吃的</b>（一整桌菜全都是）。全 here scopes over the whole table of dishes.</div>
+
+  <p style="margin-top:10px"><span class="qno">F2</span> 判断："我们高兴死了"表示他们真的死了。（√ / ×）</p>
+  <div class="mcq" data-answer="B" data-point="死了">
+    <button class="opt" data-v="A">A. √</button>
+    <button class="opt" data-v="B">B. ×</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>× ✔</b> 心理动词＋死了 = extremely happy, never real death.</div>
+
+  <p style="margin-top:10px"><span class="qno">F3</span> 文中哪句话用了"全"来指人？写出来。</p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>全家都去了乡下奶奶家。</b> 全家 = the whole family (people-scope), with 都 before the verb.</div>
+</div>
+
+<!-- ============ G 得分总结 ============ -->
+<h2 class="section"><span class="badge">G</span> 得分总结 <small>Score summary</small></h2>
+<div class="scorebox">
+  <p><b>得分总结 Score summary</b> — 检查完所有选择题后点下面的按钮。</p>
+  <button class="btn score-btn">计算得分</button>
+  <div class="score-result"></div>
+  <p><b>自评打分 Self-grade section E</b>: <button class="conf">😊 全对</button><button class="conf">🤔 差不多</button><button class="conf">😩 不行</button></p>
+</div>
+
+<script>
+document.getElementById('pyAll').onclick = () => document.body.classList.toggle('py-all');
+document.addEventListener('click', e => { const zh = e.target.closest('.zh'); if (zh) zh.classList.toggle('show'); });
+document.addEventListener('click', e => { if (e.target.matches('.check')) { const item = e.target.closest('.item'); const key = item && item.querySelector('.key'); if (key) key.classList.add('show'); } });
+document.addEventListener('click', e => {
+  if (!e.target.matches('.opt')) return;
+  const box = e.target.closest('.mcq');
+  if (!box || box.dataset.done) return;
+  box.querySelectorAll('.sel').forEach(s => s.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.check')) return;
+  const box = e.target.closest('.item').querySelector('.mcq');
+  if (!box || box.dataset.done) return;
+  box.dataset.done = '1';
+  const ans = box.dataset.answer;
+  box.querySelectorAll('.opt').forEach(o => {
+    if (o.dataset.v === ans) o.classList.add('correct');
+    else if (o.classList.contains('sel')) o.classList.add('incorrect');
+  });
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tiles > .tile')) return;
+  const built = e.target.closest('.item').querySelector('.built');
+  if (!built) return;
+  const t = document.createElement('button');
+  t.className = 'tile'; t.textContent = e.target.textContent;
+  built.appendChild(t); e.target.classList.add('used');
+});
+document.addEventListener('click', e => { if (e.target.matches('.built > .tile')) e.target.remove(); });
+document.addEventListener('click', e => {
+  if (!e.target.matches('.reset')) return;
+  const item = e.target.closest('.item');
+  item.querySelectorAll('.tiles > .tile.used').forEach(t => t.classList.remove('used'));
+  const built = item.querySelector('.built'); if (built) built.innerHTML = '';
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.conf')) return;
+  e.target.parentElement.querySelectorAll('.conf').forEach(b => b.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.score-btn')) return;
+  const box = e.target.closest('.scorebox');
+  const result = box.querySelector('.score-result');
+  if (!result) return;
+  let total = 0, right = 0;
+  const missed = []; const seen = new Set();
+  document.querySelectorAll('.mcq').forEach(mcq => {
+    total++;
+    const ok = mcq.dataset.done && !mcq.querySelector('.opt.incorrect');
+    if (ok) { right++; return; }
+    const pt = mcq.dataset.point || (mcq.closest('.item')||mcq).dataset.point;
+    if (pt && !seen.has(pt)) { seen.add(pt); missed.push(pt); }
+  });
+  const pct = total ? Math.round((right / total) * 100) : 0;
+  const pass = pct >= 80;
+  result.innerHTML =
+    `<p class="result">得分 Score: <span class="${pass ? 'verdict-pass' : 'verdict-fail'}">${right} / ${total} (${pct}%)</span></p>` +
+    `<p>${pass ? '✅ <b>通过！</b>CL01 单元过关 — 可以进入 CL02a（语气副词）了。'
+              : '📉 <b>还没过关</b>（80% 通过线）。把下面这些点补练一下，然后再来一次。'}</p>` +
+    (missed.length ? `<div class="missed-list"><b>需要复习 Need review</b>: ${missed.join('、')}</div>` : '') +
+    `<p style="font-size:.8rem;color:#6b6558">把得分和要复习的点告诉我，我会记进 progress-log 并安排下次复习。</p>`;
+  result.classList.add('show');
+});
+</script>
+</body>
+</html>

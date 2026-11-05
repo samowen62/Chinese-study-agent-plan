@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--
+  worksheet_id: hsk4-ws-002
+  type: practice (P)
+  hsk_level: 4
+  grammar_point: L4-QT-1 反问句2（难道……吗 / 疑问代词反问）
+  grammar_point_name: Rhetorical questions 2
+  cluster_context: L4-CL02a 语气/评价类副词
+  topic_context: 职场生活 · 加班的星期五
+  est_minutes: 13
+  review_sources: hsk4-ws-001 (L4-CM-1 死了)
+  generated: 2026-11-05
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSK4 · 反问句 · Practice</title>
+<style>
+  :root { --ink:#1a1a1a; --bg:#faf9f6; --card:#ffffff; --line:#e5e2da;
+    --accent:#b0342a; --accent-soft:#fdf0ee; --ok:#2e7d32; --bad:#b0342a;
+    --hanzi:"Microsoft YaHei","Noto Sans SC","PingFang SC",sans-serif; }
+  * { box-sizing:border-box; }
+  body { font-family:var(--hanzi); color:var(--ink); background:var(--bg);
+    max-width:720px; margin:0 auto; padding:16px 20px 80px; line-height:1.75; }
+  header.worksheet { border-bottom:3px solid var(--accent); padding-bottom:10px; margin-bottom:14px; }
+  header.worksheet h1 { font-size:1.35rem; margin:0 0 4px; }
+  .meta { color:#6b6558; font-size:.85rem; display:flex; flex-wrap:wrap; gap:8px 18px; }
+  .meta b { color:var(--accent); font-weight:600; }
+  .goal { background:var(--accent-soft); border-left:4px solid var(--accent);
+          padding:10px 14px; border-radius:0 8px 8px 0; margin:14px 0 22px; font-size:.95rem; }
+  h2.section { display:flex; align-items:baseline; gap:10px; margin:34px 0 8px; font-size:1.15rem; }
+  h2.section .badge { background:var(--accent); color:#fff; border-radius:6px; padding:1px 9px; font-size:.8rem; letter-spacing:1px; }
+  h2.section small { color:#6b6558; font-weight:400; font-size:.8rem; }
+  .inst { color:#6b6558; font-size:.9rem; margin:0 0 14px; }
+  .item { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:12px 0; }
+  .qno { font-weight:700; color:var(--accent); margin-right:6px; }
+  .srctag { font-size:.75rem; color:#9a917f; border:1px solid var(--line); border-radius:10px; padding:0 8px; margin-left:8px; }
+  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
+  .zh.show::before, body.py-all .zh::before {
+    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap; font-family:Arial,sans-serif; }
+  button { font-family:inherit; cursor:pointer; }
+  .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent); border-radius:8px; padding:5px 14px; font-size:.85rem; }
+  .btn:hover { background:var(--accent-soft); }
+  .key { display:none; margin-top:10px; padding:10px 12px; border-radius:8px; background:#f2f8f2; border-left:4px solid var(--ok); font-size:.92rem; }
+  .key.show { display:block; }
+  .key b { color:var(--ok); }
+  .opt { display:block; width:100%; text-align:left; background:#fff; margin:6px 0;
+         border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; font-size:1rem; }
+  .opt:hover { border-color:var(--accent); }
+  .opt.sel { border-color:var(--accent); background:var(--accent-soft); }
+  .opt.correct { border-color:var(--ok); background:#eef7ee; }
+  .opt.incorrect { border-color:var(--bad); background:#fdeeee; }
+  .tiles { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .tile { background:#fff; border:1.5px solid var(--line); border-radius:8px; padding:6px 12px; font-size:1.05rem; }
+  .tile:hover { border-color:var(--accent); }
+  .tile.used { opacity:.35; }
+  .built { min-height:2.4em; border:2px dashed var(--line); border-radius:8px; padding:8px 12px; margin:8px 0; font-size:1.05rem; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .bank { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .bank .bword { background:var(--accent-soft); border:1.5px solid var(--accent); border-radius:8px; padding:4px 12px; }
+  .bank .bword.used { opacity:.35; }
+  .slot { display:inline-block; min-width:56px; text-align:center; border-bottom:2px solid var(--accent); padding:2px 8px; cursor:pointer; margin:0 3px; background:#fff; }
+  .flip-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; }
+  .flip { perspective:900px; height:150px; cursor:pointer; }
+  .flip-inner { position:relative; width:100%; height:100%; transition:transform .5s; transform-style:preserve-3d; }
+  .flip.flipped .flip-inner { transform:rotateY(180deg); }
+  .face { position:absolute; inset:0; backface-visibility:hidden; border-radius:12px; border:1.5px solid var(--line); background:#fff; padding:14px; display:flex; align-items:center; justify-content:center; text-align:center; }
+  .face.back { transform:rotateY(180deg); background:var(--accent-soft); font-size:.85rem; }
+  .face .hl { color:var(--accent); font-weight:700; }
+  .dlg .line { display:flex; gap:10px; align-items:flex-start; padding:6px 0; border-bottom:1px dashed var(--line); }
+  .dlg .speaker { flex:0 0 64px; font-weight:700; color:var(--accent); }
+  .tts { border:none; background:none; font-size:1rem; padding:0 4px; }
+  .typed-in { font-family:var(--hanzi); font-size:1rem; border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; width:100%; margin:6px 0; }
+  .selfcheck { background:var(--card); border:2px solid var(--accent); border-radius:12px; padding:16px; margin-top:36px; }
+  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line); border-radius:8px; padding:4px 10px; margin-right:6px; }
+  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
+</style>
+</head>
+<body>
+<header class="worksheet">
+  <h1>HSK 4 · 反问句："难道……吗？"</h1>
+  <div class="meta">
+    <span><b>语法点</b> L4-QT-1 反问句2</span>
+    <span><b>话题</b> 职场生活 · 加班的星期五</span>
+    <span><b>用时</b> 约 13 分钟</span>
+    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
+  </div>
+</header>
+
+<div class="goal">
+  学习目标：能用"难道……吗？"和疑问代词反问表达强调 —— say "Of course not!" / "Who
+  wouldn't…!" without asking a real question.
+</div>
+
+<!-- ============ A 模式感知 ============ -->
+<h2 class="section"><span class="badge">A</span> 模式感知 <small>Pattern warm-up</small></h2>
+<p class="inst">Click a card to flip.</p>
+<div class="flip-row">
+  <div class="flip" tabindex="0">
+    <div class="flip-inner">
+      <div class="face front"><span class="zh" data-py="nándào nǐ bù rènshi tā ma">难道你不认识他吗？</span></div>
+      <div class="face back"><span class="hl">难道 + statement + 吗？</span><br>= "You DO know him, surely!" — surprise, not a real question.</div>
+    </div>
+  </div>
+  <div class="flip" tabindex="0">
+    <div class="flip-inner">
+      <div class="face front"><span class="zh" data-py="zhème jiǎndān de wèntí, shéi bú huì zuò">这么简单的问题，谁不会做？</span></div>
+      <div class="face back"><span class="hl">疑问代词 + 不/没 + V</span><br>谁不会做？ = EVERYONE can do it. The question word means "anyone", not a real question.</div>
+    </div>
+  </div>
+  <div class="flip" tabindex="0">
+    <div class="flip-inner">
+      <div class="face front"><span class="zh" data-py="nǐ qù ma">你去吗？ / 难道你不去吗？</span></div>
+      <div class="face back"><span class="hl">真问 vs 反问</span><br>First = real yes/no question. Second = I'm surprised you might not go — expecting agreement.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ B 语法操练 ============ -->
+<h2 class="section"><span class="badge">B</span> 语法操练 <small>Grammar drills</small></h2>
+
+<div class="item">
+  <p><span class="qno">B1</span> 选词填空：（　）你不知道今天是星期天吗？</p>
+  <div class="mcq" data-answer="A">
+    <button class="opt" data-v="A">A. 难道</button>
+    <button class="opt" data-v="B">B. 还是</button>
+    <button class="opt" data-v="C">C. 或者</button>
+    <button class="opt" data-v="D">D. 怎么</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 难道 opens a rhetorical question ending in 吗. 还是 is "or/still", 或者 "or", and 怎么 with 吗 doesn't form this pattern (真问用"怎么，你不知道？").</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B2</span> 哪个句子是对的？</p>
+  <div class="mcq" data-answer="C">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="zhème jiǎndān, shéi zuò bú huì">这么简单的问题，谁做不会？</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="shéi bú huì zuò ma">这么简单的问题，谁不会做吗？</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="zhème jiǎndān de wèntí, shéi bú huì zuò">这么简单的问题，谁不会做？</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="shéi zhème jiǎndān bú huì zuò">谁这么简单不会做？</span></button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> Question-word rhetoric: 疑问代词＋不＋V, NO 吗. — A breaks 不+V order, B wrongly adds 吗 (it becomes a real question), D scrambles.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B3</span> 排列顺序：把这些词排成一句话。</p>
+  <div class="tiles">
+    <button class="tile">你</button>
+    <button class="tile">难道</button>
+    <button class="tile">想</button>
+    <button class="tile">放弃</button>
+    <button class="tile">吗</button>
+  </div>
+  <div class="built"></div>
+  <button class="btn check">对答案</button>
+  <button class="btn reset">重来</button>
+  <div class="key"><b>难道你想放弃吗？</b> 难道 usually opens the sentence (right after the subject is also fine: 你难道想放弃吗？). 吗 must close it.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B4</span> 找错误：难道你不是已经吃过了。 —— 哪里有错？</p>
+  <div class="mcq" data-answer="D">
+    <button class="opt" data-v="A">A. 难道</button>
+    <button class="opt" data-v="B">B. 你不是</button>
+    <button class="opt" data-v="C">C. 已经吃过了</button>
+    <button class="opt" data-v="D">D. 句尾没有"吗"</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>D ✔</b> A 难道-rhetorical needs the rising tag 吗：难道你不是已经吃过了<b>吗</b>？ Without 吗 it sounds cut off (or turns into surprise without the rhetorical force).</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B5</span> 用"难道"改写：你真的不知道他的电话号码？→</p>
+  <input class="typed-in" type="text" placeholder="输入你的句子…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>难道你不知道他的电话号码吗？</b> Drop 真的, add 难道…吗. Wrong version to avoid: 难道你知道他的电话号码吗？— that flips the meaning to "do you actually know it?"</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B6</span> "谁不想成功？" 这句话的意思是：</p>
+  <div class="mcq" data-answer="A">
+    <button class="opt" data-v="A">A. 没有人不想成功（大家都想成功）</button>
+    <button class="opt" data-v="B">B. 没有人想成功</button>
+    <button class="opt" data-v="C">C. 说话人在问谁想成功</button>
+    <button class="opt" data-v="D">D. 成功不重要</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> Question-word + negation rhetoric flips into universal meaning: 谁不想… = everyone wants. If it were a real question you'd be naming people.</div>
+</div>
+
+<!-- ============ C 听力模拟 ============ -->
+<h2 class="section"><span class="badge">C</span> 听力模拟 <small>Listening simulation</small></h2>
+<p class="inst">Read the dialogue aloud twice, then answer C1–C3.</p>
+
+<div class="item">
+  <div class="dlg">
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="Xiǎo Wáng, nǐ búshì yǐjīng xiàbān le ma">小王，你不是已经下班了吗？</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span><span class="zh" data-py="jīnglǐ ràng wǒ bǎ zhè fèn bàogǎo gǎi wán">经理让我把这份报告改完，我不得不留下。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="nándào tā bù zhīdào jīntiān shì xīngqīwǔ ma">难道他不知道今天是星期五吗？</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span><span class="zh" data-py="shéi bú zhīdào a, kěxī gōngzuò bù děng rén">谁不知道啊！可惜工作不等人。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="nà wǒ bāng nǐ kàn kan ba, liǎng gè rén kuài yìdiǎnr">那我帮你看看吧，两个人快一点儿。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span><span class="zh" data-py="zhēn de kěyǐ ma">真的可以吗？太谢谢你了！</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="zánmen búshì tóngxué ma, kèqi shénme">咱们不是同学吗，客气什么！</span><button class="tts">🔊</button></span></div>
+  </div>
+  <p style="margin-top:10px"><span class="qno">C1</span> 男的为什么还没下班？</p>
+  <div class="mcq" data-answer="B">
+    <button class="opt" data-v="A">A. 他忘了时间</button>
+    <button class="opt" data-v="B">B. 经理让他改报告</button>
+    <button class="opt" data-v="C">C. 他在等女朋友</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> 经理让我把这份报告改完，我不得不留下 — note 他不得不 (have to) — that pattern is ws-003's anchor, keep your ears open for it.</div>
+
+  <p style="margin-top:10px"><span class="qno">C2</span> "谁不知道啊！"的意思是：</p>
+  <div class="mcq" data-answer="A">
+    <button class="opt" data-v="A">A. 大家都知道今天是星期五</button>
+    <button class="opt" data-v="B">B. 没有人知道</button>
+    <button class="opt" data-v="C">C. 男的在问谁知道</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> Question-word rhetoric: 谁不知道 = everyone knows — agreeing with her 难道 question.</div>
+
+  <p style="margin-top:10px"><span class="qno">C3</span> "客气什么！"是哪种说法？</p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>也是反问（X什么 = 不用客气）</b> — "客气什么" is the dismissive echo pattern (L5-WC-2's X什么X family): no need to thank me. Bonus preview, no worries if you didn't know.</div>
+</div>
+
+<!-- ============ D 考试题型 ============ -->
+<h2 class="section"><span class="badge">D</span> 考试题型 <small>Exam-style · 选词填空</small></h2>
+<div class="item" data-answers="A C E F">
+  <div class="bank">
+    <button class="bword">A 难道</button><button class="bword">B 吗</button>
+    <button class="bword">C 谁</button><button class="bword">D 不</button>
+    <button class="bword">E 究竟</button><button class="bword">F 还是</button>
+  </div>
+  <p>1.<span class="slot"></span>你不想去吗？</p>
+  <p>2. 这么好的机会，<span class="slot"></span>会不心动？——大家都会心动的。</p>
+  <p>3. 他<span class="slot"></span>想说什么？你问清楚了吗？</p>
+  <p>4. 我们<span class="slot"></span>先吃饭，再看电影，怎么样？</p>
+  <button class="btn check">对答案</button>
+  <button class="btn reset">重来</button>
+  <div class="key"><b>1-A 难道 · 2-C 谁 · 3-E 究竟 · 4-F 还是</b>（B 吗、D 不 不用）<br>
+  1. 难道 opens the rhetoric. 2. <b>谁会不心动？</b> = who wouldn't be tempted → everyone is (question-word rhetoric). 3. 究竟 = "on earth" for real pressing questions (CL02a sibling, not rhetoric). 4. 还是……吧 offers a suggestion.</div>
+</div>
+
+<!-- ============ E 自由产出 ============ -->
+<h2 class="section"><span class="badge">E</span> 自由产出 <small>Free production</small></h2>
+
+<div class="item">
+  <p><span class="qno">E1</span> 用"难道"对你的朋友说一句表示惊讶的话（他/她做了什么让你意外的事）。</p>
+  <input class="typed-in" type="text" placeholder="难道你…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>难道你把这件事全忘了吗？</b> Variants: 难道你真的不吃晚饭吗？ Structure: 难道 + (不/没) + statement + 吗？</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">E2</span> Translate into Chinese: "Are you really not coming to my birthday party?"</p>
+  <input class="typed-in" type="text" placeholder="输入你的句子…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>难道你真的不来参加我的生日聚会吗？</b> The 难道…吗 pair carries the "surely not!" hurt tone. A literal 你真的不来吗？ is a real question — much weaker.</div>
+</div>
+
+<!-- ============ F 温故知新 ============ -->
+<h2 class="section"><span class="badge">F</span> 温故知新 <small>Review</small></h2>
+
+<div class="item">
+  <p><span class="qno">F1</span> 用"X死了"完成句子：今晚跑完五公里，我累（　）了。<span class="srctag">from hsk4-ws-001 · 死了</span></p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>累死了</b> — attaches directly, no 得.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">F2</span> 用"全"完成句子：中午的菜（　）是妈妈做的，一样比一样好吃。<span class="srctag">from hsk4-ws-001 · 全</span></p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>全</b>（全是 = every single dish）.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">F3</span> 用"把"改写：他关上了门。→<span class="srctag">HSK3 · 把字句</span></p>
+  <input class="typed-in" type="text" placeholder="输入你的句子…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>他把门关上了。</b> S＋把＋O＋V＋结果.</div>
+</div>
+
+<!-- ============ Self-check strip ============ -->
+<div class="selfcheck">
+  <p><b>自评 Self-check</b> — 点每个部分的心情，再把想复习的词写下来（下次课会用到！）</p>
+  <p>A <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; B <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; C <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; D <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; E <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button></p>
+  <p><b>词语收藏 Words to revisit</b></p>
+  <textarea class="typed-in" placeholder="记下今天没把握的词和句子…"></textarea>
+</div>
+
+<script>
+document.getElementById('pyAll').onclick = () => document.body.classList.toggle('py-all');
+document.addEventListener('click', e => { const zh = e.target.closest('.zh'); if (zh && !e.target.closest('.flip')) zh.classList.toggle('show'); });
+document.addEventListener('click', e => { if (e.target.matches('.check')) { const item = e.target.closest('.item'); const key = item && item.querySelector('.key'); if (key) key.classList.add('show'); } });
+document.addEventListener('click', e => {
+  if (!e.target.matches('.opt')) return;
+  const box = e.target.closest('.mcq');
+  if (!box || box.dataset.done) return;
+  box.querySelectorAll('.sel').forEach(s => s.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.check')) return;
+  const box = e.target.closest('.item').querySelector('.mcq');
+  if (!box || box.dataset.done) return;
+  box.dataset.done = '1';
+  const ans = box.dataset.answer;
+  box.querySelectorAll('.opt').forEach(o => {
+    if (o.dataset.v === ans) o.classList.add('correct');
+    else if (o.classList.contains('sel')) o.classList.add('incorrect');
+  });
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tiles > .tile')) return;
+  const built = e.target.closest('.item').querySelector('.built');
+  if (!built) return;
+  const t = document.createElement('button');
+  t.className = 'tile'; t.textContent = e.target.textContent;
+  built.appendChild(t); e.target.classList.add('used');
+});
+document.addEventListener('click', e => { if (e.target.matches('.built > .tile')) e.target.remove(); });
+let armedWord = null;
+document.addEventListener('click', e => {
+  if (!e.target.matches('.reset')) return;
+  const item = e.target.closest('.item');
+  item.querySelectorAll('.tiles > .tile.used').forEach(t => t.classList.remove('used'));
+  const built = item.querySelector('.built'); if (built) built.innerHTML = '';
+  if (item.querySelector('.bank')) {
+    item.querySelectorAll('.bank .bword').forEach(b => { b.classList.remove('used'); b.style.outline = ''; });
+    item.querySelectorAll('.slot').forEach(s => { s.textContent = ''; delete s.dataset.filled; });
+    armedWord = null;
+  }
+});
+document.addEventListener('click', e => {
+  if (e.target.matches('.bank .bword')) {
+    armedWord = e.target.classList.contains('used') ? null : e.target;
+    document.querySelectorAll('.bword').forEach(b => b.style.outline = '');
+    if (armedWord) armedWord.style.outline = '2px solid #b0342a';
+  }
+  if (e.target.matches('.slot') && armedWord) {
+    e.target.textContent = armedWord.textContent.slice(2);
+    e.target.dataset.filled = armedWord.textContent.slice(0,1);
+    armedWord.classList.add('used'); armedWord.style.outline = ''; armedWord = null;
+  }
+});
+document.addEventListener('click', e => { const f = e.target.closest('.flip'); if (f) f.classList.toggle('flipped'); });
+document.addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.matches('.flip')) e.target.classList.toggle('flipped'); });
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tts')) return;
+  if (!('speechSynthesis' in window)) return;
+  const line = e.target.parentElement.cloneNode(true);
+  line.querySelectorAll('button').forEach(b => b.remove());
+  const u = new SpeechSynthesisUtterance(line.textContent.trim());
+  u.lang = 'zh-CN';
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.conf')) return;
+  e.target.parentElement.querySelectorAll('.conf').forEach(b => b.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+</script>
+</body>
+</html>

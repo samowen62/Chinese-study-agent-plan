@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--
+  worksheet_id: hsk4-gt-CL02a
+  type: grammar-test (GT)
+  hsk_level: 4
+  cluster: L4-CL02a 语气/评价类副词（CL02 Adverbs split a/3）
+  cluster_points: [看来, 恐怕, 甚至, 还是(had better), 最好, 不得不, 只好, 竟然, 千万, 难道, 到底, 究竟]
+  practice_units_covered: hsk4-ws-002, hsk4-ws-003
+  topic_context: 综合
+  est_minutes: 15 (study pass A + test C-G)
+  scoring: auto (MCQ) + self-grade (E)
+  generated: 2026-11-05
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSK4 · 单元测试 CL02a 语气副词 · Unit test</title>
+<style>
+  :root { --ink:#1a1a1a; --bg:#faf9f6; --card:#ffffff; --line:#e5e2da;
+    --accent:#b0342a; --accent-soft:#fdf0ee; --ok:#2e7d32; --bad:#b0342a;
+    --hanzi:"Microsoft YaHei","Noto Sans SC","PingFang SC",sans-serif; }
+  * { box-sizing:border-box; }
+  body { font-family:var(--hanzi); color:var(--ink); background:var(--bg);
+    max-width:720px; margin:0 auto; padding:16px 20px 80px; line-height:1.75; }
+  header.worksheet { border-bottom:3px solid var(--accent); padding-bottom:10px; margin-bottom:14px; }
+  header.worksheet h1 { font-size:1.35rem; margin:0 0 4px; }
+  .meta { color:#6b6558; font-size:.85rem; display:flex; flex-wrap:wrap; gap:8px 18px; }
+  .meta b { color:var(--accent); font-weight:600; }
+  .goal { background:var(--accent-soft); border-left:4px solid var(--accent);
+          padding:10px 14px; border-radius:0 8px 8px 0; margin:14px 0 22px; font-size:.95rem; }
+  h2.section { display:flex; align-items:baseline; gap:10px; margin:34px 0 8px; font-size:1.15rem; }
+  h2.section .badge { background:var(--accent); color:#fff; border-radius:6px; padding:1px 9px; font-size:.8rem; letter-spacing:1px; }
+  h2.section small { color:#6b6558; font-weight:400; font-size:.8rem; }
+  .inst { color:#6b6558; font-size:.9rem; margin:0 0 14px; }
+  .item { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:12px 0; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:10px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px; font-size:.92rem; }
+  .card h3 { margin:0 0 4px; font-size:1rem; }
+  .card .formula { color:var(--accent); font-weight:700; }
+  .card .pit { color:#8a4b00; font-size:.85rem; margin-top:4px; }
+  .qno { font-weight:700; color:var(--accent); margin-right:6px; }
+  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
+  .zh.show::before, body.py-all .zh::before {
+    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap; font-family:Arial,sans-serif; }
+  button { font-family:inherit; cursor:pointer; }
+  .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent); border-radius:8px; padding:5px 14px; font-size:.85rem; }
+  .btn:hover { background:var(--accent-soft); }
+  .key { display:none; margin-top:10px; padding:10px 12px; border-radius:8px; background:#f2f8f2; border-left:4px solid var(--ok); font-size:.92rem; }
+  .key.show { display:block; }
+  .key b { color:var(--ok); }
+  .opt { display:block; width:100%; text-align:left; background:#fff; margin:6px 0;
+         border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; font-size:1rem; }
+  .opt:hover { border-color:var(--accent); }
+  .opt.sel { border-color:var(--accent); background:var(--accent-soft); }
+  .opt.correct { border-color:var(--ok); background:#eef7ee; }
+  .opt.incorrect { border-color:var(--bad); background:#fdeeee; }
+  .tiles { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .tile { background:#fff; border:1.5px solid var(--line); border-radius:8px; padding:6px 12px; font-size:1.05rem; }
+  .tile:hover { border-color:var(--accent); }
+  .tile.used { opacity:.35; }
+  .built { min-height:2.4em; border:2px dashed var(--line); border-radius:8px; padding:8px 12px; margin:8px 0; font-size:1.05rem; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .typed-in { font-family:var(--hanzi); font-size:1rem; border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; width:100%; margin:6px 0; }
+  details.ref { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 14px; margin:10px 0; }
+  details.ref summary { cursor:pointer; font-weight:700; color:var(--accent); }
+  details.ref ul { margin:8px 0 0 18px; font-size:.92rem; }
+  .scorebox { background:var(--card); border:2px solid var(--accent); border-radius:12px; padding:16px; margin-top:36px; }
+  .scorebox .result { font-size:1.1rem; font-weight:700; margin:8px 0; }
+  .scorebox .verdict-pass { color:var(--ok); }
+  .scorebox .verdict-fail { color:var(--bad); }
+  .scorebox .missed-list { background:var(--accent-soft); border-radius:8px; padding:8px 12px; margin-top:8px; font-size:.95rem; }
+  .score-result { display:none; } .score-result.show { display:block; }
+  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line); border-radius:8px; padding:4px 10px; margin-right:6px; }
+  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
+</style>
+</head>
+<body>
+<header class="worksheet">
+  <h1>HSK 4 · 单元测试 · 语气/评价类副词（CL02a）</h1>
+  <div class="meta">
+    <span><b>集群</b> L4-CL02a（12 个语法点）</span>
+    <span><b>覆盖</b> hsk4-ws-002 / hsk4-ws-003</span>
+    <span><b>用时</b> 约 15 分钟（A 讲解约 3 分钟 + 测试）</span>
+    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
+  </div>
+</header>
+
+<div class="goal">
+  考核目标：区分 12 个"表达语气和评价"的副词 —— 推断（看来/恐怕）、夸张（甚至）、建议（还是/最好）、
+  无奈（不得不/只好）、惊讶（竟然）、叮嘱（千万）、追问（到底/究竟）、反问（难道）。
+</div>
+
+<!-- ============ A 语法讲解 ============ -->
+<h2 class="section"><span class="badge">A</span> 语法讲解 <small>Grammar explanations · 每个考点一张卡（约 3 分钟）</small></h2>
+<div class="cards">
+  <div class="card"><h3>1. 看来 kànlái</h3><span class="formula">看来 + 判断 / 在+人+看来</span><p>From what I can see → my inference. <span class="zh" data-py="kànlái jīntiān chū bu qù le">看来今天出不去了。</span> Pitfall: 在我看来 = "in my view", an opinion, not an inference.</p></div>
+  <div class="card"><h3>2. 恐怕 kǒngpà</h3><span class="formula">恐怕 + 坏消息/推测</span><p>"I'm afraid…" softens a bad guess. <span class="zh" data-py="kǒngpà yào xià yǔ le">恐怕要下雨了。</span> Pitfall: only for unwelcome outcomes.</p></div>
+  <div class="card"><h3>3. 甚至 shènzhì</h3><span class="formula">A，甚至 B</span><p>Escalates: even B on top of A. <span class="zh" data-py="tā zhōumò yě zài xuéxí">他每天学十小时，甚至周末也学。</span> Pitfall: B must be MORE extreme than A.</p></div>
+  <div class="card"><h3>4. 还是 háishi（建议）</h3><span class="formula">还是 + V + 吧</span><p>"Had better" — advice after weighing. <span class="zh" data-py="wǒmen háishi dǎchē ba">我们还是打车吧。</span> Pitfall: needs 吧 to sound like advice.</p></div>
+  <div class="card"><h3>5. 最好 zuìhǎo</h3><span class="formula">最好 + V</span><p>"It would be best to…" <span class="zh" data-py="nǐ zuìhǎo xiān wèn wen lǎoshī">你最好先问问老师。</span> Pitfall: not "the best (thing)" — that's 最好的+N.</p></div>
+  <div class="card"><h3>6. 不得不 bùdébù</h3><span class="formula">S + 不得不 + V</span><p>Forced by circumstance. <span class="zh" data-py="yǔ tài dà, bùdébù qǔxiāo">雨太大，不得不取消。</span> Pitfall: stronger than 必须 — no choice at all.</p></div>
+  <div class="card"><h3>7. 只好 zhǐhǎo</h3><span class="formula">S + 只好 + V</span><p>No better option, so you settle. <span class="zh" data-py="méi piào le, zhǐhǎo huí jiā">没票了，只好回家。</span> Pitfall: only for the option you ended up taking.</p></div>
+  <div class="card"><h3>8. 竟然 jìngrán</h3><span class="formula">S + 竟然 + V</span><p>Contrary to expectation — "would you believe it". <span class="zh" data-py="tā jìngrán méi fùxí jiù mǎn fēn">他竟然没复习就考了满分。</span> Pitfall: the fact must be genuinely surprising.</p></div>
+  <div class="card"><h3>9. 千万 qiānwàn</h3><span class="formula">千万 + (别/不) + V</span><p>Absolutely (in)… — warnings & instructions. <span class="zh" data-py="qiānwàn bié chídào">千万别迟到。</span> Pitfall: lives in commands/warnings, usually negative.</p></div>
+  <div class="card"><h3>10. 难道 nándào</h3><span class="formula">难道 + 陈述 + 吗？</span><p>Rhetorical — surely you DO / surely not?! <span class="zh" data-py="nándào nǐ bù zhīdào ma">难道你不知道吗？</span> Pitfall: needs 吗 at the end.</p></div>
+  <div class="card"><h3>11. 到底 dàodǐ</h3><span class="formula">到底 + V/问句</span><p>"On earth / in the end" — pressing questions (spoken). <span class="zh" data-py="nǐ dàodǐ qù bu qù">你到底去不去？</span> Pitfall: also means "in the end" in statements.</p></div>
+  <div class="card"><h3>12. 究竟 jiūjìng</h3><span class="formula">究竟 + V/问句</span><p>Same "on earth" family as 到底, more written/formal. <span class="zh" data-py="jiūjìng fāshēng le shénme">究竟发生了什么？</span> Pitfall: usually in real questions, NOT in statements (statement = 到底/终于).</p></div>
+</div>
+
+<!-- ============ B 集群速览 ============ -->
+<h2 class="section"><span class="badge">B</span> 集群速览 <small>Cluster reference · 测试中可查</small></h2>
+<details class="ref">
+  <summary>点开 12-point reference</summary>
+  <ul>
+    <li>看来 — 看来要下雨了（推断）</li><li>恐怕 — 恐怕来不及了（担心）</li>
+    <li>甚至 — 周末甚至也在学（递进）</li><li>还是 — 我们还是明天吧（建议）</li>
+    <li>最好 — 你最好先问问（劝告）</li><li>不得不 — 不得不取消（被迫）</li>
+    <li>只好 — 只好坐公交（无奈）</li><li>竟然 — 竟然忘了（惊讶）</li>
+    <li>千万 — 千万别迟到（叮嘱）</li><li>难道 — 难道你不知道吗？（反问）</li>
+    <li>到底 — 你到底去不去？（追问）</li><li>究竟 — 究竟怎么了？（追问，书面）</li>
+  </ul>
+</details>
+
+<!-- ============ C 场景选择 ============ -->
+<h2 class="section"><span class="badge">C</span> 场景选择 <small>Scenario MCQ · 哪个语气副词适合？</small></h2>
+
+<div class="item">
+  <p><span class="qno">C1</span> 老师考试前叮嘱你们：明天（　）不能迟到！</p>
+  <div class="mcq" data-answer="B" data-point="千万">
+    <button class="opt" data-v="A">A. 竟然</button>
+    <button class="opt" data-v="B">B. 千万</button>
+    <button class="opt" data-v="C">C. 难道</button>
+    <button class="opt" data-v="D">D. 甚至</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> A stern warning = 千万＋不. 竟然 surprises about facts, 难问 needs 吗, 甚至 escalates.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C2</span> 弟弟平时不听课，这次却考了第一。你惊讶地说：他（　）考了第一名！</p>
+  <div class="mcq" data-answer="C" data-point="竟然">
+    <button class="opt" data-v="A">A. 千万</button>
+    <button class="opt" data-v="B">B. 看来</button>
+    <button class="opt" data-v="C">C. 竟然</button>
+    <button class="opt" data-v="D">D. 只好</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> Against expectation → 竟然. The cue: 平时不听课，这次却…. 看来 marks inference, not surprise.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C3</span> 今天太累，你想劝朋友改变计划：我们（　）明天再去吧。</p>
+  <div class="mcq" data-answer="A" data-point="还是(had better)">
+    <button class="opt" data-v="A">A. 还是</button>
+    <button class="opt" data-v="B">B. 恐怕</button>
+    <button class="opt" data-v="C">C. 甚至</button>
+    <button class="opt" data-v="D">D. 难道</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 建议+吧 = 还是……吧. 恐怕 predicts bad news, 甚至 escalates, 难道 questions.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C4</span> 朋友说话吞吞吐吐，你急着问出真相：你（　）想说什么？</p>
+  <div class="mcq" data-answer="D" data-point="到底">
+    <button class="opt" data-v="A">A. 千万</button>
+    <button class="opt" data-v="B">B. 只好</button>
+    <button class="opt" data-v="C">C. 看来</button>
+    <button class="opt" data-v="D">D. 到底</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>D ✔</b> Pressing for the real answer → 到底（口语）／究竟（书面）.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C5</span> 天阴了，你推测要下雨，有点担心回不去：（　）要下雨了，我们快走吧。</p>
+  <div class="mcq" data-answer="B" data-point="恐怕">
+    <button class="opt" data-v="A">A. 竟然</button>
+    <button class="opt" data-v="B">B. 恐怕</button>
+    <button class="opt" data-v="C">C. 难道</button>
+    <button class="opt" data-v="D">D. 还是</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> Worrying prediction of bad news = 恐怕.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C6</span> 错过了末班车，没有任何别的办法：我们（　）打车回家。</p>
+  <div class="mcq" data-answer="A" data-point="只好">
+    <button class="opt" data-v="A">A. 只好</button>
+    <button class="opt" data-v="B">B. 千万</button>
+    <button class="opt" data-v="C">C. 甚至</button>
+    <button class="opt" data-v="D">D. 恐怕</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> No better option → settle for a taxi: 只好. (如果强调"被逼"更强烈，用不得不；两者都可，选项里只有只好。)</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C7</span> 你想用反问表达"你当然知道"：（　）你不知道今天要开会吗？</p>
+  <div class="mcq" data-answer="C" data-point="难道">
+    <button class="opt" data-v="A">A. 究竟</button>
+    <button class="opt" data-v="B">B. 到底</button>
+    <button class="opt" data-v="C">C. 难道</button>
+    <button class="opt" data-v="D">D. 最好</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> 难道……吗 = rhetorical: you surely DO know. 究竟/到底 press real questions.</div>
+</div>
+
+<!-- ============ D 形式判断 ============ -->
+<h2 class="section"><span class="badge">D</span> 形式判断 <small>Form check</small></h2>
+
+<div class="item">
+  <p><span class="qno">D1</span> 选词填空：（　）大家都不说话，这个问题很严重。</p>
+  <div class="mcq" data-answer="A" data-point="看来">
+    <button class="opt" data-v="A">A. 看来</button>
+    <button class="opt" data-v="B">B. 究竟</button>
+    <button class="opt" data-v="C">C. 还是</button>
+    <button class="opt" data-v="D">D. 竟然</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> Inferring from silence → 看来. 竟然 would need something surprising, not a conclusion.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D2</span> 哪个句子是对的？</p>
+  <div class="mcq" data-answer="B" data-point="甚至">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="tā dōu zài shènzhì zhōumò gōngzuò">他都在甚至周末工作。</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="tā shènzhì zhōumò dōu zài gōngzuò">他甚至周末都在工作。</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="tā zhōumò dōu zài gōngzuò shènzhì">他周末都在工作甚至。</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="shènzhì tā gōngzuò dōu zài zhōumò">甚至他工作都在周末。</span></button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> 甚至 goes after the subject, before the escalated fact (周末都在工作).</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D3</span> 选词填空：你（　）先问一下妈妈，再决定去哪儿玩。</p>
+  <div class="mcq" data-answer="C" data-point="最好">
+    <button class="opt" data-v="A">A. 竟然</button>
+    <button class="opt" data-v="B">B. 恐怕</button>
+    <button class="opt" data-v="C">C. 最好</button>
+    <button class="opt" data-v="D">D. 到底</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> Advice before deciding = 最好. (还是 would need 吧 and a proposed action.)</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D4</span> 排列顺序：</p>
+  <div class="tiles">
+    <button class="tile">他</button>
+    <button class="tile">为了健康</button>
+    <button class="tile">不得不</button>
+    <button class="tile">戒了烟</button>
+  </div>
+  <div class="built"></div>
+  <button class="btn check">对答案</button>
+  <button class="btn reset">重来</button>
+  <div class="key"><b>他为了健康不得不戒了烟。</b> Subject → purpose (为了健康) → 不得不 → V.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D5</span> 选词填空：（　）你们没听说过这个故事吗？</p>
+  <div class="mcq" data-answer="A" data-point="难道">
+    <button class="opt" data-v="A">A. 难道</button>
+    <button class="opt" data-v="B">B. 到底</button>
+    <button class="opt" data-v="C">C. 还是</button>
+    <button class="opt" data-v="D">D. 千万</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 没听说过+吗 with a "surely you HAVE" tone = 难道.</div>
+</div>
+
+<!-- ============ E 综合运用 ============ -->
+<h2 class="section"><span class="badge">E</span> 综合运用 <small>Production · self-graded</small></h2>
+
+<div class="item">
+  <p><span class="qno">E1</span> 用"究竟"改写这个追问：你想去哪儿？→</p>
+  <input class="typed-in" type="text" placeholder="输入你的句子…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>你究竟想去哪儿？</b> 究竟 injects impatience/insistence into a real question. (到底 would be the spoken twin.)</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">E2</span> 各写一句：一个用"不得不"，一个用"只好"（内容自选）。</p>
+  <input class="typed-in" type="text" placeholder="不得不：…／只好：…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>今天必须开会，我不得不取消约会。</b>／<b>菜卖完了，只好吃泡面。</b> Check placement: right after subject, before the verb.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">E3</span> 用"甚至"描述你认识的一个人（说明他/她做事到什么程度）。</p>
+  <input class="typed-in" type="text" placeholder="输入你的句子…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>我姐姐忙得甚至过年也在工作。</b> The 甚至 clause must be the MORE extreme fact.</div>
+</div>
+
+<!-- ============ F 语篇理解 ============ -->
+<h2 class="section"><span class="badge">F</span> 语篇理解 <small>Cluster in context</small></h2>
+<div class="item">
+  <p><span class="zh" data-py="shàng gè yuè wǒ dǎsuàn qù páshān, kěxī nàtiān zǎoshang tiān kànqilái yào xià yǔ, kànlái jìhuà yào qǔxiāo le">上个月我打算去爬山。可惜那天早晨天看起来要下雨，看来计划要取消了。</span><span class="zh" data-py="māma shuō, nǐmen háishi gǎitiān zài qù ba, zuìhǎo děng xià zhōu">妈妈说："你们还是改天再去吧，最好等下周天气好的时候。"</span><span class="zh" data-py="wǒ bù gānxīn, nándào xiàyǔ jiù bùnéng duànliàn shēntǐ ma">我不甘心："难道下雨就不能锻炼身体吗？"</span><span class="zh" data-py="jiéguǒ nàtiān yǔ xià de hěn dà, wǒmen bùdébù dài zài jiālǐ">结果那天雨下得很大，我们不得不待在家里。</span><span class="zh" data-py="wǎnshang dìdi jìngrán shuō, zhème dà de yǔ, páshān de rén kǒngpà dōu huí jiā le">晚上弟弟竟然说："这么大的雨，爬山的人恐怕都回家了，安全第一。"</span></p>
+
+  <p style="margin-top:10px"><span class="qno">F1</span> 说话人为什么觉得"计划要取消"？</p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>天看起来要下雨（他根据天空推断）</b> — 看来 marks that inference.</div>
+
+  <p style="margin-top:10px"><span class="qno">F2</span> 文中哪一句是反问句？写出来。</p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>难道下雨就不能锻炼身体吗？</b> — 难道+陈述+吗, no answer expected.</div>
+
+  <p style="margin-top:10px"><span class="qno">F3</span> 弟弟对爬山人的推测用了哪个词？他推测的结果是什么？</p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>用了"恐怕"；推测他们都已经回家了</b>（担心中的坏消息）。Bonus: 竟然 shows the speaker found it odd that the little brother was suddenly the wise one.</div>
+</div>
+
+<!-- ============ G 得分总结 ============ -->
+<h2 class="section"><span class="badge">G</span> 得分总结 <small>Score summary</small></h2>
+<div class="scorebox">
+  <p><b>得分总结 Score summary</b> — 检查完所有选择题后点下面的按钮。</p>
+  <button class="btn score-btn">计算得分</button>
+  <div class="score-result"></div>
+  <p><b>自评打分 Self-grade section E</b>: <button class="conf">😊 全对</button><button class="conf">🤔 差不多</button><button class="conf">😩 不行</button></p>
+</div>
+
+<script>
+document.getElementById('pyAll').onclick = () => document.body.classList.toggle('py-all');
+document.addEventListener('click', e => { const zh = e.target.closest('.zh'); if (zh) zh.classList.toggle('show'); });
+document.addEventListener('click', e => { if (e.target.matches('.check')) { const item = e.target.closest('.item'); const key = item && item.querySelector('.key'); if (key) key.classList.add('show'); } });
+document.addEventListener('click', e => {
+  if (!e.target.matches('.opt')) return;
+  const box = e.target.closest('.mcq');
+  if (!box || box.dataset.done) return;
+  box.querySelectorAll('.sel').forEach(s => s.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.check')) return;
+  const box = e.target.closest('.item').querySelector('.mcq');
+  if (!box || box.dataset.done) return;
+  box.dataset.done = '1';
+  const ans = box.dataset.answer;
+  box.querySelectorAll('.opt').forEach(o => {
+    if (o.dataset.v === ans) o.classList.add('correct');
+    else if (o.classList.contains('sel')) o.classList.add('incorrect');
+  });
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tiles > .tile')) return;
+  const built = e.target.closest('.item').querySelector('.built');
+  if (!built) return;
+  const t = document.createElement('button');
+  t.className = 'tile'; t.textContent = e.target.textContent;
+  built.appendChild(t); e.target.classList.add('used');
+});
+document.addEventListener('click', e => { if (e.target.matches('.built > .tile')) e.target.remove(); });
+document.addEventListener('click', e => {
+  if (!e.target.matches('.reset')) return;
+  const item = e.target.closest('.item');
+  item.querySelectorAll('.tiles > .tile.used').forEach(t => t.classList.remove('used'));
+  const built = item.querySelector('.built'); if (built) built.innerHTML = '';
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.conf')) return;
+  e.target.parentElement.querySelectorAll('.conf').forEach(b => b.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.score-btn')) return;
+  const box = e.target.closest('.scorebox');
+  const result = box.querySelector('.score-result');
+  if (!result) return;
+  let total = 0, right = 0;
+  const missed = []; const seen = new Set();
+  document.querySelectorAll('.mcq').forEach(mcq => {
+    total++;
+    const ok = mcq.dataset.done && !mcq.querySelector('.opt.incorrect');
+    if (ok) { right++; return; }
+    const pt = mcq.dataset.point || (mcq.closest('.item')||mcq).dataset.point;
+    if (pt && !seen.has(pt)) { seen.add(pt); missed.push(pt); }
+  });
+  const pct = total ? Math.round((right / total) * 100) : 0;
+  const pass = pct >= 80;
+  result.innerHTML =
+    `<p class="result">得分 Score: <span class="${pass ? 'verdict-pass' : 'verdict-fail'}">${right} / ${total} (${pct}%)</span></p>` +
+    `<p>${pass ? '✅ <b>通过！</b>CL02a 单元过关 — 下一个：词汇批 02（饮食），然后进入 CL02b 时间副词。'
+              : '📉 <b>还没过关</b>（80% 通过线）。把下面的点补练一下（我可以生成针对性小练习），然后再来一次。'}</p>` +
+    (missed.length ? `<div class="missed-list"><b>需要复习 Need review</b>: ${missed.join('、')}</div>` : '') +
+    `<p style="font-size:.8rem;color:#6b6558">把得分和要复习的点告诉我，我会记进 progress-log 并安排下次复习。</p>`;
+  result.classList.add('show');
+});
+</script>
+</body>
+</html>

@@ -275,6 +275,7 @@ HSK4 语段排序 / HSK5 病句 / HSK6 400字作文→adapted. Use the official 
   <p>1. 我的手机 <span class="slot" data-bank="1"></span> 弟弟弄坏了。</p>
   <p>2. 请 <span class="slot" data-bank="2"></span> 这封信交给王老师。</p>
   <button class="btn check">对答案</button>
+  <button class="btn reset">重来</button>
   <div class="key">[Per-blank answers + rules + traps.]</div>
 </div>
 
@@ -382,8 +383,15 @@ document.addEventListener('click', e => {
 document.addEventListener('click', e => {
   if (!e.target.matches('.reset')) return;
   const item = e.target.closest('.item');
+  // order-tiles: return used tiles, clear the built line
   item.querySelectorAll('.tiles > .tile.used').forEach(t => t.classList.remove('used'));
   const built = item.querySelector('.built'); if (built) built.innerHTML = '';
+  // bank-fill: clear every slot and restore the bank
+  if (item.querySelector('.bank')) {
+    item.querySelectorAll('.bank .bword').forEach(b => { b.classList.remove('used'); b.style.outline = ''; });
+    item.querySelectorAll('.slot').forEach(s => { s.textContent = ''; delete s.dataset.filled; });
+    armedWord = null;
+  }
 });
 
 // Bank fill: click a bank word (arms it), then a slot (places it)

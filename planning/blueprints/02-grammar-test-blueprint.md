@@ -20,9 +20,9 @@ cluster: L3-CL07 Sentence Patterns 句式
 cluster_points: [把字句, 被动句, 越…越…, 一…也/都+不/没]
 practice_units_covered: hsk3-ws-014, hsk3-ws-015, hsk3-ws-016
 topic_context: 日常生活 · 出行
-est_minutes: 14
+est_minutes: 15   (study pass A≈2-3 + test B-G)
 scoring: auto (MCQ) + self-grade (production)
-generated: 2026-11-03
+generated: 2026-11-04
 -->
 ```
 
@@ -32,22 +32,45 @@ Filename: `hsk{L}-gt-CL{kk}.html` (retakes: `hsk{L}-gt-CL{kk}-r2.html`).
 
 | # | Section | Purpose | Time | Items |
 |---|---|---|---|---|
-| A | 集群速览 · Cluster reference | Non-graded collapsed reference card of the cluster's points + patterns | 1 min | — |
-| B | 场景选择 · Scenario MCQ (R4) | "Which grammar point fits this scenario?" — the heart of the test | 4–5 min | 5–6 |
-| C | 形式判断 · Form check | Form-focused MCQ/error items per point (R1/R2/P3) | 3–4 min | 4–5 |
-| D | 综合运用 · Production | Typed items: transform / produce with cluster points (P4/P1, self-graded) | 3 min | 2–3 |
-| E | 语篇理解 · Cluster in context | One dialogue or passage using ≥3 cluster points + comprehension items | 2–3 min | 1 + 2–3 |
-| F | 得分总结 · Score summary | `score-summary` component: verdict + what-to-review advice | 1 min | — |
+| A | 语法讲解 · Grammar explanations | Non-graded: every grammar point being tested, explained | 2–3 min | one card per point |
+| B | 集群速览 · Cluster reference | Non-graded collapsed compact reference card | 1 min | — |
+| C | 场景选择 · Scenario MCQ (R4) | "Which grammar point fits this scenario?" — the heart of the test | 4–5 min | 5–6 |
+| D | 形式判断 · Form check | Form-focused MCQ/error items per point (R1/R2/P3) | 2–3 min | 4–5 |
+| E | 综合运用 · Production | Typed items: transform / produce with cluster points (P4/P1, self-graded) | 2–3 min | 2–3 |
+| F | 语篇理解 · Cluster in context | One dialogue or passage using ≥3 cluster points + comprehension items | 2 min | 1 + 2–3 |
+| G | 得分总结 · Score summary | `score-summary` component: verdict + what-to-review advice | 1 min | — |
 
-### A — 集群速览 (Cluster reference)
-- Collapsible card (visible by clicking) listing every cluster point: English name + pattern
-  + one example, from the inventory's cluster table. Learners may consult it during the test
-  (this is a learning tool, not a proctored exam) — but section B instruction should say
-  "try to answer before peeking".
-- If the cluster has a sibling **comparison cluster** in the same level (Category:
-  相似语法点辨析), include its rows here too.
+Section A is a **study pass**, not part of the scored test — keep the test proper (C–G)
+inside the 10–15 minute envelope and keep A tight (2–3 min max).
 
-### B — 场景选择 (Scenario MCQ, question type R4)
+### A — 语法讲解 (Grammar explanations) — REQUIRED, one card per cluster point
+- For **every point in the cluster** (the exact set that will be tested), render one
+  explanation card, in cluster order:
+  - **Name**: English point name + the key Chinese word(s) (e.g. 被 passive — "bei sentences").
+  - **Formula**: the pattern, from the inventory row (e.g. `S + 被 + doer + V + 其他`).
+  - **What it expresses**: 1–2 plain-English sentences on meaning/function — when a speaker
+    reaches for this point (e.g. "the receiver of the action is the topic; the doer may be
+    omitted when it's unknown or obvious").
+  - **Worked example**: one natural sentence in the topic context with a click-to-reveal
+    pinyin and an English gloss, the pattern keywords highlighted.
+  - **Pitfall**: one line naming the classic learner error for this point (e.g. "negation
+    goes before 把: 我没把…" not 我把…没…").
+- For **comparison clusters** (Category 相似语法点辨析), each card must state *what
+  distinguishes this point from its partner* (e.g. 不 = subjective/habitual/future negation,
+  没 = objective/past) — that contrast IS the card's "what it expresses".
+- Cards use the `flip-card` component (front: name + key word + formula; back: explanation
+  + example + pitfall) or plain `.item` cards — but ALL points of the cluster must appear,
+  and every point that appears in a C–F item must have been explained here. No surprises.
+- Pinyin stays click-to-reveal per global policy.
+
+### B — 集群速览 (Cluster reference)
+- Collapsed card (visible by clicking) listing every cluster point compactly: English name +
+  pattern + one example, taken from the inventory's cluster table. This is the during-test
+  lookup card, so keep it to one line per point.
+- If the cluster has a sibling comparison cluster in the same level, include its rows here.
+- The C-section instruction should say "try to answer before peeking at B".
+
+### C — 场景选择 (Scenario MCQ, question type R4)
 - 5–6 items. Each presents a mini-scenario (situation sentence in Chinese with a blank, or
   an English-described situation) and asks which of the cluster's grammar points fits.
 - **Options** = 3–4 grammar points from the cluster, labeled with the point's key word +
@@ -56,30 +79,30 @@ Filename: `hsk{L}-gt-CL{kk}.html` (retakes: `hsk{L}-gt-CL{kk}-r2.html`).
   from the nearest cluster in the same level and say so in the key).
 - Rotate the correct answer across positions; every cluster point must be the correct
   answer at least once across the section (for clusters with more points than items,
-  prioritize points NOT yet tested in section C/E).
+  prioritize points NOT yet tested in sections D/F).
 - The key explains the scenario's semantic cue (e.g. "the object ends up somewhere → 把
   pattern ①", "new situation unfolding → 了2").
 - **Comparison clusters** (e.g. 不 vs 没, 再 vs 又, 才 vs 就): make this the dominant
   section — every item contrasts exactly two member points.
 
-### C — 形式判断 (Form check)
+### D — 形式判断 (Form check)
 - 4–5 MCQ items testing form, not choice of point: choose the correct sentence (R2),
   pick the error segment (P3), or fill the particle (R1) — all within cluster points.
 - Exactly one defensible answer each; distractors = classic learner errors of these points.
 
-### D — 综合运用 (Production, self-graded)
+### E — 综合运用 (Production, self-graded)
 - 2–3 typed items: rewrite with a specified cluster point (P4), or answer a personal
   question forcing a specific point (F1-style). Keys give model + variants + wrong-with-reason.
 
-### E — 语篇理解 (Cluster in context)
+### F — 语篇理解 (Cluster in context)
 - One dialogue (6–10 turns) or short passage where ≥3 cluster points occur naturally,
   in the topic context; then 2–3 comprehension items (L1/L3 or R2).
   At least one item asks the learner to identify WHICH cluster point a highlighted
   sentence uses and what it contributes to meaning.
 
-### F — 得分总结 (Score summary)
-- `score-summary` component: auto-counts correct MCQ selections in B/C/E; shows
-  self-grade buttons (😊/🤔/😩) for section D items; computes a percentage over
+### G — 得分总结 (Score summary)
+- `score-summary` component: auto-counts correct MCQ selections in C/D/F; shows
+  self-grade buttons (😊/🤔/😩) for section E items; computes a percentage over
   auto-scored items.
 - **Advice text is generated from results**: list the cluster points missed (from item
   metadata `data-point`) as the "review these" list, plus a verdict:
@@ -89,17 +112,17 @@ Filename: `hsk{L}-gt-CL{kk}.html` (retakes: `hsk{L}-gt-CL{kk}-r2.html`).
     points (type P) before retaking the test.
 
 ## Scoring rules
-- Auto-scored: all MCQ (B, C, E comprehension). The template's MCQ marking provides the count.
-- Self-graded: D items — the key asks the learner to honestly mark 😊 (correct) / 🤔
+- Auto-scored: all MCQ (C, D, F comprehension). The template's MCQ marking provides the count.
+- Self-graded: E items — the key asks the learner to honestly mark 😊 (correct) / 🤔
   (almost) / 😩 (wrong); these feed advice but not the percentage.
 - The pass threshold (80% of auto-scored items) is a guideline recorded in the log, not a
   hard gate — Sam decides whether to advance or remediate.
 
 ## Generation rules specific to GT
-1. Every cluster point must appear in at least one item across B–E (cover the whole
-   cluster — that's what makes it a unit test).
-2. Items must NOT reuse example sentences from the inventory verbatim; write fresh
-   sentences in the topic context, with level-appropriate vocabulary.
+1. **Coverage symmetry**: every cluster point must appear in at least one C–F item AND have
+   an explanation card in section A — the test never quizzes an unexplained point.
+2. Items must NOT reuse example sentences from the inventory or from section A verbatim;
+   write fresh sentences in the topic context, with level-appropriate vocabulary.
 3. Cluster points whose official 2025-syllabus placement is higher than the test level
    (see cluster cross-ref notes) may be included (they're in the wiki cluster) but their
    vocabulary must stay in the 2025 cumulative list; gloss anything above.

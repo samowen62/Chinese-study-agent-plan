@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--
+  worksheet_id: hsk4-vt-01
+  type: vocabulary-test (VT)
+  hsk_level: 4
+  topic: 日常生活 · 个人情况
+  batch (27): 年龄#1536 性别#1829 性格#1831 脾气#1552 帅#1695 美#1500 笨#1026 诚实#1081
+    粗心#1106 细心#1792 活泼#1313 幽默#1882 害羞#1284 骄傲#1368 耐心#1521 自信#1983
+    懒#1452 眼镜#1852 皮肤#1551 印象#1873 + [L1] 高兴 漂亮 忙 岁 哥哥 女儿 [L3] 聪明
+  est_minutes: 14
+  scoring: auto (MCQ/bank) + self-grade (F)
+  generated: 2026-11-05
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSK4 · 词汇测试 01 · 个人情况</title>
+<style>
+  :root { --ink:#1a1a1a; --bg:#faf9f6; --card:#ffffff; --line:#e5e2da;
+    --accent:#b0342a; --accent-soft:#fdf0ee; --ok:#2e7d32; --bad:#b0342a;
+    --hanzi:"Microsoft YaHei","Noto Sans SC","PingFang SC",sans-serif; }
+  * { box-sizing:border-box; }
+  body { font-family:var(--hanzi); color:var(--ink); background:var(--bg);
+    max-width:720px; margin:0 auto; padding:16px 20px 80px; line-height:1.75; }
+  header.worksheet { border-bottom:3px solid var(--accent); padding-bottom:10px; margin-bottom:14px; }
+  header.worksheet h1 { font-size:1.35rem; margin:0 0 4px; }
+  .meta { color:#6b6558; font-size:.85rem; display:flex; flex-wrap:wrap; gap:8px 18px; }
+  .meta b { color:var(--accent); font-weight:600; }
+  .goal { background:var(--accent-soft); border-left:4px solid var(--accent);
+          padding:10px 14px; border-radius:0 8px 8px 0; margin:14px 0 22px; font-size:.95rem; }
+  h2.section { display:flex; align-items:baseline; gap:10px; margin:34px 0 8px; font-size:1.15rem; }
+  h2.section .badge { background:var(--accent); color:#fff; border-radius:6px; padding:1px 9px; font-size:.8rem; letter-spacing:1px; }
+  h2.section small { color:#6b6558; font-weight:400; font-size:.8rem; }
+  .inst { color:#6b6558; font-size:.9rem; margin:0 0 14px; }
+  .item { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:12px 0; }
+  .qno { font-weight:700; color:var(--accent); margin-right:6px; }
+  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
+  .zh.show::before, body.py-all .zh::before {
+    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap; font-family:Arial,sans-serif; }
+  button { font-family:inherit; cursor:pointer; }
+  .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent); border-radius:8px; padding:5px 14px; font-size:.85rem; }
+  .btn:hover { background:var(--accent-soft); }
+  .key { display:none; margin-top:10px; padding:10px 12px; border-radius:8px; background:#f2f8f2; border-left:4px solid var(--ok); font-size:.92rem; }
+  .key.show { display:block; }
+  .key b { color:var(--ok); }
+  .opt { display:block; width:100%; text-align:left; background:#fff; margin:6px 0;
+         border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; font-size:1rem; }
+  .opt:hover { border-color:var(--accent); }
+  .opt.sel { border-color:var(--accent); background:var(--accent-soft); }
+  .opt.correct { border-color:var(--ok); background:#eef7ee; }
+  .opt.incorrect { border-color:var(--bad); background:#fdeeee; }
+  .bank { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .bank .bword { background:var(--accent-soft); border:1.5px solid var(--accent); border-radius:8px; padding:4px 12px; }
+  .bank .bword.used { opacity:.35; }
+  .slot { display:inline-block; min-width:56px; text-align:center; border-bottom:2px solid var(--accent); padding:2px 8px; cursor:pointer; margin:0 3px; background:#fff; }
+  .typed-in { font-family:var(--hanzi); font-size:1rem; border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; width:100%; margin:6px 0; }
+  .defs p { margin:10px 0; }
+  .defs .pos { color:#8a4b00; font-size:.8rem; border:1px solid var(--line); border-radius:10px; padding:0 8px; margin-left:6px; }
+  .defs .gloss { color:#6b6558; }
+  details.ref { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 14px; margin:10px 0; }
+  details.ref summary { cursor:pointer; font-weight:700; color:var(--accent); }
+  details.ref table { width:100%; border-collapse:collapse; margin-top:8px; font-size:.9rem; }
+  details.ref td, details.ref th { border:1px solid var(--line); padding:4px 8px; }
+  .scorebox { background:var(--card); border:2px solid var(--accent); border-radius:12px; padding:16px; margin-top:36px; }
+  .scorebox .result { font-size:1.1rem; font-weight:700; margin:8px 0; }
+  .scorebox .verdict-pass { color:var(--ok); }
+  .scorebox .verdict-fail { color:var(--bad); }
+  .scorebox .missed-list { background:var(--accent-soft); border-radius:8px; padding:8px 12px; margin-top:8px; font-size:.95rem; }
+  .score-result { display:none; } .score-result.show { display:block; }
+  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line); border-radius:8px; padding:4px 10px; margin-right:6px; }
+  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
+</style>
+</head>
+<body>
+<header class="worksheet">
+  <h1>HSK 4 · 词汇测试 01 · 个人情况</h1>
+  <div class="meta">
+    <span><b>话题</b> 日常生活 · 个人情况</span>
+    <span><b>词量</b> 27 个（20 个四级 + 7 个复习词）</span>
+    <span><b>用时</b> 约 14 分钟</span>
+    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
+  </div>
+</header>
+
+<div class="goal">
+  学习目标：掌握 27 个描述"人"的词 —— 年龄、性格、外貌和感受。每个词先学，再认、再读、再用。
+</div>
+
+<!-- ============ A 词语讲解 ============ -->
+<h2 class="section"><span class="badge">A</span> 词语讲解 <small>Word definitions · 每个词都要过一遍（约 2–3 分钟）</small></h2>
+<div class="item defs">
+  <p><b><span class="zh" data-py="niánlíng">年龄</span></b><span class="pos">名 #1536</span> <span class="gloss">age, how old someone is.</span> 例：他的<span class="zh" data-py="niánlíng bǐ wǒ dà">年龄比我大</span>两岁。</p>
+  <p><b><span class="zh" data-py="xìngbié">性别</span></b><span class="pos">名 #1829</span> <span class="gloss">gender (male/female).</span> 例：报名表上要填<span class="zh" data-py="xìngbié">性别</span>。</p>
+  <p><b><span class="zh" data-py="xìnggé">性格</span></b><span class="pos">名 #1831</span> <span class="gloss">personality, character.</span> 例：她的<span class="zh" data-py="xìnggé">性格</span>很活泼。</p>
+  <p><b><span class="zh" data-py="píqi">脾气</span></b><span class="pos">名 #1552</span> <span class="gloss">temper (how easily someone gets angry). 搭配：发脾气.</span> 例：他<span class="zh" data-py="píqi">脾气</span>很好，从来不发火。</p>
+  <p><b><span class="zh" data-py="shuài">帅</span></b><span class="pos">形 #1695</span> <span class="gloss">handsome (for men).</span> 例：他穿上西装特别<span class="zh" data-py="shuài">帅</span>。</p>
+  <p><b><span class="zh" data-py="měi">美</span></b><span class="pos">形 #1500</span> <span class="gloss">beautiful.</span> 例：这里的风景真<span class="zh" data-py="měi">美</span>。</p>
+  <p><b><span class="zh" data-py="bèn">笨</span></b><span class="pos">形 #1026</span> <span class="gloss">slow to understand, "dumb".</span> 例：这个问题不难，别说自己<span class="zh" data-py="bèn">笨</span>。</p>
+  <p><b><span class="zh" data-py="chéngshí">诚实</span></b><span class="pos">形 #1081</span> <span class="gloss">honest.</span> 例：<span class="zh" data-py="chéngshí">诚实</span>的孩子不说谎。</p>
+  <p><b><span class="zh" data-py="cūxīn">粗心</span></b><span class="pos">形 #1106</span> <span class="gloss">careless. 反义词：细心.</span> 例：他太<span class="zh" data-py="cūxīn">粗心</span>了，忘了带钥匙。</p>
+  <p><b><span class="zh" data-py="xìxīn">细心</span></b><span class="pos">形 #1792</span> <span class="gloss">careful, attentive to detail.</span> 例：她很<span class="zh" data-py="xìxīn">细心</span>，把每件事都记在本子上。</p>
+  <p><b><span class="zh" data-py="huópō">活泼</span></b><span class="pos">形 #1313</span> <span class="gloss">lively, outgoing.</span> 例：小妹妹爱说爱笑，特别<span class="zh" data-py="huópō">活泼</span>。</p>
+  <p><b><span class="zh" data-py="yōumò">幽默</span></b><span class="pos">形 #1882</span> <span class="gloss">humorous, funny (pleasant).</span> 例：王老师很<span class="zh" data-py="yōumò">幽默</span>，课上总有人笑。</p>
+  <p><b><span class="zh" data-py="hàixiū">害羞</span></b><span class="pos">形 #1284</span> <span class="gloss">shy.</span> 例：她第一次上台，<span class="zh" data-py="hàixiū">害羞</span>得脸都红了。</p>
+  <p><b><span class="zh" data-py="jiāo'ào">骄傲</span></b><span class="pos">形/名 #1368</span> <span class="gloss">proud (often negative: too pleased with yourself).</span> 例：考得好也不能<span class="zh" data-py="jiāo'ào">骄傲</span>。</p>
+  <p><b><span class="zh" data-py="nàixīn">耐心</span></b><span class="pos">形/名 #1521</span> <span class="gloss">patient; 有耐心 = have patience.</span> 例：教爷爷奶奶用手机要有<span class="zh" data-py="nàixīn">耐心</span>。</p>
+  <p><b><span class="zh" data-py="zìxìn">自信</span></b><span class="pos">形/名 #1983</span> <span class="gloss">confident. 注意：自信≠骄傲.</span> 例：面试的时候要<span class="zh" data-py="zìxìn">自信</span>。</p>
+  <p><b><span class="zh" data-py="lǎn">懒</span></b><span class="pos">形 #1452</span> <span class="gloss">lazy. 搭配：懒得+V.</span> 例：周末他<span class="zh" data-py="lǎn">懒</span>得连门都不想出。</p>
+  <p><b><span class="zh" data-py="yǎnjìng">眼镜</span></b><span class="pos">名 #1852</span> <span class="gloss">glasses. 搭配：戴眼镜.</span> 例：他不戴<span class="zh" data-py="yǎnjìng">眼镜</span>就看不清黑板。</p>
+  <p><b><span class="zh" data-py="pífū">皮肤</span></b><span class="pos">名 #1551</span> <span class="gloss">skin.</span> 例：冬天<span class="zh" data-py="pífū">皮肤</span>容易干，要多喝水。</p>
+  <p><b><span class="zh" data-py="yìnxiàng">印象</span></b><span class="pos">名 #1873</span> <span class="gloss">impression. 搭配：给…留下好印象 / 对…的印象.</span> 例：我对他的<span class="zh" data-py="yìnxiàng">印象</span>很好。</p>
+  <p><b><span class="zh" data-py="gāoxìng">高兴</span></b><span class="pos">形 [L1]</span> <span class="gloss">happy (review).</span> 例：见到老朋友我很<span class="zh" data-py="gāoxìng">高兴</span>。</p>
+  <p><b><span class="zh" data-py="piàoliang">漂亮</span></b><span class="pos">形 [L1]</span> <span class="gloss">pretty (review).</span> 例：这条裙子真<span class="zh" data-py="piàoliang">漂亮</span>。</p>
+  <p><b><span class="zh" data-py="cōngmíng">聪明</span></b><span class="pos">形 [L3]</span> <span class="gloss">smart (review).</span> 例：妹妹很<span class="zh" data-py="cōngmíng">聪明</span>，一学就会。</p>
+  <p><b><span class="zh" data-py="máng">忙</span></b><span class="pos">形 [L1]</span> <span class="gloss">busy (review).</span> 例：最近工作很<span class="zh" data-py="máng">忙</span>。</p>
+  <p><b><span class="zh" data-py="suì">岁</span></b><span class="pos">量 [L1]</span> <span class="gloss">years of age (review). 搭配：数字＋岁.</span> 例：弟弟今年五<span class="zh" data-py="suì">岁</span>了。</p>
+  <p><b><span class="zh" data-py="gēge">哥哥</span></b><span class="pos">名 [L1]</span> <span class="gloss">older brother (review).</span> 例：我<span class="zh" data-py="gēge">哥哥</span>比我大三岁。</p>
+  <p><b><span class="zh" data-py="nǚ'ér">女儿</span></b><span class="pos">名 [L1]</span> <span class="gloss">daughter (review).</span> 例：<span class="zh" data-py="nǚ'ér">女儿</span>的笑容是最美的。</p>
+</div>
+
+<!-- ============ B 词语表 ============ -->
+<h2 class="section"><span class="badge">B</span> 词语表 <small>Batch reference · 测试中可以查，但先尽量不看</small></h2>
+<details class="ref">
+  <summary>点开 compact word list</summary>
+  <table>
+    <tr><th>#</th><th>词</th><th>词性</th><th>English</th></tr>
+    <tr><td>1536</td><td>年龄</td><td>名</td><td>age</td></tr>
+    <tr><td>1829</td><td>性别</td><td>名</td><td>gender</td></tr>
+    <tr><td>1831</td><td>性格</td><td>名</td><td>personality</td></tr>
+    <tr><td>1552</td><td>脾气</td><td>名</td><td>temper</td></tr>
+    <tr><td>1695</td><td>帅</td><td>形</td><td>handsome</td></tr>
+    <tr><td>1500</td><td>美</td><td>形</td><td>beautiful</td></tr>
+    <tr><td>1026</td><td>笨</td><td>形</td><td>dumb</td></tr>
+    <tr><td>1081</td><td>诚实</td><td>形</td><td>honest</td></tr>
+    <tr><td>1106</td><td>粗心</td><td>形</td><td>careless</td></tr>
+    <tr><td>1792</td><td>细心</td><td>形</td><td>careful</td></tr>
+    <tr><td>1313</td><td>活泼</td><td>形</td><td>lively</td></tr>
+    <tr><td>1882</td><td>幽默</td><td>形</td><td>humorous</td></tr>
+    <tr><td>1284</td><td>害羞</td><td>形</td><td>shy</td></tr>
+    <tr><td>1368</td><td>骄傲</td><td>形/名</td><td>proud</td></tr>
+    <tr><td>1521</td><td>耐心</td><td>形/名</td><td>patient</td></tr>
+    <tr><td>1983</td><td>自信</td><td>形/名</td><td>confident</td></tr>
+    <tr><td>1452</td><td>懒</td><td>形</td><td>lazy</td></tr>
+    <tr><td>1852</td><td>眼镜</td><td>名</td><td>glasses</td></tr>
+    <tr><td>1551</td><td>皮肤</td><td>名</td><td>skin</td></tr>
+    <tr><td>1873</td><td>印象</td><td>名</td><td>impression</td></tr>
+    <tr><td>[L1]</td><td>高兴 / 漂亮 / 忙 / 岁 / 哥哥 / 女儿</td><td>—</td><td>happy / pretty / busy / years old / brother / daughter</td></tr>
+    <tr><td>[L3]</td><td>聪明</td><td>形</td><td>smart</td></tr>
+  </table>
+</details>
+
+<!-- ============ C 认词 ============ -->
+<h2 class="section"><span class="badge">C</span> 认词 <small>Meaning recognition</small></h2>
+
+<div class="item">
+  <p><span class="qno">C1</span> "性格"是什么意思？</p>
+  <div class="mcq" data-answer="B" data-word="性格">
+    <button class="opt" data-v="A">A. age</button>
+    <button class="opt" data-v="B">B. personality</button>
+    <button class="opt" data-v="C">C. gender</button>
+    <button class="opt" data-v="D">D. skin</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> 性格 = the way a person behaves and feels — personality. 年龄 age, 性别 gender, 皮肤 skin (same batch distractors).</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C2</span> "耐心"是什么意思？</p>
+  <div class="mcq" data-answer="A" data-word="耐心">
+    <button class="opt" data-v="A">A. patient</button>
+    <button class="opt" data-v="B">B. lazy</button>
+    <button class="opt" data-v="C">C. proud</button>
+    <button class="opt" data-v="D">D. shy</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 耐心 = able to wait calmly. 懒 lazy, 骄傲 proud, 害羞 shy — all batch adjectives describing people, but only 耐心 is "patient".</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C3</span> "印象"是什么意思？</p>
+  <div class="mcq" data-answer="C" data-word="印象">
+    <button class="opt" data-v="A">A. glasses</button>
+    <button class="opt" data-v="B">B. temper</button>
+    <button class="opt" data-v="C">C. impression</button>
+    <button class="opt" data-v="D">D. age</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> 印象 = the feeling/memory a person or thing leaves you. 我对他印象很好.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C4</span> 哪个词的意思是 "stupid / slow to understand"（笨）？</p>
+  <div class="mcq" data-answer="A" data-word="笨">
+    <button class="opt" data-v="A">A. 笨</button>
+    <button class="opt" data-v="B">B. 诚实</button>
+    <button class="opt" data-v="C">C. 活泼</button>
+    <button class="opt" data-v="D">D. 幽默</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 笨 bèn. 诚实 honest, 活泼 lively, 幽默 humorous — opposite-direction character words.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C5</span> 你想夸一个男同学长得好看，用哪个词？</p>
+  <div class="mcq" data-answer="B" data-word="帅">
+    <button class="opt" data-v="A">A. 美</button>
+    <button class="opt" data-v="B">B. 帅</button>
+    <button class="opt" data-v="C">C. 漂亮</button>
+    <button class="opt" data-v="D">D. 高兴</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> 帅 is for men; 美/漂亮 usually for women or scenery. 高兴 is a feeling.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C6</span> 哪个词的意思是 "confident"（有信心）？</p>
+  <div class="mcq" data-answer="D" data-word="自信">
+    <button class="opt" data-v="A">A. 害羞</button>
+    <button class="opt" data-v="B">B. 粗心</button>
+    <button class="opt" data-v="C">C. 骄傲</button>
+    <button class="opt" data-v="D">D. 自信</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>D ✔</b> 自信 = believe in yourself (positive). 骄傲 is proud in the negative "too pleased" sense; 害羞 shy; 粗心 careless.</div>
+</div>
+
+<!-- ============ D 读音 ============ -->
+<h2 class="section"><span class="badge">D</span> 读音 <small>Pinyin ↔ character</small></h2>
+
+<div class="item">
+  <p><span class="qno">D1</span> "性格"的正确拼音是？</p>
+  <div class="mcq" data-answer="C" data-word="性格">
+    <button class="opt" data-v="A">A. xīngé</button>
+    <button class="opt" data-v="B">B. xìngě</button>
+    <button class="opt" data-v="C">C. xìnggé</button>
+    <button class="opt" data-v="D">D. xínggé</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> 性 xìng (4th) + 格 gé (2nd) — both full tones. ✗xīngé misreads 性 as 1st tone.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D2</span> "脾气"的正确拼音是？</p>
+  <div class="mcq" data-answer="A" data-word="脾气">
+    <button class="opt" data-v="A">A. píqi</button>
+    <button class="opt" data-v="B">B. píqì</button>
+    <button class="opt" data-v="C">C. bǐqi</button>
+    <button class="opt" data-v="D">D. píqí</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 气 is a light (neutral) tone here: píqi. Writing píqì isn't "wrong" in some dictionaries, but HSK convention reads it neutral.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D3</span> "骄傲"的正确拼音是？</p>
+  <div class="mcq" data-answer="B" data-word="骄傲">
+    <button class="opt" data-v="A">A. xiāo'ào</button>
+    <button class="opt" data-v="B">B. jiāo'ào</button>
+    <button class="opt" data-v="C">C. jiāo'áo</button>
+    <button class="opt" data-v="D">D. jiǎo'ào</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> Both syllables are 1st + 4th: jiāo'ào. Watch the apostrophe — without it "jiāoào" is unreadable.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D4</span> "眼镜"的正确拼音是？</p>
+  <div class="mcq" data-answer="C" data-word="眼镜">
+    <button class="opt" data-v="A">A. yánjìng</button>
+    <button class="opt" data-v="B">B. yǎnjīng</button>
+    <button class="opt" data-v="C">C. yǎnjìng</button>
+    <button class="opt" data-v="D">D. yǎnjìn</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> 眼 yǎn (3rd) + 镜 jìng (4th). B yǎnjīng misplaces the tone mark syllable.</div>
+</div>
+
+<!-- ============ E 用法 ============ -->
+<h2 class="section"><span class="badge">E</span> 用法 <small>Usage in context · 每个词只能用一次</small></h2>
+
+<div class="item" data-answers="A B C E F" data-word="性格/脾气/耐心/诚实/细心搭配">
+  <div class="bank">
+    <button class="bword">A 性格</button><button class="bword">B 脾气</button>
+    <button class="bword">C 耐心</button><button class="bword">D 年龄</button>
+    <button class="bword">E 诚实</button><button class="bword">F 细心</button>
+  </div>
+  <p>1. 她的<span class="slot"></span>很活泼，跟谁都聊得来。</p>
+  <p>2. 别发<span class="slot"></span>，先听我解释。</p>
+  <p>3. 教爷爷奶奶用手机要有<span class="slot"></span>。</p>
+  <p>4. 他很<span class="slot"></span>，从来不说谎。</p>
+  <p>5. 姐姐工作很<span class="slot"></span>，一个错误都没出过。</p>
+  <button class="btn check">对答案</button>
+  <button class="btn reset">重来</button>
+  <div class="key"><b>1-A 性格 · 2-B 脾气 · 3-C 耐心 · 4-E 诚实 · 5-F 细心</b>（D 年龄 不用）<br>
+  Cues: ① 性格+活泼 is the standard collocation ② 发脾气 fixed phrase ③ 有耐心 ④ 诚实＋不说谎 ⑤ 细心＋不出错. 年龄 needs a number context (他的年龄是…).</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">E6</span> 他说话总能把大家逗笑，大家都很喜欢他。他是个很（　）的人。</p>
+  <div class="mcq" data-answer="B" data-word="幽默">
+    <button class="opt" data-v="A">A. 害羞</button>
+    <button class="opt" data-v="B">B. 幽默</button>
+    <button class="opt" data-v="C">C. 笨</button>
+    <button class="opt" data-v="D">D. 懒</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> Making people laugh = 幽默. A shy person wouldn't be the class comedian.</div>
+</div>
+
+<!-- ============ F 造句 ============ -->
+<h2 class="section"><span class="badge">F</span> 造句 <small>Production · self-graded</small></h2>
+
+<div class="item">
+  <p><span class="qno">F1</span> 用"印象"写一句话。</p>
+  <input class="typed-in" type="text" placeholder="我对…的印象…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>第一次见面，他给我留下了很好的印象。</b> Variants: 我对这个城市的印象是又大又热闹。 Avoid ✗我印象他 — needs 对…的印象 or 给我留下印象.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">F2</span> 用今天学过的两个词描述一个你认识的人（性格、脾气、幽默、耐心…任选）。</p>
+  <input class="typed-in" type="text" placeholder="我哥哥性格…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>我爸爸脾气很好，也很有耐心，从来不发火。</b> Check your two words are used with their right collocation (发脾气 / 有耐心 / 性格+Adj).</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">F3</span> 情景：朋友穿上新西装，你想夸他。用"帅"说一句话。</p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>哇，你穿这件西装太帅了！</b> Variants: 你今天真帅。 Common mistake: ✗你很帅死了 — 帅死了 works, 很…死了 doesn't (pick one intensifier).</div>
+</div>
+
+<!-- ============ G 得分总结 ============ -->
+<h2 class="section"><span class="badge">G</span> 得分总结 <small>Score summary</small></h2>
+<div class="scorebox">
+  <p><b>得分总结 Score summary</b> — 检查完所有选择题后点下面的按钮。</p>
+  <button class="btn score-btn">计算得分</button>
+  <div class="score-result"></div>
+  <p><b>自评打分 Self-grade section F</b>: <button class="conf">😊 全对</button><button class="conf">🤔 差不多</button><button class="conf">😩 不行</button></p>
+</div>
+
+<script>
+document.getElementById('pyAll').onclick = () => document.body.classList.toggle('py-all');
+document.addEventListener('click', e => { const zh = e.target.closest('.zh'); if (zh) zh.classList.toggle('show'); });
+document.addEventListener('click', e => { if (e.target.matches('.check')) { const item = e.target.closest('.item'); const key = item && item.querySelector('.key'); if (key) key.classList.add('show'); } });
+document.addEventListener('click', e => {
+  if (!e.target.matches('.opt')) return;
+  const box = e.target.closest('.mcq');
+  if (!box || box.dataset.done) return;
+  box.querySelectorAll('.sel').forEach(s => s.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.check')) return;
+  const box = e.target.closest('.item').querySelector('.mcq');
+  if (!box || box.dataset.done) return;
+  box.dataset.done = '1';
+  const ans = box.dataset.answer;
+  box.querySelectorAll('.opt').forEach(o => {
+    if (o.dataset.v === ans) o.classList.add('correct');
+    else if (o.classList.contains('sel')) o.classList.add('incorrect');
+  });
+});
+let armedWord = null;
+document.addEventListener('click', e => {
+  if (e.target.matches('.bank .bword')) {
+    armedWord = e.target.classList.contains('used') ? null : e.target;
+    document.querySelectorAll('.bword').forEach(b => b.style.outline = '');
+    if (armedWord) armedWord.style.outline = '2px solid #b0342a';
+  }
+  if (e.target.matches('.slot') && armedWord) {
+    e.target.textContent = armedWord.textContent.slice(2);
+    e.target.dataset.filled = armedWord.textContent.slice(0,1);
+    armedWord.classList.add('used'); armedWord.style.outline = ''; armedWord = null;
+  }
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.reset')) return;
+  const item = e.target.closest('.item');
+  if (item.querySelector('.bank')) {
+    item.querySelectorAll('.bank .bword').forEach(b => { b.classList.remove('used'); b.style.outline = ''; });
+    item.querySelectorAll('.slot').forEach(s => { s.textContent = ''; delete s.dataset.filled; });
+    armedWord = null;
+  }
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.conf')) return;
+  e.target.parentElement.querySelectorAll('.conf').forEach(b => b.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.score-btn')) return;
+  const box = e.target.closest('.scorebox');
+  const result = box.querySelector('.score-result');
+  if (!result) return;
+  let total = 0, right = 0;
+  const missed = []; const seen = new Set();
+  document.querySelectorAll('.mcq').forEach(mcq => {
+    total++;
+    const ok = mcq.dataset.done && !mcq.querySelector('.opt.incorrect');
+    if (ok) { right++; return; }
+    const w = mcq.dataset.word || (mcq.closest('.item')||mcq).dataset.word;
+    if (w && !seen.has(w)) { seen.add(w); missed.push(w); }
+  });
+  document.querySelectorAll('.item[data-answers]').forEach(it => {
+    total++;
+    const want = it.dataset.answers.split(/\s+/);
+    const got = [...it.querySelectorAll('.slot')].map(s => s.dataset.filled || '_');
+    const ok = want.length === got.length && want.every((w, i) => got[i] === w);
+    if (ok) { right++; return; }
+    const w = it.dataset.word || '用法搭配(选词填空)';
+    if (!seen.has(w)) { seen.add(w); missed.push(w); }
+  });
+  const pct = total ? Math.round((right / total) * 100) : 0;
+  const pass = pct >= 80;
+  result.innerHTML =
+    `<p class="result">得分 Score: <span class="${pass ? 'verdict-pass' : 'verdict-fail'}">${right} / ${total} (${pct}%)</span></p>` +
+    `<p>${pass ? '✅ <b>通过！</b>这一批词过关 — 下次词汇测试见。'
+              : '📉 <b>还没过关</b>（80% 通过线）。把下面的词放进"词语收藏"，下次练习会再见到它们。'}</p>` +
+    (missed.length ? `<div class="missed-list"><b>需要复习 Need review</b>: ${missed.join('、')}</div>` : '') +
+    `<p style="font-size:.8rem;color:#6b6558">把得分和要复习的词告诉我，我会记进 progress-log 并在下次测试里重考它们。</p>`;
+  result.classList.add('show');
+});
+</script>
+</body>
+</html>

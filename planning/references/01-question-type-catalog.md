@@ -59,7 +59,7 @@ Legend: L1…L6 = HSK level suitability. ✔ = recommended, ○ = usable sparing
 
 ### R4 Cluster scenario MCQ (which grammar point fits?)
 - **Levels**: all | **Component**: `mcq`
-- **Usage**: Core of grammar unit tests (blueprints/02 section B); also usable inside
+- **Usage**: Core of grammar unit tests (blueprints/02 section C); also usable inside
   practice worksheets' B section when the anchor point has close siblings.
 - **Spec**: A mini-scenario (Chinese situation sentence with a blank, or an
   English-described situation) is presented; the options are 3–4 **grammar points from the
@@ -169,6 +169,8 @@ are the adapted interactive versions of the paper formats Sam will face.
   选词填空. Click a bank word to place it. Words may be reused... actually per official
   format each word is used at most once; keep 1–2 unused words as distractors.
 - **Rules**: Two bank words must be same POS class to stay tricky (e.g. 量词 本/张/件).
+  Every item includes a **重来 reset button** that clears all placed words and restores
+  the bank, so the learner can retry before checking (per Sam's request).
 
 ### E2 Q–A matching (HSK1–3 阅读 P3 style)
 - **Levels**: L1–L3 | **Component**: `match`
@@ -249,7 +251,7 @@ are the adapted interactive versions of the paper formats Sam will face.
 
 ---
 
-## VM — Vocabulary test items (blueprints/03 sections B–E)
+## VM — Vocabulary test items (blueprints/03 sections C–F)
 
 Vocabulary tests are organized by thematic word batch, not by grammar. All VM items are
 bound to the batch's words; see `blueprints/03-vocabulary-test-blueprint.md` for batch rules.
@@ -273,7 +275,8 @@ bound to the batch's words; see `blueprints/03-vocabulary-test-blueprint.md` for
 - **Levels**: all | **Components**: `bank-fill` or `mcq`
 - **Spec**: Sentence with a blank where exactly one batch word fits by collocation or
   context. Bank fill: 6–8 words with 1–2 extras; MCQ when the distinction is fine
-  (见面 vs 看见). Key states the collocation/context cue.
+  (见面 vs 看见). Bank-fill items include the 重来 reset button. Key states the
+  collocation/context cue.
 - **Rules**: Topic-context sentences, grammar within level only (no grammar surprises on
   a vocabulary test). Item carries `data-word`.
 
@@ -312,7 +315,7 @@ behavior. Copy the file; don't re-implement.
 | `mcq` | Options as buttons; click selects; 对答案 button reveals ✓/✗ + explanation for the chosen one, and marks the correct option. |
 | `typed` | Free text input; 对答案 reveals model answer(s) + explanation. No auto-grading (Chinese typing variants make exact match brittle). |
 | `order-tiles` | Click tiles to append to the answer line; 重来 resets; 对答案 reveals correct order + explanation. |
-| `bank-fill` | Click bank word → clicks blank slot to place; slots may be cleared; 对答案 checks. |
+| `bank-fill` | Click bank word → clicks blank slot to place; 对答案 checks; a 重来 reset button clears all placements and restores the bank. |
 | `match` | Click left item then right item to link; lines/labels connect; 对答案 checks. |
 | `flip-card` | Click flips front/back (CSS 3D). |
 | `reveal-lines` | Dialogue lines revealed one at a time (显示下一句 button) for shadowing. |

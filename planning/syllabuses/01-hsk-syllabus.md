@@ -68,7 +68,7 @@ Per level, in order:
 - Every worksheet's 温故知新/review content comes from `progress-log.md`:
   the most recent unit, a unit from ~3 back, and a unit from ~7–10 back.
 - Any word or point logged as "needs review" is REQUIRED content of the next worksheet's
-  review section and of the next VT's section B / GT's section B respectively.
+  review section and of the next VT's section C / GT's section C respectively.
 - GT retakes replace (not append to) the failed attempt's row in the log; missed points
   from the failed attempt stay flagged until a subsequent pass-level mention.
 

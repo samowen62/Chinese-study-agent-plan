@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--
+  worksheet_id: hsk4-ws-004
+  type: practice (P)
+  hsk_level: 4
+  grammar_point: L4-FX-1 一+量词+比+一+量词（＋L4-FX-2 再也不/没）
+  grammar_point_name: Progressive comparison 一天比一天 & never-again 再也不
+  cluster_context: L4-CL02b 时间/频率类副词
+  topic_context: 日常生活 · 健身与坚持
+  est_minutes: 13
+  review_sources: hsk4-ws-002 (反问句), hsk4-ws-003 (不得不/只好)
+  generated: 2026-11-05
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSK4 · "一天比一天" · Practice</title>
+<style>
+  :root { --ink:#1a1a1a; --bg:#faf9f6; --card:#ffffff; --line:#e5e2da;
+    --accent:#b0342a; --accent-soft:#fdf0ee; --ok:#2e7d32; --bad:#b0342a;
+    --hanzi:"Microsoft YaHei","Noto Sans SC","PingFang SC",sans-serif; }
+  * { box-sizing:border-box; }
+  body { font-family:var(--hanzi); color:var(--ink); background:var(--bg);
+    max-width:720px; margin:0 auto; padding:16px 20px 80px; line-height:1.75; }
+  header.worksheet { border-bottom:3px solid var(--accent); padding-bottom:10px; margin-bottom:14px; }
+  header.worksheet h1 { font-size:1.35rem; margin:0 0 4px; }
+  .meta { color:#6b6558; font-size:.85rem; display:flex; flex-wrap:wrap; gap:8px 18px; }
+  .meta b { color:var(--accent); font-weight:600; }
+  .goal { background:var(--accent-soft); border-left:4px solid var(--accent);
+          padding:10px 14px; border-radius:0 8px 8px 0; margin:14px 0 22px; font-size:.95rem; }
+  h2.section { display:flex; align-items:baseline; gap:10px; margin:34px 0 8px; font-size:1.15rem; }
+  h2.section .badge { background:var(--accent); color:#fff; border-radius:6px; padding:1px 9px; font-size:.8rem; letter-spacing:1px; }
+  h2.section small { color:#6b6558; font-weight:400; font-size:.8rem; }
+  .inst { color:#6b6558; font-size:.9rem; margin:0 0 14px; }
+  .item { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:12px 0; }
+  .qno { font-weight:700; color:var(--accent); margin-right:6px; }
+  .srctag { font-size:.75rem; color:#9a917f; border:1px solid var(--line); border-radius:10px; padding:0 8px; margin-left:8px; }
+  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
+  .zh.show::before, body.py-all .zh::before {
+    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap; font-family:Arial,sans-serif; }
+  button { font-family:inherit; cursor:pointer; }
+  .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent); border-radius:8px; padding:5px 14px; font-size:.85rem; }
+  .btn:hover { background:var(--accent-soft); }
+  .key { display:none; margin-top:10px; padding:10px 12px; border-radius:8px; background:#f2f8f2; border-left:4px solid var(--ok); font-size:.92rem; }
+  .key.show { display:block; }
+  .key b { color:var(--ok); }
+  .opt { display:block; width:100%; text-align:left; background:#fff; margin:6px 0;
+         border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; font-size:1rem; }
+  .opt:hover { border-color:var(--accent); }
+  .opt.sel { border-color:var(--accent); background:var(--accent-soft); }
+  .opt.correct { border-color:var(--ok); background:#eef7ee; }
+  .opt.incorrect { border-color:var(--bad); background:#fdeeee; }
+  .tiles { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .tile { background:#fff; border:1.5px solid var(--line); border-radius:8px; padding:6px 12px; font-size:1.05rem; }
+  .tile:hover { border-color:var(--accent); }
+  .tile.used { opacity:.35; }
+  .built { min-height:2.4em; border:2px dashed var(--line); border-radius:8px; padding:8px 12px; margin:8px 0; font-size:1.05rem; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .bank { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .bank .bword { background:var(--accent-soft); border:1.5px solid var(--accent); border-radius:8px; padding:4px 12px; }
+  .bank .bword.used { opacity:.35; }
+  .slot { display:inline-block; min-width:56px; text-align:center; border-bottom:2px solid var(--accent); padding:2px 8px; cursor:pointer; margin:0 3px; background:#fff; }
+  .flip-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; }
+  .flip { perspective:900px; height:150px; cursor:pointer; }
+  .flip-inner { position:relative; width:100%; height:100%; transition:transform .5s; transform-style:preserve-3d; }
+  .flip.flipped .flip-inner { transform:rotateY(180deg); }
+  .face { position:absolute; inset:0; backface-visibility:hidden; border-radius:12px; border:1.5px solid var(--line); background:#fff; padding:14px; display:flex; align-items:center; justify-content:center; text-align:center; }
+  .face.back { transform:rotateY(180deg); background:var(--accent-soft); font-size:.85rem; }
+  .face .hl { color:var(--accent); font-weight:700; }
+  .dlg .line { display:flex; gap:10px; align-items:flex-start; padding:6px 0; border-bottom:1px dashed var(--line); }
+  .dlg .speaker { flex:0 0 64px; font-weight:700; color:var(--accent); }
+  .tts { border:none; background:none; font-size:1rem; padding:0 4px; }
+  .typed-in { font-family:var(--hanzi); font-size:1rem; border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; width:100%; margin:6px 0; }
+  .selfcheck { background:var(--card); border:2px solid var(--accent); border-radius:12px; padding:16px; margin-top:36px; }
+  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line); border-radius:8px; padding:4px 10px; margin-right:6px; }
+  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
+</style>
+</head>
+<body>
+<header class="worksheet">
+  <h1>HSK 4 · "一天比一天……"</h1>
+  <div class="meta">
+    <span><b>语法点</b> L4-FX-1 一+量+比+一+量 · L4-FX-2 再也不/没</span>
+    <span><b>话题</b> 健身与坚持</span>
+    <span><b>用时</b> 约 13 分钟</span>
+    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
+  </div>
+</header>
+
+<div class="goal">
+  学习目标：能用"一+量词+比+一+量词"表达步步上升/下降，并用"再也不/没"表达"绝不再" ——
+  describe steady change and firm decisions.
+</div>
+
+<!-- ============ A 模式感知 ============ -->
+<h2 class="section"><span class="badge">A</span> 模式感知 <small>Pattern warm-up</small></h2>
+<div class="flip-row">
+  <div class="flip" tabindex="0">
+    <div class="flip-inner">
+      <div class="face front"><span class="zh" data-py="tiānqì yì tiān bǐ yì tiān lěng le">天气一天比一天冷了。</span></div>
+      <div class="face back"><span class="hl">一 + MW + 比 + 一 + MW + Adj</span><br>Step-by-step change over units of time/things. Same MW twice!</div>
+    </div>
+  </div>
+  <div class="flip" tabindex="0">
+    <div class="flip-inner">
+      <div class="face front"><span class="zh" data-py="wǒ zài yě bù chídào le">我再也不迟到了。</span></div>
+      <div class="face back"><span class="hl">再 + 也 + 不/没 + V (+了)</span><br>"Never again!" — a firm decision or a permanent state.</div>
+    </div>
+  </div>
+  <div class="flip" tabindex="0">
+    <div class="flip-inner">
+      <div class="face front"><span class="zh" data-py="hànyǔ yuè lái yuè nán le">汉语越来越难了。／一天比一天难。</span></div>
+      <div class="face back"><span class="hl">越来越 vs 一天比一天</span><br>Same direction of change. 一天比一天 stresses each unit topping the last — more vivid, often with time words.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ B 语法操练 ============ -->
+<h2 class="section"><span class="badge">B</span> 语法操练 <small>Grammar drills</small></h2>
+
+<div class="item">
+  <p><span class="qno">B1</span> 选词填空：天气一天（　）一天热了。</p>
+  <div class="mcq" data-answer="A">
+    <button class="opt" data-v="A">A. 比</button>
+    <button class="opt" data-v="B">B. 和</button>
+    <button class="opt" data-v="C">C. 跟</button>
+    <button class="opt" data-v="D">D. 向</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> The progressive frame is fixed: 一＋MW＋<b>比</b>＋一＋MW. 和/跟 join equals (一天和一天 doesn't compare), 向 points in a direction.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B2</span> 哪个句子是对的？</p>
+  <div class="mcq" data-answer="C">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="tā yì tiān dǎ qiú bǐ yì tiān hǎo">他一天打球比一天好。</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="tā yì tiān bǐ dǎ qiú yì tiān hǎo">他一天比打球一天好。</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="tā dǎqiú dǎ de yì tiān bǐ yì tiān hǎo">他打球打得一天比一天好。</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="tā yì tiān bǐ yì tiān dǎqiú hǎo">他一天比一天打球好。</span></button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> With a verb, use 得: V＋得＋一天比一天＋Adj. A/B break the frame; D puts the phrase before the verb. (With a pure adjective: 他的身体一天比一天好 ✓)</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B3</span> 排列顺序：把这些词排成一句话。</p>
+  <div class="tiles">
+    <button class="tile">生活</button>
+    <button class="tile">一天</button>
+    <button class="tile">比</button>
+    <button class="tile">一天</button>
+    <button class="tile">好了</button>
+  </div>
+  <div class="built"></div>
+  <button class="btn check">对答案</button>
+  <button class="btn reset">重来</button>
+  <div class="key"><b>生活一天比一天好了。</b> Subject + 一＋MW＋比＋一＋MW + Adj + 了.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B4</span> 你向朋友保证以后不会迟到：对不起，我（　）不迟到了！</p>
+  <div class="mcq" data-answer="B">
+    <button class="opt" data-v="A">A. 又</button>
+    <button class="opt" data-v="B">B. 再</button>
+    <button class="opt" data-v="C">C. 还</button>
+    <button class="opt" data-v="D">D. 也</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> 再也不 = never again (future promise). 又 is for repeated PAST actions (他又迟到了 — that already happened twice), 还 is "still/also", 也 alone can't carry the "again" meaning.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B5</span> 找错误：我再也不又喝汽水了。</p>
+  <div class="mcq" data-answer="C">
+    <button class="opt" data-v="A">A. 我</button>
+    <button class="opt" data-v="B">B. 再</button>
+    <button class="opt" data-v="C">C. 不又</button>
+    <button class="opt" data-v="D">D. 喝汽水了</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> Fix: 我再也不喝汽水了. 再 and 又 never stack — 再 for future "again", 又 for past "again".</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B6</span> 用"一天比一天"改写：她的病越来越重了。→</p>
+  <input class="typed-in" type="text" placeholder="输入你的句子…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>她的病一天比一天重了。</b> Adjective goes after the frame. Wrong version: 她的病比一天一天重 — the 比 must sit between the two 一天.</div>
+</div>
+
+<!-- ============ C 听力模拟 ============ -->
+<h2 class="section"><span class="badge">C</span> 听力模拟 <small>Listening simulation</small></h2>
+<p class="inst">Read aloud twice, then answer.</p>
+<div class="item">
+  <div class="dlg">
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="nǐ zuìjìn qìsè hǎo duō le">你最近气色好多了！</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span><span class="zh" data-py="shì ma, wǒ kāishǐ pǎobù yǐhòu, shēntǐ yì tiān bǐ yì tiān hǎo">是吗？我开始跑步以后，身体一天比一天好。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="zhēn xiànmù nǐ, wǒ shìguo hěn duō cì, kě dōu méi jiānchí xiàlái">真羡慕你。我试过很多次，可都没坚持下来。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span><span class="zh" data-py="gāng kāishǐ zuì nán, nǐ zuìhǎo cóng měi tiān shíwǔ fēnzhōng kāishǐ">刚开始最难，你最好从每天十五分钟开始。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="hǎo, nà wǒ jīntiān jiù qù mǎi pǎoxié">好，那我今天就去买跑鞋！</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span><span class="zh" data-py="zhè cái duì ma, qiānwàn bié fàngqì">这才对嘛！千万别放弃，一旦放弃，以前的努力就白费了。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="fàngxīn ba, wǒ zài yě bù tōulǎn le">放心吧，我再也不偷懒了！</span><button class="tts">🔊</button></span></div>
+  </div>
+  <p style="margin-top:10px"><span class="qno">C1</span> 男的是怎么让身体变好的？</p>
+  <div class="mcq" data-answer="B">
+    <button class="opt" data-v="A">A. 吃保健品</button>
+    <button class="opt" data-v="B">B. 坚持跑步</button>
+    <button class="opt" data-v="C">C. 每天游泳两小时</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> 开始跑步以后，身体一天比一天好 — steady improvement, step by step.</div>
+
+  <p style="margin-top:10px"><span class="qno">C2</span> 男的给女的什么建议？</p>
+  <div class="mcq" data-answer="C">
+    <button class="opt" data-v="A">A. 每天跑一小时</button>
+    <button class="opt" data-v="B">B. 先买跑鞋再决定</button>
+    <button class="opt" data-v="C">C. 从每天十五分钟开始，别放弃</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> 最好从每天十五分钟开始 + 千万别放弃 — note the CL02a words (最好/千万) popping up again in review.</div>
+
+  <p style="margin-top:10px"><span class="qno">C3</span> "我再也不偷懒了"是什么意思？</p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>她以后绝对不会偷懒了（这是她的决心）</b> — 再也不 = a firm promise about the future.</div>
+</div>
+
+<!-- ============ D 考试题型 ============ -->
+<h2 class="section"><span class="badge">D</span> 考试题型 <small>Exam-style · 选词填空</small></h2>
+<div class="item" data-answers="A B C D E">
+  <div class="bank">
+    <button class="bword">A 再</button><button class="bword">B 又</button>
+    <button class="bword">C 一</button><button class="bword">D 比</button>
+    <button class="bword">E 越来越</button><button class="bword">F 最</button>
+  </div>
+  <p>1. 我<span class="slot"></span>也不吃这么辣的东西了，上次辣得肚子疼。</p>
+  <p>2. 他昨天<span class="slot"></span>迟到了，这个月第三次了。</p>
+  <p>3. 天气<span class="slot"></span>天比<span class="slot"></span>天暖和了。</p>
+  <p>4. 我的手机用了四年，现在<span class="slot"></span>慢了。</p>
+  <button class="btn check">对答案</button>
+  <button class="btn reset">重来</button>
+  <div class="key"><b>1-A 再 · 2-B 又 · 3-C 一 / D 比（两空）· 4-E 越来越</b>（F 最 不用）<br>
+  1. Future promise → 再也不. 2. Repeated past → 又. 3. 一天<b>比</b>一天. 4. 越来越＋Adj — simpler alternative when you don't need the stepwise flavor.</div>
+</div>
+
+<!-- ============ E 自由产出 ============ -->
+<h2 class="section"><span class="badge">E</span> 自由产出 <small>Free production</small></h2>
+
+<div class="item">
+  <p><span class="qno">E1</span> 用"一天比一天"描述你的汉语水平，或者你家乡最近的天气。</p>
+  <input class="typed-in" type="text" placeholder="我的汉语…／我家乡的天气…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>我的汉语口语一天比一天流利了。</b> / <b>我家乡的天气一天比一天凉了。</b> Check the frame: 一＋MW＋比＋一＋MW, same measure word twice.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">E2</span> 用"再也不"写一个你的决定（决定以后不再做什么）。</p>
+  <input class="typed-in" type="text" placeholder="我再也不…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>我再也不熬夜看手机了。</b> Variants: 我再也没去过那家店（describes the past up to now: 再也没）. Check: 再也不 for decisions, 再也没 for facts-so-far.</div>
+</div>
+
+<!-- ============ F 温故知新 ============ -->
+<h2 class="section"><span class="badge">F</span> 温故知新 <small>Review</small></h2>
+
+<div class="item">
+  <p><span class="qno">F1</span> 暴雨让你改变了计划。用"不得不"说一句话。<span class="srctag">from hsk4-ws-003 · 不得不</span></p>
+  <input class="typed-in" type="text" placeholder="雨太大了，我们不得不…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>雨太大了，我们不得不取消聚会。</b></div>
+</div>
+
+<div class="item">
+  <p><span class="qno">F2</span> 朋友竟然没认出你。用"难道"表示惊讶。<span class="srctag">from hsk4-ws-002 · 反问句</span></p>
+  <input class="typed-in" type="text" placeholder="难道你…吗？">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>难道你不认识我了吗？</b> 难道＋陈述＋吗.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">F3</span> 用"X死了"完成：跑了十公里以后，我累（　）了。<span class="srctag">from hsk4-ws-001 · 死了</span></p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>累死了</b> — direct attachment, no 得.</div>
+</div>
+
+<!-- ============ Self-check strip ============ -->
+<div class="selfcheck">
+  <p><b>自评 Self-check</b> — 点每个部分的心情，再把想复习的词写下来（下次课会用到！）</p>
+  <p>A <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; B <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; C <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; D <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; E <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button></p>
+  <p><b>词语收藏 Words to revisit</b></p>
+  <textarea class="typed-in" placeholder="记下今天没把握的词和句子…"></textarea>
+</div>
+
+<script>
+document.getElementById('pyAll').onclick = () => document.body.classList.toggle('py-all');
+document.addEventListener('click', e => { const zh = e.target.closest('.zh'); if (zh && !e.target.closest('.flip')) zh.classList.toggle('show'); });
+document.addEventListener('click', e => { if (e.target.matches('.check')) { const item = e.target.closest('.item'); const key = item && item.querySelector('.key'); if (key) key.classList.add('show'); } });
+document.addEventListener('click', e => {
+  if (!e.target.matches('.opt')) return;
+  const box = e.target.closest('.mcq');
+  if (!box || box.dataset.done) return;
+  box.querySelectorAll('.sel').forEach(s => s.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.check')) return;
+  const box = e.target.closest('.item').querySelector('.mcq');
+  if (!box || box.dataset.done) return;
+  box.dataset.done = '1';
+  const ans = box.dataset.answer;
+  box.querySelectorAll('.opt').forEach(o => {
+    if (o.dataset.v === ans) o.classList.add('correct');
+    else if (o.classList.contains('sel')) o.classList.add('incorrect');
+  });
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tiles > .tile')) return;
+  const built = e.target.closest('.item').querySelector('.built');
+  if (!built) return;
+  const t = document.createElement('button');
+  t.className = 'tile'; t.textContent = e.target.textContent;
+  built.appendChild(t); e.target.classList.add('used');
+});
+document.addEventListener('click', e => { if (e.target.matches('.built > .tile')) e.target.remove(); });
+let armedWord = null;
+document.addEventListener('click', e => {
+  if (!e.target.matches('.reset')) return;
+  const item = e.target.closest('.item');
+  item.querySelectorAll('.tiles > .tile.used').forEach(t => t.classList.remove('used'));
+  const built = item.querySelector('.built'); if (built) built.innerHTML = '';
+  if (item.querySelector('.bank')) {
+    item.querySelectorAll('.bank .bword').forEach(b => { b.classList.remove('used'); b.style.outline = ''; });
+    item.querySelectorAll('.slot').forEach(s => { s.textContent = ''; delete s.dataset.filled; });
+    armedWord = null;
+  }
+});
+document.addEventListener('click', e => {
+  if (e.target.matches('.bank .bword')) {
+    armedWord = e.target.classList.contains('used') ? null : e.target;
+    document.querySelectorAll('.bword').forEach(b => b.style.outline = '');
+    if (armedWord) armedWord.style.outline = '2px solid #b0342a';
+  }
+  if (e.target.matches('.slot') && armedWord) {
+    e.target.textContent = armedWord.textContent.slice(2);
+    e.target.dataset.filled = armedWord.textContent.slice(0,1);
+    armedWord.classList.add('used'); armedWord.style.outline = ''; armedWord = null;
+  }
+});
+document.addEventListener('click', e => { const f = e.target.closest('.flip'); if (f) f.classList.toggle('flipped'); });
+document.addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.matches('.flip')) e.target.classList.toggle('flipped'); });
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tts')) return;
+  if (!('speechSynthesis' in window)) return;
+  const line = e.target.parentElement.cloneNode(true);
+  line.querySelectorAll('button').forEach(b => b.remove());
+  const u = new SpeechSynthesisUtterance(line.textContent.trim());
+  u.lang = 'zh-CN';
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.conf')) return;
+  e.target.parentElement.querySelectorAll('.conf').forEach(b => b.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+</script>
+</body>
+</html>

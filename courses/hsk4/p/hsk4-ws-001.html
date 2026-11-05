@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--
+  worksheet_id: hsk4-ws-001
+  type: practice (P)
+  hsk_level: 4
+  grammar_point: L4-CM-1 程度补语2（形容词/心理动词+死了/厉害）
+  grammar_point_name: Degree complements with 死了/厉害
+  cluster_context: L4-CL01 Adjectives 形容词（全、可+Adj 为次要内容）
+  topic_context: 日常生活 · 天气与周末
+  est_minutes: 13
+  review_sources: hsk4-gt-entry (needs_review: 反问句 HSK3; 死了 is this unit's anchor)
+  generated: 2026-11-05
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSK4 · 程度补语"死了" · Practice</title>
+<style>
+  :root { --ink:#1a1a1a; --bg:#faf9f6; --card:#ffffff; --line:#e5e2da;
+    --accent:#b0342a; --accent-soft:#fdf0ee; --ok:#2e7d32; --bad:#b0342a;
+    --hanzi:"Microsoft YaHei","Noto Sans SC","PingFang SC",sans-serif; }
+  * { box-sizing:border-box; }
+  body { font-family:var(--hanzi); color:var(--ink); background:var(--bg);
+    max-width:720px; margin:0 auto; padding:16px 20px 80px; line-height:1.75; }
+  header.worksheet { border-bottom:3px solid var(--accent); padding-bottom:10px; margin-bottom:14px; }
+  header.worksheet h1 { font-size:1.35rem; margin:0 0 4px; }
+  .meta { color:#6b6558; font-size:.85rem; display:flex; flex-wrap:wrap; gap:8px 18px; }
+  .meta b { color:var(--accent); font-weight:600; }
+  .goal { background:var(--accent-soft); border-left:4px solid var(--accent);
+          padding:10px 14px; border-radius:0 8px 8px 0; margin:14px 0 22px; font-size:.95rem; }
+  h2.section { display:flex; align-items:baseline; gap:10px; margin:34px 0 8px; font-size:1.15rem; }
+  h2.section .badge { background:var(--accent); color:#fff; border-radius:6px; padding:1px 9px; font-size:.8rem; letter-spacing:1px; }
+  h2.section small { color:#6b6558; font-weight:400; font-size:.8rem; }
+  .inst { color:#6b6558; font-size:.9rem; margin:0 0 14px; }
+  .item { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:12px 0; }
+  .qno { font-weight:700; color:var(--accent); margin-right:6px; }
+  .srctag { font-size:.75rem; color:#9a917f; border:1px solid var(--line); border-radius:10px; padding:0 8px; margin-left:8px; }
+  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
+  .zh.show::before, body.py-all .zh::before {
+    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap; font-family:Arial,sans-serif; }
+  button { font-family:inherit; cursor:pointer; }
+  .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent); border-radius:8px; padding:5px 14px; font-size:.85rem; }
+  .btn:hover { background:var(--accent-soft); }
+  .key { display:none; margin-top:10px; padding:10px 12px; border-radius:8px; background:#f2f8f2; border-left:4px solid var(--ok); font-size:.92rem; }
+  .key.show { display:block; }
+  .key b { color:var(--ok); }
+  .key .wrong-note { color:#8a4b00; }
+  .opt { display:block; width:100%; text-align:left; background:#fff; margin:6px 0;
+         border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; font-size:1rem; }
+  .opt:hover { border-color:var(--accent); }
+  .opt.sel { border-color:var(--accent); background:var(--accent-soft); }
+  .opt.correct { border-color:var(--ok); background:#eef7ee; }
+  .opt.incorrect { border-color:var(--bad); background:#fdeeee; }
+  .tiles { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .tile { background:#fff; border:1.5px solid var(--line); border-radius:8px; padding:6px 12px; font-size:1.05rem; }
+  .tile:hover { border-color:var(--accent); }
+  .tile.used { opacity:.35; }
+  .built { min-height:2.4em; border:2px dashed var(--line); border-radius:8px; padding:8px 12px; margin:8px 0; font-size:1.05rem; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .bank { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .bank .bword { background:var(--accent-soft); border:1.5px solid var(--accent); border-radius:8px; padding:4px 12px; }
+  .bank .bword.used { opacity:.35; }
+  .slot { display:inline-block; min-width:56px; text-align:center; border-bottom:2px solid var(--accent); padding:2px 8px; cursor:pointer; margin:0 3px; background:#fff; }
+  .flip-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; }
+  .flip { perspective:900px; height:150px; cursor:pointer; }
+  .flip-inner { position:relative; width:100%; height:100%; transition:transform .5s; transform-style:preserve-3d; }
+  .flip.flipped .flip-inner { transform:rotateY(180deg); }
+  .face { position:absolute; inset:0; backface-visibility:hidden; border-radius:12px; border:1.5px solid var(--line); background:#fff; padding:14px; display:flex; align-items:center; justify-content:center; text-align:center; }
+  .face.back { transform:rotateY(180deg); background:var(--accent-soft); font-size:.85rem; }
+  .face .hl { color:var(--accent); font-weight:700; }
+  .dlg .line { display:flex; gap:10px; align-items:flex-start; padding:6px 0; border-bottom:1px dashed var(--line); }
+  .dlg .speaker { flex:0 0 64px; font-weight:700; color:var(--accent); }
+  .tts { border:none; background:none; font-size:1rem; padding:0 4px; }
+  .typed-in { font-family:var(--hanzi); font-size:1rem; border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; width:100%; margin:6px 0; }
+  .selfcheck { background:var(--card); border:2px solid var(--accent); border-radius:12px; padding:16px; margin-top:36px; }
+  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line); border-radius:8px; padding:4px 10px; margin-right:6px; }
+  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
+</style>
+</head>
+<body>
+<header class="worksheet">
+  <h1>HSK 4 · 程度补语（一）："X死了"</h1>
+  <div class="meta">
+    <span><b>语法点</b> L4-CM-1 程度补语2 死了/厉害</span>
+    <span><b>话题</b> 天气与周末</span>
+    <span><b>用时</b> 约 13 分钟</span>
+    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
+  </div>
+</header>
+
+<div class="goal">
+  学习目标：能用"Adj／心理动词＋死了/厉害"夸张地表达极端程度 —— say "extremely X" the
+  way native speakers do, and know when 死了 beats 太…了.
+</div>
+
+<!-- ============ A 模式感知 ============ -->
+<h2 class="section"><span class="badge">A</span> 模式感知 <small>Pattern warm-up · 点开卡片，大声读句子</small></h2>
+<p class="inst">Click a card to flip. Click any Chinese to show its pinyin.</p>
+<div class="flip-row">
+  <div class="flip" tabindex="0">
+    <div class="flip-inner">
+      <div class="face front"><span class="zh" data-py="jīntiān rè sǐ le">今天热死了。</span></div>
+      <div class="face back"><span class="hl">Adj + 死了</span><br>= extremely Adj (spoken, vivid). Stronger than 太…了.</div>
+    </div>
+  </div>
+  <div class="flip" tabindex="0">
+    <div class="flip-inner">
+      <div class="face front"><span class="zh" data-py="wǒ gāoxìng sǐ le">我高兴死了！</span></div>
+      <div class="face back"><span class="hl">心理动词 + 死了</span><br>Works with emotion verbs too: 高兴/喜欢/想 → "I'm so happy!"</div>
+    </div>
+  </div>
+  <div class="flip" tabindex="0">
+    <div class="flip-inner">
+      <div class="face front"><span class="zh" data-py="wǒ máng sǐ le">我今天忙死了。</span></div>
+      <div class="face back"><span class="hl">注意</span><br>死了 attaches DIRECTLY: 忙死了. Never ✗忙得死了, ✗忙了死. And it never means real death here!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ B 语法操练 ============ -->
+<h2 class="section"><span class="badge">B</span> 语法操练 <small>Grammar drills · 从易到难</small></h2>
+<p class="inst">做完一题再点"对答案"。Do them in order; check each answer before moving on.</p>
+
+<div class="item">
+  <p><span class="qno">B1</span> 哪个句子是对的？</p>
+  <div class="mcq" data-answer="A">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="wǒ jīntiān máng sǐ le">我今天忙死了。</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="wǒ jīntiān sǐ le máng">我今天死了忙。</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="wǒ sǐ le hěn máng">我死了很忙。</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="wǒ hěn sǐ le máng">我很死了忙。</span></button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> Formula: subject + Adj/psych-verb + 死了. The complement follows the adjective directly — B–D all break the order 忙＋死了.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B2</span> 选词填空：这几天累（　）了，真想好好睡一觉。</p>
+  <div class="mcq" data-answer="C">
+    <button class="opt" data-v="A">A. 得</button>
+    <button class="opt" data-v="B">B. 很</button>
+    <button class="opt" data-v="C">C. 死</button>
+    <button class="opt" data-v="D">D. 太</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> 累死了 = dead tired. — 得 is tempting (you know V+得+complement), but 死了 attaches with NO 得: the 得-structure is for descriptive complements (累得很), not 死了. 太 needs 了 after the adjective (太累了), and 很 can't take 了 like this.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B3</span> 排列顺序：把这些词排成一句话。Click the words in order.</p>
+  <div class="tiles">
+    <button class="tile">我</button>
+    <button class="tile">饿</button>
+    <button class="tile">死</button>
+    <button class="tile">了</button>
+    <button class="tile">现在</button>
+  </div>
+  <div class="built"></div>
+  <button class="btn check">对答案</button>
+  <button class="btn reset">重来</button>
+  <div class="key"><b>我现在饿死了。</b>（或"饿死了"在前也可以说，但最自然的是：时间词＋主语…）饿 must come before 死了; 现在 can lead the sentence as a time word.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B4</span> 找错误：下面这句话有一个错，选出来。</p>
+  <p><span class="zh" data-py="wǒ gāoxìng dé sǐ le, kàndào nǐ de chéngjì zhème hǎo">我高兴得死了，看到你的成绩这么好。</span></p>
+  <div class="mcq" data-answer="C">
+    <button class="opt" data-v="A">A. 我高兴</button>
+    <button class="opt" data-v="B">B. 得</button>
+    <button class="opt" data-v="C">C. 死了</button>
+    <button class="opt" data-v="D">D. 看到你的成绩这么好</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> 高兴得死了 is wrong — the classic 得-intrusion error. 死了 attaches directly: 高兴死了. (If you kept 得, you'd need a descriptive phrase: 高兴得跳了起来.)</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B5</span> 用"死了"改写这句话：今天太热了！→</p>
+  <input class="typed-in" type="text" placeholder="输入你的句子…">
+  <button class="btn check">对答案</button>
+  <div class="key"><b>今天热死了！</b> Model answer. Same meaning family, stronger and more colloquial. Wrong version to avoid: 今天死了热 — 死了 must follow the adjective.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B6</span> （小考点）"整个班"用一个字怎么说？（　）班同学都参加了比赛。</p>
+  <div class="mcq" data-answer="A">
+    <button class="opt" data-v="A">A. 全</button>
+    <button class="opt" data-v="B">B. 都</button>
+    <button class="opt" data-v="C">C. 各</button>
+    <button class="opt" data-v="D">D. 所</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 全 = the whole (全班／全家／全国) — it modifies the noun directly. 都 is an adverb (goes before the verb), 各 = each, 所 needs 有: 所有(的)班. 全 is CL01's other point; it'll get full treatment in the unit test.</div>
+</div>
+
+<!-- ============ C 听力模拟 ============ -->
+<h2 class="section"><span class="badge">C</span> 听力模拟 <small>Listening simulation · read-aloud dialogue</small></h2>
+<p class="inst">Read the dialogue aloud twice — once for meaning, once at natural speed — then answer C1–C3.</p>
+
+<div class="item">
+  <div class="dlg">
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="zhège zhōumò nǐ dǎsuàn gàn shénme">这个周末你打算干什么？</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span><span class="zh" data-py="tiānqì rè sǐ le, wǒ nǎr dōu bù xiǎng qù">天气热死了，我哪儿都不想去。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="nà wǒmen qù yóuyǒng ba, shuǐ lǐ liángkuai">那我们去游泳吧，水里凉快。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span><span class="zh" data-py="hǎo zhǔyi, kěshì wǒ de yǒngjìng huài le">好主意，可是我的泳镜坏了。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="méi guānxi, yóuyǒngguǎn lǐmiàn quán yǒu mài de">没关系，游泳馆里面全有卖的。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span><span class="zh" data-py="xíng, yóu wán yǒng wǒmen qù chī bīngqílín ba, wǒ chán sǐ le">行，游完泳我们去吃冰淇淋吧，我馋死了。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="nǐ ya, jiù zhīdào chī">你呀，就知道吃！</span><button class="tts">🔊</button></span></div>
+  </div>
+  <p style="margin-top:10px"><span class="qno">C1</span> 男的为什么哪儿都不想去？</p>
+  <div class="mcq" data-answer="B">
+    <button class="opt" data-v="A">A. 他要加班</button>
+    <button class="opt" data-v="B">B. 天气太热了</button>
+    <button class="opt" data-v="C">C. 他没有朋友</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> 天气热死了 — the 死了 tells you it's extreme heat, not just "warm".</div>
+
+  <p style="margin-top:10px"><span class="qno">C2</span> 判断对错：泳镜需要提前在家买好。（√ / ×）</p>
+  <div class="mcq" data-answer="B">
+    <button class="opt" data-v="A">A. √</button>
+    <button class="opt" data-v="B">B. ×</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>× ✔</b> 游泳馆里面<b>全有卖的</b> — 全 here means the shop inside stocks everything they need; no pre-buying needed.</div>
+
+  <p style="margin-top:10px"><span class="qno">C3</span> "我馋死了"是什么意思？</p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key"><b>非常想吃（冰淇淋）。</b> 馋 chán = to crave food (a psych verb) + 死了 = extremely. It does NOT mean he is dying!</div>
+</div>
+
+<!-- ============ D 考试题型 ============ -->
+<h2 class="section"><span class="badge">D</span> 考试题型 <small>Exam-style · HSK3/4 选词填空</small></h2>
+<p class="inst">每个词只能用一次。Click a bank word, then click the blank.</p>
+<div class="item" data-answers="A B C E">
+  <div class="bank">
+    <button class="bword">A 死了</button><button class="bword">B 全</button>
+    <button class="bword">C 厉害</button><button class="bword">D 其中</button>
+    <button class="bword">E 太</button><button class="bword">F 很</button>
+  </div>
+  <p>1. 今天忙<span class="slot"></span>，连喝水的时间都没有。</p>
+  <p>2. <span class="slot"></span>班同学都到齐了，我们可以出发了。</p>
+  <p>3. 他想你想得<span class="slot"></span>，天天看你们的照片。</p>
+  <p>4.<span class="slot"></span>好了！你说得对！</p>
+  <button class="btn check">对答案</button>
+  <button class="btn reset">重来</button>
+  <div class="key"><b>1-A 死了 · 2-B 全 · 3-C 厉害 · 4-E 太</b>（D 其中、F 很 不用）<br>
+  1. 忙死了 — extreme degree. 2. 全班 — "the whole class". 3. 想得厉害 — psych verb + 得厉害 = intensely (the gentler sibling of 死了, official pattern 心理动词+得+厉害). 4. 太好了！ — the plain 太…了 exclamation.</div>
+</div>
+
+<!-- ============ E 自由产出 ============ -->
+<h2 class="section"><span class="badge">E</span> 自由产出 <small>Free production</small></h2>
+
+<div class="item">
+  <p><span class="qno">E1</span> 用"X死了"说说你最近的生活：从"忙／累／高兴／饿／困"里选一个感受，写一句话。</p>
+  <input class="typed-in" type="text" placeholder="我最近…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>这个星期我忙死了，天天开会。</b> Variants: 最近加班加得我累死了。 Check: your feeling word must attach 死了 directly (no 得). If you wrote 我死了忙 — flip the order.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">E2</span> Translate into Chinese: "The dumplings at that restaurant are insanely delicious."</p>
+  <input class="typed-in" type="text" placeholder="输入你的句子…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>那家饭馆的饺子好吃死了。</b> Variants: 那家饭馆的饺子太好吃了（weaker）. Note: 好吃 is an adjective, so it takes 死了 directly — never 好吃得死了.</div>
+</div>
+
+<!-- ============ F 温故知新 ============ -->
+<h2 class="section"><span class="badge">F</span> 温故知新 <small>Review · from hsk4-gt-entry 需要复习</small></h2>
+
+<div class="item">
+  <p><span class="qno">F1</span> 「这不是你写的信吗？」是在真的提问，还是在强调「当然是」？用一句话改写成不带问号的意思。<span class="srctag">from hsk4-gt-entry · 反问句</span></p>
+  <input class="typed-in" type="text" placeholder="这当然是…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>这当然是你写的信。</b> / 这肯定是你写的信。<br>
+  「不是……吗？」is a 反问句: the speaker is already sure. It is <em>not</em> a real yes/no question (是非问句). Wrong: answering 是/不是 as if someone asked for information. You will drill 难道/究竟 in unit 4 (hsk4-ws-002).</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">F2</span> 用"越来越"完成这句话：手机的价钱（　）。</p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>越来越便宜了。</b> — 越来越 can't take a following 比-comparison, just Adj＋了. <span class="srctag">HSK3 · 越来越</span></div>
+</div>
+
+<div class="item">
+  <p><span class="qno">F3</span> 用"把"改写：他关上了门。→</p>
+  <input class="typed-in" type="text" placeholder="输入你的句子…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>他把门关上了。</b> S＋把＋O＋V＋结果. <span class="srctag">HSK3 · 把字句</span>（HSK4 会在第 14 单元学"把字句2"的进阶用法）</div>
+</div>
+
+<!-- ============ Self-check strip ============ -->
+<div class="selfcheck">
+  <p><b>自评 Self-check</b> — 点每个部分的心情，再把想复习的词写下来（下次课会用到！）</p>
+  <p>A <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; B <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; C <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; D <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; E <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button></p>
+  <p><b>词语收藏 Words to revisit</b></p>
+  <textarea class="typed-in" placeholder="记下今天没把握的词和句子…"></textarea>
+</div>
+
+<script>
+document.getElementById('pyAll').onclick = () => document.body.classList.toggle('py-all');
+document.addEventListener('click', e => { const zh = e.target.closest('.zh'); if (zh && !e.target.closest('.flip')) zh.classList.toggle('show'); });
+document.addEventListener('click', e => { if (e.target.matches('.check')) { const item = e.target.closest('.item'); const key = item && item.querySelector('.key'); if (key) key.classList.add('show'); } });
+document.addEventListener('click', e => {
+  if (!e.target.matches('.opt')) return;
+  const box = e.target.closest('.mcq');
+  if (!box || box.dataset.done) return;
+  box.querySelectorAll('.sel').forEach(s => s.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.check')) return;
+  const box = e.target.closest('.item').querySelector('.mcq');
+  if (!box || box.dataset.done) return;
+  box.dataset.done = '1';
+  const ans = box.dataset.answer;
+  box.querySelectorAll('.opt').forEach(o => {
+    if (o.dataset.v === ans) o.classList.add('correct');
+    else if (o.classList.contains('sel')) o.classList.add('incorrect');
+  });
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tiles > .tile')) return;
+  const built = e.target.closest('.item').querySelector('.built');
+  if (!built) return;
+  const t = document.createElement('button');
+  t.className = 'tile'; t.textContent = e.target.textContent;
+  built.appendChild(t); e.target.classList.add('used');
+});
+document.addEventListener('click', e => { if (e.target.matches('.built > .tile')) e.target.remove(); });
+document.addEventListener('click', e => {
+  if (!e.target.matches('.reset')) return;
+  const item = e.target.closest('.item');
+  item.querySelectorAll('.tiles > .tile.used').forEach(t => t.classList.remove('used'));
+  const built = item.querySelector('.built'); if (built) built.innerHTML = '';
+  if (item.querySelector('.bank')) {
+    item.querySelectorAll('.bank .bword').forEach(b => { b.classList.remove('used'); b.style.outline = ''; });
+    item.querySelectorAll('.slot').forEach(s => { s.textContent = ''; delete s.dataset.filled; });
+    armedWord = null;
+  }
+});
+let armedWord = null;
+document.addEventListener('click', e => {
+  if (e.target.matches('.bank .bword')) {
+    armedWord = e.target.classList.contains('used') ? null : e.target;
+    document.querySelectorAll('.bword').forEach(b => b.style.outline = '');
+    if (armedWord) armedWord.style.outline = '2px solid #b0342a';
+  }
+  if (e.target.matches('.slot') && armedWord) {
+    e.target.textContent = armedWord.textContent.slice(2);
+    e.target.dataset.filled = armedWord.textContent.slice(0,1);
+    armedWord.classList.add('used'); armedWord.style.outline = ''; armedWord = null;
+  }
+});
+document.addEventListener('click', e => { const f = e.target.closest('.flip'); if (f) f.classList.toggle('flipped'); });
+document.addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.matches('.flip')) e.target.classList.toggle('flipped'); });
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tts')) return;
+  if (!('speechSynthesis' in window)) return;
+  const line = e.target.parentElement.cloneNode(true);
+  line.querySelectorAll('button').forEach(b => b.remove());
+  const u = new SpeechSynthesisUtterance(line.textContent.trim());
+  u.lang = 'zh-CN';
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.conf')) return;
+  e.target.parentElement.querySelectorAll('.conf').forEach(b => b.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+</script>
+</body>
+</html>

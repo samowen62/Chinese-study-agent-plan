@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--
+  worksheet_id: hsk4-ws-005
+  type: practice (P)
+  hsk_level: 4
+  grammar_point: L4 时间副词 group — 刚/刚才 · 原来/本来 · 差点 · 从来
+  grammar_point_name: Time adverbs & their contrasts
+  cluster_context: L4-CL02b 时间/频率类副词
+  topic_context: 日常生活 · 讲述昨天的经历
+  est_minutes: 13
+  review_sources: hsk4-ws-003 (不得不), hsk4-ws-004 (一天比一天)
+  generated: 2026-11-05
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSK4 · 时间副词辨析 · Practice</title>
+<style>
+  :root { --ink:#1a1a1a; --bg:#faf9f6; --card:#ffffff; --line:#e5e2da;
+    --accent:#b0342a; --accent-soft:#fdf0ee; --ok:#2e7d32; --bad:#b0342a;
+    --hanzi:"Microsoft YaHei","Noto Sans SC","PingFang SC",sans-serif; }
+  * { box-sizing:border-box; }
+  body { font-family:var(--hanzi); color:var(--ink); background:var(--bg);
+    max-width:720px; margin:0 auto; padding:16px 20px 80px; line-height:1.75; }
+  header.worksheet { border-bottom:3px solid var(--accent); padding-bottom:10px; margin-bottom:14px; }
+  header.worksheet h1 { font-size:1.35rem; margin:0 0 4px; }
+  .meta { color:#6b6558; font-size:.85rem; display:flex; flex-wrap:wrap; gap:8px 18px; }
+  .meta b { color:var(--accent); font-weight:600; }
+  .goal { background:var(--accent-soft); border-left:4px solid var(--accent);
+          padding:10px 14px; border-radius:0 8px 8px 0; margin:14px 0 22px; font-size:.95rem; }
+  h2.section { display:flex; align-items:baseline; gap:10px; margin:34px 0 8px; font-size:1.15rem; }
+  h2.section .badge { background:var(--accent); color:#fff; border-radius:6px; padding:1px 9px; font-size:.8rem; letter-spacing:1px; }
+  h2.section small { color:#6b6558; font-weight:400; font-size:.8rem; }
+  .inst { color:#6b6558; font-size:.9rem; margin:0 0 14px; }
+  .item { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:12px 0; }
+  .qno { font-weight:700; color:var(--accent); margin-right:6px; }
+  .srctag { font-size:.75rem; color:#9a917f; border:1px solid var(--line); border-radius:10px; padding:0 8px; margin-left:8px; }
+  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
+  .zh.show::before, body.py-all .zh::before {
+    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap; font-family:Arial,sans-serif; }
+  button { font-family:inherit; cursor:pointer; }
+  .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent); border-radius:8px; padding:5px 14px; font-size:.85rem; }
+  .btn:hover { background:var(--accent-soft); }
+  .key { display:none; margin-top:10px; padding:10px 12px; border-radius:8px; background:#f2f8f2; border-left:4px solid var(--ok); font-size:.92rem; }
+  .key.show { display:block; }
+  .key b { color:var(--ok); }
+  .opt { display:block; width:100%; text-align:left; background:#fff; margin:6px 0;
+         border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; font-size:1rem; }
+  .opt:hover { border-color:var(--accent); }
+  .opt.sel { border-color:var(--accent); background:var(--accent-soft); }
+  .opt.correct { border-color:var(--ok); background:#eef7ee; }
+  .opt.incorrect { border-color:var(--bad); background:#fdeeee; }
+  .tiles { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .tile { background:#fff; border:1.5px solid var(--line); border-radius:8px; padding:6px 12px; font-size:1.05rem; }
+  .tile:hover { border-color:var(--accent); }
+  .tile.used { opacity:.35; }
+  .built { min-height:2.4em; border:2px dashed var(--line); border-radius:8px; padding:8px 12px; margin:8px 0; font-size:1.05rem; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .bank { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .bank .bword { background:var(--accent-soft); border:1.5px solid var(--accent); border-radius:8px; padding:4px 12px; }
+  .bank .bword.used { opacity:.35; }
+  .slot { display:inline-block; min-width:56px; text-align:center; border-bottom:2px solid var(--accent); padding:2px 8px; cursor:pointer; margin:0 3px; background:#fff; }
+  .flip-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; }
+  .flip { perspective:900px; height:160px; cursor:pointer; }
+  .flip-inner { position:relative; width:100%; height:100%; transition:transform .5s; transform-style:preserve-3d; }
+  .flip.flipped .flip-inner { transform:rotateY(180deg); }
+  .face { position:absolute; inset:0; backface-visibility:hidden; border-radius:12px; border:1.5px solid var(--line); background:#fff; padding:14px; display:flex; align-items:center; justify-content:center; text-align:center; }
+  .face.back { transform:rotateY(180deg); background:var(--accent-soft); font-size:.82rem; }
+  .face .hl { color:var(--accent); font-weight:700; }
+  .dlg .line { display:flex; gap:10px; align-items:flex-start; padding:6px 0; border-bottom:1px dashed var(--line); }
+  .dlg .speaker { flex:0 0 64px; font-weight:700; color:var(--accent); }
+  .tts { border:none; background:none; font-size:1rem; padding:0 4px; }
+  .typed-in { font-family:var(--hanzi); font-size:1rem; border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; width:100%; margin:6px 0; }
+  .selfcheck { background:var(--card); border:2px solid var(--accent); border-radius:12px; padding:16px; margin-top:36px; }
+  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line); border-radius:8px; padding:4px 10px; margin-right:6px; }
+  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
+</style>
+</head>
+<body>
+<header class="worksheet">
+  <h1>HSK 4 · 时间副词辨析：刚／刚才／原来／本来／差点／从来</h1>
+  <div class="meta">
+    <span><b>语法点</b> L4 时间副词 group（CL02b）</span>
+    <span><b>话题</b> 讲述昨天的经历</span>
+    <span><b>用时</b> 约 13 分钟</span>
+    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
+  </div>
+</header>
+
+<div class="goal">
+  学习目标：能区分三组最容易混的时间词 —— 刚/刚才（副词 vs 时间名词）、原来/本来（恍然大悟 vs
+  原计划）、差点/从来（险些 vs 从不）—— 并在讲故事时用对它们。
+</div>
+
+<!-- ============ A 模式感知 ============ -->
+<h2 class="section"><span class="badge">A</span> 模式感知 <small>Pattern warm-up</small></h2>
+<div class="flip-row">
+  <div class="flip" tabindex="0">
+    <div class="flip-inner">
+      <div class="face front"><span class="zh" data-py="wǒ gāng dào, nǐmen liáo shénme ne">我刚到，你们聊什么呢？／刚才的事别提了。</span></div>
+      <div class="face back"><span class="hl">刚 = 副词，紧跟动词</span><br><span class="hl">刚才 = 时间名词</span>，可作定语：刚才的事。✗刚的事</div>
+    </div>
+  </div>
+  <div class="flip" tabindex="0">
+    <div class="flip-inner">
+      <div class="face front"><span class="zh" data-py="wǒ běnlái xiǎng zǎo shuì">啊，原来是你！／我本来想早睡。</span></div>
+      <div class="face back"><span class="hl">原来 = 恍然大悟 / 起初的状态</span><br><span class="hl">本来 = 原来的计划（后来改变了）</span>：本来想…后来…</div>
+    </div>
+  </div>
+  <div class="flip" tabindex="0">
+    <div class="flip-inner">
+      <div class="face front"><span class="zh" data-py="wǒ chàdiǎn chídào">我差点迟到。／他从来不迟到。</span></div>
+      <div class="face back"><span class="hl">差点 = almost（事情没发生）</span><br><span class="hl">从来（不/没）= 从过去到现在一直</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ B 语法操练 ============ -->
+<h2 class="section"><span class="badge">B</span> 语法操练 <small>Grammar drills</small></h2>
+
+<div class="item">
+  <p><span class="qno">B1</span> 选词填空：（　）的事就别提了，我们看现在。</p>
+  <div class="mcq" data-answer="B">
+    <button class="opt" data-v="A">A. 刚</button>
+    <button class="opt" data-v="B">B. 刚才</button>
+    <button class="opt" data-v="C">C. 原来</button>
+    <button class="opt" data-v="D">D. 本来</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> Only the time noun 刚才 can modify a noun (刚才的事). 刚 is an adverb — it must sit before a verb: 刚发生的事 is possible in speech, but in the slot before 的 with "the matter a moment ago", 刚才 is the standard answer; C/D mean "original/originally".</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B2</span> 哪个句子是对的？</p>
+  <div class="mcq" data-answer="C">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="wǒ men gāng le huí guó">我们刚了回国。</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="wǒ men gāng guó huí le">我们刚国回了。</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="wǒ men gāng huí guó">我们刚回国。</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="gāng wǒ men huí guó">刚我们回国。</span></button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> 刚 = adverb glued before the verb phrase 回国; no 了 of its own (A), no scrambling (B/D).</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B3</span> 他今天没来上课。后来你知道他生病了，还以为他偷懒呢。你说：</p>
+  <div class="mcq" data-answer="A">
+    <button class="opt" data-v="A">A. 他（原来）生病了，我还以为他偷懒呢。</button>
+    <button class="opt" data-v="B">B. 他（本来）生病了，我还以为他偷懒呢。</button>
+    <button class="opt" data-v="C">C. 他（差点）生病了，我还以为他偷懒呢。</button>
+    <button class="opt" data-v="D">D. 他（从来）生病了，我还以为他偷懒呢。</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 原来 = sudden realization ("so THAT's it"). 本来 is about a prior plan that changed — no realization flavor.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B4</span> 选词填空：我（　）打算坐高铁去，但是票卖完了，只好开车。</p>
+  <div class="mcq" data-answer="B">
+    <button class="opt" data-v="A">A. 原来</button>
+    <button class="opt" data-v="B">B. 本来</button>
+    <button class="opt" data-v="C">C. 刚才</button>
+    <button class="opt" data-v="D">D. 差点</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> Prior plan + change = 本来……但是……. (原来 would suggest you only now found out about your own plan — odd.)</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B5</span> 选词填空：我（　）不喝咖啡，喝了晚上就睡不着。</p>
+  <div class="mcq" data-answer="A">
+    <button class="opt" data-v="A">A. 从来</button>
+    <button class="opt" data-v="B">B. 差点</button>
+    <button class="opt" data-v="C">C. 刚</button>
+    <button class="opt" data-v="D">D. 本来</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> Habit from past to now → 从来＋不. 差点 = almost (one near-miss), 刚 = just now, 本来 = original plan.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B6</span> 找错误：我从来了没见过这么美的景色。</p>
+  <div class="mcq" data-answer="B">
+    <button class="opt" data-v="A">A. 我</button>
+    <button class="opt" data-v="B">B. 从来了</button>
+    <button class="opt" data-v="C">C. 没见过</button>
+    <button class="opt" data-v="D">D. 这么美的景色</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> Fix: 我从来<b>没</b>见过……. 从来 never takes 了 — it's about an unbroken state up to now.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">B7</span> 排列顺序：</p>
+  <div class="tiles">
+    <button class="tile">我们</button>
+    <button class="tile">本来</button>
+    <button class="tile">想坐飞机</button>
+    <button class="tile">可是</button>
+    <button class="tile">太贵了</button>
+  </div>
+  <div class="built"></div>
+  <button class="btn check">对答案</button>
+  <button class="btn reset">重来</button>
+  <div class="key"><b>我们本来想坐飞机，可是太贵了。</b> 本来 right after subject, before the planned action; the 可是-clause explains the change.</div>
+</div>
+
+<!-- ============ C 听力模拟 ============ -->
+<h2 class="section"><span class="badge">C</span> 听力模拟 <small>Listening simulation</small></h2>
+<p class="inst">Read aloud twice, then answer.</p>
+<div class="item">
+  <div class="dlg">
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="nǐ zuótiān zěnme méi lái cānjiā jùhuì">你昨天怎么没来参加聚会？</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span><span class="zh" data-py="shuō lái huà cháng, wǒ běnlái dǎsuàn liù diǎn chūfā">说来话长。我本来打算六点出发，可是公司临时有事，我不得不加班。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="nà yě tài wǎn le">那也太晚了！</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span><span class="zh" data-py="shì a, děng wǒ máng wán, chà yìdiǎnr gǎn bu shàng mòbānchē, xìngkuī pǎo de kuài">是啊。等我忙完，差一点儿赶不上末班车，幸亏跑得快！</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="nǐ cónglái dōu zhème máng, yīnggāi zǎodiǎnr gēn lǎobǎn shuō">你从来都是这么忙，应该早点儿跟老板说。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span><span class="zh" data-py="qíshí wǒ yuánlái xiǎng huàn gè gōngzuò, xiànzài hái méi juédìng">其实我原来想换个(新)工作，现在还没决定。</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">女:</span><span><span class="zh" data-py="huàn gōngzuò nǐ gāngcái bú shì hái shuō gōngzuò tǐng hǎo ma">换工作？你刚才不是说工作挺好吗？</span><button class="tts">🔊</button></span></div>
+    <div class="line"><span class="speaker">男:</span><span><span class="zh" data-py="āi, hǎo shì hǎo, jiùshì tài máng le">唉，好是好，就是太忙了。</span><button class="tts">🔊</button></span></div>
+  </div>
+  <p style="margin-top:10px"><span class="qno">C1</span> 男的昨天为什么没来聚会？</p>
+  <div class="mcq" data-answer="A">
+    <button class="opt" data-v="A">A. 公司临时有事，不得不加班</button>
+    <button class="opt" data-v="B">B. 他忘了聚会</button>
+    <button class="opt" data-v="C">C. 他不想见大家</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 本来打算六点出发 → 不得不加班 — the plan changed, and 不得不 (review from ws-003!) forced it.</div>
+
+  <p style="margin-top:10px"><span class="qno">C2</span> "差一点儿赶不上末班车"的意思是：</p>
+  <div class="mcq" data-answer="C">
+    <button class="opt" data-v="A">A. 他没赶上末班车</button>
+    <button class="opt" data-v="B">B. 他提前很久到了车站</button>
+    <button class="opt" data-v="C">C. 他赶上了，但是很险</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> 差点儿赶不上 = almost didn't catch it — but he DID (幸亏跑得快). 差点 always describes the thing that didn't happen.</div>
+
+  <p style="margin-top:10px"><span class="qno">C3</span> 判断：男的一定要换工作。（√ / ×）</p>
+  <div class="mcq" data-answer="B">
+    <button class="opt" data-v="A">A. √</button>
+    <button class="opt" data-v="B">B. ×</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>× ✔</b> 原来想换 — an earlier thought; 现在还没决定.</div>
+</div>
+
+<!-- ============ D 考试题型 ============ -->
+<h2 class="section"><span class="badge">D</span> 考试题型 <small>Exam-style · 选词填空</small></h2>
+<div class="item" data-answers="A C F D">
+  <div class="bank">
+    <button class="bword">A 刚才</button><button class="bword">B 刚</button>
+    <button class="bword">C 本来</button><button class="bword">D 原来</button>
+    <button class="bword">E 差点</button><button class="bword">F 从来</button>
+  </div>
+  <p>1. 你<span class="slot"></span>去哪儿了？我到处找你。</p>
+  <p>2. 我<span class="slot"></span>想学游泳，后来觉得太贵就没学。</p>
+  <p>3. 他<span class="slot"></span>不吃肉，只吃鱼和青菜。</p>
+  <p>4.<span class="slot"></span>是你啊！我都没听出来你的声音。</p>
+  <button class="btn check">对答案</button>
+  <button class="btn reset">重来</button>
+  <div class="key"><b>1-A 刚才 · 2-C 本来 · 3-F 从来 · 4-D 原来</b>（B 刚、E 差点 不用）<br>
+  1. Question about the recent past → time noun 刚才. 2. Changed plan → 本来…后来. 3. Standing habit → 从来不. 4. Realization → 原来是你！</div>
+</div>
+
+<!-- ============ E 自由产出 ============ -->
+<h2 class="section"><span class="badge">E</span> 自由产出 <small>Free production</small></h2>
+
+<div class="item">
+  <p><span class="qno">E1</span> 用"本来……（后来）……"写一件你改变了计划的事。</p>
+  <input class="typed-in" type="text" placeholder="我本来打算…，后来…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>我本来想学钢琴，后来工作太忙就放弃了。</b> The 后来-clause should show what changed.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">E2</span> 用"差点"讲一次你的惊险经历（差一点儿发生的坏事）。</p>
+  <input class="typed-in" type="text" placeholder="我差点…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>昨天路上有冰，我差点摔倒。</b> Check: the scary thing did NOT actually happen. If it happened, don't use 差点!</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">E3</span> 用"原来"表达一次恍然大悟（"原来是…"）。</p>
+  <input class="typed-in" type="text" placeholder="啊，原来…！">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>啊，原来这家店是你叔叔开的！怪不得每次都送我们水果。</b> Pattern: 原来＋真相＋（怪不得…）— the discovery pairs naturally with 怪不得.</div>
+</div>
+
+<!-- ============ F 温故知新 ============ -->
+<h2 class="section"><span class="badge">F</span> 温故知新 <small>Review</small></h2>
+
+<div class="item">
+  <p><span class="qno">F1</span> 用"一天比一天"描述天气。<span class="srctag">from hsk4-ws-004 · 一天比一天</span></p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>春天到了，天气一天比一天暖和了。</b></div>
+</div>
+
+<div class="item">
+  <p><span class="qno">F2</span> 用"再也不"写一个决心。<span class="srctag">from hsk4-ws-004 · 再也不</span></p>
+  <input class="typed-in" type="text" placeholder="我再也不…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>我再也不考试前才复习了。</b></div>
+</div>
+
+<div class="item">
+  <p><span class="qno">F3</span> 用"只好"完成：所有商店都关门了，我（　）。<span class="srctag">from hsk4-ws-003 · 只好</span></p>
+  <input class="typed-in" type="text" placeholder="输入…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>只好回家</b> / <b>只好饿着肚子睡觉</b>.</div>
+</div>
+
+<!-- ============ Self-check strip ============ -->
+<div class="selfcheck">
+  <p><b>自评 Self-check</b> — 点每个部分的心情，再把想复习的词写下来（下次课会用到！）</p>
+  <p>A <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; B <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; C <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; D <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
+     &nbsp; E <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button></p>
+  <p><b>词语收藏 Words to revisit</b></p>
+  <textarea class="typed-in" placeholder="记下今天没把握的词和句子…"></textarea>
+</div>
+
+<script>
+document.getElementById('pyAll').onclick = () => document.body.classList.toggle('py-all');
+document.addEventListener('click', e => { const zh = e.target.closest('.zh'); if (zh && !e.target.closest('.flip')) zh.classList.toggle('show'); });
+document.addEventListener('click', e => { if (e.target.matches('.check')) { const item = e.target.closest('.item'); const key = item && item.querySelector('.key'); if (key) key.classList.add('show'); } });
+document.addEventListener('click', e => {
+  if (!e.target.matches('.opt')) return;
+  const box = e.target.closest('.mcq');
+  if (!box || box.dataset.done) return;
+  box.querySelectorAll('.sel').forEach(s => s.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.check')) return;
+  const box = e.target.closest('.item').querySelector('.mcq');
+  if (!box || box.dataset.done) return;
+  box.dataset.done = '1';
+  const ans = box.dataset.answer;
+  box.querySelectorAll('.opt').forEach(o => {
+    if (o.dataset.v === ans) o.classList.add('correct');
+    else if (o.classList.contains('sel')) o.classList.add('incorrect');
+  });
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tiles > .tile')) return;
+  const built = e.target.closest('.item').querySelector('.built');
+  if (!built) return;
+  const t = document.createElement('button');
+  t.className = 'tile'; t.textContent = e.target.textContent;
+  built.appendChild(t); e.target.classList.add('used');
+});
+document.addEventListener('click', e => { if (e.target.matches('.built > .tile')) e.target.remove(); });
+let armedWord = null;
+document.addEventListener('click', e => {
+  if (!e.target.matches('.reset')) return;
+  const item = e.target.closest('.item');
+  item.querySelectorAll('.tiles > .tile.used').forEach(t => t.classList.remove('used'));
+  const built = item.querySelector('.built'); if (built) built.innerHTML = '';
+  if (item.querySelector('.bank')) {
+    item.querySelectorAll('.bank .bword').forEach(b => { b.classList.remove('used'); b.style.outline = ''; });
+    item.querySelectorAll('.slot').forEach(s => { s.textContent = ''; delete s.dataset.filled; });
+    armedWord = null;
+  }
+});
+document.addEventListener('click', e => {
+  if (e.target.matches('.bank .bword')) {
+    armedWord = e.target.classList.contains('used') ? null : e.target;
+    document.querySelectorAll('.bword').forEach(b => b.style.outline = '');
+    if (armedWord) armedWord.style.outline = '2px solid #b0342a';
+  }
+  if (e.target.matches('.slot') && armedWord) {
+    e.target.textContent = armedWord.textContent.slice(2);
+    e.target.dataset.filled = armedWord.textContent.slice(0,1);
+    armedWord.classList.add('used'); armedWord.style.outline = ''; armedWord = null;
+  }
+});
+document.addEventListener('click', e => { const f = e.target.closest('.flip'); if (f) f.classList.toggle('flipped'); });
+document.addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.matches('.flip')) e.target.classList.toggle('flipped'); });
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tts')) return;
+  if (!('speechSynthesis' in window)) return;
+  const line = e.target.parentElement.cloneNode(true);
+  line.querySelectorAll('button').forEach(b => b.remove());
+  const u = new SpeechSynthesisUtterance(line.textContent.trim());
+  u.lang = 'zh-CN';
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.conf')) return;
+  e.target.parentElement.querySelectorAll('.conf').forEach(b => b.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+</script>
+</body>
+</html>

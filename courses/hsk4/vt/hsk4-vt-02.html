@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--
+  worksheet_id: hsk4-vt-02
+  type: vocabulary-test (VT)
+  hsk_level: 4
+  topic: 日常生活 · 饮食
+  batch (27): 餐厅#1064 厨房#1093 厨师#1094 味道#1773 酸#1706 辣#1449 咸#1796 香#1802
+    汽水#1572 酸奶#1707 快餐#1442 馒头#1495 月饼#1908 葡萄#1559 巧克力#1583 西红柿#1789
+    汤#1720 烤#1421 聚餐#1414 干杯#1221 + [L1] 米饭 面条儿 茶 牛奶 饺子 好吃 苹果
+  est_minutes: 14
+  scoring: auto (MCQ/bank) + self-grade (F)
+  generated: 2026-11-05
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HSK4 · 词汇测试 02 · 饮食</title>
+<style>
+  :root { --ink:#1a1a1a; --bg:#faf9f6; --card:#ffffff; --line:#e5e2da;
+    --accent:#b0342a; --accent-soft:#fdf0ee; --ok:#2e7d32; --bad:#b0342a;
+    --hanzi:"Microsoft YaHei","Noto Sans SC","PingFang SC",sans-serif; }
+  * { box-sizing:border-box; }
+  body { font-family:var(--hanzi); color:var(--ink); background:var(--bg);
+    max-width:720px; margin:0 auto; padding:16px 20px 80px; line-height:1.75; }
+  header.worksheet { border-bottom:3px solid var(--accent); padding-bottom:10px; margin-bottom:14px; }
+  header.worksheet h1 { font-size:1.35rem; margin:0 0 4px; }
+  .meta { color:#6b6558; font-size:.85rem; display:flex; flex-wrap:wrap; gap:8px 18px; }
+  .meta b { color:var(--accent); font-weight:600; }
+  .goal { background:var(--accent-soft); border-left:4px solid var(--accent);
+          padding:10px 14px; border-radius:0 8px 8px 0; margin:14px 0 22px; font-size:.95rem; }
+  h2.section { display:flex; align-items:baseline; gap:10px; margin:34px 0 8px; font-size:1.15rem; }
+  h2.section .badge { background:var(--accent); color:#fff; border-radius:6px; padding:1px 9px; font-size:.8rem; letter-spacing:1px; }
+  h2.section small { color:#6b6558; font-weight:400; font-size:.8rem; }
+  .inst { color:#6b6558; font-size:.9rem; margin:0 0 14px; }
+  .item { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:12px 0; }
+  .qno { font-weight:700; color:var(--accent); margin-right:6px; }
+  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
+  .zh.show::before, body.py-all .zh::before {
+    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap; font-family:Arial,sans-serif; }
+  button { font-family:inherit; cursor:pointer; }
+  .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent); border-radius:8px; padding:5px 14px; font-size:.85rem; }
+  .btn:hover { background:var(--accent-soft); }
+  .key { display:none; margin-top:10px; padding:10px 12px; border-radius:8px; background:#f2f8f2; border-left:4px solid var(--ok); font-size:.92rem; }
+  .key.show { display:block; }
+  .key b { color:var(--ok); }
+  .opt { display:block; width:100%; text-align:left; background:#fff; margin:6px 0;
+         border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; font-size:1rem; }
+  .opt:hover { border-color:var(--accent); }
+  .opt.sel { border-color:var(--accent); background:var(--accent-soft); }
+  .opt.correct { border-color:var(--ok); background:#eef7ee; }
+  .opt.incorrect { border-color:var(--bad); background:#fdeeee; }
+  .bank { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; }
+  .bank .bword { background:var(--accent-soft); border:1.5px solid var(--accent); border-radius:8px; padding:4px 12px; }
+  .bank .bword.used { opacity:.35; }
+  .slot { display:inline-block; min-width:56px; text-align:center; border-bottom:2px solid var(--accent); padding:2px 8px; cursor:pointer; margin:0 3px; background:#fff; }
+  .typed-in { font-family:var(--hanzi); font-size:1rem; border:1.5px solid var(--line); border-radius:8px; padding:8px 12px; width:100%; margin:6px 0; }
+  .defs p { margin:10px 0; }
+  .defs .pos { color:#8a4b00; font-size:.8rem; border:1px solid var(--line); border-radius:10px; padding:0 8px; margin-left:6px; }
+  .defs .gloss { color:#6b6558; }
+  details.ref { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 14px; margin:10px 0; }
+  details.ref summary { cursor:pointer; font-weight:700; color:var(--accent); }
+  details.ref table { width:100%; border-collapse:collapse; margin-top:8px; font-size:.9rem; }
+  details.ref td, details.ref th { border:1px solid var(--line); padding:4px 8px; }
+  .scorebox { background:var(--card); border:2px solid var(--accent); border-radius:12px; padding:16px; margin-top:36px; }
+  .scorebox .result { font-size:1.1rem; font-weight:700; margin:8px 0; }
+  .scorebox .verdict-pass { color:var(--ok); }
+  .scorebox .verdict-fail { color:var(--bad); }
+  .scorebox .missed-list { background:var(--accent-soft); border-radius:8px; padding:8px 12px; margin-top:8px; font-size:.95rem; }
+  .score-result { display:none; } .score-result.show { display:block; }
+  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line); border-radius:8px; padding:4px 10px; margin-right:6px; }
+  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
+</style>
+</head>
+<body>
+<header class="worksheet">
+  <h1>HSK 4 · 词汇测试 02 · 饮食</h1>
+  <div class="meta">
+    <span><b>话题</b> 日常生活 · 饮食</span>
+    <span><b>词量</b> 27 个（20 个四级 + 7 个复习词）</span>
+    <span><b>用时</b> 约 14 分钟</span>
+    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
+  </div>
+</header>
+
+<div class="goal">
+  学习目标：掌握 27 个"吃与喝"的词 —— 从厨房到餐厅，从酸甜辣咸到干杯。先学，再认、再读、再用。
+</div>
+
+<!-- ============ A 词语讲解 ============ -->
+<h2 class="section"><span class="badge">A</span> 词语讲解 <small>Word definitions（约 2–3 分钟）</small></h2>
+<div class="item defs">
+  <p><b><span class="zh" data-py="cāntīng">餐厅</span></b><span class="pos">名 #1064</span> <span class="gloss">dining room / restaurant.</span> 例：学校<span class="zh" data-py="cāntīng">餐厅</span>的菜越来越好吃了。</p>
+  <p><b><span class="zh" data-py="chúfáng">厨房</span></b><span class="pos">名 #1093</span> <span class="gloss">kitchen.</span> 例：妈妈在<span class="zh" data-py="chúfáng">厨房</span>里做饭。</p>
+  <p><b><span class="zh" data-py="chúshī">厨师</span></b><span class="pos">名 #1094</span> <span class="gloss">chef, cook (professional).</span> 例：这位<span class="zh" data-py="chúshī">厨师</span>做的鱼最好吃。</p>
+  <p><b><span class="zh" data-py="wèidào">味道</span></b><span class="pos">名 #1773</span> <span class="gloss">taste, flavor.</span> 例：这个<span class="zh" data-py="wèidào">味道</span>有点儿怪。</p>
+  <p><b><span class="zh" data-py="suān">酸</span></b><span class="pos">形 #1706</span> <span class="gloss">sour.</span> 例：柠檬很<span class="zh" data-py="suān">酸</span>。</p>
+  <p><b><span class="zh" data-py="là">辣</span></b><span class="pos">形 #1449</span> <span class="gloss">spicy, hot (pepper-hot).</span> 例：四川菜很<span class="zh" data-py="là">辣</span>。</p>
+  <p><b><span class="zh" data-py="xián">咸</span></b><span class="pos">形 #1796</span> <span class="gloss">salty.</span> 例：汤太<span class="zh" data-py="xián">咸</span>了，得多加水。</p>
+  <p><b><span class="zh" data-py="xiāng">香</span></b><span class="pos">形 #1802</span> <span class="gloss">fragrant, smells/tastes delicious.</span> 例：谁在<span class="zh" data-py="kǎo">烤</span>肉？太<span class="zh" data-py="xiāng">香</span>了！</p>
+  <p><b><span class="zh" data-py="qìshuǐ">汽水</span></b><span class="pos">名 #1572</span> <span class="gloss">soda, fizzy drink.</span> 例：夏天喝冰<span class="zh" data-py="qìshuǐ">汽水</span>最舒服了。</p>
+  <p><b><span class="zh" data-py="suānnǎi">酸奶</span></b><span class="pos">名 #1707</span> <span class="gloss">yogurt.</span> 例：早饭我吃面包，喝<span class="zh" data-py="suānnǎi">酸奶</span>。</p>
+  <p><b><span class="zh" data-py="kuàicān">快餐</span></b><span class="pos">名 #1442</span> <span class="gloss">fast food.</span> 例：<span class="zh" data-py="kuàicān">快餐</span>方便，但是别吃太多。</p>
+  <p><b><span class="zh" data-py="mántou">馒头</span></b><span class="pos">名 #1495</span> <span class="gloss">steamed bun.</span> 例：北方人早饭常吃<span class="zh" data-py="mántou">馒头</span>。</p>
+  <p><b><span class="zh" data-py="yuèbing">月饼</span></b><span class="pos">名 #1908</span> <span class="gloss">mooncake (Mid-Autumn Festival).</span> 例：中秋节我们全家一起吃<span class="zh" data-py="yuèbing">月饼</span>。</p>
+  <p><b><span class="zh" data-py="pútao">葡萄</span></b><span class="pos">名 #1559</span> <span class="gloss">grapes.</span> 例：新疆的<span class="zh" data-py="pútao">葡萄</span>特别甜。</p>
+  <p><b><span class="zh" data-py="qiǎokèlì">巧克力</span></b><span class="pos">名 #1583</span> <span class="gloss">chocolate.</span> 例：她一吃<span class="zh" data-py="qiǎokèlì">巧克力</span>就停不下来。</p>
+  <p><b><span class="zh" data-py="xīhóngshì">西红柿</span></b><span class="pos">名 #1789</span> <span class="gloss">tomato.</span> 例：<span class="zh" data-py="xīhóngshì">西红柿</span>炒鸡蛋是我的拿手菜。</p>
+  <p><b><span class="zh" data-py="tāng">汤</span></b><span class="pos">名 #1720</span> <span class="gloss">soup.</span> 例：喝完<span class="zh" data-py="tāng">汤</span>再吃饭。</p>
+  <p><b><span class="zh" data-py="kǎo">烤</span></b><span class="pos">动 #1421</span> <span class="gloss">to roast, toast, grill, bake.</span> 例：我们在院子里<span class="zh" data-py="kǎo">烤</span>肉。</p>
+  <p><b><span class="zh" data-py="jùcān">聚餐</span></b><span class="pos">动 #1414</span> <span class="gloss">to have a group meal together.</span> 例：周五下班后我们去<span class="zh" data-py="jùcān">聚餐</span>。</p>
+  <p><b><span class="zh" data-py="gānbēi">干杯</span></b><span class="pos">动 #1221</span> <span class="gloss">cheers! (raise glasses). 敬酒时说.</span> 例：来，为我们的友谊<span class="zh" data-py="gānbēi">干杯</span>！</p>
+  <p><b><span class="zh" data-py="mǐfàn">米饭</span></b><span class="pos">名 [L1]</span> <span class="gloss">cooked rice (review).</span> 例：南方人几乎顿顿吃<span class="zh" data-py="mǐfàn">米饭</span>。</p>
+  <p><b><span class="zh" data-py="miàntiáor">面条儿</span></b><span class="pos">名 [L1]</span> <span class="gloss">noodles (review).</span> 例：生日要吃<span class="zh" data-py="miàntiáor">面条儿</span>。</p>
+  <p><b><span class="zh" data-py="chá">茶</span></b><span class="pos">名 [L1]</span> <span class="gloss">tea (review).</span> 例：爷爷每天都喝<span class="zh" data-py="chá">茶</span>。</p>
+  <p><b><span class="zh" data-py="niúnǎi">牛奶</span></b><span class="pos">名 [L1]</span> <span class="gloss">milk (review).</span> 例：睡觉前喝一杯<span class="zh" data-py="niúnǎi">牛奶</span>。</p>
+  <p><b><span class="zh" data-py="jiǎozi">饺子</span></b><span class="pos">名 [L1]</span> <span class="gloss">dumplings (review).</span> 例：过年全家一起包<span class="zh" data-py="jiǎozi">饺子</span>。</p>
+  <p><b><span class="zh" data-py="hǎochī">好吃</span></b><span class="pos">形 [L1]</span> <span class="gloss">tasty (review).</span> 例：你做的菜真<span class="zh" data-py="hǎochī">好吃</span>！</p>
+  <p><b><span class="zh" data-py="píngguǒ">苹果</span></b><span class="pos">名 [L1]</span> <span class="gloss">apple (review).</span> 例：一天一个<span class="zh" data-py="píngguǒ">苹果</span>，医生远离我。</p>
+</div>
+
+<!-- ============ B 词语表 ============ -->
+<h2 class="section"><span class="badge">B</span> 词语表 <small>Batch reference</small></h2>
+<details class="ref">
+  <summary>点开 compact word list</summary>
+  <table>
+    <tr><th>#</th><th>词</th><th>词性</th><th>English</th></tr>
+    <tr><td>1064</td><td>餐厅</td><td>名</td><td>restaurant / dining hall</td></tr>
+    <tr><td>1093</td><td>厨房</td><td>名</td><td>kitchen</td></tr>
+    <tr><td>1094</td><td>厨师</td><td>名</td><td>chef</td></tr>
+    <tr><td>1773</td><td>味道</td><td>名</td><td>taste</td></tr>
+    <tr><td>1706</td><td>酸</td><td>形</td><td>sour</td></tr>
+    <tr><td>1449</td><td>辣</td><td>形</td><td>spicy</td></tr>
+    <tr><td>1796</td><td>咸</td><td>形</td><td>salty</td></tr>
+    <tr><td>1802</td><td>香</td><td>形</td><td>fragrant/delicious</td></tr>
+    <tr><td>1572</td><td>汽水</td><td>名</td><td>soda</td></tr>
+    <tr><td>1707</td><td>酸奶</td><td>名</td><td>yogurt</td></tr>
+    <tr><td>1442</td><td>快餐</td><td>名</td><td>fast food</td></tr>
+    <tr><td>1495</td><td>馒头</td><td>名</td><td>steamed bun</td></tr>
+    <tr><td>1908</td><td>月饼</td><td>名</td><td>mooncake</td></tr>
+    <tr><td>1559</td><td>葡萄</td><td>名</td><td>grapes</td></tr>
+    <tr><td>1583</td><td>巧克力</td><td>名</td><td>chocolate</td></tr>
+    <tr><td>1789</td><td>西红柿</td><td>名</td><td>tomato</td></tr>
+    <tr><td>1720</td><td>汤</td><td>名</td><td>soup</td></tr>
+    <tr><td>1421</td><td>烤</td><td>动</td><td>roast/toast</td></tr>
+    <tr><td>1414</td><td>聚餐</td><td>动</td><td>group meal</td></tr>
+    <tr><td>1221</td><td>干杯</td><td>动</td><td>cheers</td></tr>
+    <tr><td>[L1]</td><td>米饭 / 面条儿 / 茶 / 牛奶 / 饺子 / 好吃 / 苹果</td><td>—</td><td>rice / noodles / tea / milk / dumplings / tasty / apple</td></tr>
+  </table>
+</details>
+
+<!-- ============ C 认词 ============ -->
+<h2 class="section"><span class="badge">C</span> 认词 <small>Meaning recognition</small></h2>
+
+<div class="item">
+  <p><span class="qno">C1</span> "味道"是什么意思？</p>
+  <div class="mcq" data-answer="D" data-word="味道">
+    <button class="opt" data-v="A">A. kitchen</button>
+    <button class="opt" data-v="B">B. soup</button>
+    <button class="opt" data-v="C">C. restaurant</button>
+    <button class="opt" data-v="D">D. taste / flavor</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>D ✔</b> 味道 = how something tastes. 厨房 kitchen, 汤 soup, 餐厅 restaurant — all batch words, but only 味道 is the flavor itself.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C2</span> "馒头"是什么？</p>
+  <div class="mcq" data-answer="B" data-word="馒头">
+    <button class="opt" data-v="A">A. mooncake</button>
+    <button class="opt" data-v="B">B. steamed bun</button>
+    <button class="opt" data-v="C">C. dumpling</button>
+    <button class="opt" data-v="D">D. bread</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> 馒头 = plain steamed bun (no filling). 月饼 has filling and a festival; 饺子 is boiled with filling.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C3</span> 汤太（　）了 — 哪个词是 "salty"？</p>
+  <div class="mcq" data-answer="A" data-word="咸">
+    <button class="opt" data-v="A">A. 咸</button>
+    <button class="opt" data-v="B">B. 酸</button>
+    <button class="opt" data-v="C">C. 辣</button>
+    <button class="opt" data-v="D">D. 香</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 咸 xián = salty (too much salt). 酸 sour, 辣 spicy, 香 fragrant — the four taste adjectives of this batch; saltiness specifically pairs with 咸.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C4</span> "快餐"是什么意思？</p>
+  <div class="mcq" data-answer="C" data-word="快餐">
+    <button class="opt" data-v="A">A. a fast car</button>
+    <button class="opt" data-v="B">B. cold food</button>
+    <button class="opt" data-v="C">C. fast food</button>
+    <button class="opt" data-v="D">D. a group dinner</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> 快餐 = fast food (hamburgers, instant noodles…). A group dinner is 聚餐.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C5</span> 哪个词是 "yogurt"？</p>
+  <div class="mcq" data-answer="A" data-word="酸奶">
+    <button class="opt" data-v="A">A. 酸奶</button>
+    <button class="opt" data-v="B">B. 汽水</button>
+    <button class="opt" data-v="C">C. 牛奶</button>
+    <button class="opt" data-v="D">D. 汤</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 酸奶 = yogurt (fermented milk). 汽水 soda, 牛奶 plain milk, 汤 soup.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C6</span> 哪个词是 "to roast / grill"（烤）？</p>
+  <div class="mcq" data-answer="B" data-word="烤">
+    <button class="opt" data-v="A">A. 煮 (cook in water)</button>
+    <button class="opt" data-v="B">B. 烤</button>
+    <button class="opt" data-v="C">C. 炒 (stir-fry)</button>
+    <button class="opt" data-v="D">D. 蒸 (steam)</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> 烤 = dry heat (oven/grill/fire): 烤肉、烤鸭、烤面包. The others are other cooking verbs (outside this batch — distractors).</div>
+</div>
+
+<!-- ============ D 读音 ============ -->
+<h2 class="section"><span class="badge">D</span> 读音 <small>Pinyin ↔ character</small></h2>
+
+<div class="item">
+  <p><span class="qno">D1</span> "馒头"的正确拼音是？</p>
+  <div class="mcq" data-answer="A" data-word="馒头">
+    <button class="opt" data-v="A">A. mántou</button>
+    <button class="opt" data-v="B">B. mántǒu</button>
+    <button class="opt" data-v="C">C. māntou</button>
+    <button class="opt" data-v="D">D. màntou</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> mán (2nd) + light neutral tou. Writing tǒu is the classic learner tell.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D2</span> "味道"的正确拼音是？</p>
+  <div class="mcq" data-answer="C" data-word="味道">
+    <button class="opt" data-v="A">A. wèidǎo</button>
+    <button class="opt" data-v="B">B. wēidào</button>
+    <button class="opt" data-v="C">C. wèidào</button>
+    <button class="opt" data-v="D">D. wěidào</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> Both 4th tones: wèi-dào.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D3</span> "巧克力"的正确拼音是？</p>
+  <div class="mcq" data-answer="B" data-word="巧克力">
+    <button class="opt" data-v="A">A. qiāokèlì</button>
+    <button class="opt" data-v="B">B. qiǎokèlì</button>
+    <button class="opt" data-v="C">C. qiǎokēlì</button>
+    <button class="opt" data-v="D">D. kěqiāolì</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> qiǎo-kè-lì: 3rd-4th-4th, and the syllable order matters (D reverses it into a different word, 可巧).</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D4</span> "西红柿"的正确拼音是？</p>
+  <div class="mcq" data-answer="D" data-word="西红柿">
+    <button class="opt" data-v="A">A. xīhóngsì</button>
+    <button class="opt" data-v="B">B. xīhóngshī</button>
+    <button class="opt" data-v="C">C. xǐhóngshì</button>
+    <button class="opt" data-v="D">D. xīhóngshì</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>D ✔</b> xī-hóng-shì: 1st-2nd-4th. A misspells shì as sì (lost the h), B puts the tone mark on the wrong syllable (shī instead of xī), C misreads 西 as 3rd tone.</div>
+</div>
+
+<!-- ============ E 用法 ============ -->
+<h2 class="section"><span class="badge">E</span> 用法 <small>Usage in context · 每个词只能用一次</small></h2>
+
+<div class="item" data-answers="A B C D E" data-word="咸/酸/香/辣/烤搭配">
+  <div class="bank">
+    <button class="bword">A 咸</button><button class="bword">B 酸</button>
+    <button class="bword">C 香</button><button class="bword">D 辣</button>
+    <button class="bword">E 烤</button><button class="bword">F 汤</button>
+  </div>
+  <p>1. 这个菜太<span class="slot"></span>了，得多喝点儿水。</p>
+  <p>2. 柠檬水又<span class="slot"></span>又甜，夏天喝最合适。</p>
+  <p>3. 妈妈做的红烧肉真<span class="slot"></span>，楼道里都闻得到。</p>
+  <p>4. 我不太敢吃<span class="slot"></span>的菜，一边吃一边流汗。</p>
+  <p>5. 中秋节我们在院子里<span class="slot"></span>肉、赏月亮。</p>
+  <button class="btn check">对答案</button>
+  <button class="btn reset">重来</button>
+  <div class="key"><b>1-A 咸 · 2-B 酸 · 3-C 香 · 4-D 辣 · 5-E 烤</b>（F 汤 不用）<br>
+  Cues: ① 太咸了→喝水 ② 柠檬=酸 ③ 闻得到=香 ④ 流汗=辣 ⑤ 在院子里=烤（明火）.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">E6</span> 周五下班后，同事们打算一起去（　）。</p>
+  <div class="mcq" data-answer="B" data-word="聚餐">
+    <button class="opt" data-v="A">A. 馒头</button>
+    <button class="opt" data-v="B">B. 聚餐</button>
+    <button class="opt" data-v="C">C. 汽水</button>
+    <button class="opt" data-v="D">D. 厨房</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> A group meal = 聚餐 (verb/noun). The others are foods or places, not activities.</div>
+</div>
+
+<!-- ============ F 造句 ============ -->
+<h2 class="section"><span class="badge">F</span> 造句 <small>Production · self-graded</small></h2>
+
+<div class="item">
+  <p><span class="qno">F1</span> 用"味道"写一句话。</p>
+  <input class="typed-in" type="text" placeholder="这个菜的味道…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>这家饭馆的月饼味道特别好。</b> Variants: 酸奶的味道有点儿怪。 Avoid ✗味道很好吃 — 味道 goes with 好/怪/不错, not 好吃 (好吃 describes the food itself).</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">F2</span> 用今天学过的至少两个词，介绍你最喜欢的一种食物。</p>
+  <input class="typed-in" type="text" placeholder="我最喜欢…（酸/辣/香/烤/汤…）">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>我最喜欢吃妈妈做的西红柿鸡蛋汤，酸酸的，特别香。</b> Check your taste-words agree with reality: 汤+咸/酸 ✓, 巧克力+甜/香 ✓, 巧克力+辣 ✗!</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">F3</span> 情景：聚餐的时候，你站起来想说一句祝酒词。用"干杯"说一句话。</p>
+  <input class="typed-in" type="text" placeholder="为…干杯！">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>为我们的友谊干杯！</b> Variants: 祝大家新年快乐，干杯！ Structure: 为/祝 + reason + 干杯.</div>
+</div>
+
+<!-- ============ G 得分总结 ============ -->
+<h2 class="section"><span class="badge">G</span> 得分总结 <small>Score summary</small></h2>
+<div class="scorebox">
+  <p><b>得分总结 Score summary</b> — 检查完所有选择题后点下面的按钮。</p>
+  <button class="btn score-btn">计算得分</button>
+  <div class="score-result"></div>
+  <p><b>自评打分 Self-grade section F</b>: <button class="conf">😊 全对</button><button class="conf">🤔 差不多</button><button class="conf">😩 不行</button></p>
+</div>
+
+<script>
+document.getElementById('pyAll').onclick = () => document.body.classList.toggle('py-all');
+document.addEventListener('click', e => { const zh = e.target.closest('.zh'); if (zh) zh.classList.toggle('show'); });
+document.addEventListener('click', e => { if (e.target.matches('.check')) { const item = e.target.closest('.item'); const key = item && item.querySelector('.key'); if (key) key.classList.add('show'); } });
+document.addEventListener('click', e => {
+  if (!e.target.matches('.opt')) return;
+  const box = e.target.closest('.mcq');
+  if (!box || box.dataset.done) return;
+  box.querySelectorAll('.sel').forEach(s => s.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.check')) return;
+  const box = e.target.closest('.item').querySelector('.mcq');
+  if (!box || box.dataset.done) return;
+  box.dataset.done = '1';
+  const ans = box.dataset.answer;
+  box.querySelectorAll('.opt').forEach(o => {
+    if (o.dataset.v === ans) o.classList.add('correct');
+    else if (o.classList.contains('sel')) o.classList.add('incorrect');
+  });
+});
+let armedWord = null;
+document.addEventListener('click', e => {
+  if (e.target.matches('.bank .bword')) {
+    armedWord = e.target.classList.contains('used') ? null : e.target;
+    document.querySelectorAll('.bword').forEach(b => b.style.outline = '');
+    if (armedWord) armedWord.style.outline = '2px solid #b0342a';
+  }
+  if (e.target.matches('.slot') && armedWord) {
+    e.target.textContent = armedWord.textContent.slice(2);
+    e.target.dataset.filled = armedWord.textContent.slice(0,1);
+    armedWord.classList.add('used'); armedWord.style.outline = ''; armedWord = null;
+  }
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.reset')) return;
+  const item = e.target.closest('.item');
+  if (item.querySelector('.bank')) {
+    item.querySelectorAll('.bank .bword').forEach(b => { b.classList.remove('used'); b.style.outline = ''; });
+    item.querySelectorAll('.slot').forEach(s => { s.textContent = ''; delete s.dataset.filled; });
+    armedWord = null;
+  }
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.conf')) return;
+  e.target.parentElement.querySelectorAll('.conf').forEach(b => b.classList.remove('sel'));
+  e.target.classList.add('sel');
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.score-btn')) return;
+  const box = e.target.closest('.scorebox');
+  const result = box.querySelector('.score-result');
+  if (!result) return;
+  let total = 0, right = 0;
+  const missed = []; const seen = new Set();
+  document.querySelectorAll('.mcq').forEach(mcq => {
+    total++;
+    const ok = mcq.dataset.done && !mcq.querySelector('.opt.incorrect');
+    if (ok) { right++; return; }
+    const w = mcq.dataset.word || (mcq.closest('.item')||mcq).dataset.word;
+    if (w && !seen.has(w)) { seen.add(w); missed.push(w); }
+  });
+  document.querySelectorAll('.item[data-answers]').forEach(it => {
+    total++;
+    const want = it.dataset.answers.split(/\s+/);
+    const got = [...it.querySelectorAll('.slot')].map(s => s.dataset.filled || '_');
+    const ok = want.length === got.length && want.every((w, i) => got[i] === w);
+    if (ok) { right++; return; }
+    const w = it.dataset.word || '用法搭配(选词填空)';
+    if (!seen.has(w)) { seen.add(w); missed.push(w); }
+  });
+  const pct = total ? Math.round((right / total) * 100) : 0;
+  const pass = pct >= 80;
+  result.innerHTML =
+    `<p class="result">得分 Score: <span class="${pass ? 'verdict-pass' : 'verdict-fail'}">${right} / ${total} (${pct}%)</span></p>` +
+    `<p>${pass ? '✅ <b>通过！</b>这批"饮食"词过关 — 下一批见。'
+              : '📉 <b>还没过关</b>（80% 通过线）。把下面的词放进"词语收藏"，下次练习和测试会再见到它们。'}</p>` +
+    (missed.length ? `<div class="missed-list"><b>需要复习 Need review</b>: ${missed.join('、')}</div>` : '') +
+    `<p style="font-size:.8rem;color:#6b6558">把得分和要复习的词告诉我，我会记进 progress-log 并在下次测试里重考它们。</p>`;
+  result.classList.add('show');
+});
+</script>
+</body>
+</html>
