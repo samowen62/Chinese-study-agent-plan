@@ -42,12 +42,12 @@
   .qno { font-weight:700; color:var(--accent); margin-right:6px; }
   .srctag { font-size:.75rem; color:#9a917f; border:1px solid var(--line);
             border-radius:10px; padding:0 8px; margin-left:8px; }
-  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
-  .zh.show::before, body.py-all .zh::before {
-    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
+  .zh { position:relative; cursor:help; border-bottom:1px dashed #d8d2c4; padding-top:1.05em; }
+  .zh:hover::before {
+    content:attr(data-py); position:absolute; top:0; left:0; right:0;
     font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap;
-    font-family:Arial,"Noto Sans SC",sans-serif; }
-  button { font-family:inherit; cursor:pointer; }
+    font-family:Arial,sans-serif; pointer-events:none; }
+button { font-family:inherit; cursor:pointer; }
   .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent);
          border-radius:8px; padding:5px 14px; font-size:.85rem; }
   .btn:hover { background:var(--accent-soft); }
@@ -92,22 +92,22 @@
   .tts { border:none; background:none; font-size:1rem; padding:0 4px; }
   .typed-in { font-family:var(--hanzi); font-size:1rem; border:1.5px solid var(--line);
               border-radius:8px; padding:8px 12px; width:100%; margin:6px 0; }
-  .selfcheck { background:var(--card); border:2px solid var(--accent); border-radius:12px;
-               padding:16px; margin-top:36px; }
-  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line);
-          border-radius:8px; padding:4px 10px; margin-right:6px; }
-  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
+.scorebox { background:var(--card); border:2px solid var(--accent); border-radius:12px; padding:16px; margin-top:36px; }
+  .scorebox .result { font-size:1.1rem; font-weight:700; margin:8px 0; }
+  .scorebox .verdict-pass { color:var(--ok); }
+  .scorebox .verdict-fail { color:var(--bad); }
+  .scorebox pre.report { background:#f6f4ef; border:1px solid var(--line); border-radius:8px; padding:12px; font-size:.85rem; white-space:pre-wrap; font-family:Consolas,"Courier New",monospace; }
+  .score-result { display:none; } .score-result.show { display:block; }
 </style>
 </head>
-<body>
+<body data-id="hsk3-ws-014" data-type="P">
 <header class="worksheet">
   <h1>HSK 3 · 把字句（一）</h1>
   <div class="meta">
     <span><b>语法点</b> L3-SP-1 把字句1</span>
     <span><b>话题</b> 家庭生活 · 搬家与整理房间</span>
     <span><b>用时</b> 约 13 分钟</span>
-    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
-  </div>
+</div>
 </header>
 
 <div class="goal">
@@ -116,8 +116,8 @@
 </div>
 
 <!-- ============ A · 模式感知 ============ -->
-<h2 class="section"><span class="badge">A</span> 模式感知 <small>Pattern warm-up · 点开卡片，大声读句子</small></h2>
-<p class="inst">Click a card to flip. Click any Chinese to show its pinyin.</p>
+<h2 class="section"><span class="badge">A</span> 模式感知 <small>Pattern warm-up · 点开卡片；虚线汉字悬停显示拼音</small></h2>
+<p class="inst">Click a card to flip. Hover a dashed word to see pinyin.</p>
 <div class="flip-row">
   <div class="flip" tabindex="0">
     <div class="flip-inner">
@@ -137,6 +137,12 @@
       <div class="face back">This sentence is fine <b>without</b> 把 — but once you want to highlight "what happened to MY CUP", you repackage it: 他<b>把</b>我的杯子<b>打破了</b>。</div>
     </div>
   </div>
+</div>
+<div class="item">
+  <p><b>用法例句</b> — 不同场合。Hover for pinyin.</p>
+  <p>1. <span class="zh" data-py="qǐng bǎ zhè fèn bàogào jiāo gěi jīnglǐ">请把这份报告交给经理。</span> — Please hand this report to the manager. <span class="srctag">职场</span></p>
+  <p>2. <span class="zh" data-py="tā bǎ xíngli fàng zài chūzūchē hòumiàn le">他把行李放在出租车后面了。</span> — He put the luggage behind the taxi. <span class="srctag">出行</span></p>
+  <p>3. <span class="zh" data-py="wǒ bǎ yú zuò chéng tāng le">我把鱼做成汤了。</span> — I made the fish into soup. <span class="srctag">饮食</span></p>
 </div>
 
 <!-- ============ B · 语法操练 ============ -->
@@ -305,20 +311,14 @@
   <div class="key">Model: <b>房间越来越干净了。</b> — notice how today's 把-sentence (我把房间打扫干净了) and the old pattern 越来越 connect naturally.</div>
 </div>
 
-<!-- ============ Self-check strip ============ -->
-<div class="selfcheck">
-  <p><b>自评 Self-check</b> — 点每个部分的心情，再把想复习的词写下来（下次课会用到！）</p>
-  <p>A <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
-     &nbsp; B <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
-     &nbsp; C <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
-     &nbsp; D <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
-     &nbsp; E <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button></p>
-  <p><b>词语收藏 Words to revisit</b></p>
-  <textarea class="typed-in" placeholder="记下今天没把握的词和句子…"></textarea>
+<!-- ============ Report ============ -->
+<div class="scorebox">
+  <p><b>报告 Report</b> — 做完选择题后点按钮，把生成的文字贴到课程对话里。</p>
+  <button class="btn score-btn">生成报告 / Copy report</button>
+  <div class="score-result"></div>
 </div>
 
 <script>
-document.getElementById('pyAll').onclick = () => document.body.classList.toggle('py-all');
 document.addEventListener('click', e => {
   const zh = e.target.closest('.zh');
   if (zh && !e.target.closest('.flip')) zh.classList.toggle('show');
@@ -392,11 +392,61 @@ document.addEventListener('click', e => {
   u.lang = 'zh-CN';
   speechSynthesis.cancel(); speechSynthesis.speak(u);
 });
+
 document.addEventListener('click', e => {
-  if (!e.target.matches('.conf')) return;
-  e.target.parentElement.querySelectorAll('.conf').forEach(b => b.classList.remove('sel'));
-  e.target.classList.add('sel');
+  if (e.target.matches('.copy-report')) {
+    const pre = e.target.closest('.scorebox').querySelector('pre.report');
+    if (pre) navigator.clipboard.writeText(pre.textContent);
+    return;
+  }
+  if (!e.target.matches('.score-btn')) return;
+  const box = e.target.closest('.scorebox');
+  const result = box.querySelector('.score-result');
+  if (!result) return;
+  let total = 0, right = 0;
+  const missed = []; const seen = new Set();
+  const tag = (el) => el.dataset.point || el.dataset.word
+    || (el.closest('.item') && (el.closest('.item').dataset.point || el.closest('.item').dataset.word))
+    || ((el.closest('.item') || el).querySelector('.qno') || {}).textContent
+    || 'item';
+  document.querySelectorAll('.mcq').forEach(mcq => {
+    total++;
+    const ok = mcq.dataset.done && !mcq.querySelector('.opt.incorrect');
+    if (ok) { right++; return; }
+    const w = tag(mcq);
+    if (w && !seen.has(w)) { seen.add(w); missed.push(String(w).trim()); }
+  });
+  document.querySelectorAll('.item[data-answers]').forEach(it => {
+    total++;
+    const want = it.dataset.answers.split(/\s+/);
+    const got = [...it.querySelectorAll('.slot')].map(s => s.dataset.filled || '_');
+    const ok = want.length === got.length && want.every((w, i) => got[i] === w);
+    if (ok) { right++; return; }
+    const w = it.dataset.word || it.dataset.point || '选词填空';
+    if (!seen.has(w)) { seen.add(w); missed.push(w); }
+  });
+  const pct = total ? Math.round((right / total) * 100) : 0;
+  const type = document.body.dataset.type || 'P';
+  const id = document.body.dataset.id || '';
+  let verdict = '—';
+  if (type === 'GT' || type === 'VT') verdict = pct >= 80 ? 'pass' : 'fail';
+  const report =
+`worksheet_id: ${id}
+type: ${type}
+score: ${right}/${total} (${pct}%)
+verdict: ${verdict}
+needs_review: ${missed.length ? missed.join(', ') : '—'}
+notes:`;
+  const cls = (type !== 'P' && pct >= 80) ? 'verdict-pass' : 'verdict-fail';
+  result.innerHTML =
+    `<p class="result">得分 Score: <span class="${cls}">${right} / ${total} (${pct}%)</span></p>` +
+    `<pre class="report">${report}</pre>` +
+    `<button type="button" class="btn copy-report">复制 Copy</button>` +
+    `<p style="font-size:.85rem;color:#6b6558;margin-top:8px">把上面的报告整段粘贴到课程对话里，我会记进 progress-log 并安排下一课。</p>`;
+  result.classList.add('show');
+  navigator.clipboard.writeText(report).catch(() => {});
 });
+
 </script>
 </body>
 </html>

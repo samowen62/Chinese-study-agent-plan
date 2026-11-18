@@ -1,0 +1,15 @@
+---
+description: Auto-create GT/VT retake files in an adjacent retakes/ folder when a test fails
+alwaysApply: true
+---
+
+# Test retakes
+
+When Sam reports a GT or VT score **below 80%**, immediately create the retake HTML (do not wait to be asked), unless he explicitly skips it.
+
+- Path: `courses/hsk{L}/{gt|vt}/retakes/` (adjacent to the original test folder)
+- Names: `hsk{L}-gt-CL{kk}-r2.html` · `hsk{L}-vt-{NN}-r2.html` (later attempts `-r3`, …)
+- Fresh items; do not copy the failed test verbatim. Weight `needs_review` points/words from the score summary.
+- Also generate the targeted remediation P (missed grammar) before pointing him at the retake.
+- Log the fail first; a later passing retake **replaces** that fail row.
+- This CL01 fail (8/11, 2026-11-10) was **skipped** — do not backfill `hsk4-gt-CL01-r2.html`.

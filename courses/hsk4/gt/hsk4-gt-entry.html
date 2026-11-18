@@ -36,11 +36,12 @@
   .inst { color:#6b6558; font-size:.9rem; margin:0 0 14px; }
   .item { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:12px 0; }
   .qno { font-weight:700; color:var(--accent); margin-right:6px; }
-  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
-  .zh.show::before, body.py-all .zh::before {
-    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
-    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap; font-family:Arial,sans-serif; }
-  button { font-family:inherit; cursor:pointer; }
+  .zh { position:relative; cursor:help; border-bottom:1px dashed #d8d2c4; padding-top:1.05em; }
+  .zh:hover::before {
+    content:attr(data-py); position:absolute; top:0; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap;
+    font-family:Arial,sans-serif; pointer-events:none; }
+button { font-family:inherit; cursor:pointer; }
   .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent); border-radius:8px; padding:5px 14px; font-size:.85rem; }
   .btn:hover { background:var(--accent-soft); }
   .key { display:none; margin-top:10px; padding:10px 12px; border-radius:8px; background:#f2f8f2; border-left:4px solid var(--ok); font-size:.92rem; }
@@ -52,6 +53,7 @@
   .opt.sel { border-color:var(--accent); background:var(--accent-soft); }
   .opt.correct { border-color:var(--ok); background:#eef7ee; }
   .opt.incorrect { border-color:var(--bad); background:#fdeeee; }
+  .scorebox pre.report { background:#f6f4ef; border:1px solid var(--line); border-radius:8px; padding:12px; font-size:.85rem; white-space:pre-wrap; font-family:Consolas,"Courier New",monospace; }
   .scorebox { background:var(--card); border:2px solid var(--accent); border-radius:12px; padding:16px; margin-top:36px; }
   .scorebox .result { font-size:1.1rem; font-weight:700; margin:8px 0; }
   .scorebox .verdict-pass { color:var(--ok); }
@@ -60,14 +62,13 @@
   .score-result { display:none; } .score-result.show { display:block; }
 </style>
 </head>
-<body>
+<body data-id="hsk4-gt-entry" data-type="GT">
 <header class="worksheet">
   <h1>HSK 4 · 入学摸底测试</h1>
   <div class="meta">
     <span><b>类型</b> Entry check (GT-lite)</span>
     <span><b>用时</b> 约 8 分钟</span>
-    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
-  </div>
+</div>
 </header>
 
 <div class="goal">
@@ -78,6 +79,12 @@
 <h2 class="section"><span class="badge">A</span> 说明 · How this works <small>non-graded</small></h2>
 <p class="inst">6 quick scenario questions. Each asks which pattern fits the situation. Check each answer,
 then look at your score. 每题选一个最合适的语法，然后算分。</p>
+<div class="item">
+  <p><b>摸底会碰到的格式</b> — 先看例句，不必背。Hover for pinyin. These sentences do <i>not</i> reappear in B.</p>
+  <p>1. <span class="zh" data-py="qǐng bǎ hùzhào fàng jìn bāoguǒ li">请把护照放进包裹里。</span> — 把: put the passport into the parcel. <span class="srctag">出行</span></p>
+  <p>2. <span class="zh" data-py="zuìjìn gōngzuò yuè lái yuè jǐnzhāng">最近工作越来越紧张。</span> — 越来越: work is getting tighter. <span class="srctag">职场</span></p>
+  <p>3. <span class="zh" data-py="nándào nǐ wàng le míngtiān yǒu miànshì ma">难道你忘了明天有面试吗？</span> — 反问: surely you didn't forget the interview? <span class="srctag">职场</span></p>
+</div>
 
 <h2 class="section"><span class="badge">B</span> 摸底题 · Placement items <small>auto-scored</small></h2>
 
@@ -154,14 +161,13 @@ then look at your score. 每题选一个最合适的语法，然后算分。</p>
 </div>
 
 <div class="scorebox">
-  <p><b>得分总结 Score summary</b> — 检查完所有题后点下面的按钮。</p>
-  <button class="btn score-btn">计算得分</button>
+  <p><b>报告 Report</b> — 做完选择题后点按钮，把生成的文字贴到课程对话里。</p>
+  <button class="btn score-btn">生成报告 / Copy report</button>
   <div class="score-result"></div>
   <p style="margin-top:10px"><b>说明</b>：≥80% → 直接开始 HSK4 第一单元；50–79% → 开始课程，但复习提示会带你回顾相关三级语法；&lt;50% → 建议先用 HSK3 的复习练习热热身（跟课程说一声即可）。</p>
 </div>
 
 <script>
-document.getElementById('pyAll').onclick = () => document.body.classList.toggle('py-all');
 document.addEventListener('click', e => {
   const zh = e.target.closest('.zh');
   if (zh) zh.classList.toggle('show');
@@ -192,30 +198,57 @@ document.addEventListener('click', e => {
   });
 });
 document.addEventListener('click', e => {
+  if (e.target.matches('.copy-report')) {
+    const pre = e.target.closest('.scorebox').querySelector('pre.report');
+    if (pre) navigator.clipboard.writeText(pre.textContent);
+    return;
+  }
   if (!e.target.matches('.score-btn')) return;
   const box = e.target.closest('.scorebox');
   const result = box.querySelector('.score-result');
   if (!result) return;
   let total = 0, right = 0;
   const missed = []; const seen = new Set();
+  const tag = (el) => el.dataset.point || el.dataset.word
+    || (el.closest('.item') && (el.closest('.item').dataset.point || el.closest('.item').dataset.word))
+    || ((el.closest('.item') || el).querySelector('.qno') || {}).textContent
+    || 'item';
   document.querySelectorAll('.mcq').forEach(mcq => {
     total++;
     const ok = mcq.dataset.done && !mcq.querySelector('.opt.incorrect');
     if (ok) { right++; return; }
-    const pt = mcq.dataset.point || (mcq.closest('.item')||mcq).dataset.point;
-    if (pt && !seen.has(pt)) { seen.add(pt); missed.push(pt); }
+    const w = tag(mcq);
+    if (w && !seen.has(w)) { seen.add(w); missed.push(String(w).trim()); }
+  });
+  document.querySelectorAll('.item[data-answers]').forEach(it => {
+    total++;
+    const want = it.dataset.answers.split(/\s+/);
+    const got = [...it.querySelectorAll('.slot')].map(s => s.dataset.filled || '_');
+    const ok = want.length === got.length && want.every((w, i) => got[i] === w);
+    if (ok) { right++; return; }
+    const w = it.dataset.word || it.dataset.point || '选词填空';
+    if (!seen.has(w)) { seen.add(w); missed.push(w); }
   });
   const pct = total ? Math.round((right / total) * 100) : 0;
-  let verdict;
-  if (pct >= 80) verdict = '✅ <b>很强！</b>可以直接开始 HSK4 第一单元（把字句2 之前的 CL01 程度补语）。';
-  else if (pct >= 50) verdict = '💪 <b>可以开始课程。</b>答错的点会在相关单元的复习部分再次出现。';
-  else verdict = '📉 <b>建议先热身。</b>告诉课程，先来几个 HSK3 核心句式的复习练习。';
+  const type = document.body.dataset.type || 'P';
+  const id = document.body.dataset.id || '';
+  let verdict = '—';
+  if (type === 'GT' || type === 'VT') verdict = pct >= 80 ? 'pass' : 'fail';
+  const report =
+`worksheet_id: ${id}
+type: ${type}
+score: ${right}/${total} (${pct}%)
+verdict: ${verdict}
+needs_review: ${missed.length ? missed.join(', ') : '—'}
+notes:`;
+  const cls = (type !== 'P' && pct >= 80) ? 'verdict-pass' : 'verdict-fail';
   result.innerHTML =
-    `<p class="result">得分 Score: <span class="${pct>=80?'verdict-pass':'verdict-fail'}">${right} / ${total} (${pct}%)</span></p>` +
-    `<p>${verdict}</p>` +
-    (missed.length ? `<div class="missed-list"><b>需要复习 Need review</b>: ${missed.join('、')}</div>` : '') +
-    `<p style="font-size:.8rem;color:#6b6558">把得分和要复习的点告诉我，我会记进 progress-log 并安排下一次复习。</p>`;
+    `<p class="result">得分 Score: <span class="${cls}">${right} / ${total} (${pct}%)</span></p>` +
+    `<pre class="report">${report}</pre>` +
+    `<button type="button" class="btn copy-report">复制 Copy</button>` +
+    `<p style="font-size:.85rem;color:#6b6558;margin-top:8px">把上面的报告整段粘贴到课程对话里，我会记进 progress-log 并安排下一课。</p>`;
   result.classList.add('show');
+  navigator.clipboard.writeText(report).catch(() => {});
 });
 </script>
 </body>

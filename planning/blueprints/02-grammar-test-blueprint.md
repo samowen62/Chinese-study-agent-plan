@@ -7,7 +7,8 @@ whole cluster before the syllabus (`syllabuses/01-hsk-syllabus.md`) moves on.
 Same global rules as all worksheets: 10–15 min, self-contained interactive HTML, pinyin
 hidden by default, per-item answer keys with explanations, simplified characters only,
 2025-syllabus cumulative vocabulary (see `references/02-level-guide.md`). Start from
-`templates/worksheet-template.html` and add the `score-summary` component.
+`templates/worksheet-template.html`. Body needs `data-id` + `data-type="GT"`; the paste-report
+score box is already in the template.
 
 ## Metadata block
 
@@ -26,7 +27,14 @@ generated: 2026-11-04
 -->
 ```
 
-Filename: `hsk{L}-gt-CL{kk}.html` (retakes: `hsk{L}-gt-CL{kk}-r2.html`).
+Filename: `hsk{L}-gt-CL{kk}.html`.
+
+**Retakes (automatic):** when Sam reports a score **<80%**, generate the retake immediately
+into the adjacent `retakes\` folder — do not wait to be asked, unless he explicitly skips.
+Path: `courses/hsk{L}/gt/retakes/hsk{L}-gt-CL{kk}-r2.html` (later attempts `-r3`, …).
+Write fresh items; overweight missed `data-point`s from the failed attempt. Also generate
+the targeted remediation P on those points. A passing retake replaces the fail row in
+`progress-log.md`.
 
 ## Section skeleton (fixed order)
 
@@ -38,7 +46,7 @@ Filename: `hsk{L}-gt-CL{kk}.html` (retakes: `hsk{L}-gt-CL{kk}-r2.html`).
 | D | 形式判断 · Form check | Form-focused MCQ/error items per point (R1/R2/P3) | 2–3 min | 4–5 |
 | E | 综合运用 · Production | Typed items: transform / produce with cluster points (P4/P1, self-graded) | 2–3 min | 2–3 |
 | F | 语篇理解 · Cluster in context | One dialogue or passage using ≥3 cluster points + comprehension items | 2 min | 1 + 2–3 |
-| G | 得分总结 · Score summary | `score-summary` component: verdict + what-to-review advice | 1 min | — |
+| G | 报告 · Report | paste-report: auto-score + copy-ready block (pass/fail at 80%) | 1 min | — |
 
 Section A is a **study pass**, not part of the scored test — keep the test proper (C–G)
 inside the 10–15 minute envelope and keep A tight (2–3 min max).
@@ -51,8 +59,10 @@ inside the 10–15 minute envelope and keep A tight (2–3 min max).
   - **What it expresses**: 1–2 plain-English sentences on meaning/function — when a speaker
     reaches for this point (e.g. "the receiver of the action is the topic; the doer may be
     omitted when it's unknown or obvious").
-  - **Worked example**: one natural sentence in the topic context with a click-to-reveal
-    pinyin and an English gloss, the pattern keywords highlighted.
+  - **Worked examples**: **2–3** natural sentences (not one), each a different situation,
+    with hover pinyin and an English gloss, the pattern keywords highlighted. Prefer unused
+    HSK4 cumulative words; do not recycle 忙/累/热/高兴. These A sentences must not reappear
+    in C–F.
   - **Pitfall**: one line naming the classic learner error for this point (e.g. "negation
     goes before 把: 我没把…" not 我把…没…").
 - For **comparison clusters** (Category 相似语法点辨析), each card must state *what
@@ -61,7 +71,7 @@ inside the 10–15 minute envelope and keep A tight (2–3 min max).
 - Cards use the `flip-card` component (front: name + key word + formula; back: explanation
   + example + pitfall) or plain `.item` cards — but ALL points of the cluster must appear,
   and every point that appears in a C–F item must have been explained here. No surprises.
-- Pinyin stays click-to-reveal per global policy.
+- Pinyin stays hover-only per global policy (no Show-all button).
 
 ### B — 集群速览 (Cluster reference)
 - Collapsed card (visible by clicking) listing every cluster point compactly: English name +
@@ -100,21 +110,29 @@ inside the 10–15 minute envelope and keep A tight (2–3 min max).
   At least one item asks the learner to identify WHICH cluster point a highlighted
   sentence uses and what it contributes to meaning.
 
-### G — 得分总结 (Score summary)
-- `score-summary` component: auto-counts correct MCQ selections in C/D/F; shows
-  self-grade buttons (😊/🤔/😩) for section E items; computes a percentage over
-  auto-scored items.
-- **Advice text is generated from results**: list the cluster points missed (from item
-  metadata `data-point`) as the "review these" list, plus a verdict:
-  - ≥80% auto-score: unit passed — tell the syllabus to advance (log `pass` in
-    `progress-log.md`).
-  - <80%: unit not passed — recommend a targeted mini-practice worksheet for the missed
-    points (type P) before retaking the test.
+### G — 报告 (Report)
+- Paste-report box: auto-counts MCQ in C/D/F and bank-fill items; **生成报告 / Copy report**
+  writes a `<pre>` block Sam pastes into the course chat:
+
+```
+worksheet_id: hsk4-gt-CL01
+type: GT
+score: 8/11 (73%)
+verdict: fail
+needs_review: 死了, 反问句
+notes:
+```
+
+- `verdict` is `pass` / `fail` at 80% of auto-scored items. `needs_review` lists missed
+  `data-point` values. No emoji self-grade row.
+- ≥80%: unit passed — log `pass` in `progress-log.md`.
+- <80%: generate a targeted mini-practice worksheet for the missed points (type P) **and**
+  the retake file in `gt/retakes/` (see Filename above), then point Sam at those. Skip
+  generation only if he says to skip.
 
 ## Scoring rules
-- Auto-scored: all MCQ (C, D, F comprehension). The template's MCQ marking provides the count.
-- Self-graded: E items — the key asks the learner to honestly mark 😊 (correct) / 🤔
-  (almost) / 😩 (wrong); these feed advice but not the percentage.
+- Auto-scored: all MCQ (C, D, F comprehension) plus bank-fill. The paste-report counts these.
+- Production (E) is not auto-scored; Sam can add notes in the report's `notes:` line.
 - The pass threshold (80% of auto-scored items) is a guideline recorded in the log, not a
   hard gate — Sam decides whether to advance or remediate.
 

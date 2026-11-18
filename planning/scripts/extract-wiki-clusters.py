@@ -9,7 +9,7 @@ import re
 import html as htmllib
 from pathlib import Path
 
-GRAMMAR_DIR = Path(r"Z:\Chinese\grammar")
+GRAMMAR_DIR = Path(r"Z:\Chinese\resources\grammar")
 OUT = Path(r"Z:\Chinese\planning\scripts\wiki-clusters.json")
 
 HEADING_RE = re.compile(r'<h([234])[^>]*>.*?class="mw-headline"[^>]*>(.*?)</span>.*?</h\1>', re.S)

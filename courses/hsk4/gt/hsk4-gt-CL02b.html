@@ -41,11 +41,12 @@
   .card .formula { color:var(--accent); font-weight:700; }
   .card .pit { color:#8a4b00; font-size:.85rem; margin-top:4px; }
   .qno { font-weight:700; color:var(--accent); margin-right:6px; }
-  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
-  .zh.show::before, body.py-all .zh::before {
-    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
-    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap; font-family:Arial,sans-serif; }
-  button { font-family:inherit; cursor:pointer; }
+  .zh { position:relative; cursor:help; border-bottom:1px dashed #d8d2c4; padding-top:1.05em; }
+  .zh:hover::before {
+    content:attr(data-py); position:absolute; top:0; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap;
+    font-family:Arial,sans-serif; pointer-events:none; }
+button { font-family:inherit; cursor:pointer; }
   .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent); border-radius:8px; padding:5px 14px; font-size:.85rem; }
   .btn:hover { background:var(--accent-soft); }
   .key { display:none; margin-top:10px; padding:10px 12px; border-radius:8px; background:#f2f8f2; border-left:4px solid var(--ok); font-size:.92rem; }
@@ -61,25 +62,23 @@
   details.ref { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 14px; margin:10px 0; }
   details.ref summary { cursor:pointer; font-weight:700; color:var(--accent); }
   details.ref ul { margin:8px 0 0 18px; font-size:.92rem; }
+  .scorebox pre.report { background:#f6f4ef; border:1px solid var(--line); border-radius:8px; padding:12px; font-size:.85rem; white-space:pre-wrap; font-family:Consolas,"Courier New",monospace; }
   .scorebox { background:var(--card); border:2px solid var(--accent); border-radius:12px; padding:16px; margin-top:36px; }
   .scorebox .result { font-size:1.1rem; font-weight:700; margin:8px 0; }
   .scorebox .verdict-pass { color:var(--ok); }
   .scorebox .verdict-fail { color:var(--bad); }
   .scorebox .missed-list { background:var(--accent-soft); border-radius:8px; padding:8px 12px; margin-top:8px; font-size:.95rem; }
   .score-result { display:none; } .score-result.show { display:block; }
-  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line); border-radius:8px; padding:4px 10px; margin-right:6px; }
-  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
 </style>
 </head>
-<body>
+<body data-id="hsk4-gt-CL02b" data-type="GT">
 <header class="worksheet">
   <h1>HSK 4 · 单元测试 · 时间/频率副词（CL02b）</h1>
   <div class="meta">
     <span><b>集群</b> L4-CL02b（8 个语法点 + 辨析 CL27/CL30）</span>
     <span><b>覆盖</b> hsk4-ws-004 / hsk4-ws-005</span>
     <span><b>用时</b> 约 14 分钟</span>
-    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
-  </div>
+</div>
 </header>
 
 <div class="goal">
@@ -90,17 +89,39 @@
 <!-- ============ A 语法讲解 ============ -->
 <h2 class="section"><span class="badge">A</span> 语法讲解 <small>每个考点一张卡（约 3 分钟）</small></h2>
 <div class="cards">
-  <div class="card"><h3>1. 刚 gāng</h3><span class="formula">刚 + V</span><p>Just (a moment ago) — adverb glued before the verb. <span class="zh" data-py="wǒ gāng chī wán fàn">我刚吃完饭。</span> Pitfall: 刚 is an adverb — it can't modify a noun (✗刚的事).</p></div>
-  <div class="card"><h3>2. 原来 yuánlái</h3><span class="formula">原来 + 真相 / 原来的状态</span><p>Realization: "so THAT's how it is!" — or the original state. <span class="zh" data-py="yuánlái shì nǐ">原来是你！</span> Pitfall: 原来 is finding out; 本来 is a plan that changed.</p></div>
-  <div class="card"><h3>3. 本来 běnlái</h3><span class="formula">本来 + 打算/想 … (后来…)</span><p>Originally — with an implied change. <span class="zh" data-py="běnlái xiǎng zǎo shuì">本来想早睡，结果刷手机到半夜。</span></p></div>
-  <div class="card"><h3>4. 差点 chàdiǎnr</h3><span class="formula">差点 (+没) + V</span><p>Almost — the near-miss did NOT happen. <span class="zh" data-py="chàdiǎn shuāi dǎo">差点摔倒</span> (didn't fall). Pitfall: never for things that actually happened.</p></div>
-  <div class="card"><h3>5. 从来 cónglái</h3><span class="formula">从来 + 都 / 不 / 没 + V</span><p>From past to now, unbroken. <span class="zh" data-py="tā cónglái bù chídào">他从来不迟到。</span> Pitfall: 从来 takes no 了 (✗从来了).</p></div>
-  <div class="card"><h3>6. 结果 jiéguǒ（连）</h3><span class="formula">…，结果 + 出乎意料的结局</span><p>"As a result" — often the twist. <span class="zh" data-py="méi dài sǎn, jiéguǒ lín chéng luòtāngjī">没带伞，结果淋成落汤鸡。</span></p></div>
-  <div class="card"><h3>7. 正好 zhènghǎo</h3><span class="formula">正好 + V / Adj</span><p>Exactly / coincidentally fitting. <span class="zh" data-py="wǒ zhènghǎo yě yào qù">我正好也要去。</span></p></div>
-  <div class="card"><h3>8. 先…再… xiān…zài…</h3><span class="formula">先 + V1，再 + V2</span><p>Sequence: first do this, then that. <span class="zh" data-py="xiān chī fàn, zài xiě zuòyè">先吃饭，再写作业。</span></p></div>
-  <div class="card"><h3>辨析 · 刚 vs 刚才</h3><span class="formula">刚=副词（紧跟动词）／刚才=时间名词（可作定语）</span><p><span class="zh" data-py="gāngcāi de shì bié tí le">刚才的事别提了</span> ✓，✗刚的事。</p></div>
-  <div class="card"><h3>辨析 · 常常 vs 往往</h3><span class="formula">常常=纯频率／往往=带条件/规律的"往往"</span><p><span class="zh" data-py="tā wǎngwǎng zhōumò qù páshān, tiānqì bù hǎo jiù bù qù">他往往周末去爬山，天气不好就不去。</span> — a typical pattern with conditions.</p></div>
-  <div class="card"><h3>辨析 · 以后 vs ……的时候</h3><span class="formula">以后=之后的时间段／的时候=正在进行时</span><p><span class="zh" data-py="bìyè yǐhòu, wǒ dǎsuàn lǚxíng">毕业以后，我打算先旅行。</span> vs <span class="zh" data-py="bìyè de shíhou, wǒmen kū le">毕业的时候，我们哭了。</span></p></div>
+  <div class="card"><h3>1. 刚 gāng</h3><span class="formula">刚 + V</span><p>Just (a moment ago) — adverb glued before the verb. Pitfall: 刚 is an adverb — it can't modify a noun (✗刚的事).</p>
+    <p>1. <span class="zh" data-py="wǒ gāng dǎ wán diànhuà, kèhù jiù lái le">我刚打完电话，客户就来了。</span> — I had just hung up when the client arrived. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="huǒchē gāng kāi zǒu, tā cái gǎn dào">火车刚开走，他才赶到。</span> — The train had just left when he arrived. <span class="srctag">出行</span></p></div>
+  <div class="card"><h3>2. 原来 yuánlái</h3><span class="formula">原来 + 真相 / 原来的状态</span><p>Realization: "so THAT's how it is!" — or the original state. Pitfall: 原来 is finding out; 本来 is a plan that changed.</p>
+    <p>1. <span class="zh" data-py="yuánlái fùjiàn méi fā chénggōng">原来附件没发成功。</span> — So that's why — the attachment never sent. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="yuánlái zhè jiā cāntīng huàn chúshī le">原来这家餐厅换厨师了。</span> — So that's it — this restaurant changed chefs. <span class="srctag">饮食</span></p></div>
+  <div class="card"><h3>3. 本来 běnlái</h3><span class="formula">本来 + 打算/想 … (后来…)</span><p>Originally — with an implied change.</p>
+    <p>1. <span class="zh" data-py="běnlái xiǎng qù chūchāi, hòulái xiàngmù qǔxiāo le">本来想去出差，后来项目取消了。</span> — I had planned a business trip; the project was cancelled. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="běnlái xiǎng zuò dìtiě, jiéguǒ xiànlù jiǎnxiū">本来想坐地铁，结果线路检修。</span> — I had planned the subway, but the line was under repair. <span class="srctag">出行</span></p></div>
+  <div class="card"><h3>4. 差点 chàdiǎnr</h3><span class="formula">差点 (+没) + V</span><p>Almost — the near-miss did NOT happen. Pitfall: never for things that actually happened.</p>
+    <p>1. <span class="zh" data-py="wǒ chàdiǎn bǎ mìmǎ fā cuò rén">我差点把密码发错人。</span> — I almost sent the password to the wrong person. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="tā chàdiǎn cuòguò zhè bān fēijī">他差点错过这班飞机。</span> — He almost missed this flight. <span class="srctag">出行</span></p></div>
+  <div class="card"><h3>5. 从来 cónglái</h3><span class="formula">从来 + 都 / 不 / 没 + V</span><p>From past to now, unbroken. Pitfall: 从来 takes no 了 (✗从来了).</p>
+    <p>1. <span class="zh" data-py="tā cónglái méi chíjiāo guo bàogào">他从来没迟交过报告。</span> — He has never once submitted a report late. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="wǒ cónglái bù zài kǎoshì qián tūjī">我从来不在考试前突击。</span> — I never cram right before a test. <span class="srctag">学习</span></p></div>
+  <div class="card"><h3>6. 结果 jiéguǒ（连）</h3><span class="formula">…，结果 + 出乎意料的结局</span><p>"As a result" — often the twist.</p>
+    <p>1. <span class="zh" data-py="wǒ wàng le dài yùyuē dān, jiéguǒ méi jìn chéng huìyì">我忘了带预约单，结果没进成会议。</span> — I forgot the appointment slip, so I never got into the meeting. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="wǒmen méi yùdìng, jiéguǒ cāntīng zuò mǎn le">我们没预订，结果餐厅坐满了。</span> — We hadn't booked, so the restaurant was full. <span class="srctag">饮食</span></p></div>
+  <div class="card"><h3>7. 正好 zhènghǎo</h3><span class="formula">正好 + V / Adj</span><p>Exactly / coincidentally fitting.</p>
+    <p>1. <span class="zh" data-py="nǐ lái de zhènghǎo, wǒmen zhèng yào kāihuì">你来得正好，我们正要开会。</span> — You arrived at the perfect time — we were about to start. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="wǒ zhènghǎo yě yào qù jīchǎng">我正好也要去机场。</span> — I happen to be going to the airport too. <span class="srctag">出行</span></p></div>
+  <div class="card"><h3>8. 先…再… xiān…zài…</h3><span class="formula">先 + V1，再 + V2</span><p>Sequence: first do this, then that.</p>
+    <p>1. <span class="zh" data-py="xiān bǎ bàogào gǎi hǎo, zài fā gěi kèhù">先把报告改好，再发给客户。</span> — Fix the report first, then send it to the client. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="xiān mǎi yuèbǐng, zài huí jiā chī wǎnfàn">先买月饼，再回家吃晚饭。</span> — Buy the mooncakes first, then go home for dinner. <span class="srctag">饮食</span></p></div>
+  <div class="card"><h3>辨析 · 刚 vs 刚才</h3><span class="formula">刚=副词（紧跟动词）／刚才=时间名词（可作定语）</span>
+    <p>1. <span class="zh" data-py="gāngcái de yóujiàn nǐ kàn le ma">刚才的邮件你看了吗？</span> ✓ 刚才的邮件 · ✗刚的邮件. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="wǒ gāng xià chē, gāngcái de lù tài dǔ le">我刚下车，刚才的路太堵了。</span> — I just got off; the road a moment ago was jammed. <span class="srctag">出行</span></p></div>
+  <div class="card"><h3>辨析 · 常常 vs 往往</h3><span class="formula">常常=纯频率／往往=带条件/规律的"往往"</span>
+    <p>1. <span class="zh" data-py="tā chángcháng zài cháshuǐjiān hé tóngshì liáotiān">他常常在茶水间和同事聊天。</span> — He often chats with colleagues in the pantry. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="tiānqì yì rè, tā wǎngwǎng zhǐ hē qìshuǐ bù hē tāng">天气一热，他往往只喝汽水不喝汤。</span> — When it's hot, he typically drinks soda instead of soup. <span class="srctag">饮食</span></p></div>
+  <div class="card"><h3>辨析 · 以后 vs ……的时候</h3><span class="formula">以后=之后的时间段／的时候=正在进行时</span>
+    <p>1. <span class="zh" data-py="qiān wán hétong yǐhòu, wǒmen zài tāolùn fāhuò">签完合同以后，我们再讨论发货。</span> — After signing, we'll discuss shipment. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="děng chē de shíhou, tā yìzhí zài fùxí kèwén">等车的时候，他一直在复习课文。</span> — While waiting for the bus, he kept reviewing the text. <span class="srctag">学习</span></p></div>
 </div>
 
 <!-- ============ B 集群速览 ============ -->
@@ -301,15 +322,12 @@
 <!-- ============ G 得分总结 ============ -->
 <h2 class="section"><span class="badge">G</span> 得分总结 <small>Score summary</small></h2>
 <div class="scorebox">
-  <p><b>得分总结 Score summary</b> — 检查完所有选择题后点下面的按钮。</p>
-  <button class="btn score-btn">计算得分</button>
+  <p><b>报告 Report</b> — 做完选择题后点按钮，把生成的文字贴到课程对话里。</p>
+  <button class="btn score-btn">生成报告 / Copy report</button>
   <div class="score-result"></div>
-  <p><b>自评打分 Self-grade section E</b>: <button class="conf">😊 全对</button><button class="conf">🤔 差不多</button><button class="conf">😩 不行</button></p>
-</div>
+  </div>
 
 <script>
-document.getElementById('pyAll').onclick = () => document.body.classList.toggle('py-all');
-document.addEventListener('click', e => { const zh = e.target.closest('.zh'); if (zh) zh.classList.toggle('show'); });
 document.addEventListener('click', e => { if (e.target.matches('.check')) { const item = e.target.closest('.item'); const key = item && item.querySelector('.key'); if (key) key.classList.add('show'); } });
 document.addEventListener('click', e => {
   if (!e.target.matches('.opt')) return;
@@ -330,33 +348,57 @@ document.addEventListener('click', e => {
   });
 });
 document.addEventListener('click', e => {
-  if (!e.target.matches('.conf')) return;
-  e.target.parentElement.querySelectorAll('.conf').forEach(b => b.classList.remove('sel'));
-  e.target.classList.add('sel');
-});
-document.addEventListener('click', e => {
+  if (e.target.matches('.copy-report')) {
+    const pre = e.target.closest('.scorebox').querySelector('pre.report');
+    if (pre) navigator.clipboard.writeText(pre.textContent);
+    return;
+  }
   if (!e.target.matches('.score-btn')) return;
   const box = e.target.closest('.scorebox');
   const result = box.querySelector('.score-result');
   if (!result) return;
   let total = 0, right = 0;
   const missed = []; const seen = new Set();
+  const tag = (el) => el.dataset.point || el.dataset.word
+    || (el.closest('.item') && (el.closest('.item').dataset.point || el.closest('.item').dataset.word))
+    || ((el.closest('.item') || el).querySelector('.qno') || {}).textContent
+    || 'item';
   document.querySelectorAll('.mcq').forEach(mcq => {
     total++;
     const ok = mcq.dataset.done && !mcq.querySelector('.opt.incorrect');
     if (ok) { right++; return; }
-    const pt = mcq.dataset.point || (mcq.closest('.item')||mcq).dataset.point;
-    if (pt && !seen.has(pt)) { seen.add(pt); missed.push(pt); }
+    const w = tag(mcq);
+    if (w && !seen.has(w)) { seen.add(w); missed.push(String(w).trim()); }
+  });
+  document.querySelectorAll('.item[data-answers]').forEach(it => {
+    total++;
+    const want = it.dataset.answers.split(/\s+/);
+    const got = [...it.querySelectorAll('.slot')].map(s => s.dataset.filled || '_');
+    const ok = want.length === got.length && want.every((w, i) => got[i] === w);
+    if (ok) { right++; return; }
+    const w = it.dataset.word || it.dataset.point || '选词填空';
+    if (!seen.has(w)) { seen.add(w); missed.push(w); }
   });
   const pct = total ? Math.round((right / total) * 100) : 0;
-  const pass = pct >= 80;
+  const type = document.body.dataset.type || 'P';
+  const id = document.body.dataset.id || '';
+  let verdict = '—';
+  if (type === 'GT' || type === 'VT') verdict = pct >= 80 ? 'pass' : 'fail';
+  const report =
+`worksheet_id: ${id}
+type: ${type}
+score: ${right}/${total} (${pct}%)
+verdict: ${verdict}
+needs_review: ${missed.length ? missed.join(', ') : '—'}
+notes:`;
+  const cls = (type !== 'P' && pct >= 80) ? 'verdict-pass' : 'verdict-fail';
   result.innerHTML =
-    `<p class="result">得分 Score: <span class="${pass ? 'verdict-pass' : 'verdict-fail'}">${right} / ${total} (${pct}%)</span></p>` +
-    `<p>${pass ? '✅ <b>通过！</b>CL02b 单元过关 — 下一个：ws-006（CL02c 程度/范围副词），然后 CL02c 单元测试。'
-              : '📉 <b>还没过关</b>（80% 通过线）。把下面的点补练一下（我可以生成针对性小练习），然后再来一次。'}</p>` +
-    (missed.length ? `<div class="missed-list"><b>需要复习 Need review</b>: ${missed.join('、')}</div>` : '') +
-    `<p style="font-size:.8rem;color:#6b6558">把得分和要复习的点告诉我，我会记进 progress-log 并安排下次复习。</p>`;
+    `<p class="result">得分 Score: <span class="${cls}">${right} / ${total} (${pct}%)</span></p>` +
+    `<pre class="report">${report}</pre>` +
+    `<button type="button" class="btn copy-report">复制 Copy</button>` +
+    `<p style="font-size:.85rem;color:#6b6558;margin-top:8px">把上面的报告整段粘贴到课程对话里，我会记进 progress-log 并安排下一课。</p>`;
   result.classList.add('show');
+  navigator.clipboard.writeText(report).catch(() => {});
 });
 </script>
 </body>

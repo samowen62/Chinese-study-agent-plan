@@ -7,7 +7,8 @@ It is organized by TOPIC, not by grammar.
 Same global rules: 10–15 min, self-contained interactive HTML, pinyin hidden by default,
 per-item answer keys with explanations, 2025-syllabus cumulative vocabulary
 (`references/02-level-guide.md`), simplified characters. Start from
-`templates/worksheet-template.html` and add `score-summary`.
+`templates/worksheet-template.html`. Body needs `data-id` + `data-type="VT"`; the paste-report
+score box is already in the template.
 
 ## The word batch
 
@@ -36,7 +37,13 @@ generated: 2026-11-04
 -->
 ```
 
-Filename: `hsk{L}-vt-{NN}-{topic-slug}.html`.
+Filename: `hsk{L}-vt-{NN}.html` (course files) or `hsk{L}-vt-{NN}-{topic-slug}.html` (standalone).
+
+**Retakes (automatic):** when Sam reports a score **<80%**, generate the retake immediately
+into the adjacent `retakes\` folder — do not wait to be asked, unless he explicitly skips.
+Path: `courses/hsk{L}/vt/retakes/hsk{L}-vt-{NN}-r2.html` (later attempts `-r3`, …).
+Write fresh items; overweight missed `data-word`s from the failed attempt. A passing
+retake replaces the fail row in `progress-log.md`.
 
 ## Section skeleton (fixed order)
 
@@ -48,7 +55,7 @@ Filename: `hsk{L}-vt-{NN}-{topic-slug}.html`.
 | D | 读音 · Pinyin ↔ character (VM2) | Select/match correct pronunciation | 2–3 min | 4–5 |
 | E | 用法 · Usage in context (VM3) | Cloze sentences where only one batch word fits | 2–3 min | 5–6 |
 | F | 造句 · Production (VM4) | Write sentences with assigned batch words (self-graded) | 2 min | 2–3 |
-| G | 得分总结 · Score summary | `score-summary`: verdict + auto-collected review list | 1 min | — |
+| G | 报告 · Report | paste-report: auto-score + copy-ready block (pass/fail at 80%) | 1 min | — |
 
 Section A is a **study pass**, not part of the scored test — keep the test proper (C–G)
 inside the 10–15 minute envelope and keep A tight (2–3 min max).
@@ -56,21 +63,22 @@ inside the 10–15 minute envelope and keep A tight (2–3 min max).
 ### A — 词语讲解 (Word definitions) — REQUIRED, every batch word defined
 - For **every word in the batch** (the exact set that will be tested), render one
   definition entry, in 词汇大纲 list order, containing:
-  - **词** the word in characters (click-to-reveal pinyin with tone marks) + 词性 POS
+  - **词** the word in characters (hover pinyin with tone marks) + 词性 POS
     (from the 词汇大纲 词性 column: 名/动/形/副/量/…).
   - **定义**: a plain-English definition — a real dictionary sense for this word's POS,
     not a vague "about"-phrase.
   - **搭配/用法**: one usage note — a natural collocation, common measure word, or
     valence fact (e.g. 见面 needs 和/跟: 我跟她见过面).
-  - **例句**: one natural example sentence in the topic context, English glossed.
+  - **例句**: **two** example sentences — one everyday, one a different frame/collocation
+    — each English-glossed. Do not reuse these sentences in C–F.
 - Entries are plain `.item` cards or a definition list — visible by default (this is the
-  learning input), each word's pinyin behind click. NO word may appear in a C–F item
+  learning input), each word's pinyin on hover. NO word may appear in a C–F item
   without being defined here first. No surprises.
-- Keep one entry tight (3–4 lines); the full pass must stay ≤3 minutes.
+- Section A may run a bit longer than 3 minutes; that is acceptable for the study pass.
 
 ### B — 词语表 (Batch reference)
 - Collapsed card: one compact row per batch word — `序号 | 词 | 词性 | English gloss |
-  (pinyin by click)`. This is the during-test lookup; instruction says try without it first.
+  (pinyin on hover)`. This is the during-test lookup; instruction says try without it first.
 
 ### C — 认词 (Meaning recognition, VM1)
 - ~Half items: "这个词是什么意思？" — word shown in characters, 4 English gloss options.
@@ -104,12 +112,13 @@ inside the 10–15 minute envelope and keep A tight (2–3 min max).
 - Keys give a model sentence + acceptable variants + a "this would be wrong" example
   (wrong collocation, wrong measure word, wrong valence: e.g. 见面 needs 和/跟 object).
 
-### G — 得分总结 (Score summary)
-- `score-summary` auto-counts C/D/E; self-grade buttons cover F; percentage over
-  auto-scored items with the 80% pass guideline (same rules as the grammar test).
-- The review list is **word-level**: missed words are listed (from item `data-word`) for
-  Sam's 词语收藏; the agent must include them in the next worksheet's review section and
-  re-test them in the next VT's section C.
+### G — 报告 (Report)
+- Paste-report auto-counts C/D/E (MCQ + bank-fill); **生成报告 / Copy report** writes a
+  paste-ready block (`type: VT`, `verdict: pass|fail` at 80%). No emoji self-grade row.
+- The review list is **word-level**: missed words (from item `data-word`) go in
+  `needs_review`. The agent must include them in the next worksheet's review section and
+  re-test them in the next VT's section C. Production (F) is not auto-scored; Sam can add
+  notes in the report.
 
 ## Generation rules specific to VT
 

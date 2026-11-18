@@ -18,7 +18,8 @@ For each level, the syllabus walks two parallel tracks that share the topic rota
 
 ```
 … → [P worksheet: point 1 of cluster] → [P worksheet: point 2] → … → [GT: cluster test]
-→ (pass? → next cluster;  fail? → targeted P worksheet(s) on missed points → GT retake)
+→ (pass? → next cluster;  fail? → targeted P worksheet(s) on missed points → GT retake
+   in `gt/retakes/`; generate that retake as soon as the fail is logged, unless Sam skips)
 Vocabulary track runs alongside: [VT: topic batch 1] → [VT: topic batch 2] → …
 ```
 
@@ -69,8 +70,11 @@ Per level, in order:
   the most recent unit, a unit from ~3 back, and a unit from ~7–10 back.
 - Any word or point logged as "needs review" is REQUIRED content of the next worksheet's
   review section and of the next VT's section C / GT's section C respectively.
-- GT retakes replace (not append to) the failed attempt's row in the log; missed points
-  from the failed attempt stay flagged until a subsequent pass-level mention.
+- GT/VT retakes live in `courses/hsk{L}/{gt|vt}/retakes/` (`…-r2.html`, then `-r3`…).
+  Generate the retake file automatically when a <80% score is logged, unless Sam skips.
+  A completed retake replaces (not appends to) the failed attempt's row; missed points
+  from the failed attempt stay flagged until a subsequent pass-level mention. If Sam
+  skips the retake, leave the fail row in place and advance.
 
 ## Unit numbering and logging
 

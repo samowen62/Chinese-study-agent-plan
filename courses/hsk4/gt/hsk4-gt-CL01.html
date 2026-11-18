@@ -43,11 +43,12 @@
   .card .pit { color:#8a4b00; font-size:.88rem; margin-top:6px; }
   .qno { font-weight:700; color:var(--accent); margin-right:6px; }
   .srctag { font-size:.75rem; color:#9a917f; border:1px solid var(--line); border-radius:10px; padding:0 8px; margin-left:8px; }
-  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
-  .zh.show::before, body.py-all .zh::before {
-    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
-    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap; font-family:Arial,sans-serif; }
-  button { font-family:inherit; cursor:pointer; }
+  .zh { position:relative; cursor:help; border-bottom:1px dashed #d8d2c4; padding-top:1.05em; }
+  .zh:hover::before {
+    content:attr(data-py); position:absolute; top:0; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap;
+    font-family:Arial,sans-serif; pointer-events:none; }
+button { font-family:inherit; cursor:pointer; }
   .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent); border-radius:8px; padding:5px 14px; font-size:.85rem; }
   .btn:hover { background:var(--accent-soft); }
   .key { display:none; margin-top:10px; padding:10px 12px; border-radius:8px; background:#f2f8f2; border-left:4px solid var(--ok); font-size:.92rem; }
@@ -69,25 +70,23 @@
   details.ref summary { cursor:pointer; font-weight:700; color:var(--accent); }
   details.ref table { width:100%; border-collapse:collapse; margin-top:8px; font-size:.92rem; }
   details.ref td, details.ref th { border:1px solid var(--line); padding:5px 8px; }
+  .scorebox pre.report { background:#f6f4ef; border:1px solid var(--line); border-radius:8px; padding:12px; font-size:.85rem; white-space:pre-wrap; font-family:Consolas,"Courier New",monospace; }
   .scorebox { background:var(--card); border:2px solid var(--accent); border-radius:12px; padding:16px; margin-top:36px; }
   .scorebox .result { font-size:1.1rem; font-weight:700; margin:8px 0; }
   .scorebox .verdict-pass { color:var(--ok); }
   .scorebox .verdict-fail { color:var(--bad); }
   .scorebox .missed-list { background:var(--accent-soft); border-radius:8px; padding:8px 12px; margin-top:8px; font-size:.95rem; }
   .score-result { display:none; } .score-result.show { display:block; }
-  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line); border-radius:8px; padding:4px 10px; margin-right:6px; }
-  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
 </style>
 </head>
-<body>
+<body data-id="hsk4-gt-CL01" data-type="GT">
 <header class="worksheet">
   <h1>HSK 4 · 单元测试 · 形容词（全 / 死了）</h1>
   <div class="meta">
     <span><b>集群</b> L4-CL01 Adjectives 形容词</span>
     <span><b>覆盖</b> hsk4-ws-001</span>
     <span><b>用时</b> 约 10 分钟</span>
-    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
-  </div>
+</div>
 </header>
 
 <div class="goal">
@@ -101,17 +100,24 @@
 <div class="card">
   <h3>1. 全 quán — the whole / entire</h3>
   <p><span class="formula">全 + Noun</span>（＋都＋V）：全家 · 全班 · 全国 · 全世界 · 全身</p>
-  <p><span class="zh" data-py="quán jiā dōu bān dào Běijīng le">全家都搬到北京了。</span> = the WHOLE family moved.</p>
-  <p>What it expresses: the scope covers every member of the noun. With a plural subject, 都 usually follows: <span class="zh" data-py="quán bān tóngxué dōu lái le">全班同学都来了。</span></p>
+  <p>What it expresses: the scope covers every member of the noun. With a plural subject, 都 usually follows.</p>
+  <p><b>例句</b></p>
+  <p>1. <span class="zh" data-py="quán bù tóngshì dōu tóngyì zhège jìhuà">全部同事都同意这个计划。</span> — The whole staff agreed to the plan. <span class="srctag">职场</span></p>
+  <p>2. <span class="zh" data-py="zhè liàng chē quán shì xīn língjiàn">这辆车全是新零件。</span> — This car is all new parts. <span class="srctag">出行</span></p>
+  <p>3. <span class="zh" data-py="cānzhuō shàng quán shì làcài, wǒ chī bu liǎo">餐桌上全是辣菜，我吃不了。</span> — The table is all spicy dishes; I can't eat them. <span class="srctag">饮食</span></p>
   <p class="pit">⚠ Pitfall: 全 modifies the noun; 都 goes before the verb. ✗全班同学来了 sounds incomplete. Compare 所有(的)+N (all of X, attributive) and 各+M (each of X).</p>
 </div>
 
 <div class="card">
   <h3>2. 死了 / 得厉害 — extreme degree</h3>
-  <p><span class="formula">Adj / 心理动词 + 死了</span>：热死了 · 忙死了 · 高兴死了 · 馋死了（spoken, vivid）</p>
+  <p><span class="formula">Adj / 心理动词 + 死了</span>（spoken, vivid）</p>
   <p><span class="formula">心理动词 + 得 + 厉害</span>：想得厉害（softer, written-friendly）</p>
   <p>What it expresses: the degree is at an extreme — stronger than 太…了. 死了 never means real death here.</p>
-  <p class="pit">⚠ Pitfall: 死了 attaches directly — ✗忙得死了. And it only works with state adjectives / psych verbs: ✗吃死了 (real meaning), ✗跑了死了.</p>
+  <p><b>例句</b></p>
+  <p>1. <span class="zh" data-py="zhè fèn hétong gǎi sǐ le">这份合同改死了。</span> — This contract has been revised to death. <span class="srctag">职场</span></p>
+  <p>2. <span class="zh" data-py="kèwén bèi sǐ le, hái shì bèi cuò">课文背死了，还是背错。</span> — I recited the text to death and still got it wrong. <span class="srctag">学习</span></p>
+  <p>3. <span class="zh" data-py="wǒ kě sǐ le, kuài gěi wǒ yì píng qìshuǐ">我渴死了，快给我一瓶汽水。</span> — I'm dying of thirst — give me a soda. <span class="srctag">饮食</span></p>
+  <p class="pit">⚠ Pitfall: 死了 attaches directly — ✗改得死了. And it only works with state adjectives / psych verbs: ✗吃死了 (real meaning), ✗跑了死了.</p>
 </div>
 
 <!-- ============ B 集群速览 ============ -->
@@ -316,15 +322,12 @@
 <!-- ============ G 得分总结 ============ -->
 <h2 class="section"><span class="badge">G</span> 得分总结 <small>Score summary</small></h2>
 <div class="scorebox">
-  <p><b>得分总结 Score summary</b> — 检查完所有选择题后点下面的按钮。</p>
-  <button class="btn score-btn">计算得分</button>
+  <p><b>报告 Report</b> — 做完选择题后点按钮，把生成的文字贴到课程对话里。</p>
+  <button class="btn score-btn">生成报告 / Copy report</button>
   <div class="score-result"></div>
-  <p><b>自评打分 Self-grade section E</b>: <button class="conf">😊 全对</button><button class="conf">🤔 差不多</button><button class="conf">😩 不行</button></p>
-</div>
+  </div>
 
 <script>
-document.getElementById('pyAll').onclick = () => document.body.classList.toggle('py-all');
-document.addEventListener('click', e => { const zh = e.target.closest('.zh'); if (zh) zh.classList.toggle('show'); });
 document.addEventListener('click', e => { if (e.target.matches('.check')) { const item = e.target.closest('.item'); const key = item && item.querySelector('.key'); if (key) key.classList.add('show'); } });
 document.addEventListener('click', e => {
   if (!e.target.matches('.opt')) return;
@@ -360,33 +363,57 @@ document.addEventListener('click', e => {
   const built = item.querySelector('.built'); if (built) built.innerHTML = '';
 });
 document.addEventListener('click', e => {
-  if (!e.target.matches('.conf')) return;
-  e.target.parentElement.querySelectorAll('.conf').forEach(b => b.classList.remove('sel'));
-  e.target.classList.add('sel');
-});
-document.addEventListener('click', e => {
+  if (e.target.matches('.copy-report')) {
+    const pre = e.target.closest('.scorebox').querySelector('pre.report');
+    if (pre) navigator.clipboard.writeText(pre.textContent);
+    return;
+  }
   if (!e.target.matches('.score-btn')) return;
   const box = e.target.closest('.scorebox');
   const result = box.querySelector('.score-result');
   if (!result) return;
   let total = 0, right = 0;
   const missed = []; const seen = new Set();
+  const tag = (el) => el.dataset.point || el.dataset.word
+    || (el.closest('.item') && (el.closest('.item').dataset.point || el.closest('.item').dataset.word))
+    || ((el.closest('.item') || el).querySelector('.qno') || {}).textContent
+    || 'item';
   document.querySelectorAll('.mcq').forEach(mcq => {
     total++;
     const ok = mcq.dataset.done && !mcq.querySelector('.opt.incorrect');
     if (ok) { right++; return; }
-    const pt = mcq.dataset.point || (mcq.closest('.item')||mcq).dataset.point;
-    if (pt && !seen.has(pt)) { seen.add(pt); missed.push(pt); }
+    const w = tag(mcq);
+    if (w && !seen.has(w)) { seen.add(w); missed.push(String(w).trim()); }
+  });
+  document.querySelectorAll('.item[data-answers]').forEach(it => {
+    total++;
+    const want = it.dataset.answers.split(/\s+/);
+    const got = [...it.querySelectorAll('.slot')].map(s => s.dataset.filled || '_');
+    const ok = want.length === got.length && want.every((w, i) => got[i] === w);
+    if (ok) { right++; return; }
+    const w = it.dataset.word || it.dataset.point || '选词填空';
+    if (!seen.has(w)) { seen.add(w); missed.push(w); }
   });
   const pct = total ? Math.round((right / total) * 100) : 0;
-  const pass = pct >= 80;
+  const type = document.body.dataset.type || 'P';
+  const id = document.body.dataset.id || '';
+  let verdict = '—';
+  if (type === 'GT' || type === 'VT') verdict = pct >= 80 ? 'pass' : 'fail';
+  const report =
+`worksheet_id: ${id}
+type: ${type}
+score: ${right}/${total} (${pct}%)
+verdict: ${verdict}
+needs_review: ${missed.length ? missed.join(', ') : '—'}
+notes:`;
+  const cls = (type !== 'P' && pct >= 80) ? 'verdict-pass' : 'verdict-fail';
   result.innerHTML =
-    `<p class="result">得分 Score: <span class="${pass ? 'verdict-pass' : 'verdict-fail'}">${right} / ${total} (${pct}%)</span></p>` +
-    `<p>${pass ? '✅ <b>通过！</b>CL01 单元过关 — 可以进入 CL02a（语气副词）了。'
-              : '📉 <b>还没过关</b>（80% 通过线）。把下面这些点补练一下，然后再来一次。'}</p>` +
-    (missed.length ? `<div class="missed-list"><b>需要复习 Need review</b>: ${missed.join('、')}</div>` : '') +
-    `<p style="font-size:.8rem;color:#6b6558">把得分和要复习的点告诉我，我会记进 progress-log 并安排下次复习。</p>`;
+    `<p class="result">得分 Score: <span class="${cls}">${right} / ${total} (${pct}%)</span></p>` +
+    `<pre class="report">${report}</pre>` +
+    `<button type="button" class="btn copy-report">复制 Copy</button>` +
+    `<p style="font-size:.85rem;color:#6b6558;margin-top:8px">把上面的报告整段粘贴到课程对话里，我会记进 progress-log 并安排下一课。</p>`;
   result.classList.add('show');
+  navigator.clipboard.writeText(report).catch(() => {});
 });
 </script>
 </body>

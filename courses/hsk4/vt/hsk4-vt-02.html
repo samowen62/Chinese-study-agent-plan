@@ -35,11 +35,12 @@
   .inst { color:#6b6558; font-size:.9rem; margin:0 0 14px; }
   .item { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:12px 0; }
   .qno { font-weight:700; color:var(--accent); margin-right:6px; }
-  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
-  .zh.show::before, body.py-all .zh::before {
-    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
-    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap; font-family:Arial,sans-serif; }
-  button { font-family:inherit; cursor:pointer; }
+  .zh { position:relative; cursor:help; border-bottom:1px dashed #d8d2c4; padding-top:1.05em; }
+  .zh:hover::before {
+    content:attr(data-py); position:absolute; top:0; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap;
+    font-family:Arial,sans-serif; pointer-events:none; }
+button { font-family:inherit; cursor:pointer; }
   .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent); border-radius:8px; padding:5px 14px; font-size:.85rem; }
   .btn:hover { background:var(--accent-soft); }
   .key { display:none; margin-top:10px; padding:10px 12px; border-radius:8px; background:#f2f8f2; border-left:4px solid var(--ok); font-size:.92rem; }
@@ -63,25 +64,23 @@
   details.ref summary { cursor:pointer; font-weight:700; color:var(--accent); }
   details.ref table { width:100%; border-collapse:collapse; margin-top:8px; font-size:.9rem; }
   details.ref td, details.ref th { border:1px solid var(--line); padding:4px 8px; }
+  .scorebox pre.report { background:#f6f4ef; border:1px solid var(--line); border-radius:8px; padding:12px; font-size:.85rem; white-space:pre-wrap; font-family:Consolas,"Courier New",monospace; }
   .scorebox { background:var(--card); border:2px solid var(--accent); border-radius:12px; padding:16px; margin-top:36px; }
   .scorebox .result { font-size:1.1rem; font-weight:700; margin:8px 0; }
   .scorebox .verdict-pass { color:var(--ok); }
   .scorebox .verdict-fail { color:var(--bad); }
   .scorebox .missed-list { background:var(--accent-soft); border-radius:8px; padding:8px 12px; margin-top:8px; font-size:.95rem; }
   .score-result { display:none; } .score-result.show { display:block; }
-  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line); border-radius:8px; padding:4px 10px; margin-right:6px; }
-  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
 </style>
 </head>
-<body>
+<body data-id="hsk4-vt-02" data-type="VT">
 <header class="worksheet">
   <h1>HSK 4 · 词汇测试 02 · 饮食</h1>
   <div class="meta">
     <span><b>话题</b> 日常生活 · 饮食</span>
     <span><b>词量</b> 27 个（20 个四级 + 7 个复习词）</span>
     <span><b>用时</b> 约 14 分钟</span>
-    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
-  </div>
+</div>
 </header>
 
 <div class="goal">
@@ -91,33 +90,33 @@
 <!-- ============ A 词语讲解 ============ -->
 <h2 class="section"><span class="badge">A</span> 词语讲解 <small>Word definitions（约 2–3 分钟）</small></h2>
 <div class="item defs">
-  <p><b><span class="zh" data-py="cāntīng">餐厅</span></b><span class="pos">名 #1064</span> <span class="gloss">dining room / restaurant.</span> 例：学校<span class="zh" data-py="cāntīng">餐厅</span>的菜越来越好吃了。</p>
-  <p><b><span class="zh" data-py="chúfáng">厨房</span></b><span class="pos">名 #1093</span> <span class="gloss">kitchen.</span> 例：妈妈在<span class="zh" data-py="chúfáng">厨房</span>里做饭。</p>
-  <p><b><span class="zh" data-py="chúshī">厨师</span></b><span class="pos">名 #1094</span> <span class="gloss">chef, cook (professional).</span> 例：这位<span class="zh" data-py="chúshī">厨师</span>做的鱼最好吃。</p>
-  <p><b><span class="zh" data-py="wèidào">味道</span></b><span class="pos">名 #1773</span> <span class="gloss">taste, flavor.</span> 例：这个<span class="zh" data-py="wèidào">味道</span>有点儿怪。</p>
-  <p><b><span class="zh" data-py="suān">酸</span></b><span class="pos">形 #1706</span> <span class="gloss">sour.</span> 例：柠檬很<span class="zh" data-py="suān">酸</span>。</p>
-  <p><b><span class="zh" data-py="là">辣</span></b><span class="pos">形 #1449</span> <span class="gloss">spicy, hot (pepper-hot).</span> 例：四川菜很<span class="zh" data-py="là">辣</span>。</p>
-  <p><b><span class="zh" data-py="xián">咸</span></b><span class="pos">形 #1796</span> <span class="gloss">salty.</span> 例：汤太<span class="zh" data-py="xián">咸</span>了，得多加水。</p>
-  <p><b><span class="zh" data-py="xiāng">香</span></b><span class="pos">形 #1802</span> <span class="gloss">fragrant, smells/tastes delicious.</span> 例：谁在<span class="zh" data-py="kǎo">烤</span>肉？太<span class="zh" data-py="xiāng">香</span>了！</p>
-  <p><b><span class="zh" data-py="qìshuǐ">汽水</span></b><span class="pos">名 #1572</span> <span class="gloss">soda, fizzy drink.</span> 例：夏天喝冰<span class="zh" data-py="qìshuǐ">汽水</span>最舒服了。</p>
-  <p><b><span class="zh" data-py="suānnǎi">酸奶</span></b><span class="pos">名 #1707</span> <span class="gloss">yogurt.</span> 例：早饭我吃面包，喝<span class="zh" data-py="suānnǎi">酸奶</span>。</p>
-  <p><b><span class="zh" data-py="kuàicān">快餐</span></b><span class="pos">名 #1442</span> <span class="gloss">fast food.</span> 例：<span class="zh" data-py="kuàicān">快餐</span>方便，但是别吃太多。</p>
-  <p><b><span class="zh" data-py="mántou">馒头</span></b><span class="pos">名 #1495</span> <span class="gloss">steamed bun.</span> 例：北方人早饭常吃<span class="zh" data-py="mántou">馒头</span>。</p>
-  <p><b><span class="zh" data-py="yuèbing">月饼</span></b><span class="pos">名 #1908</span> <span class="gloss">mooncake (Mid-Autumn Festival).</span> 例：中秋节我们全家一起吃<span class="zh" data-py="yuèbing">月饼</span>。</p>
-  <p><b><span class="zh" data-py="pútao">葡萄</span></b><span class="pos">名 #1559</span> <span class="gloss">grapes.</span> 例：新疆的<span class="zh" data-py="pútao">葡萄</span>特别甜。</p>
-  <p><b><span class="zh" data-py="qiǎokèlì">巧克力</span></b><span class="pos">名 #1583</span> <span class="gloss">chocolate.</span> 例：她一吃<span class="zh" data-py="qiǎokèlì">巧克力</span>就停不下来。</p>
-  <p><b><span class="zh" data-py="xīhóngshì">西红柿</span></b><span class="pos">名 #1789</span> <span class="gloss">tomato.</span> 例：<span class="zh" data-py="xīhóngshì">西红柿</span>炒鸡蛋是我的拿手菜。</p>
-  <p><b><span class="zh" data-py="tāng">汤</span></b><span class="pos">名 #1720</span> <span class="gloss">soup.</span> 例：喝完<span class="zh" data-py="tāng">汤</span>再吃饭。</p>
-  <p><b><span class="zh" data-py="kǎo">烤</span></b><span class="pos">动 #1421</span> <span class="gloss">to roast, toast, grill, bake.</span> 例：我们在院子里<span class="zh" data-py="kǎo">烤</span>肉。</p>
-  <p><b><span class="zh" data-py="jùcān">聚餐</span></b><span class="pos">动 #1414</span> <span class="gloss">to have a group meal together.</span> 例：周五下班后我们去<span class="zh" data-py="jùcān">聚餐</span>。</p>
-  <p><b><span class="zh" data-py="gānbēi">干杯</span></b><span class="pos">动 #1221</span> <span class="gloss">cheers! (raise glasses). 敬酒时说.</span> 例：来，为我们的友谊<span class="zh" data-py="gānbēi">干杯</span>！</p>
-  <p><b><span class="zh" data-py="mǐfàn">米饭</span></b><span class="pos">名 [L1]</span> <span class="gloss">cooked rice (review).</span> 例：南方人几乎顿顿吃<span class="zh" data-py="mǐfàn">米饭</span>。</p>
-  <p><b><span class="zh" data-py="miàntiáor">面条儿</span></b><span class="pos">名 [L1]</span> <span class="gloss">noodles (review).</span> 例：生日要吃<span class="zh" data-py="miàntiáor">面条儿</span>。</p>
-  <p><b><span class="zh" data-py="chá">茶</span></b><span class="pos">名 [L1]</span> <span class="gloss">tea (review).</span> 例：爷爷每天都喝<span class="zh" data-py="chá">茶</span>。</p>
-  <p><b><span class="zh" data-py="niúnǎi">牛奶</span></b><span class="pos">名 [L1]</span> <span class="gloss">milk (review).</span> 例：睡觉前喝一杯<span class="zh" data-py="niúnǎi">牛奶</span>。</p>
-  <p><b><span class="zh" data-py="jiǎozi">饺子</span></b><span class="pos">名 [L1]</span> <span class="gloss">dumplings (review).</span> 例：过年全家一起包<span class="zh" data-py="jiǎozi">饺子</span>。</p>
-  <p><b><span class="zh" data-py="hǎochī">好吃</span></b><span class="pos">形 [L1]</span> <span class="gloss">tasty (review).</span> 例：你做的菜真<span class="zh" data-py="hǎochī">好吃</span>！</p>
-  <p><b><span class="zh" data-py="píngguǒ">苹果</span></b><span class="pos">名 [L1]</span> <span class="gloss">apple (review).</span> 例：一天一个<span class="zh" data-py="píngguǒ">苹果</span>，医生远离我。</p>
+  <p><b><span class="zh" data-py="cāntīng">餐厅</span></b><span class="pos">名 #1064</span> <span class="gloss">dining room / restaurant.</span><br>① 公司<span class="zh" data-py="cāntīng">餐厅</span>中午人最多。 — The company canteen is busiest at noon. <span class="srctag">职场</span><br>② 高铁站的<span class="zh" data-py="cāntīng">餐厅</span>有点儿贵。 — The restaurant at the high-speed rail station is a bit pricey. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="chúfáng">厨房</span></b><span class="pos">名 #1093</span> <span class="gloss">kitchen.</span><br>① 茶水间比家里的<span class="zh" data-py="chúfáng">厨房</span>还小。 — The office pantry is even smaller than a home kitchen. <span class="srctag">职场</span><br>② 请把行李箱先放<span class="zh" data-py="chúfáng">厨房</span>门口。 — Put the suitcase by the kitchen door first. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="chúshī">厨师</span></b><span class="pos">名 #1094</span> <span class="gloss">chef, cook (professional).</span><br>① 酒店<span class="zh" data-py="chúshī">厨师</span>长亲自做了欢迎宴。 — The hotel's head chef cooked the welcome dinner. <span class="srctag">出行</span><br>② 学校食堂换了<span class="zh" data-py="chúshī">厨师</span>，味道完全不同。 — The school canteen changed chefs; the flavor is totally different. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="wèidào">味道</span></b><span class="pos">名 #1773</span> <span class="gloss">taste, flavor.</span><br>① 这杯咖啡的<span class="zh" data-py="wèidào">味道</span>有点儿苦。 — This coffee tastes a bit bitter. <span class="srctag">职场</span><br>② 飞机餐的<span class="zh" data-py="wèidào">味道</span>总是一般。 — Airplane meals always taste so-so. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="suān">酸</span></b><span class="pos">形 #1706</span> <span class="gloss">sour.</span><br>① 这瓶酸奶太<span class="zh" data-py="suān">酸</span>了，加点糖吧。 — This yogurt is too sour; add a little sugar. <span class="srctag">饮食</span><br>② 柠檬茶很<span class="zh" data-py="suān">酸</span>，开会时提神。 — The lemon tea is sour; it keeps you alert in meetings. <span class="srctag">职场</span></p>
+  <p><b><span class="zh" data-py="là">辣</span></b><span class="pos">形 #1449</span> <span class="gloss">spicy, hot (pepper-hot).</span><br>① 同事请客，点的全是<span class="zh" data-py="là">辣</span>菜。 — A colleague treated us; every dish was spicy. <span class="srctag">职场</span><br>② 火车上的方便面特别<span class="zh" data-py="là">辣</span>。 — Instant noodles on the train are extra spicy. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="xián">咸</span></b><span class="pos">形 #1796</span> <span class="gloss">salty.</span><br>① 食堂的汤太<span class="zh" data-py="xián">咸</span>了，得多加水。 — The canteen soup is too salty; add water. <span class="srctag">职场</span><br>② 飞机餐的花生很<span class="zh" data-py="xián">咸</span>，要多喝水。 — The peanuts on the plane are salty; drink more water. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="xiāng">香</span></b><span class="pos">形 #1802</span> <span class="gloss">fragrant, smells/tastes delicious.</span><br>① 茶水间谁在烤面包？太<span class="zh" data-py="xiāng">香</span>了。 — Who's toasting bread in the pantry? It smells great. <span class="srctag">职场</span><br>② 街上烤红薯的<span class="zh" data-py="xiāng">香</span>味让人停下。 — The smell of roasted sweet potato on the street makes you stop. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="qìshuǐ">汽水</span></b><span class="pos">名 #1572</span> <span class="gloss">soda, fizzy drink.</span><br>① 会议室只准备了茶和<span class="zh" data-py="qìshuǐ">汽水</span>。 — The meeting room only has tea and soda. <span class="srctag">职场</span><br>② 等车的时候我买了一瓶冰<span class="zh" data-py="qìshuǐ">汽水</span>。 — I bought an iced soda while waiting for the bus. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="suānnǎi">酸奶</span></b><span class="pos">名 #1707</span> <span class="gloss">yogurt.</span><br>① 我早饭在办公室喝<span class="zh" data-py="suānnǎi">酸奶</span>。 — I drink yogurt at my desk for breakfast. <span class="srctag">职场</span><br>② 便利店的<span class="zh" data-py="suānnǎi">酸奶</span>比车站便宜。 — Convenience-store yogurt is cheaper than at the station. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="kuàicān">快餐</span></b><span class="pos">名 #1442</span> <span class="gloss">fast food.</span><br>① 中午没时间，只好吃<span class="zh" data-py="kuàicān">快餐</span>。 — No time at noon, so I just grab fast food. <span class="srctag">职场</span><br>② 机场的<span class="zh" data-py="kuàicān">快餐</span>排队很长。 — The airport fast-food line is long. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="mántou">馒头</span></b><span class="pos">名 #1495</span> <span class="gloss">steamed bun.</span><br>① 食堂早饭有免费<span class="zh" data-py="mántou">馒头</span>。 — The canteen gives free steamed buns at breakfast. <span class="srctag">职场</span><br>② 火车上我带了两个<span class="zh" data-py="mántou">馒头</span>当午饭。 — I brought two steamed buns on the train for lunch. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="yuèbing">月饼</span></b><span class="pos">名 #1908</span> <span class="gloss">mooncake (Mid-Autumn Festival).</span><br>① 中秋节公司给每人一盒<span class="zh" data-py="yuèbing">月饼</span>。 — At Mid-Autumn the company gives everyone a box of mooncakes. <span class="srctag">职场</span><br>② 课文里讲了<span class="zh" data-py="yuèbing">月饼</span>的来历。 — The text explains where mooncakes come from. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="pútao">葡萄</span></b><span class="pos">名 #1559</span> <span class="gloss">grapes.</span><br>① 茶水间放了一盘<span class="zh" data-py="pútao">葡萄</span>。 — There's a plate of grapes in the pantry. <span class="srctag">职场</span><br>② 高铁上别买太甜的<span class="zh" data-py="pútao">葡萄</span>，容易坏。 — Don't buy overly sweet grapes for the train; they spoil. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="qiǎokèlì">巧克力</span></b><span class="pos">名 #1583</span> <span class="gloss">chocolate.</span><br>① 客户来访，桌上放了<span class="zh" data-py="qiǎokèlì">巧克力</span>。 — When clients visit, there is chocolate on the table. <span class="srctag">职场</span><br>② 考试前她吃一块<span class="zh" data-py="qiǎokèlì">巧克力</span>提神。 — Before a test she eats a piece of chocolate to wake up. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="xīhóngshì">西红柿</span></b><span class="pos">名 #1789</span> <span class="gloss">tomato.</span><br>① 食堂今天的<span class="zh" data-py="xīhóngshì">西红柿</span>炒鸡蛋卖完了。 — Today's tomato-and-egg at the canteen sold out. <span class="srctag">职场</span><br>② 课文生词里有<span class="zh" data-py="xīhóngshì">西红柿</span>和鸡蛋。 — The new-word list has tomato and egg. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="tāng">汤</span></b><span class="pos">名 #1720</span> <span class="gloss">soup.</span><br>① 开会前我先喝了一碗<span class="zh" data-py="tāng">汤</span>。 — I had a bowl of soup before the meeting. <span class="srctag">职场</span><br>② 冬天坐火车，带瓶热<span class="zh" data-py="tāng">汤</span>最舒服。 — On a winter train, a bottle of hot soup is the most comfortable. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="kǎo">烤</span></b><span class="pos">动 #1421</span> <span class="gloss">to roast, toast, grill, bake.</span><br>① 聚餐时同事负责<span class="zh" data-py="kǎo">烤</span>肉。 — At the group meal a colleague is in charge of grilling. <span class="srctag">职场</span><br>② 旅馆早餐可以自己<span class="zh" data-py="kǎo">烤</span>面包。 — At the hotel breakfast you can toast your own bread. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="jùcān">聚餐</span></b><span class="pos">动 #1414</span> <span class="gloss">to have a group meal together.</span><br>① 项目结束，组里一起<span class="zh" data-py="jùcān">聚餐</span>。 — When the project ended, the team went out together. <span class="srctag">职场</span><br>② 同学毕业前约好去<span class="zh" data-py="jùcān">聚餐</span>。 — Classmates planned a group meal before graduation. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="gānbēi">干杯</span></b><span class="pos">动 #1221</span> <span class="gloss">cheers! (raise glasses). 敬酒时说.</span><br>① 合同签完，老板说先<span class="zh" data-py="gānbēi">干杯</span>。 — After signing, the boss said "cheers" first. <span class="srctag">职场</span><br>② 同学聚会，大家为成绩<span class="zh" data-py="gānbēi">干杯</span>。 — At the reunion everyone toasted their grades. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="mǐfàn">米饭</span></b><span class="pos">名 [L1]</span> <span class="gloss">cooked rice (review).</span><br>① 食堂的<span class="zh" data-py="mǐfàn">米饭</span>可以随便加。 — You can add extra rice in the canteen. <span class="srctag">职场</span><br>② 飞机餐的<span class="zh" data-py="mǐfàn">米饭</span>有点儿硬。 — The rice on the plane meal is a bit hard. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="miàntiáor">面条儿</span></b><span class="pos">名 [L1]</span> <span class="gloss">noodles (review).</span><br>① 加班到很晚，我煮了碗<span class="zh" data-py="miàntiáor">面条儿</span>。 — Working late, I cooked a bowl of noodles. <span class="srctag">职场</span><br>② 车站最方便的就是一碗<span class="zh" data-py="miàntiáor">面条儿</span>。 — The easiest thing at the station is a bowl of noodles. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="chá">茶</span></b><span class="pos">名 [L1]</span> <span class="gloss">tea (review).</span><br>① 会客室先上<span class="zh" data-py="chá">茶</span>。 — Guests are served tea first in the meeting room. <span class="srctag">职场</span><br>② 复习到半夜，我泡了一杯<span class="zh" data-py="chá">茶</span>。 — Reviewing until midnight, I made a cup of tea. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="niúnǎi">牛奶</span></b><span class="pos">名 [L1]</span> <span class="gloss">milk (review).</span><br>① 办公室冰箱里有盒<span class="zh" data-py="niúnǎi">牛奶</span>。 — There's a carton of milk in the office fridge. <span class="srctag">职场</span><br>② 火车上我买了一盒<span class="zh" data-py="niúnǎi">牛奶</span>当早饭。 — I bought a carton of milk on the train for breakfast. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="jiǎozi">饺子</span></b><span class="pos">名 [L1]</span> <span class="gloss">dumplings (review).</span><br>① 年会点了几盘<span class="zh" data-py="jiǎozi">饺子</span>。 — The year-end party ordered several plates of dumplings. <span class="srctag">职场</span><br>② 课文说北方过年要包<span class="zh" data-py="jiǎozi">饺子</span>。 — The text says northerners make dumplings for New Year. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="hǎochī">好吃</span></b><span class="pos">形 [L1]</span> <span class="gloss">tasty (review).</span><br>① 客户说这顿饭特别<span class="zh" data-py="hǎochī">好吃</span>。 — The client said this meal was especially tasty. <span class="srctag">职场</span><br>② 火车站的包子意外地<span class="zh" data-py="hǎochī">好吃</span>。 — The buns at the station were surprisingly tasty. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="píngguǒ">苹果</span></b><span class="pos">名 [L1]</span> <span class="gloss">apple (review).</span><br>① 下午茶放了一盘<span class="zh" data-py="píngguǒ">苹果</span>。 — Afternoon tea came with a plate of apples. <span class="srctag">职场</span><br>② 坐长途车，我带了两个<span class="zh" data-py="píngguǒ">苹果</span>。 — For the long-distance bus I brought two apples. <span class="srctag">出行</span></p>
 </div>
 
 <!-- ============ B 词语表 ============ -->
@@ -335,15 +334,12 @@
 <!-- ============ G 得分总结 ============ -->
 <h2 class="section"><span class="badge">G</span> 得分总结 <small>Score summary</small></h2>
 <div class="scorebox">
-  <p><b>得分总结 Score summary</b> — 检查完所有选择题后点下面的按钮。</p>
-  <button class="btn score-btn">计算得分</button>
+  <p><b>报告 Report</b> — 做完选择题后点按钮，把生成的文字贴到课程对话里。</p>
+  <button class="btn score-btn">生成报告 / Copy report</button>
   <div class="score-result"></div>
-  <p><b>自评打分 Self-grade section F</b>: <button class="conf">😊 全对</button><button class="conf">🤔 差不多</button><button class="conf">😩 不行</button></p>
-</div>
+  </div>
 
 <script>
-document.getElementById('pyAll').onclick = () => document.body.classList.toggle('py-all');
-document.addEventListener('click', e => { const zh = e.target.closest('.zh'); if (zh) zh.classList.toggle('show'); });
 document.addEventListener('click', e => { if (e.target.matches('.check')) { const item = e.target.closest('.item'); const key = item && item.querySelector('.key'); if (key) key.classList.add('show'); } });
 document.addEventListener('click', e => {
   if (!e.target.matches('.opt')) return;
@@ -386,23 +382,27 @@ document.addEventListener('click', e => {
   }
 });
 document.addEventListener('click', e => {
-  if (!e.target.matches('.conf')) return;
-  e.target.parentElement.querySelectorAll('.conf').forEach(b => b.classList.remove('sel'));
-  e.target.classList.add('sel');
-});
-document.addEventListener('click', e => {
+  if (e.target.matches('.copy-report')) {
+    const pre = e.target.closest('.scorebox').querySelector('pre.report');
+    if (pre) navigator.clipboard.writeText(pre.textContent);
+    return;
+  }
   if (!e.target.matches('.score-btn')) return;
   const box = e.target.closest('.scorebox');
   const result = box.querySelector('.score-result');
   if (!result) return;
   let total = 0, right = 0;
   const missed = []; const seen = new Set();
+  const tag = (el) => el.dataset.point || el.dataset.word
+    || (el.closest('.item') && (el.closest('.item').dataset.point || el.closest('.item').dataset.word))
+    || ((el.closest('.item') || el).querySelector('.qno') || {}).textContent
+    || 'item';
   document.querySelectorAll('.mcq').forEach(mcq => {
     total++;
     const ok = mcq.dataset.done && !mcq.querySelector('.opt.incorrect');
     if (ok) { right++; return; }
-    const w = mcq.dataset.word || (mcq.closest('.item')||mcq).dataset.word;
-    if (w && !seen.has(w)) { seen.add(w); missed.push(w); }
+    const w = tag(mcq);
+    if (w && !seen.has(w)) { seen.add(w); missed.push(String(w).trim()); }
   });
   document.querySelectorAll('.item[data-answers]').forEach(it => {
     total++;
@@ -410,18 +410,29 @@ document.addEventListener('click', e => {
     const got = [...it.querySelectorAll('.slot')].map(s => s.dataset.filled || '_');
     const ok = want.length === got.length && want.every((w, i) => got[i] === w);
     if (ok) { right++; return; }
-    const w = it.dataset.word || '用法搭配(选词填空)';
+    const w = it.dataset.word || it.dataset.point || '选词填空';
     if (!seen.has(w)) { seen.add(w); missed.push(w); }
   });
   const pct = total ? Math.round((right / total) * 100) : 0;
-  const pass = pct >= 80;
+  const type = document.body.dataset.type || 'P';
+  const id = document.body.dataset.id || '';
+  let verdict = '—';
+  if (type === 'GT' || type === 'VT') verdict = pct >= 80 ? 'pass' : 'fail';
+  const report =
+`worksheet_id: ${id}
+type: ${type}
+score: ${right}/${total} (${pct}%)
+verdict: ${verdict}
+needs_review: ${missed.length ? missed.join(', ') : '—'}
+notes:`;
+  const cls = (type !== 'P' && pct >= 80) ? 'verdict-pass' : 'verdict-fail';
   result.innerHTML =
-    `<p class="result">得分 Score: <span class="${pass ? 'verdict-pass' : 'verdict-fail'}">${right} / ${total} (${pct}%)</span></p>` +
-    `<p>${pass ? '✅ <b>通过！</b>这批"饮食"词过关 — 下一批见。'
-              : '📉 <b>还没过关</b>（80% 通过线）。把下面的词放进"词语收藏"，下次练习和测试会再见到它们。'}</p>` +
-    (missed.length ? `<div class="missed-list"><b>需要复习 Need review</b>: ${missed.join('、')}</div>` : '') +
-    `<p style="font-size:.8rem;color:#6b6558">把得分和要复习的词告诉我，我会记进 progress-log 并在下次测试里重考它们。</p>`;
+    `<p class="result">得分 Score: <span class="${cls}">${right} / ${total} (${pct}%)</span></p>` +
+    `<pre class="report">${report}</pre>` +
+    `<button type="button" class="btn copy-report">复制 Copy</button>` +
+    `<p style="font-size:.85rem;color:#6b6558;margin-top:8px">把上面的报告整段粘贴到课程对话里，我会记进 progress-log 并安排下一课。</p>`;
   result.classList.add('show');
+  navigator.clipboard.writeText(report).catch(() => {});
 });
 </script>
 </body>

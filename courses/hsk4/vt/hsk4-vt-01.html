@@ -35,11 +35,12 @@
   .inst { color:#6b6558; font-size:.9rem; margin:0 0 14px; }
   .item { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin:12px 0; }
   .qno { font-weight:700; color:var(--accent); margin-right:6px; }
-  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
-  .zh.show::before, body.py-all .zh::before {
-    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
-    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap; font-family:Arial,sans-serif; }
-  button { font-family:inherit; cursor:pointer; }
+  .zh { position:relative; cursor:help; border-bottom:1px dashed #d8d2c4; padding-top:1.05em; }
+  .zh:hover::before {
+    content:attr(data-py); position:absolute; top:0; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap;
+    font-family:Arial,sans-serif; pointer-events:none; }
+button { font-family:inherit; cursor:pointer; }
   .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent); border-radius:8px; padding:5px 14px; font-size:.85rem; }
   .btn:hover { background:var(--accent-soft); }
   .key { display:none; margin-top:10px; padding:10px 12px; border-radius:8px; background:#f2f8f2; border-left:4px solid var(--ok); font-size:.92rem; }
@@ -63,25 +64,23 @@
   details.ref summary { cursor:pointer; font-weight:700; color:var(--accent); }
   details.ref table { width:100%; border-collapse:collapse; margin-top:8px; font-size:.9rem; }
   details.ref td, details.ref th { border:1px solid var(--line); padding:4px 8px; }
+  .scorebox pre.report { background:#f6f4ef; border:1px solid var(--line); border-radius:8px; padding:12px; font-size:.85rem; white-space:pre-wrap; font-family:Consolas,"Courier New",monospace; }
   .scorebox { background:var(--card); border:2px solid var(--accent); border-radius:12px; padding:16px; margin-top:36px; }
   .scorebox .result { font-size:1.1rem; font-weight:700; margin:8px 0; }
   .scorebox .verdict-pass { color:var(--ok); }
   .scorebox .verdict-fail { color:var(--bad); }
   .scorebox .missed-list { background:var(--accent-soft); border-radius:8px; padding:8px 12px; margin-top:8px; font-size:.95rem; }
   .score-result { display:none; } .score-result.show { display:block; }
-  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line); border-radius:8px; padding:4px 10px; margin-right:6px; }
-  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
 </style>
 </head>
-<body>
+<body data-id="hsk4-vt-01" data-type="VT">
 <header class="worksheet">
   <h1>HSK 4 · 词汇测试 01 · 个人情况</h1>
   <div class="meta">
     <span><b>话题</b> 日常生活 · 个人情况</span>
     <span><b>词量</b> 27 个（20 个四级 + 7 个复习词）</span>
     <span><b>用时</b> 约 14 分钟</span>
-    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
-  </div>
+</div>
 </header>
 
 <div class="goal">
@@ -91,33 +90,33 @@
 <!-- ============ A 词语讲解 ============ -->
 <h2 class="section"><span class="badge">A</span> 词语讲解 <small>Word definitions · 每个词都要过一遍（约 2–3 分钟）</small></h2>
 <div class="item defs">
-  <p><b><span class="zh" data-py="niánlíng">年龄</span></b><span class="pos">名 #1536</span> <span class="gloss">age, how old someone is.</span> 例：他的<span class="zh" data-py="niánlíng bǐ wǒ dà">年龄比我大</span>两岁。</p>
-  <p><b><span class="zh" data-py="xìngbié">性别</span></b><span class="pos">名 #1829</span> <span class="gloss">gender (male/female).</span> 例：报名表上要填<span class="zh" data-py="xìngbié">性别</span>。</p>
-  <p><b><span class="zh" data-py="xìnggé">性格</span></b><span class="pos">名 #1831</span> <span class="gloss">personality, character.</span> 例：她的<span class="zh" data-py="xìnggé">性格</span>很活泼。</p>
-  <p><b><span class="zh" data-py="píqi">脾气</span></b><span class="pos">名 #1552</span> <span class="gloss">temper (how easily someone gets angry). 搭配：发脾气.</span> 例：他<span class="zh" data-py="píqi">脾气</span>很好，从来不发火。</p>
-  <p><b><span class="zh" data-py="shuài">帅</span></b><span class="pos">形 #1695</span> <span class="gloss">handsome (for men).</span> 例：他穿上西装特别<span class="zh" data-py="shuài">帅</span>。</p>
-  <p><b><span class="zh" data-py="měi">美</span></b><span class="pos">形 #1500</span> <span class="gloss">beautiful.</span> 例：这里的风景真<span class="zh" data-py="měi">美</span>。</p>
-  <p><b><span class="zh" data-py="bèn">笨</span></b><span class="pos">形 #1026</span> <span class="gloss">slow to understand, "dumb".</span> 例：这个问题不难，别说自己<span class="zh" data-py="bèn">笨</span>。</p>
-  <p><b><span class="zh" data-py="chéngshí">诚实</span></b><span class="pos">形 #1081</span> <span class="gloss">honest.</span> 例：<span class="zh" data-py="chéngshí">诚实</span>的孩子不说谎。</p>
-  <p><b><span class="zh" data-py="cūxīn">粗心</span></b><span class="pos">形 #1106</span> <span class="gloss">careless. 反义词：细心.</span> 例：他太<span class="zh" data-py="cūxīn">粗心</span>了，忘了带钥匙。</p>
-  <p><b><span class="zh" data-py="xìxīn">细心</span></b><span class="pos">形 #1792</span> <span class="gloss">careful, attentive to detail.</span> 例：她很<span class="zh" data-py="xìxīn">细心</span>，把每件事都记在本子上。</p>
-  <p><b><span class="zh" data-py="huópō">活泼</span></b><span class="pos">形 #1313</span> <span class="gloss">lively, outgoing.</span> 例：小妹妹爱说爱笑，特别<span class="zh" data-py="huópō">活泼</span>。</p>
-  <p><b><span class="zh" data-py="yōumò">幽默</span></b><span class="pos">形 #1882</span> <span class="gloss">humorous, funny (pleasant).</span> 例：王老师很<span class="zh" data-py="yōumò">幽默</span>，课上总有人笑。</p>
-  <p><b><span class="zh" data-py="hàixiū">害羞</span></b><span class="pos">形 #1284</span> <span class="gloss">shy.</span> 例：她第一次上台，<span class="zh" data-py="hàixiū">害羞</span>得脸都红了。</p>
-  <p><b><span class="zh" data-py="jiāo'ào">骄傲</span></b><span class="pos">形/名 #1368</span> <span class="gloss">proud (often negative: too pleased with yourself).</span> 例：考得好也不能<span class="zh" data-py="jiāo'ào">骄傲</span>。</p>
-  <p><b><span class="zh" data-py="nàixīn">耐心</span></b><span class="pos">形/名 #1521</span> <span class="gloss">patient; 有耐心 = have patience.</span> 例：教爷爷奶奶用手机要有<span class="zh" data-py="nàixīn">耐心</span>。</p>
-  <p><b><span class="zh" data-py="zìxìn">自信</span></b><span class="pos">形/名 #1983</span> <span class="gloss">confident. 注意：自信≠骄傲.</span> 例：面试的时候要<span class="zh" data-py="zìxìn">自信</span>。</p>
-  <p><b><span class="zh" data-py="lǎn">懒</span></b><span class="pos">形 #1452</span> <span class="gloss">lazy. 搭配：懒得+V.</span> 例：周末他<span class="zh" data-py="lǎn">懒</span>得连门都不想出。</p>
-  <p><b><span class="zh" data-py="yǎnjìng">眼镜</span></b><span class="pos">名 #1852</span> <span class="gloss">glasses. 搭配：戴眼镜.</span> 例：他不戴<span class="zh" data-py="yǎnjìng">眼镜</span>就看不清黑板。</p>
-  <p><b><span class="zh" data-py="pífū">皮肤</span></b><span class="pos">名 #1551</span> <span class="gloss">skin.</span> 例：冬天<span class="zh" data-py="pífū">皮肤</span>容易干，要多喝水。</p>
-  <p><b><span class="zh" data-py="yìnxiàng">印象</span></b><span class="pos">名 #1873</span> <span class="gloss">impression. 搭配：给…留下好印象 / 对…的印象.</span> 例：我对他的<span class="zh" data-py="yìnxiàng">印象</span>很好。</p>
-  <p><b><span class="zh" data-py="gāoxìng">高兴</span></b><span class="pos">形 [L1]</span> <span class="gloss">happy (review).</span> 例：见到老朋友我很<span class="zh" data-py="gāoxìng">高兴</span>。</p>
-  <p><b><span class="zh" data-py="piàoliang">漂亮</span></b><span class="pos">形 [L1]</span> <span class="gloss">pretty (review).</span> 例：这条裙子真<span class="zh" data-py="piàoliang">漂亮</span>。</p>
-  <p><b><span class="zh" data-py="cōngmíng">聪明</span></b><span class="pos">形 [L3]</span> <span class="gloss">smart (review).</span> 例：妹妹很<span class="zh" data-py="cōngmíng">聪明</span>，一学就会。</p>
-  <p><b><span class="zh" data-py="máng">忙</span></b><span class="pos">形 [L1]</span> <span class="gloss">busy (review).</span> 例：最近工作很<span class="zh" data-py="máng">忙</span>。</p>
-  <p><b><span class="zh" data-py="suì">岁</span></b><span class="pos">量 [L1]</span> <span class="gloss">years of age (review). 搭配：数字＋岁.</span> 例：弟弟今年五<span class="zh" data-py="suì">岁</span>了。</p>
-  <p><b><span class="zh" data-py="gēge">哥哥</span></b><span class="pos">名 [L1]</span> <span class="gloss">older brother (review).</span> 例：我<span class="zh" data-py="gēge">哥哥</span>比我大三岁。</p>
-  <p><b><span class="zh" data-py="nǚ'ér">女儿</span></b><span class="pos">名 [L1]</span> <span class="gloss">daughter (review).</span> 例：<span class="zh" data-py="nǚ'ér">女儿</span>的笑容是最美的。</p>
+  <p><b><span class="zh" data-py="niánlíng">年龄</span></b><span class="pos">名 #1536</span> <span class="gloss">age, how old someone is.</span><br>① 报名表要写真实<span class="zh" data-py="niánlíng">年龄</span>。 — Put your real age on the form. <span class="srctag">职场</span><br>② 坐飞机，儿童按<span class="zh" data-py="niánlíng">年龄</span>买票。 — Kids buy plane tickets by age. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="xìngbié">性别</span></b><span class="pos">名 #1829</span> <span class="gloss">gender (male/female).</span><br>① 体检表上要填<span class="zh" data-py="xìngbié">性别</span>。 — Fill in gender on the medical form. <span class="srctag">职场</span><br>② 这门课不限<span class="zh" data-py="xìngbié">性别</span>，谁都能报。 — The class has no gender limit. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="xìnggé">性格</span></b><span class="pos">名 #1831</span> <span class="gloss">personality, character.</span><br>① 经理的<span class="zh" data-py="xìnggé">性格</span>很开朗，开会不怕说话。 — The manager's personality is outgoing. <span class="srctag">职场</span><br>② 她的<span class="zh" data-py="xìnggé">性格</span>内向，不爱在食堂聊天。 — She's introverted and doesn't chat in the cafeteria. <span class="srctag">饮食</span></p>
+  <p><b><span class="zh" data-py="píqi">脾气</span></b><span class="pos">名 #1552</span> <span class="gloss">temper. 搭配：发脾气.</span><br>① 客户一催，他就爱发<span class="zh" data-py="píqi">脾气</span>。 — He loses his temper when clients chase him. <span class="srctag">职场</span><br>② 堵车的时候别发<span class="zh" data-py="píqi">脾气</span>。 — Don't lose your temper in a traffic jam. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="shuài">帅</span></b><span class="pos">形 #1695</span> <span class="gloss">handsome (for men).</span><br>① 他穿西装去面试，特别<span class="zh" data-py="shuài">帅</span>。 — He looked handsome in a suit at the interview. <span class="srctag">职场</span><br>② 列车员那身制服挺<span class="zh" data-py="shuài">帅</span>的。 — That conductor's uniform looks pretty sharp. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="měi">美</span></b><span class="pos">形 #1500</span> <span class="gloss">beautiful.</span><br>① 窗外的风景真<span class="zh" data-py="měi">美</span>。 — The view out the window is beautiful. <span class="srctag">出行</span><br>② 这盘菜颜色很<span class="zh" data-py="měi">美</span>，先别动筷子。 — This dish looks beautiful — don't start yet. <span class="srctag">饮食</span></p>
+  <p><b><span class="zh" data-py="bèn">笨</span></b><span class="pos">形 #1026</span> <span class="gloss">slow to understand, "dumb".</span><br>① 软件不难，别说自己<span class="zh" data-py="bèn">笨</span>。 — The software isn't hard; don't call yourself slow. <span class="srctag">职场</span><br>② 这道语法不难，你一点儿也不<span class="zh" data-py="bèn">笨</span>。 — This grammar isn't hard; you're not slow at all. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="chéngshí">诚实</span></b><span class="pos">形 #1081</span> <span class="gloss">honest.</span><br>① 面试时要<span class="zh" data-py="chéngshí">诚实</span>，别夸大经历。 — Be honest in the interview; don't inflate your record. <span class="srctag">职场</span><br>② 他很<span class="zh" data-py="chéngshí">诚实</span>，作业不会做就直接说。 — He's honest — if he can't do the homework, he says so. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="cūxīn">粗心</span></b><span class="pos">形 #1106</span> <span class="gloss">careless. 反义词：细心.</span><br>① 他太<span class="zh" data-py="cūxīn">粗心</span>，把附件发错了。 — He was so careless he sent the wrong attachment. <span class="srctag">职场</span><br>② 考试时<span class="zh" data-py="cūxīn">粗心</span>，把题号填错了。 — Careless in the exam, he marked the wrong item numbers. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="xìxīn">细心</span></b><span class="pos">形 #1792</span> <span class="gloss">careful, attentive to detail.</span><br>① 会计很<span class="zh" data-py="xìxīn">细心</span>，账目一个错都没有。 — The accountant is careful; the books have no errors. <span class="srctag">职场</span><br>② 她<span class="zh" data-py="xìxīn">细心</span>地把生词都记在本子上。 — She carefully copied every new word into her notebook. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="huópō">活泼</span></b><span class="pos">形 #1313</span> <span class="gloss">lively, outgoing.</span><br>① 新同事很<span class="zh" data-py="huópō">活泼</span>，茶水间总有笑声。 — The new colleague is lively; the pantry is always laughing. <span class="srctag">职场</span><br>② 导游很<span class="zh" data-py="huópō">活泼</span>，一路讲故事。 — The guide is lively and tells stories the whole way. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="yōumò">幽默</span></b><span class="pos">形 #1882</span> <span class="gloss">humorous, funny (pleasant).</span><br>① 老板说话很<span class="zh" data-py="yōumò">幽默</span>，开会不那么紧张。 — The boss is humorous; meetings feel lighter. <span class="srctag">职场</span><br>② 这本课文的对话很<span class="zh" data-py="yōumò">幽默</span>。 — This textbook dialogue is humorous. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="hàixiū">害羞</span></b><span class="pos">形 #1284</span> <span class="gloss">shy.</span><br>① 第一次见客户，他<span class="zh" data-py="hàixiū">害羞</span>得不敢说话。 — Meeting a client the first time, he was too shy to talk. <span class="srctag">职场</span><br>② 她<span class="zh" data-py="hàixiū">害羞</span>，点菜总让别人先说。 — She's shy and always lets others order first. <span class="srctag">饮食</span></p>
+  <p><b><span class="zh" data-py="jiāo'ào">骄傲</span></b><span class="pos">形/名 #1368</span> <span class="gloss">proud (often negative: too pleased with yourself).</span><br>① 项目成功了也不能<span class="zh" data-py="jiāo'ào">骄傲</span>。 — Even after a successful project, don't get smug. <span class="srctag">职场</span><br>② 考了满分，他有点儿<span class="zh" data-py="jiāo'ào">骄傲</span>。 — He scored full marks and got a bit proud. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="nàixīn">耐心</span></b><span class="pos">形/名 #1521</span> <span class="gloss">patient; 有耐心 = have patience.</span><br>① 教新同事用系统要有<span class="zh" data-py="nàixīn">耐心</span>。 — Teaching a new colleague the system takes patience. <span class="srctag">职场</span><br>② 背生词要有<span class="zh" data-py="nàixīn">耐心</span>，一天记不完。 — Memorizing words takes patience; you can't finish in a day. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="zìxìn">自信</span></b><span class="pos">形/名 #1983</span> <span class="gloss">confident. 注意：自信≠骄傲.</span><br>① 答辩的时候要<span class="zh" data-py="zìxìn">自信</span>。 — Be confident in the presentation. <span class="srctag">职场</span><br>② 口语考试时，<span class="zh" data-py="zìxìn">自信</span>比语法更重要。 — In the oral test, confidence matters more than grammar. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="lǎn">懒</span></b><span class="pos">形 #1452</span> <span class="gloss">lazy. 搭配：懒得+V.</span><br>① 周末他<span class="zh" data-py="lǎn de kāihuì">懒得开会</span>，把材料提前发了。 — He couldn't be bothered to meet; he sent the materials ahead. <span class="srctag">职场</span><br>② 我<span class="zh" data-py="lǎn de zuòfàn">懒得做饭</span>，就点了快餐。 — I couldn't be bothered to cook, so I ordered fast food. <span class="srctag">饮食</span></p>
+  <p><b><span class="zh" data-py="yǎnjìng">眼镜</span></b><span class="pos">名 #1852</span> <span class="gloss">glasses. 搭配：戴眼镜.</span><br>① 看合同要戴<span class="zh" data-py="yǎnjìng">眼镜</span>。 — Wear glasses to read the contract. <span class="srctag">职场</span><br>② 他开车忘了戴<span class="zh" data-py="yǎnjìng">眼镜</span>。 — He forgot his glasses when driving. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="pífū">皮肤</span></b><span class="pos">名 #1551</span> <span class="gloss">skin.</span><br>① 空调房里<span class="zh" data-py="pífū">皮肤</span>容易干。 — Skin dries out in air-conditioned offices. <span class="srctag">职场</span><br>② 辣菜吃多了，<span class="zh" data-py="pífū">皮肤</span>会红。 — Too much spicy food can make your skin flush. <span class="srctag">饮食</span></p>
+  <p><b><span class="zh" data-py="yìnxiàng">印象</span></b><span class="pos">名 #1873</span> <span class="gloss">impression. 搭配：给…留下好印象 / 对…的印象.</span><br>① 第一次见客户，要留下好<span class="zh" data-py="yìnxiàng">印象</span>。 — First meeting a client, leave a good impression. <span class="srctag">职场</span><br>② 我对这个城市的<span class="zh" data-py="yìnxiàng">印象</span>是又干净又方便。 — My impression of the city is clean and convenient. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="gāoxìng">高兴</span></b><span class="pos">形 [L1]</span> <span class="gloss">happy (review).</span><br>① 合同签成了，全组都很<span class="zh" data-py="gāoxìng">高兴</span>。 — The contract was signed; the whole team was happy. <span class="srctag">职场</span><br>② 火车准点到，旅客都<span class="zh" data-py="gāoxìng">高兴</span>。 — The train arrived on time; passengers were happy. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="piàoliang">漂亮</span></b><span class="pos">形 [L1]</span> <span class="gloss">pretty (review).</span><br>① 她把幻灯片做得真<span class="zh" data-py="piàoliang">漂亮</span>。 — She made the slides look really polished. <span class="srctag">职场</span><br>② 这盘西红柿炒鸡蛋颜色很<span class="zh" data-py="piàoliang">漂亮</span>。 — This tomato-and-egg dish looks pretty. <span class="srctag">饮食</span></p>
+  <p><b><span class="zh" data-py="cōngmíng">聪明</span></b><span class="pos">形 [L3]</span> <span class="gloss">smart (review).</span><br>① 这个办法很<span class="zh" data-py="cōngmíng">聪明</span>，能省一半时间。 — This method is smart; it saves half the time. <span class="srctag">职场</span><br>② 他学语法很快，真<span class="zh" data-py="cōngmíng">聪明</span>。 — He picks up grammar fast — really smart. <span class="srctag">学习</span></p>
+  <p><b><span class="zh" data-py="máng">忙</span></b><span class="pos">形 [L1]</span> <span class="gloss">busy (review).</span><br>① 月底财务很<span class="zh" data-py="máng">忙</span>，别随便请假。 — Finance is busy at month-end; don't take random leave. <span class="srctag">职场</span><br>② 春节前车站特别<span class="zh" data-py="máng">忙</span>。 — Stations are especially busy before Spring Festival. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="suì">岁</span></b><span class="pos">量 [L1]</span> <span class="gloss">years of age (review). 搭配：数字＋岁.</span><br>① 新同事才二十二<span class="zh" data-py="suì">岁</span>，已经能独立做项目。 — The new colleague is only 22 and already runs projects. <span class="srctag">职场</span><br>② 孩子不满六<span class="zh" data-py="suì">岁</span>可以免票。 — Kids under six ride free. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="gēge">哥哥</span></b><span class="pos">名 [L1]</span> <span class="gloss">older brother (review).</span><br>① 我<span class="zh" data-py="gēge">哥哥</span>在上海出差。 — My older brother is on a business trip in Shanghai. <span class="srctag">职场</span><br>② <span class="zh" data-py="gēge">哥哥</span>开车来机场接我。 — My older brother drove to the airport to pick me up. <span class="srctag">出行</span></p>
+  <p><b><span class="zh" data-py="nǚ'ér">女儿</span></b><span class="pos">名 [L1]</span> <span class="gloss">daughter (review).</span><br>① 经理的<span class="zh" data-py="nǚ'ér">女儿</span>今年上小学。 — The manager's daughter starts primary school this year. <span class="srctag">职场</span><br>② 他给<span class="zh" data-py="nǚ'ér">女儿</span>点了一碗不辣的汤。 — He ordered a mild soup for his daughter. <span class="srctag">饮食</span></p>
 </div>
 
 <!-- ============ B 词语表 ============ -->
@@ -336,15 +335,12 @@
 <!-- ============ G 得分总结 ============ -->
 <h2 class="section"><span class="badge">G</span> 得分总结 <small>Score summary</small></h2>
 <div class="scorebox">
-  <p><b>得分总结 Score summary</b> — 检查完所有选择题后点下面的按钮。</p>
-  <button class="btn score-btn">计算得分</button>
+  <p><b>报告 Report</b> — 做完选择题后点按钮，把生成的文字贴到课程对话里。</p>
+  <button class="btn score-btn">生成报告 / Copy report</button>
   <div class="score-result"></div>
-  <p><b>自评打分 Self-grade section F</b>: <button class="conf">😊 全对</button><button class="conf">🤔 差不多</button><button class="conf">😩 不行</button></p>
-</div>
+  </div>
 
 <script>
-document.getElementById('pyAll').onclick = () => document.body.classList.toggle('py-all');
-document.addEventListener('click', e => { const zh = e.target.closest('.zh'); if (zh) zh.classList.toggle('show'); });
 document.addEventListener('click', e => { if (e.target.matches('.check')) { const item = e.target.closest('.item'); const key = item && item.querySelector('.key'); if (key) key.classList.add('show'); } });
 document.addEventListener('click', e => {
   if (!e.target.matches('.opt')) return;
@@ -387,23 +383,27 @@ document.addEventListener('click', e => {
   }
 });
 document.addEventListener('click', e => {
-  if (!e.target.matches('.conf')) return;
-  e.target.parentElement.querySelectorAll('.conf').forEach(b => b.classList.remove('sel'));
-  e.target.classList.add('sel');
-});
-document.addEventListener('click', e => {
+  if (e.target.matches('.copy-report')) {
+    const pre = e.target.closest('.scorebox').querySelector('pre.report');
+    if (pre) navigator.clipboard.writeText(pre.textContent);
+    return;
+  }
   if (!e.target.matches('.score-btn')) return;
   const box = e.target.closest('.scorebox');
   const result = box.querySelector('.score-result');
   if (!result) return;
   let total = 0, right = 0;
   const missed = []; const seen = new Set();
+  const tag = (el) => el.dataset.point || el.dataset.word
+    || (el.closest('.item') && (el.closest('.item').dataset.point || el.closest('.item').dataset.word))
+    || ((el.closest('.item') || el).querySelector('.qno') || {}).textContent
+    || 'item';
   document.querySelectorAll('.mcq').forEach(mcq => {
     total++;
     const ok = mcq.dataset.done && !mcq.querySelector('.opt.incorrect');
     if (ok) { right++; return; }
-    const w = mcq.dataset.word || (mcq.closest('.item')||mcq).dataset.word;
-    if (w && !seen.has(w)) { seen.add(w); missed.push(w); }
+    const w = tag(mcq);
+    if (w && !seen.has(w)) { seen.add(w); missed.push(String(w).trim()); }
   });
   document.querySelectorAll('.item[data-answers]').forEach(it => {
     total++;
@@ -411,18 +411,29 @@ document.addEventListener('click', e => {
     const got = [...it.querySelectorAll('.slot')].map(s => s.dataset.filled || '_');
     const ok = want.length === got.length && want.every((w, i) => got[i] === w);
     if (ok) { right++; return; }
-    const w = it.dataset.word || '用法搭配(选词填空)';
+    const w = it.dataset.word || it.dataset.point || '选词填空';
     if (!seen.has(w)) { seen.add(w); missed.push(w); }
   });
   const pct = total ? Math.round((right / total) * 100) : 0;
-  const pass = pct >= 80;
+  const type = document.body.dataset.type || 'P';
+  const id = document.body.dataset.id || '';
+  let verdict = '—';
+  if (type === 'GT' || type === 'VT') verdict = pct >= 80 ? 'pass' : 'fail';
+  const report =
+`worksheet_id: ${id}
+type: ${type}
+score: ${right}/${total} (${pct}%)
+verdict: ${verdict}
+needs_review: ${missed.length ? missed.join(', ') : '—'}
+notes:`;
+  const cls = (type !== 'P' && pct >= 80) ? 'verdict-pass' : 'verdict-fail';
   result.innerHTML =
-    `<p class="result">得分 Score: <span class="${pass ? 'verdict-pass' : 'verdict-fail'}">${right} / ${total} (${pct}%)</span></p>` +
-    `<p>${pass ? '✅ <b>通过！</b>这一批词过关 — 下次词汇测试见。'
-              : '📉 <b>还没过关</b>（80% 通过线）。把下面的词放进"词语收藏"，下次练习会再见到它们。'}</p>` +
-    (missed.length ? `<div class="missed-list"><b>需要复习 Need review</b>: ${missed.join('、')}</div>` : '') +
-    `<p style="font-size:.8rem;color:#6b6558">把得分和要复习的词告诉我，我会记进 progress-log 并在下次测试里重考它们。</p>`;
+    `<p class="result">得分 Score: <span class="${cls}">${right} / ${total} (${pct}%)</span></p>` +
+    `<pre class="report">${report}</pre>` +
+    `<button type="button" class="btn copy-report">复制 Copy</button>` +
+    `<p style="font-size:.85rem;color:#6b6558;margin-top:8px">把上面的报告整段粘贴到课程对话里，我会记进 progress-log 并安排下一课。</p>`;
   result.classList.add('show');
+  navigator.clipboard.writeText(report).catch(() => {});
 });
 </script>
 </body>

@@ -1,7 +1,7 @@
 # Level Guide (HSK 1–6)
 
 Per-level profiles for worksheet generation. Exam structures are taken from the provided
-past papers in `hsk1\`…`hsk6\` (note: those papers predate the 2025-11 syllabus; treat them
+past papers in `resources\hsk1\`…`resources\hsk6\` (note: those papers predate the 2025-11 syllabus; treat them
 as the question-format reference per Sam's instruction, while ALL content — vocab, grammar,
 topics — comes from the new syllabus PDF).
 
@@ -48,7 +48,7 @@ P2 sentence↔picture match, P3 Q–A matching, P4 word-bank fill 选词填空) 
   anything beyond — at L1 there should be almost none).
 - Sections B–D items: 4–6 per section, heavily visual formats (E1 bank-fill, E2 Q–A
   matching, P2 scramble with ≤6 tiles).
-- Scaffolding: bilingual (Chinese + English) instructions everywhere; click-pinyin on every
+- Scaffolding: bilingual (Chinese + English) instructions everywhere; hover-pinyin on every
   Chinese word; English glosses in keys expected. True/false and match formats preferred
   over typed input; typed input only in section E with pinyin-free character prompts.
 - Question types: W1, R1, R2 (skip at L1 — use R1 only), P1, P2, P5, L1, L3(二选一),
@@ -69,7 +69,7 @@ sentences, 比 comparatives (basic), 着/过 aspects, 得/地, directional compl
 
 **Worksheet profile**:
 - Sentences ≤ 12 characters, 1–2 clauses. Vocabulary #1–551 (loose: +≤5%).
-- Scaffold down: bilingual instructions; click-pinyin on all content; keys in English with
+- Scaffold down: bilingual instructions; hover-pinyin on all content; keys in English with
   Chinese examples.
 - Question types: W1, W2, R1, R2, P1, P2, P3 (single obvious error), P4, P5, L1, L2, L3,
   E1, E2, F1, F3, V1, V2.
@@ -90,7 +90,7 @@ from given word) · ~90 min.
 
 **Worksheet profile**:
 - Sentences ≤ 18 characters, ≤ 2 clauses. Dialogue 8–12 turns. Vocabulary #1–1000.
-- Instructions bilingual; pinyin still behind click everywhere; English glosses in keys
+- Instructions bilingual; pinyin still hover-only everywhere; English glosses in keys
   only for words > #1000.
 - Question types: everything in the catalog except E4, E6, F4.
 - D: E3 cloze (short, ~80字) or official L3 formats (word-order 书写 → P2 already covers;

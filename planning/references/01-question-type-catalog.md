@@ -16,7 +16,8 @@ Legend: L1…L6 = HSK level suitability. ✔ = recommended, ○ = usable sparing
   context). Back shows the same sentence with the pattern highlighted, the pattern formula
   (e.g. `S + 把 + O + V + 结果补语`), and a one-line English note on what it expresses.
 - **Rules**: Sentences must be at mid-level difficulty for the target level (the learner
-  should parse them successfully). No pinyin on the front; back may carry click-pinyin.
+  should parse them successfully). No pinyin on the front; hover a dashed word anywhere
+  for ruby pinyin.
 - **Example** (L3, 把): Front: 我把新的地图挂在墙上了。 Back: formula + note "把 marks that
   the action was applied to the object AND produced a result (挂在了墙上)."
 
@@ -244,10 +245,11 @@ are the adapted interactive versions of the paper formats Sam will face.
   PREVIOUS worksheet's pattern — interleaving old and new is the point
   (e.g. current 把: 我把房间打扫干净了 → rewrite with 越来越: 房间越来越干净).
 
-### Self-check strip (always last on P worksheets)
-- **Component**: `selfcheck` — per-section 😊/🤔/ 😩 confidence buttons and a
-  "词语收藏 words to revisit" text box. Its contents (asked from Sam or noted by him)
-  become REQUIRED content of the next worksheet's review section.
+### Paste-report (always last on P / GT / VT)
+- **Component**: `scorebox` — **生成报告 / Copy report** auto-counts `.mcq` +
+  `.item[data-answers]` bank-fill, then renders a paste-ready `<pre>` block
+  (`worksheet_id`, `type`, `score`, `verdict`, `needs_review`, `notes`). P: `verdict: —`.
+  GT/VT: `pass`/`fail` at 80%. Sam pastes the block into the course chat.
 
 ---
 
@@ -289,18 +291,15 @@ bound to the batch's words; see `blueprints/03-vocabulary-test-blueprint.md` for
 
 ---
 
-## Score summary (test worksheets' final section)
+## Paste-report (every worksheet's final block)
 
-- **Component**: `score-summary` — present on GT and VT worksheets only.
-- **Behavior**: a 计算得分 button counts every `.mcq` item marked right/wrong on the page
-  (the template marks `.opt.correct` green / `.opt.incorrect` red on check), shows
-  `correct / total auto-scored`, the percentage, and a verdict line (≥80% pass guideline
-  per the syllabus). It also scans item metadata (`data-point` on GT, `data-word` on VT)
-  of missed items to build the "review these" list, and offers self-grade buttons for the
-  typed (production) items.
-- **Rules**: the percentage covers auto-scored items only; production items feed advice,
-  not the score. The verdict text is generated per results (pass → advance; fail →
-  remediate then retake), matching `syllabuses/01-hsk-syllabus.md`.
+- **Component**: `scorebox` — present on P, GT, and VT.
+- **Behavior**: **生成报告 / Copy report** counts every `.mcq` marked right/wrong and every
+  `.item[data-answers]` bank-fill, shows `correct / total`, the percentage, and a
+  copy-ready report. Missed items contribute `data-point` (GT) or `data-word` (VT/P) to
+  `needs_review`. Body must have `data-id` and `data-type`.
+- **Rules**: percentage covers auto-scored items only. P: `verdict: —`. GT/VT: ≥80% `pass`
+  else `fail` (remediate then retake), matching `syllabuses/01-hsk-syllabus.md`.
 
 ---
 
@@ -311,7 +310,7 @@ behavior. Copy the file; don't re-implement.
 
 | Component | Behavior |
 |---|---|
-| `.zh` + `data-py` | Chinese text; click toggles pinyin ruby. Page-level "显示拼音" toggle also flips all. |
+| `.zh` + `data-py` | Chinese text; hover shows ruby pinyin. No Show-all button. Dashed underline + `cursor: help`. |
 | `mcq` | Options as buttons; click selects; 对答案 button reveals ✓/✗ + explanation for the chosen one, and marks the correct option. |
 | `typed` | Free text input; 对答案 reveals model answer(s) + explanation. No auto-grading (Chinese typing variants make exact match brittle). |
 | `order-tiles` | Click tiles to append to the answer line; 重来 resets; 对答案 reveals correct order + explanation. |
@@ -320,6 +319,5 @@ behavior. Copy the file; don't re-implement.
 | `flip-card` | Click flips front/back (CSS 3D). |
 | `reveal-lines` | Dialogue lines revealed one at a time (显示下一句 button) for shadowing. |
 | `tts` | 🔊 button reads its target text with `speechSynthesis` `zh-CN`; gracefully no-ops if unsupported. |
-| `selfcheck` | Confidence buttons + notes textbox; contents stay on page (Sam reviews/copies them into the chat so the next worksheet can use them). |
-| `score-summary` | Test-only: counts marked MCQ results page-wide, shows % + verdict, collects missed items' `data-point`/`data-word` into a review list, self-grade buttons for typed items. |
-| `data-point` / `data-word` | Optional item metadata (on `.mcq` or `.item`) naming the cluster point / batch word tested; consumed by `score-summary`. |
+| `scorebox` | Paste-report on every worksheet: counts MCQ + bank-fill, shows % + copy-ready block (`verdict` pass/fail on GT/VT, `—` on P). |
+| `data-point` / `data-word` | Item metadata (on `.mcq` or `.item`) naming the cluster point / batch word tested; consumed by the paste-report. |

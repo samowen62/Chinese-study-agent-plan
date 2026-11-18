@@ -11,7 +11,7 @@ INTRO = """# Grammar Inventory (HSK 1–6)
 Two coordinated layers, both machine- and human-readable:
 
 1. **Cluster spine (primary)** — grammar points grouped into **133 clusters of similar points**
-   (502 points), extracted from the Chinese Grammar Wiki files in `Z:\\Chinese\\grammar\\`
+   (502 points), extracted from the Chinese Grammar Wiki files in `Z:\\Chinese\\resources\\grammar\\`
    (HSK 1–6, old wiki scheme). Each cluster has a stable ID `L{n}-CL{kk}`.
    - **Unit tests** (`blueprints/02-grammar-test-blueprint.md`) test an entire cluster.
    - **Scenario MCQs** (question type R4) ask "which grammar point in this cluster fits this
@@ -22,7 +22,7 @@ Two coordinated layers, both machine- and human-readable:
    still anchor to ONE appendix point at a time. Each cluster header cross-references appendix IDs.
 
 **Level caveat**: cluster levels follow the OLD wiki HSK scheme (matching the past papers in
-`hsk1\\`…`hsk6\\`); the appendix follows the 2025-11 syllabus. Cross-reference lines note
+`resources\\hsk1\\`…`resources\\hsk6\\`); the appendix follows the 2025-11 syllabus. Cross-reference lines note
 placement mismatches (e.g. a wiki-HSK1 point that the 2025 syllabus teaches at level 3).
 Vocabulary in worksheet items always follows the 2025 syllabus cumulative list
 (`references/02-level-guide.md`), regardless of which layer a grammar point comes from.

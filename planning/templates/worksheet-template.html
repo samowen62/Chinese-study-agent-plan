@@ -17,8 +17,8 @@
   generated: [date]
 
   QUICK RULES
-  - Pinyin: wrap Chinese in <span class="zh" data-py="pīnyīn">汉字</span> — click toggles
-    ruby pinyin. The header button toggles ALL. Pinyin uses tone marks.
+  - Pinyin: wrap Chinese in <span class="zh" data-py="pīnyīn">汉字</span> — hover shows
+    ruby pinyin (no click, no Show-all button). Pinyin uses tone marks.
   - Every item gets its own check button; the key must include the rule + why the tempting
     distractor fails. Production keys give model + variants + a wrong-with-reason example.
   - No external resources. Fonts: system stack below.
@@ -58,16 +58,12 @@
   .srctag { font-size:.75rem; color:#9a917f; border:1px solid var(--line);
             border-radius:10px; padding:0 8px; margin-left:8px; }
 
-  /* pinyin toggle: <span class="zh" data-py="...">汉字</span> */
-  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
-  .zh.show::before {
-    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
+  /* pinyin: hover <span class="zh" data-py="...">汉字</span> */
+  .zh { position:relative; cursor:help; border-bottom:1px dashed #d8d2c4; padding-top:1.05em; }
+  .zh:hover::before {
+    content:attr(data-py); position:absolute; top:0; left:0; right:0;
     font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap;
-    font-family:Arial,"Noto Sans SC",sans-serif;
-  }
-  body.py-all .zh::before {
-    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
-    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap;
+    font-family:Arial,sans-serif; pointer-events:none;
   }
 
   button { font-family:inherit; cursor:pointer; }
@@ -142,34 +138,27 @@
               border-radius:8px; padding:8px 12px; width:100%; margin:6px 0; }
   textarea.typed-in { min-height:110px; }
 
-  /* self-check strip */
-  .selfcheck { background:var(--card); border:2px solid var(--accent); border-radius:12px;
-               padding:16px; margin-top:36px; }
-  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line);
-          border-radius:8px; padding:4px 10px; margin-right:6px; }
-  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
-
-  /* score summary (test worksheets: GT/VT — replaces .selfcheck) */
+  /* paste-report (all worksheet types) */
   .scorebox { background:var(--card); border:2px solid var(--accent); border-radius:12px;
               padding:16px; margin-top:36px; }
   .scorebox .result { font-size:1.1rem; font-weight:700; margin:8px 0; }
   .scorebox .verdict-pass { color:var(--ok); }
   .scorebox .verdict-fail { color:var(--bad); }
-  .scorebox .missed-list { background:var(--accent-soft); border-radius:8px;
-              padding:8px 12px; margin-top:8px; font-size:.95rem; }
+  .scorebox pre.report { background:#f6f4ef; border:1px solid var(--line); border-radius:8px;
+              padding:12px; font-size:.85rem; white-space:pre-wrap;
+              font-family:Consolas,"Courier New",monospace; }
+  .score-result { display:none; } .score-result.show { display:block; }
 
   @media (max-width:480px){ .match-cols { grid-template-columns:1fr; } }
 </style>
 </head>
-<body>
-<!-- py toggle lives in the header row below -->
+<body data-id="[hsk{L}-ws{NNN}]" data-type="P">
 <header class="worksheet">
   <h1>[HSK3 · 把字句（一）]</h1>
   <div class="meta">
     <span><b>语法点</b> [L3-SP-1 把字句1]</span>
     <span><b>话题</b> [家庭生活 · 搬家]</span>
     <span><b>用时</b> [约 13 分钟]</span>
-    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
   </div>
 </header>
 
@@ -180,7 +169,7 @@
 
 <!-- ============ SECTION A · 模式感知 Pattern warm-up ============ -->
 <h2 class="section"><span class="badge">A</span> 模式感知 <small>Pattern warm-up · 先看例句，别急着做题</small></h2>
-<p class="inst">[Click each card to flip. Read the sentences aloud.]</p>
+<p class="inst">[Flip each card. Hover a dashed word for pinyin. Then read the 用法例句.]</p>
 
 <!-- W1 flip card -->
 <div class="flip-row">
@@ -194,6 +183,11 @@
     </div>
   </div>
   <!-- more .flip cards: one per warm-up sentence + optional formula card + contrast card -->
+</div>
+<div class="item">
+  <p><b>用法例句</b> — 2–3 full sentences, different situations, English gloss. Hover for pinyin.</p>
+  <p>1. <span class="zh" data-py="tā bǎ xíngli fàng zài chūzūchē hòumiàn le">他把行李放在出租车后面了。</span> — He put the luggage behind the taxi.</p>
+  <p>2. <span class="zh" data-py="qǐng bǎ zhè fèn bàogào jiāo gěi jīnglǐ">请把这份报告交给经理。</span> — Please hand this report to the manager.</p>
 </div>
 
 <!-- ============ SECTION B · 语法操练 Grammar drills ============ -->
@@ -300,44 +294,20 @@ HSK4 语段排序 / HSK5 病句 / HSK6 400字作文→adapted. Use the official 
   <div class="key">[越来越干净 — interleaves the old pattern with today's 把 sentence context.]</div>
 </div>
 
-<!-- ============ Self-check strip (P practice worksheets end here) ============ -->
-<div class="selfcheck">
-  <p><b>自评 Self-check</b> — 点每个部分的心情，再把想复习的词写下来（下次课会用到！）</p>
-  <p>A <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
-     &nbsp; B <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
-     &nbsp; C <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
-     &nbsp; D <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button>
-     &nbsp; E <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button></p>
-  <p><b>词语收藏 Words to revisit</b></p>
-  <textarea class="typed-in" placeholder="记下今天没把握的词和句子…"></textarea>
+<!-- ============ Report (all types: P / GT / VT) ============ -->
+<div class="scorebox">
+  <p><b>报告 Report</b> — 做完选择题后点按钮，把生成的文字贴到课程对话里。</p>
+  <button class="btn score-btn">生成报告 / Copy report</button>
+  <div class="score-result"></div>
 </div>
-
-<!-- ============ Score summary (GT / VT test worksheets: use INSTEAD of .selfcheck) ============
-  <div class="scorebox">
-    <p><b>得分总结 Score summary</b> — 检查完所有选择题后点下面的按钮。</p>
-    <button class="btn score-btn">计算得分</button>
-    <div class="score-result"></div>
-    <p><b>自评打分 Self-grade the written sections (D/E)</b>:</p>
-    <p>😊 全对 / 🤔 差不多 / 😩 不行: <button class="conf">😊</button><button class="conf">🤔</button><button class="conf">😩</button></p>
-  </div>
-  NOTE for agents:
-  - Every MCQ item in a GT must carry data-point="the cluster point it tests"
-    (e.g. data-point="把+O+V+结果"); every VT item carries data-word="word tested".
-  - Missed (unchecked or wrong) items are collected into the review list by the button.
-  - Verdict: >=80% pass (advance per syllabus), else remediate-then-retake.
--->
+<!-- Agents: body needs data-id + data-type (P|GT|VT). MCQs: data-point / data-word.
+     Bank-fill items: data-answers + data-word. P verdict is —. GT/VT: 80% pass/fail. -->
 
 
 <script>
 /* ---------- engine: copy unchanged; behavior is class-based ---------- */
 
-// Pinyin: click a .zh to toggle; header button toggles all.
-document.getElementById('pyAll').onclick = () =>
-  document.body.classList.toggle('py-all');
-document.addEventListener('click', e => {
-  const zh = e.target.closest('.zh');
-  if (zh) zh.classList.toggle('show');
-});
+// Pinyin is CSS :hover on .zh — no click handler.
 
 // Generic: a .check button shows the .key inside the same .item
 document.addEventListener('click', e => {
@@ -412,7 +382,7 @@ document.addEventListener('click', e => {
 // Flip cards
 document.addEventListener('click', e => {
   const f = e.target.closest('.flip');
-  if (f && !e.target.matches('.zh')) f.classList.toggle('flipped');
+  if (f) f.classList.toggle('flipped');
 });
 document.addEventListener('keydown', e => {
   if (e.key === 'Enter' && e.target.matches('.flip')) e.target.classList.toggle('flipped');
@@ -444,40 +414,59 @@ document.addEventListener('click', e => {
   speechSynthesis.cancel(); speechSynthesis.speak(u);
 });
 
-// Self-check confidence buttons
+// Paste-report: MCQ + bank-fill → copy-ready block
 document.addEventListener('click', e => {
-  if (!e.target.matches('.conf')) return;
-  const sibs = e.target.parentElement.querySelectorAll('.conf');
-  sibs.forEach(b => b.classList.remove('sel'));
-  e.target.classList.add('sel');
-});
-
-// Score summary (test worksheets): count marked MCQs, collect missed points/words
-document.addEventListener('click', e => {
+  if (e.target.matches('.copy-report')) {
+    const pre = e.target.closest('.scorebox').querySelector('pre.report');
+    if (pre) navigator.clipboard.writeText(pre.textContent);
+    return;
+  }
   if (!e.target.matches('.score-btn')) return;
   const box = e.target.closest('.scorebox');
   const result = box.querySelector('.score-result');
   if (!result) return;
   let total = 0, right = 0;
-  const missed = [];
-  const seen = new Set();
+  const missed = []; const seen = new Set();
+  const tag = (el) => el.dataset.point || el.dataset.word
+    || (el.closest('.item') && (el.closest('.item').dataset.point || el.closest('.item').dataset.word))
+    || ((el.closest('.item') || el).querySelector('.qno') || {}).textContent
+    || 'item';
   document.querySelectorAll('.mcq').forEach(mcq => {
     total++;
     const ok = mcq.dataset.done && !mcq.querySelector('.opt.incorrect');
     if (ok) { right++; return; }
-    const meta = mcq.closest('.item') || mcq;
-    const pt = mcq.dataset.point || meta.dataset.point || mcq.dataset.word || meta.dataset.word;
-    if (pt && !seen.has(pt)) { seen.add(pt); missed.push(pt); }
+    const w = tag(mcq);
+    if (w && !seen.has(w)) { seen.add(w); missed.push(String(w).trim()); }
+  });
+  document.querySelectorAll('.item[data-answers]').forEach(it => {
+    total++;
+    const want = it.dataset.answers.split(/\s+/);
+    const got = [...it.querySelectorAll('.slot')].map(s => s.dataset.filled || '_');
+    const ok = want.length === got.length && want.every((w, i) => got[i] === w);
+    if (ok) { right++; return; }
+    const w = it.dataset.word || it.dataset.point || '选词填空';
+    if (!seen.has(w)) { seen.add(w); missed.push(w); }
   });
   const pct = total ? Math.round((right / total) * 100) : 0;
-  const pass = pct >= 80;
+  const type = document.body.dataset.type || 'P';
+  const id = document.body.dataset.id || '';
+  let verdict = '—';
+  if (type === 'GT' || type === 'VT') verdict = pct >= 80 ? 'pass' : 'fail';
+  const report =
+`worksheet_id: ${id}
+type: ${type}
+score: ${right}/${total} (${pct}%)
+verdict: ${verdict}
+needs_review: ${missed.length ? missed.join(', ') : '—'}
+notes:`;
+  const cls = (type !== 'P' && pct >= 80) ? 'verdict-pass' : 'verdict-fail';
   result.innerHTML =
-    `<p class="result">得分 Score: <span class="${pass ? 'verdict-pass' : 'verdict-fail'}">${right} / ${total} (${pct}%)</span></p>` +
-    `<p>${pass ? '✅ <b>通过！</b>这个单元过关 — 可以进入下一个单元了。'
-              : '📉 <b>还没过关</b>（80% 通过线）。把下面这些点/词补练一下，然后再来一次。'}</p>` +
-    (missed.length ? `<div class="missed-list"><b>需要复习 Need review</b>: ${missed.join('、')}</div>` : '') +
-    `<p style="font-size:.8rem;color:#6b6558">别忘了在聊天里把得分和要复习的内容告诉我，我会记录并安排下次复习。</p>`;
+    `<p class="result">得分 Score: <span class="${cls}">${right} / ${total} (${pct}%)</span></p>` +
+    `<pre class="report">${report}</pre>` +
+    `<button type="button" class="btn copy-report">复制 Copy</button>` +
+    `<p style="font-size:.85rem;color:#6b6558;margin-top:8px">把上面的报告整段粘贴到课程对话里，我会记进 progress-log 并安排下一课。</p>`;
   result.classList.add('show');
+  navigator.clipboard.writeText(report).catch(() => {});
 });
 </script>
 </body>

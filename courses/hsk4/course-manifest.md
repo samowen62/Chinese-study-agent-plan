@@ -26,9 +26,9 @@ reported scores). This file + `planning/progress-log.md` answer "what comes next
 | Unit | Type | File | Content | Predecessor | Status |
 |---|---|---|---|---|---|
 | 0 | GT | `gt/hsk4-gt-entry.html` | Level-entry placement mini-check (5–6 R4 over CL01/CL06/CL23 samples + HSK3 core) | — | placed (4/6, 67%) |
-| 1 | P | `p/hsk4-ws-001.html` | CL01 · anchor L4-CM-1 程度补语2 死了/厉害 (secondary: 全, 可+Adj) | 0 | generated |
-| 2 | GT | `gt/hsk4-gt-CL01.html` | CL01 Adjectives 形容词 (全, 死了) | 1 | generated |
-| 3 | VT | `vt/hsk4-vt-01.html` | Topic 个人情况 · 27 words | 2 | generated |
+| 1 | P | `p/hsk4-ws-001.html` | CL01 · anchor L4-CM-1 程度补语2 死了/厉害 (secondary: 全, 可+Adj) | 0 | completed (2 wrong) |
+| 2 | GT | `gt/hsk4-gt-CL01.html` | CL01 Adjectives 形容词 (全, 死了) | 1 | fail (8/11, 73%; retake skipped) |
+| 3 | VT | `vt/hsk4-vt-01.html` | Topic 个人情况 · 27 words | 2 | passed (r2 10/12, 83%) |
 | 4 | P | `p/hsk4-ws-002.html` | CL02a · anchor L4-QT-1 反问句2 难道/究竟 | 3 | generated |
 | 5 | P | `p/hsk4-ws-003.html` | CL02a · anchor L4-SP-5 双重否定 不得不/只好 | 4 | generated |
 | 6 | GT | `gt/hsk4-gt-CL02a.html` | CL02a 语气/评价类副词 (看来 恐怕 甚至 还是 最好 不得不 只好 竟然 千万 难道 到底 究竟) | 5 | generated |
@@ -116,7 +116,7 @@ reported scores). This file + `planning/progress-log.md` answer "what comes next
 
 | VT | Topic | Anchor words noted at generation | Status |
 |---|---|---|---|
-| 01 | 日常生活 · 个人情况 | 年龄 性别 性格 脾气 帅 美 笨 诚实 粗心 细心 活泼 幽默 害羞 骄傲 耐心 自信 懒 眼镜 皮肤 印象 (+高 漂亮 聪明 忙 岁 哥哥 女儿) | generated |
+| 01 | 日常生活 · 个人情况 | 年龄 性别 性格 脾气 帅 美 笨 诚实 粗心 细心 活泼 幽默 害羞 骄傲 耐心 自信 懒 眼镜 皮肤 印象 (+高 漂亮 聪明 忙 岁 哥哥 女儿) | passed (r2; still review 眼镜 + 性格搭配) |
 | 02 | 日常生活 · 饮食 | 餐厅 厨房 厨师 味道 酸 辣 咸 香 汽水 酸奶 快餐 馒头 月饼 葡萄 巧克力 西红柿 汤 烤 聚餐 (+米饭 面条儿 茶 牛奶 饺子 好吃 苹果) | generated |
 | 03 | 日常生活 · 交通出行 | 机场/交通 words: 大巴 动车 电动车 出租车?(L1) 交警 航班 乘客 乘坐 出行 交通 堵车 加油站 车位 车速 十字路口 出口 入口 导游 旅行 旅客 旅馆 景点 景区 (+自行车 L3 火车 L1 飞机 L1 出租车 L1) | pending |
 | 04 | 日常生活 · 购物 | 商品 购买 购物 价格 价钱 打折 降价 便宜?(L1) 费用 付 支付 现金 零钱 红包 快递 网购 牌子 质量 顾客 纸巾 袋子 (+买 L1 卖 L1 贵 L1 商店 L1 超市 L1) | pending |
@@ -162,10 +162,15 @@ batch 32, audit the manifest word lists against #1001–2000 and sweep leftovers
 - Wave 1 (units 0–10): generated 2026-11-05. Browser-verified P (MCQ + pinyin), GT
   (score-summary + `data-point`), VT (bank-fill reset + `data-word`).
 - Unit 0 taken 2026-11-05: **4/6 (67%)**, placed in the 50–79% band. Missed
-  `程度补语2 死了` (item 3) and `反问句` (item 6). Stay on HSK4; no HSK3 refresher.
-  Next unit: `p/hsk4-ws-001.html` (covers 死了 as the anchor; F-section now reviews 反问句).
+  `程度补语2 死了` (item 3) and `反问句` (item 6).
+- Unit 1 taken 2026-11-10: ws-001 completed, 2 items wrong (which items not reported).
+- Unit 2 taken 2026-11-10: **hsk4-gt-CL01 8/11 (73%) — fail**. Sam skipped the retake
+  (browser closed) and is advancing. Next unit: `vt/hsk4-vt-01.html`. Carry 死了 and
+  反问句 in later review sections. Do **not** backfill `gt/retakes/hsk4-gt-CL01-r2.html`.
+- Unit 3 taken 2026-11-12 / retake 2026-11-16: **hsk4-vt-01-r2 10/12 (83%) — pass**.
+  Still review: 眼镜, 性格/脾气/耐心/诚实/细心配对. Next: `p/hsk4-ws-002.html` (反问句).
 - Wave 2: units 11–13 (`p/hsk4-ws-006.html` CL02c 程度/范围, `gt/hsk4-gt-CL02c.html`,
   `vt/hsk4-vt-03.html` 交通出行). Next "continue the course" request starts here.
-- When Sam reports a test score: update unit status, append progress-log row, and if
-  a cluster GT failed, generate the remediation P worksheet(s) for missed points before
-  advancing. Entry placement is not a cluster gate.
+- When Sam reports a test score: update unit status, append progress-log row. If a
+  cluster GT/VT is <80%, generate the remediation P (grammar) **and** the retake HTML in
+  `{gt|vt}/retakes/` immediately, unless he skips. Entry placement is not a cluster gate.

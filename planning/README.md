@@ -6,8 +6,8 @@ worksheets for Sam. Read this README first, then follow the map below.
 ## What we're building
 
 **Worksheets are**: short (10–15 min), interactive HTML pages running in a browser (not
-printed), with pinyin hidden by default and answers behind click-to-reveal controls. There
-are **three worksheet types**:
+printed), with pinyin hidden by default (hover a dashed word) and answers behind
+click-to-reveal keys. There are **three worksheet types**:
 
 | Type | What it is | Unit it covers | Blueprint |
 |---|---|---|---|
@@ -19,12 +19,12 @@ are **three worksheet types**:
 `syllabuses/01-hsk-syllabus.md` — agents should always be able to answer "what comes next?"
 from the syllabus plus `progress-log.md`.
 
-**Source material** (in `Z:\Chinese`):
-- `新版HSK考试大纲1219.pdf` — official HSK syllabus (2025-11 edition, effective 2026-07).
+**Source material** (in `Z:\Chinese\resources\`):
+- `resources\新版HSK考试大纲1219.pdf` — official HSK syllabus (2025-11 edition, effective 2026-07).
   Content source of truth: vocabulary, grammar, topics, tasks, characters.
-- `hsk1\` … `hsk6\` — official past papers (older generation). Question-format reference
-  for exam-style sections.
-- `grammar\` — Chinese Grammar Wiki pages (old wiki HSK levels); source of the
+- `resources\hsk1\` … `resources\hsk6\` — official past papers (older generation). Question-format
+  reference for exam-style sections.
+- `resources\grammar\` — Chinese Grammar Wiki pages (old wiki HSK levels); source of the
   **grammar clusters** in `references/03-grammar-inventory.md`.
 
 ## Design decisions (fixed — do not deviate without asking Sam)
@@ -36,10 +36,10 @@ from the syllabus plus `progress-log.md`.
 | Organizing principle | P: one grammar point · GT: one cluster · VT: one thematic word batch |
 | Length | 10–15 minutes, ~20–25 items (all types) |
 | Listening skill | "Listening simulation": dialogue transcripts for read-aloud + comprehension (optional TTS button) |
-| Pinyin | Hidden by default everywhere; click-to-reveal; tone marks (ā á ǎ à) |
+| Pinyin | Hidden by default everywhere; hover a dashed `.zh` word to show ruby pinyin; no Show-all button; tone marks (ā á ǎ à) |
 | Answer keys | Every item: answer + explanation (why right / why distractors wrong), click-to-reveal |
-| Vocabulary | Cumulative vocab of target level; may slightly exceed (~≤5%) when it serves learning; gloss anything beyond |
-| Interactivity | Click-to-reveal pinyin, self-check buttons, flip cards, click-to-order tiles, score summary on tests |
+| Vocabulary | Cumulative vocab of target level; may slightly exceed (~≤5%) when it serves learning; gloss anything beyond. Prefer unused list words over recycling 忙/累/热/高兴/哥哥; rotate 话题 even inside one worksheet. |
+| Interactivity | Hover pinyin, flip cards, click-to-order tiles, paste-report score box on every worksheet |
 | Output | Self-contained HTML (one file, no external dependencies) |
 
 ## Directory map
@@ -67,7 +67,9 @@ planning\
 
 **Course storage**: worksheets built as part of a level course go in
 `Z:\Chinese\courses\hsk{L}\{p,gt,vt}\` with a `course-manifest.md` tracking every unit's
-status; standalone one-off worksheets still go in `Z:\Chinese\worksheets\{type}\`.
+status. Failed GT/VT retakes go in the adjacent `gt\retakes\` or `vt\retakes\` folder
+(generated automatically when a <80% score is logged, unless Sam skips). Standalone
+one-off worksheets still go in `Z:\Chinese\worksheets\{type}\`.
 
 ## Workflow: generating a worksheet
 
@@ -80,13 +82,13 @@ status; standalone one-off worksheets still go in `Z:\Chinese\worksheets\{type}\
    `references/02-level-guide.md` (VT).
 4. Read `references/01-question-type-catalog.md` for item formats and components.
 5. Generate content per the blueprint, then render HTML by copying
-   `templates/worksheet-template.html` (GT/VT: use the `score-summary` block instead of
-   `.selfcheck`; items carry `data-point` / `data-word`).
+   `templates/worksheet-template.html`. Every file has `body data-id` + `data-type`
+   (P|GT|VT) and the paste-report score box. MCQ/bank items carry `data-point` / `data-word`.
 6. Run the QA checklist below. Fix anything that fails.
 7. Save as `Z:\Chinese\worksheets\{type}\hsk{L}-…` with these names:
    - P: `hsk{L}-ws{NNN}-{slug}.html`
-   - GT: `hsk{L}-gt-CL{kk}[-rN].html`
-   - VT: `hsk{L}-vt-{NN}-{topic-slug}.html`
+   - GT: `hsk{L}-gt-CL{kk}.html` (retakes: `{gt}/retakes/hsk{L}-gt-CL{kk}-rN.html`)
+   - VT: `hsk{L}-vt-{NN}-{topic-slug}.html` (retakes: `{vt}/retakes/hsk{L}-vt-{NN}-rN.html`)
 8. Append a row to `progress-log.md` (see its header for the format). For tests, record
    score + verdict + missed points/words once Sam reports them.
 
@@ -114,15 +116,15 @@ status; standalone one-off worksheets still go in `Z:\Chinese\worksheets\{type}\
 - [ ] Correct type (P/GT/VT), correct unit, per the syllabus sequence or Sam's request.
 - [ ] Section skeleton and order match the type's blueprint.
 - [ ] GT: every cluster point appears in ≥1 item; R4 options all from the cluster;
-      `data-point` on every MCQ; `score-summary` present.
+      `data-point` on every MCQ; paste-report present.
 - [ ] VT: every batch word tested ≥1 time; `data-word` on every MCQ/bank item;
-      `score-summary` present; batch words verified in 词汇大纲.
+      paste-report present; batch words verified in 词汇大纲.
 - [ ] P: one grammar point only, in every section B–D item; review section sources from log.
 - [ ] Item counts and estimated time fit 10–15 minutes at the target level.
-- [ ] Pinyin hidden by default; production items always show characters.
+- [ ] Pinyin hidden by default (hover only; no Show-all button); production items always show characters.
 - [ ] Every item has a working check/reveal control with answer + explanation.
 - [ ] Distractors plausible; exactly one defensible answer per item.
 - [ ] Vocabulary within cumulative level list; anything above is glossed.
-- [ ] HTML opens standalone; all interactions work (pinyin, MCQ marking, tiles, flip,
-      score summary); mobile-readable (720px max width).
+- [ ] HTML opens standalone; all interactions work (hover pinyin, MCQ marking, tiles, flip,
+      paste-report); mobile-readable (720px max width).
 - [ ] Metadata block filled; filename matches convention; progress log updated.

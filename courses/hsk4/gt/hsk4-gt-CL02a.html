@@ -40,11 +40,12 @@
   .card .formula { color:var(--accent); font-weight:700; }
   .card .pit { color:#8a4b00; font-size:.85rem; margin-top:4px; }
   .qno { font-weight:700; color:var(--accent); margin-right:6px; }
-  .zh { position:relative; cursor:pointer; border-bottom:1px dashed #d8d2c4; }
-  .zh.show::before, body.py-all .zh::before {
-    content:attr(data-py); position:absolute; top:-1.05em; left:0; right:0;
-    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap; font-family:Arial,sans-serif; }
-  button { font-family:inherit; cursor:pointer; }
+  .zh { position:relative; cursor:help; border-bottom:1px dashed #d8d2c4; padding-top:1.05em; }
+  .zh:hover::before {
+    content:attr(data-py); position:absolute; top:0; left:0; right:0;
+    font-size:.62em; color:var(--accent); text-align:center; white-space:nowrap;
+    font-family:Arial,sans-serif; pointer-events:none; }
+button { font-family:inherit; cursor:pointer; }
   .btn { background:#fff; border:1.5px solid var(--accent); color:var(--accent); border-radius:8px; padding:5px 14px; font-size:.85rem; }
   .btn:hover { background:var(--accent-soft); }
   .key { display:none; margin-top:10px; padding:10px 12px; border-radius:8px; background:#f2f8f2; border-left:4px solid var(--ok); font-size:.92rem; }
@@ -65,25 +66,23 @@
   details.ref { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 14px; margin:10px 0; }
   details.ref summary { cursor:pointer; font-weight:700; color:var(--accent); }
   details.ref ul { margin:8px 0 0 18px; font-size:.92rem; }
+  .scorebox pre.report { background:#f6f4ef; border:1px solid var(--line); border-radius:8px; padding:12px; font-size:.85rem; white-space:pre-wrap; font-family:Consolas,"Courier New",monospace; }
   .scorebox { background:var(--card); border:2px solid var(--accent); border-radius:12px; padding:16px; margin-top:36px; }
   .scorebox .result { font-size:1.1rem; font-weight:700; margin:8px 0; }
   .scorebox .verdict-pass { color:var(--ok); }
   .scorebox .verdict-fail { color:var(--bad); }
   .scorebox .missed-list { background:var(--accent-soft); border-radius:8px; padding:8px 12px; margin-top:8px; font-size:.95rem; }
   .score-result { display:none; } .score-result.show { display:block; }
-  .conf { font-size:1.5rem; background:none; border:1.5px solid var(--line); border-radius:8px; padding:4px 10px; margin-right:6px; }
-  .conf.sel { border-color:var(--accent); background:var(--accent-soft); }
 </style>
 </head>
-<body>
+<body data-id="hsk4-gt-CL02a" data-type="GT">
 <header class="worksheet">
   <h1>HSK 4 · 单元测试 · 语气/评价类副词（CL02a）</h1>
   <div class="meta">
     <span><b>集群</b> L4-CL02a（12 个语法点）</span>
     <span><b>覆盖</b> hsk4-ws-002 / hsk4-ws-003</span>
     <span><b>用时</b> 约 15 分钟（A 讲解约 3 分钟 + 测试）</span>
-    <span><button class="btn" id="pyAll">显示拼音 / Show pinyin</button></span>
-  </div>
+</div>
 </header>
 
 <div class="goal">
@@ -94,18 +93,42 @@
 <!-- ============ A 语法讲解 ============ -->
 <h2 class="section"><span class="badge">A</span> 语法讲解 <small>Grammar explanations · 每个考点一张卡（约 3 分钟）</small></h2>
 <div class="cards">
-  <div class="card"><h3>1. 看来 kànlái</h3><span class="formula">看来 + 判断 / 在+人+看来</span><p>From what I can see → my inference. <span class="zh" data-py="kànlái jīntiān chū bu qù le">看来今天出不去了。</span> Pitfall: 在我看来 = "in my view", an opinion, not an inference.</p></div>
-  <div class="card"><h3>2. 恐怕 kǒngpà</h3><span class="formula">恐怕 + 坏消息/推测</span><p>"I'm afraid…" softens a bad guess. <span class="zh" data-py="kǒngpà yào xià yǔ le">恐怕要下雨了。</span> Pitfall: only for unwelcome outcomes.</p></div>
-  <div class="card"><h3>3. 甚至 shènzhì</h3><span class="formula">A，甚至 B</span><p>Escalates: even B on top of A. <span class="zh" data-py="tā zhōumò yě zài xuéxí">他每天学十小时，甚至周末也学。</span> Pitfall: B must be MORE extreme than A.</p></div>
-  <div class="card"><h3>4. 还是 háishi（建议）</h3><span class="formula">还是 + V + 吧</span><p>"Had better" — advice after weighing. <span class="zh" data-py="wǒmen háishi dǎchē ba">我们还是打车吧。</span> Pitfall: needs 吧 to sound like advice.</p></div>
-  <div class="card"><h3>5. 最好 zuìhǎo</h3><span class="formula">最好 + V</span><p>"It would be best to…" <span class="zh" data-py="nǐ zuìhǎo xiān wèn wen lǎoshī">你最好先问问老师。</span> Pitfall: not "the best (thing)" — that's 最好的+N.</p></div>
-  <div class="card"><h3>6. 不得不 bùdébù</h3><span class="formula">S + 不得不 + V</span><p>Forced by circumstance. <span class="zh" data-py="yǔ tài dà, bùdébù qǔxiāo">雨太大，不得不取消。</span> Pitfall: stronger than 必须 — no choice at all.</p></div>
-  <div class="card"><h3>7. 只好 zhǐhǎo</h3><span class="formula">S + 只好 + V</span><p>No better option, so you settle. <span class="zh" data-py="méi piào le, zhǐhǎo huí jiā">没票了，只好回家。</span> Pitfall: only for the option you ended up taking.</p></div>
-  <div class="card"><h3>8. 竟然 jìngrán</h3><span class="formula">S + 竟然 + V</span><p>Contrary to expectation — "would you believe it". <span class="zh" data-py="tā jìngrán méi fùxí jiù mǎn fēn">他竟然没复习就考了满分。</span> Pitfall: the fact must be genuinely surprising.</p></div>
-  <div class="card"><h3>9. 千万 qiānwàn</h3><span class="formula">千万 + (别/不) + V</span><p>Absolutely (in)… — warnings & instructions. <span class="zh" data-py="qiānwàn bié chídào">千万别迟到。</span> Pitfall: lives in commands/warnings, usually negative.</p></div>
-  <div class="card"><h3>10. 难道 nándào</h3><span class="formula">难道 + 陈述 + 吗？</span><p>Rhetorical — surely you DO / surely not?! <span class="zh" data-py="nándào nǐ bù zhīdào ma">难道你不知道吗？</span> Pitfall: needs 吗 at the end.</p></div>
-  <div class="card"><h3>11. 到底 dàodǐ</h3><span class="formula">到底 + V/问句</span><p>"On earth / in the end" — pressing questions (spoken). <span class="zh" data-py="nǐ dàodǐ qù bu qù">你到底去不去？</span> Pitfall: also means "in the end" in statements.</p></div>
-  <div class="card"><h3>12. 究竟 jiūjìng</h3><span class="formula">究竟 + V/问句</span><p>Same "on earth" family as 到底, more written/formal. <span class="zh" data-py="jiūjìng fāshēng le shénme">究竟发生了什么？</span> Pitfall: usually in real questions, NOT in statements (statement = 到底/终于).</p></div>
+  <div class="card"><h3>1. 看来 kànlái</h3><span class="formula">看来 + 判断 / 在+人+看来</span><p>From what I can see → my inference. Pitfall: 在我看来 = "in my view", an opinion, not an inference.</p>
+    <p>1. <span class="zh" data-py="kànlái zhè cì hézuò yào tuīchí">看来这次合作要推迟。</span> — Looks like this partnership will be delayed. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="kànlái wǒmen gǎn bu shàng zhè bān fēijī le">看来我们赶不上这班飞机了。</span> — Looks like we'll miss this flight. <span class="srctag">出行</span></p></div>
+  <div class="card"><h3>2. 恐怕 kǒngpà</h3><span class="formula">恐怕 + 坏消息/推测</span><p>"I'm afraid…" softens a bad guess. Pitfall: only for unwelcome outcomes.</p>
+    <p>1. <span class="zh" data-py="kǒngpà jīnnián de jiǎngjīn yào jiǎnshǎo">恐怕今年的奖金要减少。</span> — I'm afraid this year's bonus will be cut. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="kǒngpà cāntīng yǐjīng dǎyáng le">恐怕餐厅已经打烊了。</span> — I'm afraid the restaurant has already closed. <span class="srctag">饮食</span></p></div>
+  <div class="card"><h3>3. 甚至 shènzhì</h3><span class="formula">A，甚至 B</span><p>Escalates: even B on top of A. Pitfall: B must be MORE extreme than A.</p>
+    <p>1. <span class="zh" data-py="tā zhōurì yě lái jiābān, shènzhì chūnjié dōu méi xiū">他周日也来加班，甚至春节都没休。</span> — He even works Sundays — even skipped Spring Festival. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="zhè dào tí lián lǎoshī dōu zuò cuò le, shènzhì dá'àn yě yìn cuò le">这道题连老师都做错了，甚至答案也印错了。</span> — Even the teacher got it wrong — even the printed key was wrong. <span class="srctag">学习</span></p></div>
+  <div class="card"><h3>4. 还是 háishi（建议）</h3><span class="formula">还是 + V + 吧</span><p>"Had better" — advice after weighing. Pitfall: needs 吧 to sound like advice.</p>
+    <p>1. <span class="zh" data-py="wǒmen háishi xiān tǎolùn hétong ba">我们还是先讨论合同吧。</span> — We'd better discuss the contract first. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="tiānqì zhème chà, háishi zuò huǒchē ba">天气这么差，还是坐火车吧。</span> — Weather's this bad — we'd better take the train. <span class="srctag">出行</span></p></div>
+  <div class="card"><h3>5. 最好 zuìhǎo</h3><span class="formula">最好 + V</span><p>"It would be best to…" Pitfall: not "the best (thing)" — that's 最好的+N.</p>
+    <p>1. <span class="zh" data-py="nǐ zuìhǎo bǎ fùjiàn zài fā yí biàn">你最好把附件再发一遍。</span> — You'd better send the attachment again. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="kǎoshì qián zuìhǎo zài fùxí yí biàn kèwén">考试前最好再复习一遍课文。</span> — Before the test, it's best to review the text once more. <span class="srctag">学习</span></p></div>
+  <div class="card"><h3>6. 不得不 bùdébù</h3><span class="formula">S + 不得不 + V</span><p>Forced by circumstance. Pitfall: stronger than 必须 — no choice at all.</p>
+    <p>1. <span class="zh" data-py="kèhù línshí gǎi rìqī, wǒmen bùdébù tuīchí fāhuò">客户临时改日期，我们不得不推迟发货。</span> — The client changed the date; we had to delay shipment. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="gāosù gōnglù fēng le, wǒmen bùdébù rào lù">高速公路封了，我们不得不绕路。</span> — The highway was closed; we had to detour. <span class="srctag">出行</span></p></div>
+  <div class="card"><h3>7. 只好 zhǐhǎo</h3><span class="formula">S + 只好 + V</span><p>No better option, so you settle. Pitfall: only for the option you ended up taking.</p>
+    <p>1. <span class="zh" data-py="huìyìshì mǎn le, wǒmen zhǐhǎo huàn dào cháshuǐjiān">会议室满了，我们只好换到茶水间。</span> — The meeting room was full, so we settled for the pantry. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="cāntīng pái duì tài cháng, wǒmen zhǐhǎo mǎi miànbāo">餐厅排队太长，我们只好买面包。</span> — The restaurant queue was too long, so we just bought bread. <span class="srctag">饮食</span></p></div>
+  <div class="card"><h3>8. 竟然 jìngrán</h3><span class="formula">S + 竟然 + V</span><p>Contrary to expectation — "would you believe it". Pitfall: the fact must be genuinely surprising.</p>
+    <p>1. <span class="zh" data-py="xīn tóngshì jìngrán néng shuō sān zhǒng wàiyǔ">新同事竟然能说三种外语。</span> — The new colleague can actually speak three foreign languages. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="tā jìngrán bǎ hùzhào luò zài chūzūchē li le">他竟然把护照落在出租车里了。</span> — He actually left his passport in the taxi. <span class="srctag">出行</span></p></div>
+  <div class="card"><h3>9. 千万 qiānwàn</h3><span class="formula">千万 + (别/不) + V</span><p>Absolutely (in)… — warnings & instructions. Pitfall: lives in commands/warnings, usually negative.</p>
+    <p>1. <span class="zh" data-py="qiānwàn bié bǎ mìmǎ fā gěi biéren">千万别把密码发给别人。</span> — Whatever you do, don't send the password to anyone. <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="guò mǎlù qiānwàn yào kàn hónglǜdēng">过马路千万要看红绿灯。</span> — When you cross, you absolutely must watch the lights. <span class="srctag">出行</span></p></div>
+  <div class="card"><h3>10. 难道 nándào</h3><span class="formula">难道 + 陈述 + 吗？</span><p>Rhetorical — surely you DO / surely not?! Pitfall: needs 吗 at the end.</p>
+    <p>1. <span class="zh" data-py="nándào nǐ hái méi kàn nà fēng yóujiàn ma">难道你还没看那封邮件吗？</span> — You mean you still haven't read that email? <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="nándào zhè dào tí nǐ yě bù huì ma">难道这道题你也不会吗？</span> — Don't tell me you can't do this problem either? <span class="srctag">学习</span></p></div>
+  <div class="card"><h3>11. 到底 dàodǐ</h3><span class="formula">到底 + V/问句</span><p>"On earth / in the end" — pressing questions (spoken). Pitfall: also means "in the end" in statements.</p>
+    <p>1. <span class="zh" data-py="zhège xiàngmù dào dǐ shéi fùzé">这个项目到底谁负责？</span> — Who on earth is in charge of this project? <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="nǐmen dào dǐ zài nǎ ge zhàntái děng">你们到底在哪个站台等？</span> — Which platform are you waiting at, exactly? <span class="srctag">出行</span></p></div>
+  <div class="card"><h3>12. 究竟 jiūjìng</h3><span class="formula">究竟 + V/问句</span><p>Same "on earth" family as 到底, more written/formal. Pitfall: usually in real questions, NOT in statements (statement = 到底/终于).</p>
+    <p>1. <span class="zh" data-py="jiūjìng shì shéi qiānde zhè fèn hétong">究竟是谁签的这份合同？</span> — Who exactly signed this contract? <span class="srctag">职场</span></p>
+    <p>2. <span class="zh" data-py="zhè piān kèwén jiūjìng xiǎng shuō shénme">这篇课文究竟想说什么？</span> — What on earth is this text trying to say? <span class="srctag">学习</span></p></div>
 </div>
 
 <!-- ============ B 集群速览 ============ -->
@@ -322,15 +345,12 @@
 <!-- ============ G 得分总结 ============ -->
 <h2 class="section"><span class="badge">G</span> 得分总结 <small>Score summary</small></h2>
 <div class="scorebox">
-  <p><b>得分总结 Score summary</b> — 检查完所有选择题后点下面的按钮。</p>
-  <button class="btn score-btn">计算得分</button>
+  <p><b>报告 Report</b> — 做完选择题后点按钮，把生成的文字贴到课程对话里。</p>
+  <button class="btn score-btn">生成报告 / Copy report</button>
   <div class="score-result"></div>
-  <p><b>自评打分 Self-grade section E</b>: <button class="conf">😊 全对</button><button class="conf">🤔 差不多</button><button class="conf">😩 不行</button></p>
-</div>
+  </div>
 
 <script>
-document.getElementById('pyAll').onclick = () => document.body.classList.toggle('py-all');
-document.addEventListener('click', e => { const zh = e.target.closest('.zh'); if (zh) zh.classList.toggle('show'); });
 document.addEventListener('click', e => { if (e.target.matches('.check')) { const item = e.target.closest('.item'); const key = item && item.querySelector('.key'); if (key) key.classList.add('show'); } });
 document.addEventListener('click', e => {
   if (!e.target.matches('.opt')) return;
@@ -366,33 +386,57 @@ document.addEventListener('click', e => {
   const built = item.querySelector('.built'); if (built) built.innerHTML = '';
 });
 document.addEventListener('click', e => {
-  if (!e.target.matches('.conf')) return;
-  e.target.parentElement.querySelectorAll('.conf').forEach(b => b.classList.remove('sel'));
-  e.target.classList.add('sel');
-});
-document.addEventListener('click', e => {
+  if (e.target.matches('.copy-report')) {
+    const pre = e.target.closest('.scorebox').querySelector('pre.report');
+    if (pre) navigator.clipboard.writeText(pre.textContent);
+    return;
+  }
   if (!e.target.matches('.score-btn')) return;
   const box = e.target.closest('.scorebox');
   const result = box.querySelector('.score-result');
   if (!result) return;
   let total = 0, right = 0;
   const missed = []; const seen = new Set();
+  const tag = (el) => el.dataset.point || el.dataset.word
+    || (el.closest('.item') && (el.closest('.item').dataset.point || el.closest('.item').dataset.word))
+    || ((el.closest('.item') || el).querySelector('.qno') || {}).textContent
+    || 'item';
   document.querySelectorAll('.mcq').forEach(mcq => {
     total++;
     const ok = mcq.dataset.done && !mcq.querySelector('.opt.incorrect');
     if (ok) { right++; return; }
-    const pt = mcq.dataset.point || (mcq.closest('.item')||mcq).dataset.point;
-    if (pt && !seen.has(pt)) { seen.add(pt); missed.push(pt); }
+    const w = tag(mcq);
+    if (w && !seen.has(w)) { seen.add(w); missed.push(String(w).trim()); }
+  });
+  document.querySelectorAll('.item[data-answers]').forEach(it => {
+    total++;
+    const want = it.dataset.answers.split(/\s+/);
+    const got = [...it.querySelectorAll('.slot')].map(s => s.dataset.filled || '_');
+    const ok = want.length === got.length && want.every((w, i) => got[i] === w);
+    if (ok) { right++; return; }
+    const w = it.dataset.word || it.dataset.point || '选词填空';
+    if (!seen.has(w)) { seen.add(w); missed.push(w); }
   });
   const pct = total ? Math.round((right / total) * 100) : 0;
-  const pass = pct >= 80;
+  const type = document.body.dataset.type || 'P';
+  const id = document.body.dataset.id || '';
+  let verdict = '—';
+  if (type === 'GT' || type === 'VT') verdict = pct >= 80 ? 'pass' : 'fail';
+  const report =
+`worksheet_id: ${id}
+type: ${type}
+score: ${right}/${total} (${pct}%)
+verdict: ${verdict}
+needs_review: ${missed.length ? missed.join(', ') : '—'}
+notes:`;
+  const cls = (type !== 'P' && pct >= 80) ? 'verdict-pass' : 'verdict-fail';
   result.innerHTML =
-    `<p class="result">得分 Score: <span class="${pass ? 'verdict-pass' : 'verdict-fail'}">${right} / ${total} (${pct}%)</span></p>` +
-    `<p>${pass ? '✅ <b>通过！</b>CL02a 单元过关 — 下一个：词汇批 02（饮食），然后进入 CL02b 时间副词。'
-              : '📉 <b>还没过关</b>（80% 通过线）。把下面的点补练一下（我可以生成针对性小练习），然后再来一次。'}</p>` +
-    (missed.length ? `<div class="missed-list"><b>需要复习 Need review</b>: ${missed.join('、')}</div>` : '') +
-    `<p style="font-size:.8rem;color:#6b6558">把得分和要复习的点告诉我，我会记进 progress-log 并安排下次复习。</p>`;
+    `<p class="result">得分 Score: <span class="${cls}">${right} / ${total} (${pct}%)</span></p>` +
+    `<pre class="report">${report}</pre>` +
+    `<button type="button" class="btn copy-report">复制 Copy</button>` +
+    `<p style="font-size:.85rem;color:#6b6558;margin-top:8px">把上面的报告整段粘贴到课程对话里，我会记进 progress-log 并安排下一课。</p>`;
   result.classList.add('show');
+  navigator.clipboard.writeText(report).catch(() => {});
 });
 </script>
 </body>

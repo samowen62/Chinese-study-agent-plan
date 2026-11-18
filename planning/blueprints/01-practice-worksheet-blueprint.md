@@ -67,7 +67,10 @@ doesn't.
 - 3–4 **flip cards** (`flip-card` component): front = natural sentence using the pattern in
   the topic context; back = the pattern highlighted + a one-line note on what it expresses.
   Optionally one card showing the pattern's formula (e.g. `主语 + 把 + 宾语 + 动词 + 结果`).
-- No quizzing here. Input only. Pinyin behind click-reveal per policy.
+- After the cards, a short **用法例句** list: **2–3 full sentences** (English gloss), each
+  using the target pattern in a *different* situation (rotate 职场 / 出行 / 学习 / 饮食).
+  Prefer unused HSK4 cumulative words (`#1–2000`) over recycling 忙/累/热/高兴/哥哥.
+- No quizzing here. Input only. Hover a dashed word for pinyin.
 - Include one **deliberate contrast card** when the pattern has a classic confusion partner
   (e.g. 把 vs 被, 了 vs 着, 二 vs 两).
 
@@ -117,9 +120,10 @@ doesn't.
   points from `references/03-grammar-inventory.md` for the same level.
 - Prefer quick formats: V1 mixed MCQ, V2 "say it with the old pattern" transformation,
   or one flip-card self-test. Mark each item with the source worksheet ID and its topic.
-- Also include the **自评 self-check strip** at the very end: per-section confidence
-  checkboxes (😊 / 🤔 / 😩) and a "词语收藏 words to revisit" text box. Whatever Sam notes
-  there becomes required content for the next worksheet's review section (agent should ask).
+- End the page with the **报告 Report** box (same `scorebox` as GT/VT): auto-counts MCQ +
+  bank-fill, renders a paste-ready block (`worksheet_id` / `type: P` / `score` / `verdict: —`
+  / `needs_review` / `notes`). P has no pass/fail. `needs_review` lists missed `data-point`
+  tags and wrong MCQs. Sam pastes that block into the course chat.
 
 ## Answer key & explanation rules (apply to every item, all sections)
 
@@ -129,18 +133,25 @@ doesn't.
 3. Production items (P1/P4/F*): give model answer + 1–2 acceptable variants + a
    "this would be wrong" example with its reason.
 4. Explanations in English, model sentences in Chinese. Chinese in an explanation may
-   carry inline click-pinyin like any other content.
+   carry inline hover-pinyin like any other content.
 5. If an item uses a word above the target level, the key must gloss it
    (word + pinyin + English).
 
 ## Pinyin policy (all sections)
 
 - Hidden by default, at every level (Sam's explicit preference; forces character reading).
-- Implementation: `<span class="zh" data-py="nǐ hǎo">你好</span>` — click toggles ruby-style
-  pinyin above the characters. A page-level "显示拼音 / Show pinyin" toggle also exists.
+- Implementation: `<span class="zh" data-py="nǐ hǎo">你好</span>` — hover shows ruby-style
+  pinyin above the characters (`cursor: help`, dashed underline). There is **no** page-level
+  "显示拼音 / Show pinyin" button and no click-to-toggle.
 - Pinyin is written with tone marks; sandhi is NOT respelled (bù stays bù, yī stays yī).
 - The only strings exempt from pinyin: section titles and long instruction paragraphs —
   still add pinyin to key pattern words inside instructions.
+
+## Vocabulary variety (all sections)
+
+- Prefer unused words from the level's cumulative list over repeating 忙 / 累 / 热 / 高兴 / 哥哥.
+- Rotate 话题 (职场, 出行, 学习, 饮食) even inside one worksheet. Gloss anything above the
+  level cap.
 
 ## Difficulty calibration (by level)
 
