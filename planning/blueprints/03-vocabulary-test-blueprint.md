@@ -86,8 +86,9 @@ inside the 10–15 minute envelope and keep A tight (2–3 min max).
   confusables (e.g. 天气 vs 气候).
 - ~Half items: reverse direction — English meaning → choose the Chinese word (options are
   Chinese words from the batch, visually distinct characters).
-- One item per word; spread across C–E so every batch word is directly tested ≥ once
-  (batch words too abstract for E cloze can appear twice in C).
+- **Even coverage**: every batch word appears in **exactly one primary C–F item** (a second
+  appearance only for 多音字 / collocation traps). Spread: C ~⅓ of the batch, D another ~⅓
+  (hard pronunciations), E cloze the rest, F 2–3 of the trickiest (may overlap E).
 
 ### D — 读音 (Pinyin, VM2)
 - 4–5 items in two flavors: select the correct tone-marked pinyin for a given word
@@ -113,8 +114,9 @@ inside the 10–15 minute envelope and keep A tight (2–3 min max).
   (wrong collocation, wrong measure word, wrong valence: e.g. 见面 needs 和/跟 object).
 
 ### G — 报告 (Report)
-- Paste-report auto-counts C/D/E (MCQ + bank-fill); **生成报告 / Copy report** writes a
-  paste-ready block (`type: VT`, `verdict: pass|fail` at 80%). No emoji self-grade row.
+- Paste-report auto-counts C/D/E (MCQ + bank-fill + P2 `data-order`); **生成报告 / Copy report**
+  writes a paste-ready block (`type: VT`, `verdict: pass|fail` at 80%). **≥10 auto-scored
+  items**. No emoji self-grade row.
 - The review list is **word-level**: missed words (from item `data-word`) go in
   `needs_review`. The agent must include them in the next worksheet's review section and
   re-test them in the next VT's section C. Production (F) is not auto-scored; Sam can add
@@ -133,3 +135,5 @@ inside the 10–15 minute envelope and keep A tight (2–3 min max).
 4. No grammar above the target level in any sentence (this is a vocabulary test;
    grammar surprise invalidates the item).
 5. Log results in `progress-log.md`: score, verdict, missed words.
+6. Coverage checklist: every batch word has exactly one primary C–F item; extras only for
+   多音字 / collocation traps. Auto-scored denominator ≥10.

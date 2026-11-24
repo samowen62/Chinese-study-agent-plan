@@ -173,14 +173,15 @@ button { font-family:inherit; cursor:pointer; }
   <div class="key"><b>C ✔</b> Pattern ② : S＋把＋O1＋V（＋给）＋O2 — I handed the letter TO teacher Wang. — 在/到 introduce a <b>location</b>, but 王老师 is a person receiving the object, so you need 给 (attached to the verb) instead. 交了了 would be ungrammatical; 交了 alone loses the recipient.</div>
 </div>
 
-<div class="item">
+<div class="item" data-order="我|把|房间|打扫|干净了">
   <p><span class="qno">B3</span> 排列顺序：把这些词排成一句话。Click the words in order.</p>
   <div class="tiles">
-    <button class="tile">我</button>
-    <button class="tile">把</button>
-    <button class="tile">房间</button>
-    <button class="tile">打扫</button>
     <button class="tile">干净了</button>
+    <button class="tile">把房间</button>
+    <button class="tile">我</button>
+    <button class="tile">打扫</button>
+    <button class="tile">房间</button>
+    <button class="tile">把</button>
   </div>
   <div class="built"></div>
   <button class="btn check">对答案</button>
@@ -319,6 +320,25 @@ button { font-family:inherit; cursor:pointer; }
 </div>
 
 <script>
+
+function shuffleTiles(row) {
+  if (!row) return;
+  const tiles = [...row.children];
+  for (let i = tiles.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+  }
+  tiles.forEach(t => row.appendChild(t));
+}
+function shuffleAllTiles() {
+  document.querySelectorAll('.tiles').forEach(shuffleTiles);
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', shuffleAllTiles);
+} else {
+  shuffleAllTiles();
+}
+
 document.addEventListener('click', e => {
   const zh = e.target.closest('.zh');
   if (zh && !e.target.closest('.flip')) zh.classList.toggle('show');
@@ -362,6 +382,7 @@ document.addEventListener('click', e => {
   const item = e.target.closest('.item');
   item.querySelectorAll('.tiles > .tile.used').forEach(t => t.classList.remove('used'));
   const built = item.querySelector('.built'); if (built) built.innerHTML = '';
+  shuffleTiles(item.querySelector('.tiles'));
 });
 let armedWord = null;
 document.addEventListener('click', e => {
@@ -383,14 +404,54 @@ document.addEventListener('click', e => {
 document.addEventListener('keydown', e => {
   if (e.key === 'Enter' && e.target.matches('.flip')) e.target.classList.toggle('flipped');
 });
+function lineGender(el) {
+  const line = el.closest('.line') || el.parentElement;
+  const g = ((line && line.dataset.gender) || '').toLowerCase();
+  if (g === 'm' || g === 'male') return 'm';
+  if (g === 'f' || g === 'female') return 'f';
+  const sp = line && line.querySelector('.speaker');
+  const t = sp ? sp.textContent : '';
+  if (/男/.test(t)) return 'm';
+  if (/女/.test(t)) return 'f';
+  return 'f';
+}
+function pickZhVoice(gender) {
+  const voices = speechSynthesis.getVoices().filter(v =>
+    /zh(-|_|$)/i.test(v.lang) || /chinese|中文/i.test(v.name));
+  const re = gender === 'm'
+    ? /kangkang|yunyang|yunjian|yunxi|yunhao|male|男/i
+    : /huihui|yaoyao|xiaoxiao|xiaoyi|xiaoxuan|female|女/i;
+  const named = voices.find(v => re.test(v.name));
+  if (named) return { voice: named, pitch: 1 };
+  const zh = voices.find(v => /zh-CN/i.test(v.lang)) || voices[0] || null;
+  return { voice: zh, pitch: gender === 'm' ? 0.85 : 1.15 };
+}
+function whenVoices(cb) {
+  if (speechSynthesis.getVoices().length) { cb(); return; }
+  let ran = false;
+  const go = () => { if (ran) return; ran = true; cb(); };
+  speechSynthesis.addEventListener('voiceschanged', go, { once: true });
+  setTimeout(go, 500);
+}
 document.addEventListener('click', e => {
   if (!e.target.matches('.tts')) return;
   if (!('speechSynthesis' in window)) return;
-  const line = e.target.parentElement.cloneNode(true);
-  line.querySelectorAll('button').forEach(b => b.remove());
-  const u = new SpeechSynthesisUtterance(line.textContent.trim());
-  u.lang = 'zh-CN';
-  speechSynthesis.cancel(); speechSynthesis.speak(u);
+  const line = e.target.closest('.line') || e.target.parentElement;
+  const clone = line.cloneNode(true);
+  clone.querySelectorAll('button').forEach(b => b.remove());
+  const sp = clone.querySelector('.speaker');
+  if (sp) sp.remove();
+  const gender = lineGender(e.target);
+  const text = clone.textContent.trim();
+  whenVoices(() => {
+    const { voice, pitch } = pickZhVoice(gender);
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'zh-CN';
+    if (voice) u.voice = voice;
+    u.pitch = pitch;
+    speechSynthesis.cancel();
+    speechSynthesis.speak(u);
+  });
 });
 
 document.addEventListener('click', e => {
@@ -424,6 +485,15 @@ document.addEventListener('click', e => {
     if (ok) { right++; return; }
     const w = it.dataset.word || it.dataset.point || '选词填空';
     if (!seen.has(w)) { seen.add(w); missed.push(w); }
+  });
+  document.querySelectorAll('.item[data-order]').forEach(it => {
+    total++;
+    const want = it.dataset.order.split('|');
+    const got = [...it.querySelectorAll('.built > .tile')].map(t => t.textContent);
+    const ok = want.length === got.length && want.every((w, i) => got[i] === w);
+    if (ok) { right++; return; }
+    const w = it.dataset.point || it.dataset.word || tag(it);
+    if (w && !seen.has(w)) { seen.add(w); missed.push(String(w).trim()); }
   });
   const pct = total ? Math.round((right / total) * 100) : 0;
   const type = document.body.dataset.type || 'P';

@@ -129,7 +129,7 @@ button { font-family:inherit; cursor:pointer; }
 <h2 class="section"><span class="badge">B</span> 语法操练 <small>Grammar drills</small></h2>
 
 <div class="item">
-  <p><span class="qno">B1</span> 选词填空：（　）的事就别提了，我们看现在。</p>
+  <p><span class="qno">B1</span> （　）的事就别提了，我们看现在。</p>
   <div class="mcq" data-answer="B">
     <button class="opt" data-v="A">A. 刚</button>
     <button class="opt" data-v="B">B. 刚才</button>
@@ -165,27 +165,25 @@ button { font-family:inherit; cursor:pointer; }
 </div>
 
 <div class="item">
-  <p><span class="qno">B4</span> 选词填空：我（　）打算坐高铁去，但是票卖完了，只好开车。</p>
+  <p><span class="qno">B4</span> 判断对错：票卖完了、只好开车 —— 应该说"我原来打算坐高铁"。</p>
   <div class="mcq" data-answer="B">
-    <button class="opt" data-v="A">A. 原来</button>
-    <button class="opt" data-v="B">B. 本来</button>
-    <button class="opt" data-v="C">C. 刚才</button>
-    <button class="opt" data-v="D">D. 差点</button>
+    <button class="opt" data-v="A">A. 对</button>
+    <button class="opt" data-v="B">B. 错</button>
   </div>
   <button class="btn check">对答案</button>
-  <div class="key"><b>B ✔</b> Prior plan + change = 本来……但是……. (原来 would suggest you only now found out about your own plan — odd.)</div>
+  <div class="key"><b>B ✔ 错</b> Prior plan + change = <b>本来</b>打算坐高铁. 原来 would mean you only now discovered your own plan.</div>
 </div>
 
 <div class="item">
-  <p><span class="qno">B5</span> 选词填空：我（　）不喝咖啡，喝了晚上就睡不着。</p>
+  <p><span class="qno">B5</span> 哪个句子是对的？</p>
   <div class="mcq" data-answer="A">
-    <button class="opt" data-v="A">A. 从来</button>
-    <button class="opt" data-v="B">B. 差点</button>
-    <button class="opt" data-v="C">C. 刚</button>
-    <button class="opt" data-v="D">D. 本来</button>
+    <button class="opt" data-v="A">A. 我从来不喝咖啡，喝了晚上就睡不着。</button>
+    <button class="opt" data-v="B">B. 我差点不喝咖啡，喝了晚上就睡不着。</button>
+    <button class="opt" data-v="C">C. 我刚不喝咖啡，喝了晚上就睡不着。</button>
+    <button class="opt" data-v="D">D. 我本来不喝咖啡，喝了晚上就睡不着。</button>
   </div>
   <button class="btn check">对答案</button>
-  <div class="key"><b>A ✔</b> Habit from past to now → 从来＋不. 差点 = almost (one near-miss), 刚 = just now, 本来 = original plan.</div>
+  <div class="key"><b>A ✔</b> Habit from past to now → 从来＋不. 差点 = one near-miss; 刚 = just now; 本来 needs a change-of-plan continuation, not a standing habit.</div>
 </div>
 
 <div class="item">
@@ -200,19 +198,20 @@ button { font-family:inherit; cursor:pointer; }
   <div class="key"><b>B ✔</b> Fix: 我从来<b>没</b>见过……. 从来 never takes 了 — it's about an unbroken state up to now.</div>
 </div>
 
-<div class="item">
-  <p><span class="qno">B7</span> 排列顺序：</p>
+<div class="item" data-order="我们|本来|想坐飞机|可是|太贵了" data-point="本来">
+  <p><span class="qno">B7</span> 排列顺序：把这些词排成一句话。（有一个用不上）</p>
   <div class="tiles">
-    <button class="tile">我们</button>
-    <button class="tile">本来</button>
-    <button class="tile">想坐飞机</button>
-    <button class="tile">可是</button>
     <button class="tile">太贵了</button>
+    <button class="tile">本来想</button>
+    <button class="tile">可是</button>
+    <button class="tile">我们</button>
+    <button class="tile">想坐飞机</button>
+    <button class="tile">本来</button>
   </div>
   <div class="built"></div>
   <button class="btn check">对答案</button>
   <button class="btn reset">重来</button>
-  <div class="key"><b>我们本来想坐飞机，可是太贵了。</b> 本来 right after subject, before the planned action; the 可是-clause explains the change.</div>
+  <div class="key"><b>我们本来想坐飞机，可是太贵了。</b> 本来 right after the subject; 想坐飞机 is the planned VP. Trap tile <b>本来想</b> glues the adverb to 想 and leaves 坐飞机 stranded.</div>
 </div>
 
 <!-- ============ C 听力模拟 ============ -->
@@ -330,6 +329,25 @@ button { font-family:inherit; cursor:pointer; }
 </div>
 
 <script>
+
+function shuffleTiles(row) {
+  if (!row) return;
+  const tiles = [...row.children];
+  for (let i = tiles.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+  }
+  tiles.forEach(t => row.appendChild(t));
+}
+function shuffleAllTiles() {
+  document.querySelectorAll('.tiles').forEach(shuffleTiles);
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', shuffleAllTiles);
+} else {
+  shuffleAllTiles();
+}
+
 document.addEventListener('click', e => { if (e.target.matches('.check')) { const item = e.target.closest('.item'); const key = item && item.querySelector('.key'); if (key) key.classList.add('show'); } });
 document.addEventListener('click', e => {
   if (!e.target.matches('.opt')) return;
@@ -364,6 +382,7 @@ document.addEventListener('click', e => {
   const item = e.target.closest('.item');
   item.querySelectorAll('.tiles > .tile.used').forEach(t => t.classList.remove('used'));
   const built = item.querySelector('.built'); if (built) built.innerHTML = '';
+  shuffleTiles(item.querySelector('.tiles'));
   if (item.querySelector('.bank')) {
     item.querySelectorAll('.bank .bword').forEach(b => { b.classList.remove('used'); b.style.outline = ''; });
     item.querySelectorAll('.slot').forEach(s => { s.textContent = ''; delete s.dataset.filled; });
@@ -384,14 +403,54 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('click', e => { const f = e.target.closest('.flip'); if (f) f.classList.toggle('flipped'); });
 document.addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.matches('.flip')) e.target.classList.toggle('flipped'); });
+function lineGender(el) {
+  const line = el.closest('.line') || el.parentElement;
+  const g = ((line && line.dataset.gender) || '').toLowerCase();
+  if (g === 'm' || g === 'male') return 'm';
+  if (g === 'f' || g === 'female') return 'f';
+  const sp = line && line.querySelector('.speaker');
+  const t = sp ? sp.textContent : '';
+  if (/男/.test(t)) return 'm';
+  if (/女/.test(t)) return 'f';
+  return 'f';
+}
+function pickZhVoice(gender) {
+  const voices = speechSynthesis.getVoices().filter(v =>
+    /zh(-|_|$)/i.test(v.lang) || /chinese|中文/i.test(v.name));
+  const re = gender === 'm'
+    ? /kangkang|yunyang|yunjian|yunxi|yunhao|male|男/i
+    : /huihui|yaoyao|xiaoxiao|xiaoyi|xiaoxuan|female|女/i;
+  const named = voices.find(v => re.test(v.name));
+  if (named) return { voice: named, pitch: 1 };
+  const zh = voices.find(v => /zh-CN/i.test(v.lang)) || voices[0] || null;
+  return { voice: zh, pitch: gender === 'm' ? 0.85 : 1.15 };
+}
+function whenVoices(cb) {
+  if (speechSynthesis.getVoices().length) { cb(); return; }
+  let ran = false;
+  const go = () => { if (ran) return; ran = true; cb(); };
+  speechSynthesis.addEventListener('voiceschanged', go, { once: true });
+  setTimeout(go, 500);
+}
 document.addEventListener('click', e => {
   if (!e.target.matches('.tts')) return;
   if (!('speechSynthesis' in window)) return;
-  const line = e.target.parentElement.cloneNode(true);
-  line.querySelectorAll('button').forEach(b => b.remove());
-  const u = new SpeechSynthesisUtterance(line.textContent.trim());
-  u.lang = 'zh-CN';
-  speechSynthesis.cancel(); speechSynthesis.speak(u);
+  const line = e.target.closest('.line') || e.target.parentElement;
+  const clone = line.cloneNode(true);
+  clone.querySelectorAll('button').forEach(b => b.remove());
+  const sp = clone.querySelector('.speaker');
+  if (sp) sp.remove();
+  const gender = lineGender(e.target);
+  const text = clone.textContent.trim();
+  whenVoices(() => {
+    const { voice, pitch } = pickZhVoice(gender);
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'zh-CN';
+    if (voice) u.voice = voice;
+    u.pitch = pitch;
+    speechSynthesis.cancel();
+    speechSynthesis.speak(u);
+  });
 });
 
 document.addEventListener('click', e => {
@@ -425,6 +484,15 @@ document.addEventListener('click', e => {
     if (ok) { right++; return; }
     const w = it.dataset.word || it.dataset.point || '选词填空';
     if (!seen.has(w)) { seen.add(w); missed.push(w); }
+  });
+  document.querySelectorAll('.item[data-order]').forEach(it => {
+    total++;
+    const want = it.dataset.order.split('|');
+    const got = [...it.querySelectorAll('.built > .tile')].map(t => t.textContent);
+    const ok = want.length === got.length && want.every((w, i) => got[i] === w);
+    if (ok) { right++; return; }
+    const w = it.dataset.point || it.dataset.word || tag(it);
+    if (w && !seen.has(w)) { seen.add(w); missed.push(String(w).trim()); }
   });
   const pct = total ? Math.round((right / total) * 100) : 0;
   const type = document.body.dataset.type || 'P';

@@ -111,7 +111,8 @@ inside the 10–15 minute envelope and keep A tight (2–3 min max).
   sentence uses and what it contributes to meaning.
 
 ### G — 报告 (Report)
-- Paste-report box: auto-counts MCQ in C/D/F and bank-fill items; **生成报告 / Copy report**
+- Paste-report box: auto-counts MCQ in C/D/F, bank-fill, and P2 `data-order` (≥10 total);
+  **生成报告 / Copy report**
   writes a `<pre>` block Sam pastes into the course chat:
 
 ```
@@ -131,7 +132,8 @@ notes:
   generation only if he says to skip.
 
 ## Scoring rules
-- Auto-scored: all MCQ (C, D, F comprehension) plus bank-fill. The paste-report counts these.
+- Auto-scored: all MCQ (C, D, F comprehension) plus bank-fill plus P2 `.item[data-order]`.
+  The paste-report counts these. **≥10 auto-scored items** on every GT.
 - Production (E) is not auto-scored; Sam can add notes in the report's `notes:` line.
 - The pass threshold (80% of auto-scored items) is a guideline recorded in the log, not a
   hard gate — Sam decides whether to advance or remediate.

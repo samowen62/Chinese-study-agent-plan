@@ -117,9 +117,14 @@ one-off worksheets still go in `Z:\Chinese\worksheets\{type}\`.
 - [ ] Section skeleton and order match the type's blueprint.
 - [ ] GT: every cluster point appears in ≥1 item; R4 options all from the cluster;
       `data-point` on every MCQ; paste-report present.
-- [ ] VT: every batch word tested ≥1 time; `data-word` on every MCQ/bank item;
-      paste-report present; batch words verified in 词汇大纲.
+- [ ] VT: every batch word has exactly one primary C–F item (second only for 多音字 /
+      collocation traps); C ~⅓, D ~⅓ hard pronunciations, E the rest, F 2–3 trickiest;
+      `data-word` on every MCQ/bank item; paste-report present; batch words in 词汇大纲.
 - [ ] P: one grammar point only, in every section B–D item; review section sources from log.
+- [ ] ≥10 auto-scored items (`.mcq` + bank-fill + P2 `data-order`); paste-report denominator matches.
+- [ ] P2 tiles not in canonical order; phrase chunks; `data-order` present; tempting wrong grouping.
+- [ ] MCQ stems vary: no same stem frame in any stretch of 4 consecutive MCQs.
+- [ ] TTS: 女/男 (or `data-gender`) pick different voices; pitch fallback if only one zh-CN voice.
 - [ ] Item counts and estimated time fit 10–15 minutes at the target level.
 - [ ] Pinyin hidden by default (hover only; no Show-all button); production items always show characters.
 - [ ] Every item has a working check/reveal control with answer + explanation.

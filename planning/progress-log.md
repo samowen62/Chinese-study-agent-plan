@@ -24,9 +24,9 @@ Format:
 2026-11-10 | hsk4-ws-001 | P | 4 | L4-CL01 · L4-CM-1 程度补语2 死了 / 全 | — | completed (2 items wrong; which items not reported) | (unspecified — send item numbers / 词语收藏 if you want them in the remediating P)
 2026-11-10 | hsk4-gt-CL01 | GT | 4 | L4-CL01 Adjectives 形容词 (全, 死了) | 8/11 (73%) | fail (retake skipped — Sam advancing) | 3 auto-scored items missed (list not reported); still flag 死了 + 反问句 from entry
 2026-11-16 | hsk4-vt-01-r2 | VT | 4 | 日常生活 · 个人情况 (retake of vt-01) | 10/12 (83%) | pass | 眼镜; 性格/脾气/耐心/诚实/细心配对
-2026-11-05 | hsk4-ws-002 | P | 4 | L4-CL02a · L4-QT-1 反问句2 难道/究竟 | — | generated | —
-2026-11-05 | hsk4-ws-003 | P | 4 | L4-CL02a · L4-SP-5 双重否定 不得不/只好 | — | generated | —
-2026-11-05 | hsk4-gt-CL02a | GT | 4 | CL02a 语气/评价类副词 | — | generated (not yet taken) | —
+2026-11-20 | hsk4-ws-002 | P | 4 | L4-CL02a · L4-QT-1 反问句2 难道/究竟 | 7/9 (78%) | completed | C1 (dialogue: 为什么还没下班); 选词填空 (难道 / 谁 / 究竟 / 还是)
+2026-11-23 | hsk4-ws-003 | P | 4 | L4-CL02a · L4-SP-5 双重否定 不得不/只好 | 4/6 (67%) | completed | C1 (地铁→步行→公交); 选词填空 (不得不 / 只好 / 不用 / 还是)
+2026-11-24 | hsk4-gt-CL02a | GT | 4 | CL02a 语气/评价类副词 | 10/11 (91%) | pass | 恐怕
 2026-11-05 | hsk4-vt-02 | VT | 4 | 日常生活 · 饮食 · 27 words | — | generated (not yet taken) | —
 2026-11-05 | hsk4-ws-004 | P | 4 | L4-CL02b · L4-FX-1 一+量+比+一+量 + L4-FX-2 再也不 | — | generated | —
 2026-11-05 | hsk4-ws-005 | P | 4 | L4-CL02b · 时间副词 contrast 刚/原来/本来/差点/从来 | — | generated | —

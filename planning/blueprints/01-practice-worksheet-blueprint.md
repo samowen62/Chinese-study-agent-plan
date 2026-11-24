@@ -78,7 +78,7 @@ doesn't.
 - A graded ladder, always in this difficulty order:
   1. **Recognize**: which sentence uses the pattern correctly (R1/R2) — 2 items
   2. **Select**: MCQ fill-in of the pattern word/particle (R1) or choose correct sentence (R2) — 2–3 items
-  3. **Order**: sentence scramble (P2) — 2 items
+  3. **Order**: sentence scramble (P2) — 2 items (tiles not in canonical order; `data-order` for auto-score)
   4. **Correct**: find and fix the error (P3) — 1–2 items
   5. **Transform / produce**: rewrite or typed answer (P1/P4/P5) — 1–2 items
 - Question types and their rules: see `references/01-question-type-catalog.md`.
@@ -121,9 +121,10 @@ doesn't.
 - Prefer quick formats: V1 mixed MCQ, V2 "say it with the old pattern" transformation,
   or one flip-card self-test. Mark each item with the source worksheet ID and its topic.
 - End the page with the **报告 Report** box (same `scorebox` as GT/VT): auto-counts MCQ +
-  bank-fill, renders a paste-ready block (`worksheet_id` / `type: P` / `score` / `verdict: —`
-  / `needs_review` / `notes`). P has no pass/fail. `needs_review` lists missed `data-point`
-  tags and wrong MCQs. Sam pastes that block into the course chat.
+  bank-fill + P2 `.item[data-order]`, renders a paste-ready block (`worksheet_id` / `type: P`
+  / `score` / `verdict: —` / `needs_review` / `notes`). **≥10 auto-scored items** (MCQ +
+  bank-fill + P2). P has no pass/fail. `needs_review` lists missed `data-point` tags and
+  wrong MCQs. Sam pastes that block into the course chat.
 
 ## Answer key & explanation rules (apply to every item, all sections)
 

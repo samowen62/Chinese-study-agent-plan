@@ -69,6 +69,15 @@ document.addEventListener('click', e => {
     const w = it.dataset.word || it.dataset.point || '选词填空';
     if (!seen.has(w)) { seen.add(w); missed.push(w); }
   });
+  document.querySelectorAll('.item[data-order]').forEach(it => {
+    total++;
+    const want = it.dataset.order.split('|');
+    const got = [...it.querySelectorAll('.built > .tile')].map(t => t.textContent);
+    const ok = want.length === got.length && want.every((w, i) => got[i] === w);
+    if (ok) { right++; return; }
+    const w = it.dataset.point || it.dataset.word || tag(it);
+    if (w && !seen.has(w)) { seen.add(w); missed.push(String(w).trim()); }
+  });
   const pct = total ? Math.round((right / total) * 100) : 0;
   const type = document.body.dataset.type || 'P';
   const id = document.body.dataset.id || '';

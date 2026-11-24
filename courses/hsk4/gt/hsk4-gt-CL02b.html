@@ -69,6 +69,10 @@ button { font-family:inherit; cursor:pointer; }
   .scorebox .verdict-fail { color:var(--bad); }
   .scorebox .missed-list { background:var(--accent-soft); border-radius:8px; padding:8px 12px; margin-top:8px; font-size:.95rem; }
   .score-result { display:none; } .score-result.show { display:block; }
+  .dlg { margin:8px 0; }
+  .dlg .line { display:flex; gap:10px; align-items:flex-start; padding:6px 0; }
+  .dlg .speaker { flex:0 0 64px; font-weight:700; color:var(--accent); }
+  .tts { border:none; background:none; font-size:1rem; padding:0 4px; }
 </style>
 </head>
 <body data-id="hsk4-gt-CL02b" data-type="GT">
@@ -152,15 +156,13 @@ button { font-family:inherit; cursor:pointer; }
 </div>
 
 <div class="item">
-  <p><span class="qno">C2</span> 朋友突然出现在你身后，你吓了一跳：（　）是你啊！</p>
-  <div class="mcq" data-answer="A" data-point="原来">
-    <button class="opt" data-v="A">A. 原来</button>
-    <button class="opt" data-v="B">B. 本来</button>
-    <button class="opt" data-v="C">C. 正好</button>
-    <button class="opt" data-v="D">D. 结果</button>
+  <p><span class="qno">C2</span> 判断对错：朋友突然出现在身后，你吓了一跳，说"本来是你啊！"合适。</p>
+  <div class="mcq" data-answer="B" data-point="原来">
+    <button class="opt" data-v="A">A. 对</button>
+    <button class="opt" data-v="B">B. 错</button>
   </div>
   <button class="btn check">对答案</button>
-  <div class="key"><b>A ✔</b> Sudden recognition = 原来. 本来 would mean the person was originally you (!).</div>
+  <div class="key"><b>B ✔ 错</b> Sudden recognition = <b>原来</b>是你啊. 本来 would mean the person was originally you (!).</div>
 </div>
 
 <div class="item">
@@ -176,12 +178,12 @@ button { font-family:inherit; cursor:pointer; }
 </div>
 
 <div class="item">
-  <p><span class="qno">C4</span> 他开车太快，险些撞上大树：他开车太快，（　）撞上前面的大树。</p>
+  <p><span class="qno">C4</span> 哪个句子是对的？（开车太快，树还在）</p>
   <div class="mcq" data-answer="C" data-point="差点">
-    <button class="opt" data-v="A">A. 从来</button>
-    <button class="opt" data-v="B">B. 原来</button>
-    <button class="opt" data-v="C">C. 差点</button>
-    <button class="opt" data-v="D">D. 先</button>
+    <button class="opt" data-v="A">A. 他开车太快，从来撞上前面的大树。</button>
+    <button class="opt" data-v="B">B. 他开车太快，原来撞上前面的大树。</button>
+    <button class="opt" data-v="C">C. 他开车太快，差点撞上前面的大树。</button>
+    <button class="opt" data-v="D">D. 他开车太快，先撞上前面的大树。</button>
   </div>
   <button class="btn check">对答案</button>
   <div class="key"><b>C ✔</b> 险些撞上（没撞上） = 差点. The near-miss didn't happen — the tree is fine.</div>
@@ -200,7 +202,7 @@ button { font-family:inherit; cursor:pointer; }
 </div>
 
 <div class="item">
-  <p><span class="qno">C6</span> 你到车站，朋友的车也刚到，时间刚好碰上：我到的时候，他的车（　）也到了。</p>
+  <p><span class="qno">C6</span> Scenario: you reach the station at the same moment as your friend's car. Which word?</p>
   <div class="mcq" data-answer="B" data-point="正好">
     <button class="opt" data-v="A">A. 结果</button>
     <button class="opt" data-v="B">B. 正好</button>
@@ -251,15 +253,15 @@ button { font-family:inherit; cursor:pointer; }
 </div>
 
 <div class="item">
-  <p><span class="qno">D3</span> 辨析（CL30）：毕业（　），我打算先去旅行，再找工作。</p>
-  <div class="mcq" data-answer="A" data-point="以后 vs 的时候">
-    <button class="opt" data-v="A">A. 以后</button>
-    <button class="opt" data-v="B">B. 的时候</button>
-    <button class="opt" data-v="C">C. 原来</button>
-    <button class="opt" data-v="D">D. 从来</button>
+  <p><span class="qno">D3</span> 哪句是错的？（毕业后去旅行）</p>
+  <div class="mcq" data-answer="B" data-point="以后 vs 的时候">
+    <button class="opt" data-v="A">A. 毕业以后，我打算先去旅行，再找工作。</button>
+    <button class="opt" data-v="B">B. 毕业的时候，我打算先去旅行，再找工作。</button>
+    <button class="opt" data-v="C">C. 毕业以后我想去旅行。</button>
+    <button class="opt" data-v="D">D. 找到工作以后再去旅行也可以。</button>
   </div>
   <button class="btn check">对答案</button>
-  <div class="key"><b>A ✔</b> Plans for the period AFTER graduation = 毕业(以后). 毕业(的时候) = the moment/at the ceremony itself — you can't travel during the graduation ceremony.</div>
+  <div class="key"><b>B ✔ 错的是 B</b> 毕业(的时候) = the ceremony itself — you can't travel during it. AFTER = 毕业以后.</div>
 </div>
 
 <div class="item">
@@ -301,7 +303,14 @@ button { font-family:inherit; cursor:pointer; }
 <!-- ============ F 语篇理解 ============ -->
 <h2 class="section"><span class="badge">F</span> 语篇理解 <small>Cluster in context</small></h2>
 <div class="item">
-  <p><span class="zh" data-py="shàng gè xīngqīliù, wǒ běnlái dǎsuàn zài jiā xiūxi, jiéguǒ péngyou tūrán dǎ diànhuà yuē wǒ qù páshān">上个星期六，我本来打算在家休息，结果朋友突然打电话约我去爬山。</span><span class="zh" data-py="wǒ gāng xiǎng jùjué, tā shuō ménpiào zhènghǎo dǎzhé, wǒ zhǐhǎo dāying le">我刚想拒绝，他说门票正好打折，我只好答应了。</span><span class="zh" data-py="dào le shān jiǎoxià, wǒmen fāxiàn jīntiān rén tèbié duō, yuánlái jīntiān shì yì nián yí dù de dēngshān jié">到了山脚下，我们发现今天人特别多——原来今天是一年一度的登山节！</span><span class="zh" data-py="wǒmen chàdiǎn jǐ bu jìnqù">我们差点挤不进去。</span><span class="zh" data-py="zuìhòu wǒmen juédìng, xiān zuò lǎnchē shàngqù, zài zǒulù xiàlái">最后我们决定：先坐缆车上去，再走路下来。</span></p>
+  <p class="inst">点 🔊：男声讲故事，女声确认计划。</p>
+  <div class="dlg">
+    <div class="line" data-gender="m"><span class="speaker">男:</span><span><span class="zh" data-py="shàng gè xīngqīliù, wǒ běnlái dǎsuàn zài jiā xiūxi, jiéguǒ péngyou tūrán dǎ diànhuà yuē wǒ qù páshān">上个星期六，我本来打算在家休息，结果朋友突然打电话约我去爬山。</span><button class="tts">🔊</button></span></div>
+    <div class="line" data-gender="m"><span class="speaker">男:</span><span><span class="zh" data-py="wǒ gāng xiǎng jùjué, tā shuō ménpiào zhènghǎo dǎzhé, wǒ zhǐhǎo dāying le">我刚想拒绝，他说门票正好打折，我只好答应了。</span><button class="tts">🔊</button></span></div>
+    <div class="line" data-gender="m"><span class="speaker">男:</span><span><span class="zh" data-py="dào le shān jiǎoxià, wǒmen fāxiàn jīntiān rén tèbié duō, yuánlái jīntiān shì yì nián yí dù de dēngshān jié">到了山脚下，我们发现今天人特别多——原来今天是一年一度的登山节！我们差点挤不进去。</span><button class="tts">🔊</button></span></div>
+    <div class="line" data-gender="f"><span class="speaker">女:</span><span><span class="zh" data-py="suǒyǐ nǐmen xiān zuò lǎnchē shàngqù, zài zǒulù xiàlái">所以你们先坐缆车上去，再走路下来？</span><button class="tts">🔊</button></span></div>
+    <div class="line" data-gender="m"><span class="speaker">男:</span><span><span class="zh" data-py="duì, zuìhòu wǒmen jiù zhème juédìng le">对，最后我们就这么决定了。</span><button class="tts">🔊</button></span></div>
+  </div>
 
   <p style="margin-top:10px"><span class="qno">F1</span> "我只好答应了"说明"我"当时是怎么想的？</p>
   <input class="typed-in" type="text" placeholder="输入…">
@@ -328,6 +337,25 @@ button { font-family:inherit; cursor:pointer; }
   </div>
 
 <script>
+
+function shuffleTiles(row) {
+  if (!row) return;
+  const tiles = [...row.children];
+  for (let i = tiles.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+  }
+  tiles.forEach(t => row.appendChild(t));
+}
+function shuffleAllTiles() {
+  document.querySelectorAll('.tiles').forEach(shuffleTiles);
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', shuffleAllTiles);
+} else {
+  shuffleAllTiles();
+}
+
 document.addEventListener('click', e => { if (e.target.matches('.check')) { const item = e.target.closest('.item'); const key = item && item.querySelector('.key'); if (key) key.classList.add('show'); } });
 document.addEventListener('click', e => {
   if (!e.target.matches('.opt')) return;
@@ -347,6 +375,83 @@ document.addEventListener('click', e => {
     else if (o.classList.contains('sel')) o.classList.add('incorrect');
   });
 });
+
+let armedWord = null;
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tiles > .tile')) return;
+  const built = e.target.closest('.item').querySelector('.built');
+  if (!built) return;
+  const t = document.createElement('button');
+  t.className = 'tile'; t.textContent = e.target.textContent;
+  built.appendChild(t); e.target.classList.add('used');
+});
+document.addEventListener('click', e => {
+  if (e.target.matches('.built > .tile')) e.target.remove();
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.reset')) return;
+  const item = e.target.closest('.item');
+  item.querySelectorAll('.tiles > .tile.used').forEach(t => t.classList.remove('used'));
+  const built = item.querySelector('.built'); if (built) built.innerHTML = '';
+  shuffleTiles(item.querySelector('.tiles'));
+  if (item.querySelector('.bank')) {
+    item.querySelectorAll('.bank .bword').forEach(b => { b.classList.remove('used'); b.style.outline = ''; });
+    item.querySelectorAll('.slot').forEach(s => { s.textContent = ''; delete s.dataset.filled; });
+    armedWord = null;
+  }
+});
+
+
+function lineGender(el) {
+  const line = el.closest('.line') || el.parentElement;
+  const g = ((line && line.dataset.gender) || '').toLowerCase();
+  if (g === 'm' || g === 'male') return 'm';
+  if (g === 'f' || g === 'female') return 'f';
+  const sp = line && line.querySelector('.speaker');
+  const t = sp ? sp.textContent : '';
+  if (/男/.test(t)) return 'm';
+  if (/女/.test(t)) return 'f';
+  return 'f';
+}
+function pickZhVoice(gender) {
+  const voices = speechSynthesis.getVoices().filter(v =>
+    /zh(-|_|$)/i.test(v.lang) || /chinese|中文/i.test(v.name));
+  const re = gender === 'm'
+    ? /kangkang|yunyang|yunjian|yunxi|yunhao|male|男/i
+    : /huihui|yaoyao|xiaoxiao|xiaoyi|xiaoxuan|female|女/i;
+  const named = voices.find(v => re.test(v.name));
+  if (named) return { voice: named, pitch: 1 };
+  const zh = voices.find(v => /zh-CN/i.test(v.lang)) || voices[0] || null;
+  return { voice: zh, pitch: gender === 'm' ? 0.85 : 1.15 };
+}
+function whenVoices(cb) {
+  if (speechSynthesis.getVoices().length) { cb(); return; }
+  let ran = false;
+  const go = () => { if (ran) return; ran = true; cb(); };
+  speechSynthesis.addEventListener('voiceschanged', go, { once: true });
+  setTimeout(go, 500);
+}
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tts')) return;
+  if (!('speechSynthesis' in window)) return;
+  const line = e.target.closest('.line') || e.target.parentElement;
+  const clone = line.cloneNode(true);
+  clone.querySelectorAll('button').forEach(b => b.remove());
+  const sp = clone.querySelector('.speaker');
+  if (sp) sp.remove();
+  const gender = lineGender(e.target);
+  const text = clone.textContent.trim();
+  whenVoices(() => {
+    const { voice, pitch } = pickZhVoice(gender);
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'zh-CN';
+    if (voice) u.voice = voice;
+    u.pitch = pitch;
+    speechSynthesis.cancel();
+    speechSynthesis.speak(u);
+  });
+});
+
 document.addEventListener('click', e => {
   if (e.target.matches('.copy-report')) {
     const pre = e.target.closest('.scorebox').querySelector('pre.report');
@@ -378,6 +483,15 @@ document.addEventListener('click', e => {
     if (ok) { right++; return; }
     const w = it.dataset.word || it.dataset.point || '选词填空';
     if (!seen.has(w)) { seen.add(w); missed.push(w); }
+  });
+  document.querySelectorAll('.item[data-order]').forEach(it => {
+    total++;
+    const want = it.dataset.order.split('|');
+    const got = [...it.querySelectorAll('.built > .tile')].map(t => t.textContent);
+    const ok = want.length === got.length && want.every((w, i) => got[i] === w);
+    if (ok) { right++; return; }
+    const w = it.dataset.point || it.dataset.word || tag(it);
+    if (w && !seen.has(w)) { seen.add(w); missed.push(String(w).trim()); }
   });
   const pct = total ? Math.round((right / total) * 100) : 0;
   const type = document.body.dataset.type || 'P';

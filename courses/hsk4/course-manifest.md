@@ -29,9 +29,9 @@ reported scores). This file + `planning/progress-log.md` answer "what comes next
 | 1 | P | `p/hsk4-ws-001.html` | CL01 · anchor L4-CM-1 程度补语2 死了/厉害 (secondary: 全, 可+Adj) | 0 | completed (2 wrong) |
 | 2 | GT | `gt/hsk4-gt-CL01.html` | CL01 Adjectives 形容词 (全, 死了) | 1 | fail (8/11, 73%; retake skipped) |
 | 3 | VT | `vt/hsk4-vt-01.html` | Topic 个人情况 · 27 words | 2 | passed (r2 10/12, 83%) |
-| 4 | P | `p/hsk4-ws-002.html` | CL02a · anchor L4-QT-1 反问句2 难道/究竟 | 3 | generated |
-| 5 | P | `p/hsk4-ws-003.html` | CL02a · anchor L4-SP-5 双重否定 不得不/只好 | 4 | generated |
-| 6 | GT | `gt/hsk4-gt-CL02a.html` | CL02a 语气/评价类副词 (看来 恐怕 甚至 还是 最好 不得不 只好 竟然 千万 难道 到底 究竟) | 5 | generated |
+| 4 | P | `p/hsk4-ws-002.html` | CL02a · anchor L4-QT-1 反问句2 难道/究竟 | 3 | completed (7/9, 78%) |
+| 5 | P | `p/hsk4-ws-003.html` | CL02a · anchor L4-SP-5 双重否定 不得不/只好 | 4 | completed (4/6, 67%) |
+| 6 | GT | `gt/hsk4-gt-CL02a.html` | CL02a 语气/评价类副词 (看来 恐怕 甚至 还是 最好 不得不 只好 竟然 千万 难道 到底 究竟) | 5 | pass (10/11, 91%) |
 | 7 | VT | `vt/hsk4-vt-02.html` | Topic 饮食 · 27 words | 6 | generated |
 | 8 | P | `p/hsk4-ws-004.html` | CL02b · anchor L4-FX-1 一+量+比+一+量 + L4-FX-2 再也不 | 7 | generated |
 | 9 | P | `p/hsk4-ws-005.html` | CL02b · anchor 时间副词 contrast 刚/原来/本来/差点/从来 | 8 | generated |
@@ -168,7 +168,10 @@ batch 32, audit the manifest word lists against #1001–2000 and sweep leftovers
   (browser closed) and is advancing. Next unit: `vt/hsk4-vt-01.html`. Carry 死了 and
   反问句 in later review sections. Do **not** backfill `gt/retakes/hsk4-gt-CL01-r2.html`.
 - Unit 3 taken 2026-11-12 / retake 2026-11-16: **hsk4-vt-01-r2 10/12 (83%) — pass**.
-  Still review: 眼镜, 性格/脾气/耐心/诚实/细心配对. Next: `p/hsk4-ws-002.html` (反问句).
+  Still review: 眼镜, 性格/脾气/耐心/诚实/细心配对.
+- Unit 4 taken 2026-11-20: **hsk4-ws-002 7/9 (78%)**. Missed C1 (why he hasn't left: 经理让他改报告 / 不得不留下) and the D 选词填空 (难道 vs 谁 vs 究竟 vs 还是).
+- Unit 5 taken 2026-11-23: **hsk4-ws-003 4/6 (67%)**. Missed C1 (route: 地铁→步行→公交) and D 选词填空 (不得不 vs 只好 vs 不用 vs 还是).
+- Unit 6 taken 2026-11-24: **hsk4-gt-CL02a 10/11 (91%) — pass**. Carry 恐怕 into vt-02 F and ws-004 F. Next: `vt/hsk4-vt-02.html`.
 - Wave 2: units 11–13 (`p/hsk4-ws-006.html` CL02c 程度/范围, `gt/hsk4-gt-CL02c.html`,
   `vt/hsk4-vt-03.html` 交通出行). Next "continue the course" request starts here.
 - When Sam reports a test score: update unit status, append progress-log row. If a

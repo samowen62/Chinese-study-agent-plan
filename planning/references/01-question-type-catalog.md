@@ -42,6 +42,12 @@ Legend: L1…L6 = HSK level suitability. ✔ = recommended, ○ = usable sparing
 - **Example** (L2, 着-持续): 墙上挂（ ）一张地图。 A 着 ✔ B 了 C 过 D 的
 - **Key must explain**: the rule + why the tempting distractor fails.
 
+### MCQ stem variety (R1 / R2 / R4 / VM1 / L1 / L3)
+- In any stretch of **4 consecutive MCQs**, do not repeat the same stem frame. Rotate among:
+  blank fill, choose-the-correct-sentence, true/false, English scenario, reverse gloss (EN→ZH),
+  "which is wrong", odd-one-out.
+- Keep rotating the correct-answer letter (A/B/C/D).
+
 ### R2 Choose the correct sentence (form judgment)
 - **Levels**: L2–L6 | **Component**: `mcq`
 - **Spec**: 3–4 full sentences, one uses the pattern correctly, others violate one specific
@@ -100,6 +106,12 @@ Legend: L1…L6 = HSK level suitability. ✔ = recommended, ○ = usable sparing
   trivially linear (a bare 时间词 at the start every time is fine, but vary positions).
   Include the target pattern's fixed positions among the movable material. If a sentence has
   a particle that could attach two places with different meanings, don't use it.
+- **Scramble (required)**: never write tiles in the correct sentence order in HTML — left-to-right
+  clicking must not be the answer. Prefer **phrase chunks** (2–4 characters) mixed with single
+  function words, not a 1-character chain. At least one chunk must be a tempting wrong grouping
+  (e.g. offering `比一天` as a tile while the correct split is `一天` + `比`).
+- **Scoring**: the `.item` carries `data-order="tile|tile|…"` (exact click sequence, `|`-joined).
+  The engine shuffles `.tiles` on load and on 重来; paste-report auto-scores this item.
 
 ### P3 Error finding & correction
 - **Levels**: L2–L6 | **Component**: `mcq` (find error) + optional `typed` (fix it)
@@ -156,6 +168,11 @@ that hang off it.
   `lang="zh-CN"`). Transcript is ALWAYS visible (Sam's design decision). Instruction tells
   Sam to read the dialogue aloud twice before answering. Line-by-line reveal mode
   (`reveal-lines` component) supports shadowing: read the next line yourself, then reveal.
+- **Gendered voices**: 女 / 男 speakers must use different voices. Infer from `.speaker`
+  (`女` → female, `男` → male); named speakers take `data-gender="f|m"` on the `.line`.
+  Prefer named zh-CN voices (Huihui / Yaoyao / Xiaoxiao vs Kangkang / Yunyang). If the OS
+  only has one zh voice, fall back to pitch `1.15` (female) vs `0.85` (male). Wait for
+  `voiceschanged` before the first speak.
 
 ---
 
@@ -294,11 +311,13 @@ bound to the batch's words; see `blueprints/03-vocabulary-test-blueprint.md` for
 ## Paste-report (every worksheet's final block)
 
 - **Component**: `scorebox` — present on P, GT, and VT.
-- **Behavior**: **生成报告 / Copy report** counts every `.mcq` marked right/wrong and every
-  `.item[data-answers]` bank-fill, shows `correct / total`, the percentage, and a
-  copy-ready report. Missed items contribute `data-point` (GT) or `data-word` (VT/P) to
-  `needs_review`. Body must have `data-id` and `data-type`.
-- **Rules**: percentage covers auto-scored items only. P: `verdict: —`. GT/VT: ≥80% `pass`
+- **Behavior**: **生成报告 / Copy report** counts every `.mcq` marked right/wrong, every
+  `.item[data-answers]` bank-fill, and every `.item[data-order]` P2 scramble; shows
+  `correct / total`, the percentage, and a copy-ready report. Missed items contribute
+  `data-point` (GT) or `data-word` (VT/P) to `needs_review`. Body must have `data-id` and
+  `data-type`.
+- **Rules**: percentage covers auto-scored items only. **Every worksheet must have ≥10
+  auto-scored items** (MCQ + bank-fill + P2). P: `verdict: —`. GT/VT: ≥80% `pass`
   else `fail` (remediate then retake), matching `syllabuses/01-hsk-syllabus.md`.
 
 ---
@@ -313,11 +332,11 @@ behavior. Copy the file; don't re-implement.
 | `.zh` + `data-py` | Chinese text; hover shows ruby pinyin. No Show-all button. Dashed underline + `cursor: help`. |
 | `mcq` | Options as buttons; click selects; 对答案 button reveals ✓/✗ + explanation for the chosen one, and marks the correct option. |
 | `typed` | Free text input; 对答案 reveals model answer(s) + explanation. No auto-grading (Chinese typing variants make exact match brittle). |
-| `order-tiles` | Click tiles to append to the answer line; 重来 resets; 对答案 reveals correct order + explanation. |
+| `order-tiles` | Click tiles to append to the answer line; engine shuffles `.tiles` on load/重来; `data-order` auto-scores; 对答案 reveals correct order + explanation. |
 | `bank-fill` | Click bank word → clicks blank slot to place; 对答案 checks; a 重来 reset button clears all placements and restores the bank. |
 | `match` | Click left item then right item to link; lines/labels connect; 对答案 checks. |
 | `flip-card` | Click flips front/back (CSS 3D). |
 | `reveal-lines` | Dialogue lines revealed one at a time (显示下一句 button) for shadowing. |
-| `tts` | 🔊 button reads its target text with `speechSynthesis` `zh-CN`; gracefully no-ops if unsupported. |
+| `tts` | 🔊 button reads its target text with `speechSynthesis` `zh-CN`; female vs male voice from 女/男 (or `data-gender`); pitch fallback if only one zh voice. |
 | `scorebox` | Paste-report on every worksheet: counts MCQ + bank-fill, shows % + copy-ready block (`verdict` pass/fail on GT/VT, `—` on P). |
 | `data-point` / `data-word` | Item metadata (on `.mcq` or `.item`) naming the cluster point / batch word tested; consumed by the paste-report. |

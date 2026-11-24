@@ -71,6 +71,10 @@ button { font-family:inherit; cursor:pointer; }
   .scorebox .verdict-fail { color:var(--bad); }
   .scorebox .missed-list { background:var(--accent-soft); border-radius:8px; padding:8px 12px; margin-top:8px; font-size:.95rem; }
   .score-result { display:none; } .score-result.show { display:block; }
+  .dlg { margin:8px 0; }
+  .dlg .line { display:flex; gap:10px; align-items:flex-start; padding:6px 0; }
+  .dlg .speaker { flex:0 0 64px; font-weight:700; color:var(--accent); }
+  .tts { border:none; background:none; font-size:1rem; padding:0 4px; }
 </style>
 </head>
 <body data-id="hsk4-vt-02" data-type="VT">
@@ -150,46 +154,41 @@ button { font-family:inherit; cursor:pointer; }
 </details>
 
 <!-- ============ C 认词 ============ -->
-<h2 class="section"><span class="badge">C</span> 认词 <small>Meaning recognition</small></h2>
-
+<h2 class="section"><span class="badge">C</span> 认词 <small>Meaning recognition · ~⅓ of the batch</small></h2>
+<p class="inst">点 🔊：女声和男声应该不同。然后做 C1–C9（每个词只考一次）。</p>
 <div class="item">
-  <p><span class="qno">C1</span> "味道"是什么意思？</p>
-  <div class="mcq" data-answer="D" data-word="味道">
-    <button class="opt" data-v="A">A. kitchen</button>
-    <button class="opt" data-v="B">B. soup</button>
-    <button class="opt" data-v="C">C. restaurant</button>
-    <button class="opt" data-v="D">D. taste / flavor</button>
+  <div class="dlg">
+    <div class="line" data-gender="f"><span class="speaker">女:</span><span><span class="zh" data-py="zhè jiā cāntīng de tāng tài xián le">这家餐厅的汤太咸了。</span><button class="tts">🔊</button></span></div>
+    <div class="line" data-gender="m"><span class="speaker">男:</span><span><span class="zh" data-py="nà wǒmen huàn yí ge, zài gānbēi ba">那我们换一个，再干杯吧。</span><button class="tts">🔊</button></span></div>
   </div>
-  <button class="btn check">对答案</button>
-  <div class="key"><b>D ✔</b> 味道 = how something tastes. 厨房 kitchen, 汤 soup, 餐厅 restaurant — all batch words, but only 味道 is the flavor itself.</div>
 </div>
 
 <div class="item">
-  <p><span class="qno">C2</span> "馒头"是什么？</p>
-  <div class="mcq" data-answer="B" data-word="馒头">
-    <button class="opt" data-v="A">A. mooncake</button>
-    <button class="opt" data-v="B">B. steamed bun</button>
-    <button class="opt" data-v="C">C. dumpling</button>
-    <button class="opt" data-v="D">D. bread</button>
+  <p><span class="qno">C1</span> Scenario: you want a sit-down meal, not a snack at your desk. Where do you go?</p>
+  <div class="mcq" data-answer="D" data-word="餐厅">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="chúfáng">厨房</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="kuàicān">快餐</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="jùcān">聚餐</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="cāntīng">餐厅</span></button>
   </div>
   <button class="btn check">对答案</button>
-  <div class="key"><b>B ✔</b> 馒头 = plain steamed bun (no filling). 月饼 has filling and a festival; 饺子 is boiled with filling.</div>
+  <div class="key"><b>D ✔</b> A restaurant / dining hall is 餐厅. 厨房 is the room you cook in; 快餐 is the food type; 聚餐 is the group-meal event.</div>
 </div>
 
 <div class="item">
-  <p><span class="qno">C3</span> 汤太（　）了 — 哪个词是 "salty"？</p>
-  <div class="mcq" data-answer="A" data-word="咸">
-    <button class="opt" data-v="A">A. 咸</button>
-    <button class="opt" data-v="B">B. 酸</button>
-    <button class="opt" data-v="C">C. 辣</button>
-    <button class="opt" data-v="D">D. 香</button>
+  <p><span class="qno">C2</span> Which word means "kitchen"?</p>
+  <div class="mcq" data-answer="B" data-word="厨房">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="cāntīng">餐厅</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="chúfáng">厨房</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="chúshī">厨师</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="kuàicān">快餐</span></button>
   </div>
   <button class="btn check">对答案</button>
-  <div class="key"><b>A ✔</b> 咸 xián = salty (too much salt). 酸 sour, 辣 spicy, 香 fragrant — the four taste adjectives of this batch; saltiness specifically pairs with 咸.</div>
+  <div class="key"><b>B ✔</b> 厨房 = kitchen (the room). 厨师 is the person; 餐厅 is where guests eat.</div>
 </div>
 
 <div class="item">
-  <p><span class="qno">C4</span> "快餐"是什么意思？</p>
+  <p><span class="qno">C3</span> "<span class="zh" data-py="kuàicān">快餐</span>"是什么意思？</p>
   <div class="mcq" data-answer="C" data-word="快餐">
     <button class="opt" data-v="A">A. a fast car</button>
     <button class="opt" data-v="B">B. cold food</button>
@@ -197,38 +196,84 @@ button { font-family:inherit; cursor:pointer; }
     <button class="opt" data-v="D">D. a group dinner</button>
   </div>
   <button class="btn check">对答案</button>
-  <div class="key"><b>C ✔</b> 快餐 = fast food (hamburgers, instant noodles…). A group dinner is 聚餐.</div>
+  <div class="key"><b>C ✔</b> 快餐 = fast food. A group dinner is 聚餐. 快 here is "quick", not a vehicle.</div>
 </div>
 
 <div class="item">
-  <p><span class="qno">C5</span> 哪个词是 "yogurt"？</p>
-  <div class="mcq" data-answer="A" data-word="酸奶">
-    <button class="opt" data-v="A">A. 酸奶</button>
-    <button class="opt" data-v="B">B. 汽水</button>
-    <button class="opt" data-v="C">C. 牛奶</button>
-    <button class="opt" data-v="D">D. 汤</button>
+  <p><span class="qno">C4</span> 哪个不是饮料？ Odd one out.</p>
+  <div class="mcq" data-answer="A" data-word="月饼">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="yuèbǐng">月饼</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="chá">茶</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="qìshuǐ">汽水</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="niúnǎi">牛奶</span></button>
   </div>
   <button class="btn check">对答案</button>
-  <div class="key"><b>A ✔</b> 酸奶 = yogurt (fermented milk). 汽水 soda, 牛奶 plain milk, 汤 soup.</div>
+  <div class="key"><b>A ✔</b> 月饼 is a Mid-Autumn pastry, not a drink. The other three are beverages (tested on their own later).</div>
 </div>
 
 <div class="item">
-  <p><span class="qno">C6</span> 哪个词是 "to roast / grill"（烤）？</p>
-  <div class="mcq" data-answer="B" data-word="烤">
-    <button class="opt" data-v="A">A. 煮 (cook in water)</button>
-    <button class="opt" data-v="B">B. 烤</button>
-    <button class="opt" data-v="C">C. 炒 (stir-fry)</button>
-    <button class="opt" data-v="D">D. 蒸 (steam)</button>
+  <p><span class="qno">C5</span> 判断对错：<span class="zh" data-py="tāng">汤</span>就是茶，用杯子喝。</p>
+  <div class="mcq" data-answer="B" data-word="汤">
+    <button class="opt" data-v="A">A. 对</button>
+    <button class="opt" data-v="B">B. 错</button>
   </div>
   <button class="btn check">对答案</button>
-  <div class="key"><b>B ✔</b> 烤 = dry heat (oven/grill/fire): 烤肉、烤鸭、烤面包. The others are other cooking verbs (outside this batch — distractors).</div>
+  <div class="key"><b>B ✔ 错</b> 汤 = soup (bowl, often with a spoon). 茶 is tea. Mixing them is a beginner trap from "hot liquid in a vessel".</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C6</span> 哪句是错的？</p>
+  <div class="mcq" data-answer="C" data-word="米饭">
+    <button class="opt" data-v="A">A. 食堂的<span class="zh" data-py="mǐfàn">米饭</span>可以再加一碗。</button>
+    <button class="opt" data-v="B">B. 飞机餐有<span class="zh" data-py="mǐfàn">米饭</span>和青菜。</button>
+    <button class="opt" data-v="C">C. 请给我一瓶<span class="zh" data-py="mǐfàn">米饭</span>。</button>
+    <button class="opt" data-v="D">D. 我午饭只吃<span class="zh" data-py="mǐfàn">米饭</span>，不吃面。</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> 米饭 is cooked rice — bowl/plate, never 一瓶. 瓶 is for bottles (汽水、牛奶).</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C7</span> 会客室先上（　），客人一边喝一边等。</p>
+  <div class="mcq" data-answer="A" data-word="茶">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="chá">茶</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="mántou">馒头</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="jiǎozi">饺子</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="yuèbǐng">月饼</span></button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> Guests are served 茶 first. The others are solids, not what you 上 in a waiting room.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C8</span> Which word is "milk" (not yogurt, not soda)?</p>
+  <div class="mcq" data-answer="C" data-word="牛奶">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="suānnǎi">酸奶</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="qìshuǐ">汽水</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="niúnǎi">牛奶</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="tāng">汤</span></button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> 牛奶 = milk. 酸奶 is fermented (yogurt); 汽水 is fizzy; 汤 is soup.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">C9</span> 哪个句子是对的？</p>
+  <div class="mcq" data-answer="B" data-word="好吃">
+    <button class="opt" data-v="A">A. 这碗汤的味道很<span class="zh" data-py="hǎochī">好吃</span>。</button>
+    <button class="opt" data-v="B">B. 这家店的饺子特别<span class="zh" data-py="hǎochī">好吃</span>。</button>
+    <button class="opt" data-v="C">C. 咖啡很好吃，我每天喝。</button>
+    <button class="opt" data-v="D">D. 汽水很好吃，冰的。</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> 好吃 describes food (饺子). 味道 takes 好/不错, not 好吃 (A). Drinks take 好喝 (C/D).</div>
 </div>
 
 <!-- ============ D 读音 ============ -->
-<h2 class="section"><span class="badge">D</span> 读音 <small>Pinyin ↔ character</small></h2>
+<h2 class="section"><span class="badge">D</span> 读音 <small>Pinyin ↔ character · hard pronunciations</small></h2>
 
 <div class="item">
-  <p><span class="qno">D1</span> "馒头"的正确拼音是？</p>
+  <p><span class="qno">D1</span> "<span class="zh" data-py="mántou">馒头</span>"的正确拼音是？</p>
   <div class="mcq" data-answer="A" data-word="馒头">
     <button class="opt" data-v="A">A. mántou</button>
     <button class="opt" data-v="B">B. mántǒu</button>
@@ -240,45 +285,104 @@ button { font-family:inherit; cursor:pointer; }
 </div>
 
 <div class="item">
-  <p><span class="qno">D2</span> "味道"的正确拼音是？</p>
-  <div class="mcq" data-answer="C" data-word="味道">
-    <button class="opt" data-v="A">A. wèidǎo</button>
-    <button class="opt" data-v="B">B. wēidào</button>
-    <button class="opt" data-v="C">C. wèidào</button>
-    <button class="opt" data-v="D">D. wěidào</button>
-  </div>
-  <button class="btn check">对答案</button>
-  <div class="key"><b>C ✔</b> Both 4th tones: wèi-dào.</div>
-</div>
-
-<div class="item">
-  <p><span class="qno">D3</span> "巧克力"的正确拼音是？</p>
+  <p><span class="qno">D2</span> Which word is <i>qiǎokèlì</i>?</p>
   <div class="mcq" data-answer="B" data-word="巧克力">
-    <button class="opt" data-v="A">A. qiāokèlì</button>
-    <button class="opt" data-v="B">B. qiǎokèlì</button>
-    <button class="opt" data-v="C">C. qiǎokēlì</button>
-    <button class="opt" data-v="D">D. kěqiāolì</button>
+    <button class="opt" data-v="A">A. <span class="zh" data-py="pútao">葡萄</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="qiǎokèlì">巧克力</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="xīhóngshì">西红柿</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="yuèbǐng">月饼</span></button>
   </div>
   <button class="btn check">对答案</button>
-  <div class="key"><b>B ✔</b> qiǎo-kè-lì: 3rd-4th-4th, and the syllable order matters (D reverses it into a different word, 可巧).</div>
+  <div class="key"><b>B ✔</b> qiǎo-kè-lì: 3rd-4th-4th. 葡萄 is pútao (neutral); 西红柿 is xīhóngshì.</div>
 </div>
 
 <div class="item">
-  <p><span class="qno">D4</span> "西红柿"的正确拼音是？</p>
-  <div class="mcq" data-answer="D" data-word="西红柿">
-    <button class="opt" data-v="A">A. xīhóngsì</button>
-    <button class="opt" data-v="B">B. xīhóngshī</button>
-    <button class="opt" data-v="C">C. xǐhóngshì</button>
-    <button class="opt" data-v="D">D. xīhóngshì</button>
+  <p><span class="qno">D3</span> 判断对错：<span class="zh" data-py="xīhóngshì">西红柿</span>的拼音是 xīhóngshì。</p>
+  <div class="mcq" data-answer="A" data-word="西红柿">
+    <button class="opt" data-v="A">A. 对</button>
+    <button class="opt" data-v="B">B. 错</button>
   </div>
   <button class="btn check">对答案</button>
-  <div class="key"><b>D ✔</b> xī-hóng-shì: 1st-2nd-4th. A misspells shì as sì (lost the h), B puts the tone mark on the wrong syllable (shī instead of xī), C misreads 西 as 3rd tone.</div>
+  <div class="key"><b>A ✔ 对</b> xī-hóng-shì: 1st-2nd-4th. Common misses: xīhóngsì (lost the h) or xǐhóngshì (西 as 3rd).</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D4</span> "<span class="zh" data-py="pútao">葡萄</span>"的正确拼音是？</p>
+  <div class="mcq" data-answer="C" data-word="葡萄">
+    <button class="opt" data-v="A">A. pútáo</button>
+    <button class="opt" data-v="B">B. pǔtao</button>
+    <button class="opt" data-v="C">C. pútao</button>
+    <button class="opt" data-v="D">D. pùtáo</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> pú (2nd) + neutral tao. Writing táo (2nd on both) is the usual over-correction.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D5</span> 哪一个读音是错的？（选出错误的那项）</p>
+  <div class="mcq" data-answer="D" data-word="饺子">
+    <button class="opt" data-v="A">A. 饺子 jiǎozi</button>
+    <button class="opt" data-v="B">B. 馒头 mántou</button>
+    <button class="opt" data-v="C">C. 葡萄 pútao</button>
+    <button class="opt" data-v="D">D. 饺子 jiāozi</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>D ✔</b> 饺 is 3rd: jiǎo, not jiāo (1st). A is the correct reading of the same word; D is the trap.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D6</span> 哪个词带儿化音？</p>
+  <div class="mcq" data-answer="B" data-word="面条儿">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="mǐfàn">米饭</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="miàntiáor">面条儿</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="jiǎozi">饺子</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="mántou">馒头</span></button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> 面条儿 miàntiáor — the 儿 is written and pronounced. The others have no erhua.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D7</span> Scenario: the label on a fizzy drink. Which pinyin?</p>
+  <div class="mcq" data-answer="A" data-word="汽水">
+    <button class="opt" data-v="A">A. qìshuǐ</button>
+    <button class="opt" data-v="B">B. qīshuǐ</button>
+    <button class="opt" data-v="C">C. qǐshuí</button>
+    <button class="opt" data-v="D">D. xīshuǐ</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 汽 qì (4th) + 水 shuǐ (3rd). 1st-tone qī is 七; xī is 西.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D8</span> <i>chúshī</i> 是哪个词？（别跟厨房搞混）</p>
+  <div class="mcq" data-answer="C" data-word="厨师">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="chúfáng">厨房</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="cāntīng">餐厅</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="chúshī">厨师</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="jùcān">聚餐</span></button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>C ✔</b> 厨师 chúshī = chef (person). 厨房 chúfáng = kitchen (place). Same 厨, different second syllable.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">D9</span> Which word is <i>suānnǎi</i>?</p>
+  <div class="mcq" data-answer="B" data-word="酸奶">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="niúnǎi">牛奶</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="suānnǎi">酸奶</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="qìshuǐ">汽水</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="chá">茶</span></button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔</b> 酸奶 suān-nǎi (1st-3rd). 牛奶 is niúnǎi; don't let 奶 steal the whole ID.</div>
 </div>
 
 <!-- ============ E 用法 ============ -->
-<h2 class="section"><span class="badge">E</span> 用法 <small>Usage in context · 每个词只能用一次</small></h2>
+<h2 class="section"><span class="badge">E</span> 用法 <small>Usage in context · remaining batch words</small></h2>
 
-<div class="item" data-answers="A B C D E" data-word="咸/酸/香/辣/烤搭配">
+<div class="item" data-answers="A B C D E" data-word="咸/酸/香/辣/烤">
+  <p>选词填空（每个词一次；有一个用不上）。</p>
   <div class="bank">
     <button class="bword">A 咸</button><button class="bword">B 酸</button>
     <button class="bword">C 香</button><button class="bword">D 辣</button>
@@ -291,20 +395,54 @@ button { font-family:inherit; cursor:pointer; }
   <p>5. 中秋节我们在院子里<span class="slot"></span>肉、赏月亮。</p>
   <button class="btn check">对答案</button>
   <button class="btn reset">重来</button>
-  <div class="key"><b>1-A 咸 · 2-B 酸 · 3-C 香 · 4-D 辣 · 5-E 烤</b>（F 汤 不用）<br>
+  <div class="key"><b>1-A 咸 · 2-B 酸 · 3-C 香 · 4-D 辣 · 5-E 烤</b>（F 汤 不用 — 汤 already tested in C5）<br>
   Cues: ① 太咸了→喝水 ② 柠檬=酸 ③ 闻得到=香 ④ 流汗=辣 ⑤ 在院子里=烤（明火）.</div>
 </div>
 
 <div class="item">
   <p><span class="qno">E6</span> 周五下班后，同事们打算一起去（　）。</p>
   <div class="mcq" data-answer="B" data-word="聚餐">
-    <button class="opt" data-v="A">A. 馒头</button>
-    <button class="opt" data-v="B">B. 聚餐</button>
-    <button class="opt" data-v="C">C. 汽水</button>
-    <button class="opt" data-v="D">D. 厨房</button>
+    <button class="opt" data-v="A">A. <span class="zh" data-py="mántou">馒头</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="jùcān">聚餐</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="qìshuǐ">汽水</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="chúfáng">厨房</span></button>
   </div>
   <button class="btn check">对答案</button>
   <div class="key"><b>B ✔</b> A group meal = 聚餐 (verb/noun). The others are foods or places, not activities.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">E7</span> 判断对错：可以说"这个菜的<span class="zh" data-py="wèidào">味道</span>很好吃"。</p>
+  <div class="mcq" data-answer="B" data-word="味道">
+    <button class="opt" data-v="A">A. 对</button>
+    <button class="opt" data-v="B">B. 错</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>B ✔ 错</b> 味道 pairs with 好 / 不错 / 怪, not 好吃. 好吃 describes the food: 这个菜很好吃。 / 这个菜的味道很好。</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">E8</span> At a group dinner you stand up with a glass. What do you say?</p>
+  <div class="mcq" data-answer="D" data-word="干杯">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="jùcān">聚餐</span>！</button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="hǎochī">好吃</span>！</button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="kuàicān">快餐</span>！</button>
+    <button class="opt" data-v="D">D. 为友谊<span class="zh" data-py="gānbēi">干杯</span>！</button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>D ✔</b> Toast = 干杯 (often 为…干杯). 聚餐 is the event, not the toast line.</div>
+</div>
+
+<div class="item">
+  <p><span class="qno">E9</span> 坐长途车，你带了两个（　）当零食。</p>
+  <div class="mcq" data-answer="A" data-word="苹果">
+    <button class="opt" data-v="A">A. <span class="zh" data-py="píngguǒ">苹果</span></button>
+    <button class="opt" data-v="B">B. <span class="zh" data-py="tāng">汤</span></button>
+    <button class="opt" data-v="C">C. <span class="zh" data-py="chá">茶</span></button>
+    <button class="opt" data-v="D">D. <span class="zh" data-py="qìshuǐ">汽水</span></button>
+  </div>
+  <button class="btn check">对答案</button>
+  <div class="key"><b>A ✔</b> 两个 + 苹果 (countable fruit). 汤/茶/汽水 take 碗/杯/瓶, not 两个 as a snack you pack.</div>
 </div>
 
 <!-- ============ F 造句 ============ -->
@@ -331,6 +469,13 @@ button { font-family:inherit; cursor:pointer; }
   <div class="key">Model: <b>为我们的友谊干杯！</b> Variants: 祝大家新年快乐，干杯！ Structure: 为/祝 + reason + 干杯.</div>
 </div>
 
+<div class="item">
+  <p><span class="qno">F4</span> 用"恐怕"写一句话：聚餐快结束，你担心甜点卖完了。<span class="srctag">from hsk4-gt-CL02a · 恐怕</span></p>
+  <input class="typed-in" type="text" placeholder="恐怕…">
+  <button class="btn check">对答案</button>
+  <div class="key">Model: <b>这么晚了，甜点恐怕已经卖完了。</b> 恐怕 = worried guess about bad news, not 看来 (neutral inference) and not 竟然 (surprise at a fact).</div>
+</div>
+
 <!-- ============ G 得分总结 ============ -->
 <h2 class="section"><span class="badge">G</span> 得分总结 <small>Score summary</small></h2>
 <div class="scorebox">
@@ -340,6 +485,25 @@ button { font-family:inherit; cursor:pointer; }
   </div>
 
 <script>
+
+function shuffleTiles(row) {
+  if (!row) return;
+  const tiles = [...row.children];
+  for (let i = tiles.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+  }
+  tiles.forEach(t => row.appendChild(t));
+}
+function shuffleAllTiles() {
+  document.querySelectorAll('.tiles').forEach(shuffleTiles);
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', shuffleAllTiles);
+} else {
+  shuffleAllTiles();
+}
+
 document.addEventListener('click', e => { if (e.target.matches('.check')) { const item = e.target.closest('.item'); const key = item && item.querySelector('.key'); if (key) key.classList.add('show'); } });
 document.addEventListener('click', e => {
   if (!e.target.matches('.opt')) return;
@@ -381,6 +545,82 @@ document.addEventListener('click', e => {
     armedWord = null;
   }
 });
+
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tiles > .tile')) return;
+  const built = e.target.closest('.item').querySelector('.built');
+  if (!built) return;
+  const t = document.createElement('button');
+  t.className = 'tile'; t.textContent = e.target.textContent;
+  built.appendChild(t); e.target.classList.add('used');
+});
+document.addEventListener('click', e => {
+  if (e.target.matches('.built > .tile')) e.target.remove();
+});
+document.addEventListener('click', e => {
+  if (!e.target.matches('.reset')) return;
+  const item = e.target.closest('.item');
+  item.querySelectorAll('.tiles > .tile.used').forEach(t => t.classList.remove('used'));
+  const built = item.querySelector('.built'); if (built) built.innerHTML = '';
+  shuffleTiles(item.querySelector('.tiles'));
+  if (item.querySelector('.bank')) {
+    item.querySelectorAll('.bank .bword').forEach(b => { b.classList.remove('used'); b.style.outline = ''; });
+    item.querySelectorAll('.slot').forEach(s => { s.textContent = ''; delete s.dataset.filled; });
+    armedWord = null;
+  }
+});
+
+
+function lineGender(el) {
+  const line = el.closest('.line') || el.parentElement;
+  const g = ((line && line.dataset.gender) || '').toLowerCase();
+  if (g === 'm' || g === 'male') return 'm';
+  if (g === 'f' || g === 'female') return 'f';
+  const sp = line && line.querySelector('.speaker');
+  const t = sp ? sp.textContent : '';
+  if (/男/.test(t)) return 'm';
+  if (/女/.test(t)) return 'f';
+  return 'f';
+}
+function pickZhVoice(gender) {
+  const voices = speechSynthesis.getVoices().filter(v =>
+    /zh(-|_|$)/i.test(v.lang) || /chinese|中文/i.test(v.name));
+  const re = gender === 'm'
+    ? /kangkang|yunyang|yunjian|yunxi|yunhao|male|男/i
+    : /huihui|yaoyao|xiaoxiao|xiaoyi|xiaoxuan|female|女/i;
+  const named = voices.find(v => re.test(v.name));
+  if (named) return { voice: named, pitch: 1 };
+  const zh = voices.find(v => /zh-CN/i.test(v.lang)) || voices[0] || null;
+  return { voice: zh, pitch: gender === 'm' ? 0.85 : 1.15 };
+}
+function whenVoices(cb) {
+  if (speechSynthesis.getVoices().length) { cb(); return; }
+  let ran = false;
+  const go = () => { if (ran) return; ran = true; cb(); };
+  speechSynthesis.addEventListener('voiceschanged', go, { once: true });
+  setTimeout(go, 500);
+}
+document.addEventListener('click', e => {
+  if (!e.target.matches('.tts')) return;
+  if (!('speechSynthesis' in window)) return;
+  const line = e.target.closest('.line') || e.target.parentElement;
+  const clone = line.cloneNode(true);
+  clone.querySelectorAll('button').forEach(b => b.remove());
+  const sp = clone.querySelector('.speaker');
+  if (sp) sp.remove();
+  const gender = lineGender(e.target);
+  const text = clone.textContent.trim();
+  whenVoices(() => {
+    const { voice, pitch } = pickZhVoice(gender);
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'zh-CN';
+    if (voice) u.voice = voice;
+    u.pitch = pitch;
+    speechSynthesis.cancel();
+    speechSynthesis.speak(u);
+  });
+});
+
 document.addEventListener('click', e => {
   if (e.target.matches('.copy-report')) {
     const pre = e.target.closest('.scorebox').querySelector('pre.report');
@@ -412,6 +652,15 @@ document.addEventListener('click', e => {
     if (ok) { right++; return; }
     const w = it.dataset.word || it.dataset.point || '选词填空';
     if (!seen.has(w)) { seen.add(w); missed.push(w); }
+  });
+  document.querySelectorAll('.item[data-order]').forEach(it => {
+    total++;
+    const want = it.dataset.order.split('|');
+    const got = [...it.querySelectorAll('.built > .tile')].map(t => t.textContent);
+    const ok = want.length === got.length && want.every((w, i) => got[i] === w);
+    if (ok) { right++; return; }
+    const w = it.dataset.point || it.dataset.word || tag(it);
+    if (w && !seen.has(w)) { seen.add(w); missed.push(String(w).trim()); }
   });
   const pct = total ? Math.round((right / total) * 100) : 0;
   const type = document.body.dataset.type || 'P';

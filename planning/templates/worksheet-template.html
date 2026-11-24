@@ -22,6 +22,8 @@
   - Every item gets its own check button; the key must include the rule + why the tempting
     distractor fails. Production keys give model + variants + a wrong-with-reason example.
   - No external resources. Fonts: system stack below.
+  - P2: tiles not in canonical order; phrase chunks; data-order="tile|tile|…"; ≥10 auto-scored.
+  - TTS: 女/男 or data-gender="f|m" pick different voices.
 -->
 <head>
 <meta charset="UTF-8">
@@ -212,20 +214,22 @@
 
 <!-- R2: choose the correct sentence (same .mcq structure, options are full sentences) -->
 
-<!-- P2: order tiles -->
-<div class="item">
+<!-- P2: order tiles — never emit in canonical order; phrase chunks + one tempting wrong grouping.
+     data-order is the exact click sequence (unused trap tiles are omitted from it). -->
+<div class="item" data-order="我|把|房间|打扫|干净了">
   <p><span class="qno">B2</span> 排列顺序：把下面的词排成一句话。</p>
   <div class="tiles">
-    <button class="tile">我</button>
-    <button class="tile">把</button>
-    <button class="tile">房间</button>
-    <button class="tile">打扫</button>
     <button class="tile">干净了</button>
+    <button class="tile">把房间</button>
+    <button class="tile">我</button>
+    <button class="tile">打扫</button>
+    <button class="tile">房间</button>
+    <button class="tile">把</button>
   </div>
   <div class="built" aria-label="your answer"></div>
   <button class="btn check">对答案</button>
   <button class="btn reset">重来</button>
-  <div class="key">[Correct order + rule + note on the trap.]</div>
+  <div class="key">[Correct order + rule + note on the trap. Trap tile 把房间 is unused.]</div>
 </div>
 
 <!-- P3: error finding (mcq over sentence segments) -->
@@ -338,6 +342,25 @@ document.addEventListener('click', e => {
   });
 });
 
+// P2 scramble: Fisher–Yates shuffle on load and 重来 (never leave canonical order on screen)
+function shuffleTiles(row) {
+  if (!row) return;
+  const tiles = [...row.children];
+  for (let i = tiles.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+  }
+  tiles.forEach(t => row.appendChild(t));
+}
+function shuffleAllTiles() {
+  document.querySelectorAll('.tiles').forEach(shuffleTiles);
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', shuffleAllTiles);
+} else {
+  shuffleAllTiles();
+}
+
 // Order tiles: click tile → append to .built; click built tile to remove
 document.addEventListener('click', e => {
   if (!e.target.matches('.tiles > .tile')) return;
@@ -353,9 +376,10 @@ document.addEventListener('click', e => {
 document.addEventListener('click', e => {
   if (!e.target.matches('.reset')) return;
   const item = e.target.closest('.item');
-  // order-tiles: return used tiles, clear the built line
+  // order-tiles: return used tiles, clear the built line, re-shuffle
   item.querySelectorAll('.tiles > .tile.used').forEach(t => t.classList.remove('used'));
   const built = item.querySelector('.built'); if (built) built.innerHTML = '';
+  shuffleTiles(item.querySelector('.tiles'));
   // bank-fill: clear every slot and restore the bank
   if (item.querySelector('.bank')) {
     item.querySelectorAll('.bank .bword').forEach(b => { b.classList.remove('used'); b.style.outline = ''; });
@@ -402,16 +426,55 @@ document.addEventListener('click', e => {
   }
 });
 
-// TTS: reads the sibling Chinese text with zh-CN voice if available
+// TTS: gendered zh-CN voices (女/男 or data-gender). Pitch fallback if only one voice.
+function lineGender(el) {
+  const line = el.closest('.line') || el.parentElement;
+  const g = ((line && line.dataset.gender) || '').toLowerCase();
+  if (g === 'm' || g === 'male') return 'm';
+  if (g === 'f' || g === 'female') return 'f';
+  const sp = line && line.querySelector('.speaker');
+  const t = sp ? sp.textContent : '';
+  if (/男/.test(t)) return 'm';
+  if (/女/.test(t)) return 'f';
+  return 'f';
+}
+function pickZhVoice(gender) {
+  const voices = speechSynthesis.getVoices().filter(v =>
+    /zh(-|_|$)/i.test(v.lang) || /chinese|中文/i.test(v.name));
+  const re = gender === 'm'
+    ? /kangkang|yunyang|yunjian|yunxi|yunhao|male|男/i
+    : /huihui|yaoyao|xiaoxiao|xiaoyi|xiaoxuan|female|女/i;
+  const named = voices.find(v => re.test(v.name));
+  if (named) return { voice: named, pitch: 1 };
+  const zh = voices.find(v => /zh-CN/i.test(v.lang)) || voices[0] || null;
+  return { voice: zh, pitch: gender === 'm' ? 0.85 : 1.15 };
+}
+function whenVoices(cb) {
+  if (speechSynthesis.getVoices().length) { cb(); return; }
+  let ran = false;
+  const go = () => { if (ran) return; ran = true; cb(); };
+  speechSynthesis.addEventListener('voiceschanged', go, { once: true });
+  setTimeout(go, 500);
+}
 document.addEventListener('click', e => {
   if (!e.target.matches('.tts')) return;
   if (!('speechSynthesis' in window)) return;
-  const line = e.target.parentElement;
+  const line = e.target.closest('.line') || e.target.parentElement;
   const clone = line.cloneNode(true);
   clone.querySelectorAll('button').forEach(b => b.remove());
-  const u = new SpeechSynthesisUtterance(clone.textContent.trim());
-  u.lang = 'zh-CN';
-  speechSynthesis.cancel(); speechSynthesis.speak(u);
+  const sp = clone.querySelector('.speaker');
+  if (sp) sp.remove();
+  const gender = lineGender(e.target);
+  const text = clone.textContent.trim();
+  whenVoices(() => {
+    const { voice, pitch } = pickZhVoice(gender);
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'zh-CN';
+    if (voice) u.voice = voice;
+    u.pitch = pitch;
+    speechSynthesis.cancel();
+    speechSynthesis.speak(u);
+  });
 });
 
 // Paste-report: MCQ + bank-fill → copy-ready block
@@ -446,6 +509,15 @@ document.addEventListener('click', e => {
     if (ok) { right++; return; }
     const w = it.dataset.word || it.dataset.point || '选词填空';
     if (!seen.has(w)) { seen.add(w); missed.push(w); }
+  });
+  document.querySelectorAll('.item[data-order]').forEach(it => {
+    total++;
+    const want = it.dataset.order.split('|');
+    const got = [...it.querySelectorAll('.built > .tile')].map(t => t.textContent);
+    const ok = want.length === got.length && want.every((w, i) => got[i] === w);
+    if (ok) { right++; return; }
+    const w = it.dataset.point || it.dataset.word || tag(it);
+    if (w && !seen.has(w)) { seen.add(w); missed.push(String(w).trim()); }
   });
   const pct = total ? Math.round((right / total) * 100) : 0;
   const type = document.body.dataset.type || 'P';
